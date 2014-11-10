@@ -16,7 +16,10 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+<<<<<<< HEAD
 DS_Store
+=======
+>>>>>>> b31b58f16c8cd8173fa095babc8426e048b8efcb
 
 # CocoaPods
 #
