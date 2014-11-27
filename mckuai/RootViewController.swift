@@ -14,7 +14,7 @@ let appID:String = "3Z8C4UK6GU"
 
 class RootViewController: UITabBarController , ChangeTableDelegate{
     
-    let launchImgUrl = "http://news-at.zhihu.com/api/3/start-image/640*960"
+    let launchImgUrl = "http://pic2.zhimg.com/cf3bcf3ca5c7a503e7b58d0f498f14bc.jpg"
     var welcome:UIViewController!
     override func viewDidLoad() {
         super.viewDidLoad()

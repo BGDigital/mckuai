@@ -8,16 +8,25 @@
 
 import UIKit
 
-class Community: UITableViewController {
+class Community: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet var tv: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadHeader()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func loadHeader() {
+        var tableHeaderView = NSBundle.mainBundle().loadNibNamed("DynamicHeader", owner: self, options: nil)[0] as DynamicHeader
+        tableHeaderView.lb_name1.text = "麦块反馈"
+        tv.tableHeaderView = tableHeaderView
+        //tv.backgroundColor = UIColor(red: 0.918, green: 0.918, blue: 0.918, alpha: 1.00)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +45,7 @@ class Community: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1
+        return 0
     }
 
     /*

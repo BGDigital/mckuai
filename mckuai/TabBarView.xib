@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -10,15 +10,147 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" id="9bD-cV-DbX" customClass="RadiusView" customModule="mckuai" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9bD-cV-DbX" customClass="RadiusView" customModule="mckuai" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="20" width="320" height="51"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nK0-vw-qBv">
-                            <rect key="frame" x="20" y="5" width="40" height="40"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dj-h1-F1l">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.01" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="65" id="Ljh-r0-G4Q"/>
+                                <constraint firstAttribute="height" constant="50" id="cgy-ec-5DB"/>
+                            </constraints>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Ljh-r0-G4Q"/>
+                                    <exclude reference="cgy-ec-5DB"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="constraints">
+                                    <include reference="Ljh-r0-G4Q"/>
+                                    <include reference="cgy-ec-5DB"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="7Zm-AJ-GFV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcK-vh-nfZ">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.01" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="H8n-hk-0k0"/>
+                                <constraint firstAttribute="width" constant="60" id="gJw-6f-Jp2"/>
+                            </constraints>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="H8n-hk-0k0"/>
+                                    <exclude reference="gJw-6f-Jp2"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="constraints">
+                                    <include reference="H8n-hk-0k0"/>
+                                    <include reference="gJw-6f-Jp2"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="pxk-MO-OGS"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbu-5F-leP">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.01" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="90m-bC-noF"/>
+                                <constraint firstAttribute="width" constant="60" id="n0a-fJ-wlf"/>
+                            </constraints>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="90m-bC-noF"/>
+                                    <exclude reference="n0a-fJ-wlf"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="constraints">
+                                    <include reference="90m-bC-noF"/>
+                                    <include reference="n0a-fJ-wlf"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="amh-Ni-Fs0"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xmn-Ts-fMS">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.01" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="0d6-es-KAa"/>
+                                <constraint firstAttribute="width" constant="65" id="Uip-js-xOr"/>
+                            </constraints>
+                            <state key="normal">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="0d6-es-KAa"/>
+                                    <exclude reference="Uip-js-xOr"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="constraints">
+                                    <include reference="0d6-es-KAa"/>
+                                    <include reference="Uip-js-xOr"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="1eG-Qk-V4i"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z64-dO-UCJ">
+                            <rect key="frame" x="210" y="5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="5Rf-Eh-kFo">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                    <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                </constraint>
+                                <constraint firstAttribute="width" constant="40" id="OpL-6d-6oY">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                    <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                </constraint>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                            <state key="normal" title="聊天" backgroundImage="chat_no.png">
+                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="KfU-Ux-LzK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nK0-vw-qBv">
+                            <rect key="frame" x="20" y="4" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="6R7-R9-hjU">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                    <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                </constraint>
+                                <constraint firstAttribute="height" constant="40" id="t9q-tl-FHx">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                    <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                </constraint>
+                            </constraints>
                             <color key="tintColor" red="0.96862745100000003" green="0.42352941179999998" blue="0.39607843139999999" alpha="1" colorSpace="deviceRGB"/>
-                            <state key="normal" title="酒单" backgroundImage="recipe_no.png">
+                            <state key="normal" title="首页" backgroundImage="home_no.png">
                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </state>
@@ -26,10 +158,19 @@
                                 <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="yCX-di-EP7"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n13-UF-AQV">
-                            <rect key="frame" x="260" y="5" width="40" height="40"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="用户" backgroundImage="user_no.png">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n13-UF-AQV">
+                            <rect key="frame" x="270" y="5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="DCC-nZ-Qzb">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                    <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                </constraint>
+                                <constraint firstAttribute="height" constant="40" id="kwD-X2-0RH">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                    <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                </constraint>
+                            </constraints>
+                            <state key="normal" title="用户" backgroundImage="mine_no.png">
                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -37,10 +178,19 @@
                                 <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="jKr-P8-K6T"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="container" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9B2-hZ-ycV">
-                            <rect key="frame" x="100" y="5" width="40" height="40"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="材料" backgroundImage="ingridient_no.png">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" restorationIdentifier="container" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9B2-hZ-ycV">
+                            <rect key="frame" x="80" y="5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="HPD-ZF-QBi">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                    <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                </constraint>
+                                <constraint firstAttribute="height" constant="40" id="Hmm-w2-rDQ">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                                    <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                                </constraint>
+                            </constraints>
+                            <state key="normal" title="社区" backgroundImage="community_no.png">
                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -48,46 +198,47 @@
                                 <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="wlR-jL-S8P"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Z64-dO-UCJ">
-                            <rect key="frame" x="180" y="5" width="40" height="40"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="聊天" backgroundImage="container_no.png">
-                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="KfU-Ux-LzK"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="首页" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zNO-vk-cIo">
-                            <rect key="frame" x="23" y="45" width="34" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="社区" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lzG-0Q-pz3">
-                            <rect key="frame" x="103" y="45" width="34" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="聊天" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nW1-Fc-qeF">
-                            <rect key="frame" x="183" y="45" width="34" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="irB-wc-Wyz">
-                            <rect key="frame" x="263" y="45" width="34" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="9B2-hZ-ycV" firstAttribute="top" secondItem="9bD-cV-DbX" secondAttribute="top" constant="5" id="4pe-R6-l3e">
+                            <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                            <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                        </constraint>
+                        <constraint firstItem="9B2-hZ-ycV" firstAttribute="leading" secondItem="nK0-vw-qBv" secondAttribute="trailing" constant="20" id="80r-xo-HI1"/>
+                        <constraint firstItem="3Dj-h1-F1l" firstAttribute="leading" secondItem="9bD-cV-DbX" secondAttribute="leading" id="Hdd-GW-vUc"/>
+                        <constraint firstAttribute="trailing" secondItem="n13-UF-AQV" secondAttribute="trailing" constant="10" id="Jnn-1a-tLc">
+                            <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                            <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                        </constraint>
+                        <constraint firstItem="Xmn-Ts-fMS" firstAttribute="top" secondItem="9bD-cV-DbX" secondAttribute="top" id="LaP-KJ-Dk3"/>
+                        <constraint firstItem="nK0-vw-qBv" firstAttribute="top" secondItem="9bD-cV-DbX" secondAttribute="top" constant="5" id="MZL-2U-l48">
+                            <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                            <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                        </constraint>
+                        <constraint firstItem="n13-UF-AQV" firstAttribute="top" secondItem="9bD-cV-DbX" secondAttribute="top" constant="5" id="NRE-T4-3Gy">
+                            <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                            <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                        </constraint>
+                        <constraint firstItem="Xmn-Ts-fMS" firstAttribute="leading" secondItem="vbu-5F-leP" secondAttribute="trailing" id="OWz-59-Dhf"/>
+                        <constraint firstItem="nK0-vw-qBv" firstAttribute="leading" secondItem="9bD-cV-DbX" secondAttribute="leading" constant="20" id="Vhn-eo-UGc">
+                            <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                            <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                        </constraint>
+                        <constraint firstItem="vbu-5F-leP" firstAttribute="top" secondItem="9bD-cV-DbX" secondAttribute="top" id="XAI-VK-hLF"/>
+                        <constraint firstItem="n13-UF-AQV" firstAttribute="leading" secondItem="Z64-dO-UCJ" secondAttribute="trailing" constant="20" id="XEF-is-f5R"/>
+                        <constraint firstAttribute="height" constant="51" id="Z0G-7J-CiV"/>
+                        <constraint firstItem="Z64-dO-UCJ" firstAttribute="top" secondItem="9bD-cV-DbX" secondAttribute="top" constant="5" id="cLI-pH-8li">
+                            <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                            <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                        </constraint>
+                        <constraint firstItem="n13-UF-AQV" firstAttribute="leading" secondItem="Z64-dO-UCJ" secondAttribute="trailing" constant="120" id="dnT-w8-aya"/>
+                        <constraint firstAttribute="trailing" secondItem="Xmn-Ts-fMS" secondAttribute="trailing" id="iO1-KK-mJZ"/>
+                        <constraint firstItem="TcK-vh-nfZ" firstAttribute="leading" secondItem="3Dj-h1-F1l" secondAttribute="trailing" id="jaB-ux-dht"/>
+                        <constraint firstItem="3Dj-h1-F1l" firstAttribute="top" secondItem="9bD-cV-DbX" secondAttribute="top" id="msn-Px-txN"/>
+                        <constraint firstItem="TcK-vh-nfZ" firstAttribute="top" secondItem="9bD-cV-DbX" secondAttribute="top" id="o0U-bR-XGy"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="n13-UF-AQV" secondAttribute="trailing" constant="100" id="rhR-fy-KPX"/>
+                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                             <real key="value" value="1"/>
@@ -96,9 +247,155 @@
                             <color key="value" red="0.82517408290000005" green="0.82517408290000005" blue="0.82517408290000005" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="3Dj-h1-F1l"/>
+                            <exclude reference="TcK-vh-nfZ"/>
+                            <exclude reference="vbu-5F-leP"/>
+                            <exclude reference="Xmn-Ts-fMS"/>
+                        </mask>
+                        <mask key="constraints">
+                            <exclude reference="Hdd-GW-vUc"/>
+                            <exclude reference="msn-Px-txN"/>
+                            <exclude reference="jaB-ux-dht"/>
+                            <exclude reference="o0U-bR-XGy"/>
+                            <exclude reference="LaP-KJ-Dk3"/>
+                            <exclude reference="OWz-59-Dhf"/>
+                            <exclude reference="iO1-KK-mJZ"/>
+                            <exclude reference="XAI-VK-hLF"/>
+                            <exclude reference="dnT-w8-aya"/>
+                            <exclude reference="rhR-fy-KPX"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="subviews">
+                            <include reference="3Dj-h1-F1l"/>
+                            <include reference="TcK-vh-nfZ"/>
+                            <include reference="vbu-5F-leP"/>
+                            <include reference="Xmn-Ts-fMS"/>
+                        </mask>
+                        <mask key="constraints">
+                            <include reference="Hdd-GW-vUc"/>
+                            <include reference="msn-Px-txN"/>
+                            <include reference="jaB-ux-dht"/>
+                            <include reference="o0U-bR-XGy"/>
+                            <include reference="LaP-KJ-Dk3"/>
+                            <include reference="OWz-59-Dhf"/>
+                            <include reference="iO1-KK-mJZ"/>
+                            <include reference="XAI-VK-hLF"/>
+                        </mask>
+                    </variation>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8km-U4-x9X">
+                    <rect key="frame" x="125" y="1" width="70" height="70"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6N-hb-1oW" customClass="RadiusView" customModule="mckuai" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="62" id="sZR-v2-ghf"/>
+                                <constraint firstAttribute="height" constant="62" id="zeZ-gI-sZc"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.82517408290000005" green="0.82517408290000005" blue="0.82517408290000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="31"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="sZR-v2-ghf"/>
+                                    <exclude reference="zeZ-gI-sZc"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="constraints">
+                                    <include reference="sZR-v2-ghf"/>
+                                    <include reference="zeZ-gI-sZc"/>
+                                </mask>
+                            </variation>
+                        </view>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlM-2E-Jfs" customClass="FilletButton" customModule="mckuai" customModuleProvider="target">
+                            <rect key="frame" x="7" y="7" width="56" height="56"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="56" id="XYl-6r-Rdy"/>
+                                <constraint firstAttribute="width" constant="56" id="p9s-Z7-LNB"/>
+                            </constraints>
+                            <state key="normal" title="设备">
+                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="28"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="normalbgColor">
+                                    <color key="value" red="0.96862745100000003" green="0.42352941179999998" blue="0.39607843139999999" alpha="1" colorSpace="deviceRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="selectedbgColor">
+                                    <color key="value" red="0.96862745100000003" green="0.42352941179999998" blue="0.39607843139999999" alpha="1" colorSpace="deviceRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="ARP-A1-hJd"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.png" translatesAutoresizingMaskIntoConstraints="NO" id="MjZ-pA-yrO">
+                            <rect key="frame" x="17" y="17" width="36" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="HnH-mk-B1o"/>
+                                <constraint firstAttribute="width" constant="36" id="uHW-2c-0hW"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="hlM-2E-Jfs" firstAttribute="top" secondItem="8km-U4-x9X" secondAttribute="top" constant="9" id="0FF-1W-ZK3"/>
+                        <constraint firstAttribute="width" constant="70" id="59G-LM-DUP"/>
+                        <constraint firstItem="MjZ-pA-yrO" firstAttribute="top" secondItem="8km-U4-x9X" secondAttribute="top" constant="20" id="ADG-iR-z65"/>
+                        <constraint firstAttribute="centerX" secondItem="e6N-hb-1oW" secondAttribute="centerX" id="Fi7-jX-ZQe"/>
+                        <constraint firstAttribute="height" constant="70" id="Gb2-Rj-CBs"/>
+                        <constraint firstAttribute="centerX" secondItem="MjZ-pA-yrO" secondAttribute="centerX" id="deg-vo-kbl"/>
+                        <constraint firstAttribute="centerY" secondItem="MjZ-pA-yrO" secondAttribute="centerY" id="dgf-zv-EvH"/>
+                        <constraint firstAttribute="centerX" secondItem="hlM-2E-Jfs" secondAttribute="centerX" id="frM-DG-jKL"/>
+                        <constraint firstAttribute="centerY" secondItem="e6N-hb-1oW" secondAttribute="centerY" id="fz8-dc-4fs"/>
+                        <constraint firstAttribute="centerY" secondItem="hlM-2E-Jfs" secondAttribute="centerY" id="xS4-M0-4a6"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="e6N-hb-1oW"/>
+                        </mask>
+                        <mask key="constraints">
+                            <exclude reference="0FF-1W-ZK3"/>
+                            <exclude reference="ADG-iR-z65"/>
+                            <exclude reference="Fi7-jX-ZQe"/>
+                            <exclude reference="fz8-dc-4fs"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="subviews">
+                            <include reference="e6N-hb-1oW"/>
+                        </mask>
+                        <mask key="constraints">
+                            <include reference="Fi7-jX-ZQe"/>
+                            <include reference="fz8-dc-4fs"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9bD-cV-DbX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-1" id="2tF-Vr-RU7"/>
+                <constraint firstAttribute="bottom" secondItem="9bD-cV-DbX" secondAttribute="bottom" constant="-1" id="Cj3-1p-PlA"/>
+                <constraint firstItem="8km-U4-x9X" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="Jla-4E-MJq"/>
+                <constraint firstAttribute="centerX" secondItem="8km-U4-x9X" secondAttribute="centerX" id="XSH-GC-4Dw"/>
+                <constraint firstAttribute="trailing" secondItem="9bD-cV-DbX" secondAttribute="trailing" constant="-1" id="h2G-Fq-KaQ"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -106,20 +403,17 @@
                 <outlet property="contanBtn" destination="Z64-dO-UCJ" id="4Y0-Yg-ZVA"/>
                 <outlet property="materlBtn" destination="9B2-hZ-ycV" id="o1s-2L-t8s"/>
                 <outlet property="recipeBtn" destination="nK0-vw-qBv" id="0d0-tc-yXi"/>
+                <outlet property="settigBtn" destination="hlM-2E-Jfs" id="YIM-Af-9kh"/>
                 <outlet property="userBtn" destination="n13-UF-AQV" id="8Zs-18-sBf"/>
             </connections>
             <point key="canvasLocation" x="906" y="176"/>
         </view>
     </objects>
     <resources>
-        <image name="container_no.png" width="128" height="128"/>
-        <image name="ingridient_no.png" width="128" height="128"/>
-        <image name="recipe_no.png" width="128" height="128"/>
-        <image name="user_no.png" width="128" height="128"/>
+        <image name="chat_no.png" width="56" height="56"/>
+        <image name="community_no.png" width="56" height="56"/>
+        <image name="home_no.png" width="56" height="56"/>
+        <image name="mine_no.png" width="56" height="56"/>
+        <image name="plus.png" width="90" height="90"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

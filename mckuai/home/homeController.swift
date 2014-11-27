@@ -17,7 +17,10 @@ class homeController: UIViewController, DHCarouselViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        InitCarouselView(200)
+        InitCarouselView(115)
+        
+        //navigation bar 背景
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
