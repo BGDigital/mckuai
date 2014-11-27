@@ -345,7 +345,7 @@
                                 <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="ARP-A1-hJd"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.png" translatesAutoresizingMaskIntoConstraints="NO" id="MjZ-pA-yrO">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_on" translatesAutoresizingMaskIntoConstraints="NO" id="MjZ-pA-yrO">
                             <rect key="frame" x="17" y="17" width="36" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="HnH-mk-B1o"/>
@@ -414,6 +414,6 @@
         <image name="community_no.png" width="56" height="56"/>
         <image name="home_no.png" width="56" height="56"/>
         <image name="mine_no.png" width="56" height="56"/>
-        <image name="plus.png" width="90" height="90"/>
+        <image name="mine_on" width="56" height="56"/>
     </resources>
 </document>

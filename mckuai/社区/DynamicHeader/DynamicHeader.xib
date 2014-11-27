@@ -10,20 +10,20 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="211"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e70-OP-Ue0">
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e70-OP-Ue0">
                     <rect key="frame" x="0.0" y="119" width="320" height="92"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="cu7-bP-XOY">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="cu7-bP-XOY">
                             <rect key="frame" x="300" y="0.0" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="T7P-Pt-ObU"/>
                                 <constraint firstAttribute="width" constant="20" id="wCY-FT-H73"/>
                             </constraints>
                         </imageView>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y5K-W3-CRz">
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y5K-W3-CRz">
                             <rect key="frame" x="0.0" y="20" width="320" height="72"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bankuai_huodong" translatesAutoresizingMaskIntoConstraints="NO" id="tpU-48-c7w">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bankuai_huodong" translatesAutoresizingMaskIntoConstraints="NO" id="tpU-48-c7w">
                                     <rect key="frame" x="8" y="11" width="20" height="20"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="截止:11-5 12:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oq2-pO-hXx">
@@ -32,13 +32,13 @@
                                     <color key="textColor" red="0.59999999999999998" green="0.59607843140000005" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="热贴推荐热贴推荐热贴推荐热贴推荐 热贴推荐" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irt-EY-mCZ">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="热贴推荐热贴推荐热贴推荐热贴推荐 热贴推荐" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irt-EY-mCZ">
                                     <rect key="frame" x="36" y="11" width="270" height="40"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                     <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="122" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6B-Yv-BEl">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="122" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6B-Yv-BEl">
                                     <rect key="frame" x="288" y="56" width="18" height="12"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <color key="textColor" red="0.59999999999999998" green="0.59607843140000005" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,8 +46,17 @@
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="tpU-48-c7w" secondAttribute="bottom" constant="41" id="2Yk-Ga-2MW"/>
+                                <constraint firstItem="Irt-EY-mCZ" firstAttribute="top" secondItem="Y5K-W3-CRz" secondAttribute="top" constant="11" id="9cq-bo-nCU"/>
+                                <constraint firstItem="tpU-48-c7w" firstAttribute="top" secondItem="Y5K-W3-CRz" secondAttribute="top" constant="11" id="BT1-uW-0FR"/>
+                                <constraint firstItem="s6B-Yv-BEl" firstAttribute="top" secondItem="Irt-EY-mCZ" secondAttribute="bottom" constant="5" id="Dmw-00-70j"/>
+                                <constraint firstItem="tpU-48-c7w" firstAttribute="leading" secondItem="Y5K-W3-CRz" secondAttribute="leading" constant="8" id="Y55-1p-VZV"/>
+                                <constraint firstItem="Irt-EY-mCZ" firstAttribute="leading" secondItem="tpU-48-c7w" secondAttribute="trailing" constant="8" id="Z7e-8c-lqn"/>
+                                <constraint firstItem="s6B-Yv-BEl" firstAttribute="top" secondItem="Irt-EY-mCZ" secondAttribute="bottom" constant="5" id="ffp-G2-9bx"/>
+                            </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="热贴推荐" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4K-x6-i7W">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="热贴推荐" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4K-x6-i7W">
                             <rect key="frame" x="8" y="1" width="60" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -55,24 +64,31 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Y5K-W3-CRz" firstAttribute="top" secondItem="h4K-x6-i7W" secondAttribute="bottom" constant="1" id="2gz-XG-cuD"/>
+                        <constraint firstItem="h4K-x6-i7W" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="e70-OP-Ue0" secondAttribute="leading" constant="8" id="7cZ-C5-XIX"/>
+                        <constraint firstItem="h4K-x6-i7W" firstAttribute="top" secondItem="e70-OP-Ue0" secondAttribute="top" constant="1" id="HoF-vk-sA2"/>
+                        <constraint firstItem="h4K-x6-i7W" firstAttribute="leading" secondItem="e70-OP-Ue0" secondAttribute="leading" constant="8" id="jfM-cu-Eps"/>
+                        <constraint firstItem="cu7-bP-XOY" firstAttribute="leading" secondItem="h4K-x6-i7W" secondAttribute="trailing" constant="232" id="zIy-Wy-p8K"/>
+                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xg7-YU-5ky">
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xg7-YU-5ky">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="image2" translatesAutoresizingMaskIntoConstraints="NO" id="xCl-8r-wRX">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="image2" translatesAutoresizingMaskIntoConstraints="NO" id="xCl-8r-wRX">
                             <rect key="frame" x="300" y="0.0" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="FXw-RA-Q2h"/>
                                 <constraint firstAttribute="width" constant="20" id="pTX-uj-cwW"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="版块" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-y0-Dqf">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="版块" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgL-y0-Dqf">
                             <rect key="frame" x="8" y="1" width="30" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cuv-es-c7M">
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cuv-es-c7M">
                             <rect key="frame" x="0.0" y="20" width="320" height="99"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="旷工茶馆" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNn-Mb-6HE">
@@ -165,6 +181,15 @@
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="hgL-y0-Dqf" firstAttribute="leading" secondItem="xg7-YU-5ky" secondAttribute="leading" constant="8" id="FbZ-6E-4sj"/>
+                        <constraint firstAttribute="trailing" secondItem="xCl-8r-wRX" secondAttribute="trailing" id="GVb-g0-EOJ"/>
+                        <constraint firstItem="xCl-8r-wRX" firstAttribute="top" secondItem="xg7-YU-5ky" secondAttribute="top" id="IOA-Ou-DbL"/>
+                        <constraint firstItem="hgL-y0-Dqf" firstAttribute="top" secondItem="xg7-YU-5ky" secondAttribute="top" constant="1" id="RKW-vz-l3Q"/>
+                        <constraint firstItem="xCl-8r-wRX" firstAttribute="leading" secondItem="hgL-y0-Dqf" secondAttribute="trailing" constant="262" id="boR-Rj-lLI"/>
+                        <constraint firstItem="Cuv-es-c7M" firstAttribute="top" secondItem="hgL-y0-Dqf" secondAttribute="bottom" constant="1" id="gyF-T8-UUZ"/>
+                        <constraint firstItem="hgL-y0-Dqf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xg7-YU-5ky" secondAttribute="leading" constant="8" id="rCH-eY-g3v"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.45570943809999997" green="0.26829098229999998" blue="0.1700197581" alpha="1" colorSpace="calibratedRGB"/>

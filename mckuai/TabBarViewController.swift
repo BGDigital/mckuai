@@ -23,10 +23,10 @@ class TabBarViewController: UIView {
     
     func initSelected(){
         currentSelected = recipeBtn
-        recipeBtn.setImage(UIImage(named: "home_on.png"), forState: UIControlState.Selected)
-        materlBtn.setImage(UIImage(named: "community_on.png"), forState: UIControlState.Selected)
-        contanBtn.setImage(UIImage(named: "chat_on.png"), forState: UIControlState.Selected)
-        userBtn.setImage(UIImage(named: "mine_on.png"), forState: UIControlState.Selected)
+        recipeBtn.setImage(UIImage(named: "home_on"), forState: UIControlState.Selected)
+        materlBtn.setImage(UIImage(named: "community_on"), forState: UIControlState.Selected)
+        contanBtn.setImage(UIImage(named: "chat_on"), forState: UIControlState.Selected)
+        userBtn.setImage(UIImage(named: "mine_on"), forState: UIControlState.Selected)
         
         //设置阴影颜色，透明度，偏移量
         self.layer.shadowColor = UIColor.grayColor().CGColor
