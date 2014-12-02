@@ -27,8 +27,8 @@
 		E64C09531A2C3FA200AD9138 /* AlamofireSwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E64C094D1A2C3F6900AD9138 /* AlamofireSwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E64C09551A2C59C300AD9138 /* DynamicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C09541A2C59C300AD9138 /* DynamicModel.swift */; };
 		E64C09571A2C625900AD9138 /* DynamicDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C09561A2C625900AD9138 /* DynamicDetailController.swift */; };
-		E66879491A25F0DF00BE48CE /* DynamicHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66879471A25F0DF00BE48CE /* DynamicHeader.swift */; };
-		E668794A1A25F0DF00BE48CE /* DynamicHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = E66879481A25F0DF00BE48CE /* DynamicHeader.xib */; };
+		E64C09661A2DB74B00AD9138 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C09641A2DB74B00AD9138 /* CollectionViewCell.swift */; };
+		E64C09671A2DB74B00AD9138 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C09651A2DB74B00AD9138 /* HeaderViewController.swift */; };
 		E67377711A19E7CA006DAE76 /* DHCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67377701A19E7CA006DAE76 /* DHCarouselView.swift */; };
 		E67F89431A1C7B5E00044035 /* DynamicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67F89421A1C7B5E00044035 /* DynamicCell.swift */; };
 		E6BCFC651A1A30F2009857B0 /* FilletButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCFC631A1A30F2009857B0 /* FilletButton.swift */; };
@@ -105,8 +105,8 @@
 		E64C09451A2C3F6900AD9138 /* Alamofire-SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Alamofire-SwiftyJSON.xcodeproj"; path = "Alamofire-SwiftyJSON/Alamofire-SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		E64C09541A2C59C300AD9138 /* DynamicModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicModel.swift; sourceTree = "<group>"; };
 		E64C09561A2C625900AD9138 /* DynamicDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicDetailController.swift; sourceTree = "<group>"; };
-		E66879471A25F0DF00BE48CE /* DynamicHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicHeader.swift; sourceTree = "<group>"; };
-		E66879481A25F0DF00BE48CE /* DynamicHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DynamicHeader.xib; sourceTree = "<group>"; };
+		E64C09641A2DB74B00AD9138 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewCell.swift; path = ../../../../../test/test/Header/CollectionViewCell.swift; sourceTree = "<group>"; };
+		E64C09651A2DB74B00AD9138 /* HeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderViewController.swift; path = ../../../../../test/test/Header/HeaderViewController.swift; sourceTree = "<group>"; };
 		E67377701A19E7CA006DAE76 /* DHCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DHCarouselView.swift; path = ../DHCarouselView.swift; sourceTree = "<group>"; };
 		E67F89421A1C7B5E00044035 /* DynamicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicCell.swift; sourceTree = "<group>"; };
 		E6BCFC631A1A30F2009857B0 /* FilletButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilletButton.swift; sourceTree = "<group>"; };
@@ -250,8 +250,8 @@
 		E66879461A25F0DF00BE48CE /* DynamicHeader */ = {
 			isa = PBXGroup;
 			children = (
-				E66879471A25F0DF00BE48CE /* DynamicHeader.swift */,
-				E66879481A25F0DF00BE48CE /* DynamicHeader.xib */,
+				E64C09641A2DB74B00AD9138 /* CollectionViewCell.swift */,
+				E64C09651A2DB74B00AD9138 /* HeaderViewController.swift */,
 			);
 			path = DynamicHeader;
 			sourceTree = "<group>";
@@ -372,7 +372,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E668794A1A25F0DF00BE48CE /* DynamicHeader.xib in Resources */,
 				E62C21831A03F34E004DBFD0 /* Main.storyboard in Resources */,
 				E62C21881A03F34E004DBFD0 /* LaunchScreen.xib in Resources */,
 				E63FD7DE1A133DBF00177E3E /* home.storyboard in Resources */,
@@ -407,9 +406,10 @@
 				E63FD7E01A133E0400177E3E /* homeController.swift in Sources */,
 				E62C21801A03F34E004DBFD0 /* RootViewController.swift in Sources */,
 				E63FD6D11A13340100177E3E /* TabBarViewController.swift in Sources */,
+				E64C09671A2DB74B00AD9138 /* HeaderViewController.swift in Sources */,
 				E63FD7E81A13471F00177E3E /* chat.swift in Sources */,
 				E6BCFC651A1A30F2009857B0 /* FilletButton.swift in Sources */,
-				E66879491A25F0DF00BE48CE /* DynamicHeader.swift in Sources */,
+				E64C09661A2DB74B00AD9138 /* CollectionViewCell.swift in Sources */,
 				E64C09551A2C59C300AD9138 /* DynamicModel.swift in Sources */,
 				E6BCFC661A1A30F2009857B0 /* RadiusView.swift in Sources */,
 				E63FD7E41A1345B500177E3E /* userCenter.swift in Sources */,

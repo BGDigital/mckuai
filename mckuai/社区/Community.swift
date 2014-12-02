@@ -18,7 +18,7 @@ class Community: UITableViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         initData()
         super.viewDidLoad()
-        loadHeader()
+        //loadHeader()
         
         
 
@@ -46,13 +46,6 @@ class Community: UITableViewController, UITableViewDataSource, UITableViewDelega
                 self.tableView.reloadData()
                 }
         }
-    }
-    
-    func loadHeader() {
-        var tableHeaderView = NSBundle.mainBundle().loadNibNamed("DynamicHeader", owner: self, options: nil)[0] as DynamicHeader
-        tableHeaderView.lb_name1.text = "麦块反馈"
-        self.tableView.tableHeaderView = tableHeaderView
-        //tv.backgroundColor = UIColor(red: 0.918, green: 0.918, blue: 0.918, alpha: 1.00)
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,7 +80,7 @@ class Community: UITableViewController, UITableViewDataSource, UITableViewDelega
         
         //这里UIImage的值判断有问题，所以就直接判断url地址是不是为空了
         //var url = self.json["dataObject"]["recTalk"][indexPath.row]["mobilePic"].string!
-        var url = "http://c.hiphotos.baidu.com/video/pic/item/f703738da977391224eade15fb198618377ae2f2.jpg"
+        var url = "http://pic.youxigt.com/uploadimg/quan/images1/68831411547537743.jpg"
         let image = self.imageCache[url]
         if (image == nil) {
             //println("缓存中没有图片，从网上获取")
