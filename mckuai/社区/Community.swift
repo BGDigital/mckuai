@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import Foundation
 
 class Community: UITableViewController, UITableViewDataSource, UITableViewDelegate {
-
-    @IBOutlet var tv: UITableView!
+    
+    var json = JSON("")
+    var imageCache = Dictionary<String, UIImage>()
     override func viewDidLoad() {
+        initData()
         super.viewDidLoad()
         loadHeader()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -22,10 +29,29 @@ class Community: UITableViewController, UITableViewDataSource, UITableViewDelega
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    func initData() {
+        Alamofire.request(.GET, "http://221.237.152.39:8081/zone.do?act=all", parameters: nil)
+            .responseJSON { (request, response, data, error) in
+                
+                if data == nil {
+                    println("取不到数据，不显示")
+                } else {
+                var jsonParse = data as NSDictionary
+                self.json = JSON(jsonParse)
+                
+                var count = self.json["dataObject","recTalk"].count
+                println("count\(count)")
+                println(self.json["state"])
+                
+                self.tableView.reloadData()
+                }
+        }
+    }
+    
     func loadHeader() {
         var tableHeaderView = NSBundle.mainBundle().loadNibNamed("DynamicHeader", owner: self, options: nil)[0] as DynamicHeader
         tableHeaderView.lb_name1.text = "麦块反馈"
-        tv.tableHeaderView = tableHeaderView
+        self.tableView.tableHeaderView = tableHeaderView
         //tv.backgroundColor = UIColor(red: 0.918, green: 0.918, blue: 0.918, alpha: 1.00)
     }
 
@@ -39,24 +65,50 @@ class Community: UITableViewController, UITableViewDataSource, UITableViewDelega
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.json["dataObject","recTalk"].count
+        
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        //let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
+        //cell.textLabel.text = self.json["dataObject"]["recTalk"][indexPath.row]["talkTitle"].string
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell") as DynamicCell
+        cell.title.text = self.json["dataObject","recTalk",indexPath.row,"talkTitle"].string
+        cell.username.text = self.json["dataObject","recTalk",indexPath.row,"userName"].string
+        cell.time.text = self.json["dataObject","recTalk",indexPath.row,"replyTime"].string
+        cell.replyNum.text = self.json["dataObject","recTalk",indexPath.row,"replyNum"].string
+        
+        //这里UIImage的值判断有问题，所以就直接判断url地址是不是为空了
+        //var url = self.json["dataObject"]["recTalk"][indexPath.row]["mobilePic"].string!
+        var url = "http://c.hiphotos.baidu.com/video/pic/item/f703738da977391224eade15fb198618377ae2f2.jpg"
+        let image = self.imageCache[url]
+        if (image == nil) {
+            //println("缓存中没有图片，从网上获取")
+            let imgURL: NSURL = NSURL(string:url)!
+            let request:NSURLRequest = NSURLRequest(URL: imgURL)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response:NSURLResponse!,data:NSData!,error:NSError!)->Void in
+                var img=UIImage(data:data)
+                cell.imgComm.image=img
+                self.imageCache[url] = img })
+        }
+        else
+        {
+            //println("缓存中有图片，直接显示出来")
+            cell.imgComm.image = image
+        }
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

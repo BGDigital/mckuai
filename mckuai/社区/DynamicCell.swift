@@ -15,7 +15,8 @@ class DynamicCell: UITableViewCell {
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var replyNum: UILabel!
-    
+  
+    /*
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -34,4 +35,5 @@ class DynamicCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+*/
 }
