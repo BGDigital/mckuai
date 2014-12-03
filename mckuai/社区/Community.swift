@@ -76,7 +76,8 @@ class Community: UITableViewController, UITableViewDataSource, UITableViewDelega
         cell.title.text = self.json["dataObject","recTalk",indexPath.row,"talkTitle"].string
         cell.username.text = self.json["dataObject","recTalk",indexPath.row,"userName"].string
         cell.time.text = self.json["dataObject","recTalk",indexPath.row,"replyTime"].string
-        cell.replyNum.text = self.json["dataObject","recTalk",indexPath.row,"replyNum"].string
+        var replyNum = self.json["dataObject","recTalk",indexPath.row,"replyNum"].int!
+        cell.replyNum.text = "\(replyNum)"
         
         //这里UIImage的值判断有问题，所以就直接判断url地址是不是为空了
         //var url = self.json["dataObject"]["recTalk"][indexPath.row]["mobilePic"].string!

@@ -39,17 +39,26 @@
                                                 <constraint firstAttribute="width" constant="190" id="pRO-bx-HpM"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.054901960784313725" green="0.054901960784313725" blue="0.054901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="用户名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b97-pv-KJX">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="用户名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b97-pv-KJX">
                                             <rect key="frame" x="114" y="49" width="69" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="评论" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7h-Px-EeD">
-                                            <rect key="frame" x="185" y="49" width="22" height="14"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRT-7B-aV0">
+                                            <rect key="frame" x="185" y="49" width="89" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="89" id="o5f-fO-wns"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="评论" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7h-Px-EeD">
+                                            <rect key="frame" x="282" y="49" width="22" height="14"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="14" id="pPT-XH-sVz"/>
                                                 <constraint firstAttribute="width" constant="22" id="xga-J4-UJv"/>
@@ -58,24 +67,15 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRT-7B-aV0">
-                                            <rect key="frame" x="223" y="49" width="89" height="14"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="T7h-Px-EeD" firstAttribute="leading" secondItem="b97-pv-KJX" secondAttribute="trailing" constant="2" id="Eh6-EZ-kOd"/>
+                                        <constraint firstItem="b97-pv-KJX" firstAttribute="leading" secondItem="Fmd-4Q-z57" secondAttribute="leadingMargin" constant="106" id="4Le-e4-CMz"/>
                                         <constraint firstItem="OaE-TP-dc7" firstAttribute="top" secondItem="Fmd-4Q-z57" secondAttribute="topMargin" id="FTt-U6-L66"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="tRT-7B-aV0" secondAttribute="bottom" constant="1" id="MU9-qh-szI"/>
                                         <constraint firstItem="b97-pv-KJX" firstAttribute="leading" secondItem="OaE-TP-dc7" secondAttribute="trailing" constant="8" id="SMW-p9-PfA"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="b97-pv-KJX" secondAttribute="bottom" constant="1" id="cUk-UY-U5m"/>
                                         <constraint firstItem="OaE-TP-dc7" firstAttribute="leading" secondItem="Fmd-4Q-z57" secondAttribute="leadingMargin" id="dR0-DH-bTx"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="T7h-Px-EeD" secondAttribute="bottom" constant="1" id="ex1-jR-28s"/>
-                                        <constraint firstItem="tRT-7B-aV0" firstAttribute="trailing" secondItem="Fmd-4Q-z57" secondAttribute="trailingMargin" id="hAK-WV-sMy"/>
-                                        <constraint firstItem="tRT-7B-aV0" firstAttribute="leading" secondItem="T7h-Px-EeD" secondAttribute="trailing" constant="16" id="hTM-4L-EHY"/>
-                                        <constraint firstItem="T7h-Px-EeD" firstAttribute="leading" secondItem="b97-pv-KJX" secondAttribute="trailing" constant="2" id="nMS-zH-P3y"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="OaE-TP-dc7" secondAttribute="bottom" constant="0.5" id="rj6-BY-Bvq"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -103,7 +103,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvn-5n-21k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="192" y="237"/>
+            <point key="canvasLocation" x="206" y="205"/>
         </scene>
         <!--Dynamic Detail Controller-->
         <scene sceneID="80Z-bp-kKM">
@@ -207,10 +207,10 @@
                                             <constraint firstAttribute="width" constant="270" id="xPA-Fc-ED2"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                        <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="122" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ci3-gq-1Rs">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="122" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ci3-gq-1Rs">
                                         <rect key="frame" x="288" y="56" width="18" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.59607843140000005" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
