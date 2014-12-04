@@ -14,12 +14,12 @@ protocol ChangeTableDelegate{
 
 class TabBarViewController: UIView {
     //
-    @IBOutlet  var  recipeBtn : UIButton!
-    @IBOutlet  var  materlBtn : UIButton!
-    @IBOutlet  var  contanBtn : UIButton!
-    @IBOutlet  var  userBtn : UIButton!
-    @IBOutlet  var  settigBtn : UIButton!
-    @IBOutlet var barView:UIView!
+    @IBOutlet weak var  recipeBtn : UIButton!
+    @IBOutlet weak var  materlBtn : UIButton!
+    @IBOutlet weak var  userBtn : UIButton!
+    @IBOutlet weak var contanBtn: UIButton!
+    @IBOutlet weak var  settigBtn : UIButton!
+    @IBOutlet weak var barView:UIView!
     
     func initSelected(){
         currentSelected = recipeBtn
