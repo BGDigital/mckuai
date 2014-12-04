@@ -20,7 +20,7 @@ class APIClient {
         return Static.instance
     }
     
-    func getJSONData(path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
+    private func getJSONData(path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
         Alamofire.request(.GET, APIRootURL + path, parameters: parameters)
             .responseSwiftyJSON { (request, response, json, error) in
                 if let err = error? {
@@ -33,6 +33,12 @@ class APIClient {
     //获取社区数据
     func getCommunityData(success: (JSON) -> Void, failure: (NSError) -> Void) {
         self.getJSONData("zone.do?act=all", parameters: nil, success: success, failure: failure)
+    }
+    
+    //获取社区版块信息
+    func getCommunityBankuaiData(forumID: String, page: String, success: (JSON) -> Void, failure: (NSError) -> Void) {
+        let dict = ["forumId": forumID, "page": page]
+        self.getJSONData("zone.do?act=one", parameters: dict, success: success, failure: failure)
     }
     
     /*

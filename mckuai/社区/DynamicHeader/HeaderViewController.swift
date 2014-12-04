@@ -18,9 +18,11 @@ class HeaderViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var headReplyNum: UILabel!
     var datasource: Array<JSON>!
     var huodong: JSON!
-    var imageCache = Dictionary<String, UIImage>()
+    var forumDetailc: forumDetailViewController!=nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //是否读取缓存数据
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             var nodes = AppContext.sharedInstance.getCommunityData()
@@ -92,7 +94,11 @@ class HeaderViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     
     func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        //点击CollectionViewCell的事件
+        forumDetailc = UIStoryboard(name: "forumDetail", bundle: nil).instantiateViewControllerWithIdentifier("SB_forumDetail") as forumDetailViewController
+        var data = self.datasource[indexPath.row] as JSON
+        var forumid = data["id"].stringValue
+        forumDetailc.forum_ID = forumid
+        self.navigationController?.pushViewController(forumDetailc, animated: true)
         return true
     }
         

@@ -13,6 +13,9 @@
 		E62C21851A03F34E004DBFD0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E62C21841A03F34E004DBFD0 /* Images.xcassets */; };
 		E62C21881A03F34E004DBFD0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E62C21861A03F34E004DBFD0 /* LaunchScreen.xib */; };
 		E62C21941A03F34E004DBFD0 /* mckuaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C21931A03F34E004DBFD0 /* mckuaiTests.swift */; };
+		E63C78B61A302F5F00D28668 /* forumDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63C78B31A302F5F00D28668 /* forumDetail.storyboard */; };
+		E63C78B71A302F5F00D28668 /* forumDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C78B41A302F5F00D28668 /* forumDetailCell.swift */; };
+		E63C78B81A302F5F00D28668 /* forumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C78B51A302F5F00D28668 /* forumDetailViewController.swift */; };
 		E63FD6CF1A13340100177E3E /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63FD6CB1A13340100177E3E /* Launch.storyboard */; };
 		E63FD6D11A13340100177E3E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD6CD1A13340100177E3E /* TabBarViewController.swift */; };
 		E63FD6D21A13340100177E3E /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD6CE1A13340100177E3E /* Welcome.swift */; };
@@ -96,6 +99,9 @@
 		E62C218D1A03F34E004DBFD0 /* mckuaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mckuaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E62C21921A03F34E004DBFD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E62C21931A03F34E004DBFD0 /* mckuaiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mckuaiTests.swift; sourceTree = "<group>"; };
+		E63C78B31A302F5F00D28668 /* forumDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = forumDetail.storyboard; sourceTree = "<group>"; };
+		E63C78B41A302F5F00D28668 /* forumDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forumDetailCell.swift; sourceTree = "<group>"; };
+		E63C78B51A302F5F00D28668 /* forumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forumDetailViewController.swift; sourceTree = "<group>"; };
 		E63FD6CB1A13340100177E3E /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		E63FD6CD1A13340100177E3E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E63FD6CE1A13340100177E3E /* Welcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
@@ -209,6 +215,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E63C78B21A302F5F00D28668 /* forumDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E63C78B31A302F5F00D28668 /* forumDetail.storyboard */,
+				E63C78B41A302F5F00D28668 /* forumDetailCell.swift */,
+				E63C78B51A302F5F00D28668 /* forumDetailViewController.swift */,
+			);
+			name = forumDetail;
+			path = ../forumDetail;
+			sourceTree = "<group>";
+		};
 		E63FD7D51A133C5B00177E3E /* Community */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +269,7 @@
 		E66879461A25F0DF00BE48CE /* DynamicHeader */ = {
 			isa = PBXGroup;
 			children = (
+				E63C78B21A302F5F00D28668 /* forumDetail */,
 				E6D6C2AE1A2EE72E00858161 /* CollectionViewCell.swift */,
 				E6D6C2AF1A2EE72E00858161 /* HeaderViewController.swift */,
 			);
@@ -349,6 +367,7 @@
 				TargetAttributes = {
 					E62C21771A03F34E004DBFD0 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = RPLF9PJ3L4;
 					};
 					E62C218C1A03F34E004DBFD0 = {
 						CreatedOnToolsVersion = 6.1;
@@ -412,6 +431,7 @@
 				E62C21851A03F34E004DBFD0 /* Images.xcassets in Resources */,
 				E63FD6CF1A13340100177E3E /* Launch.storyboard in Resources */,
 				E6BCFC681A1A324B009857B0 /* TabBarView.xib in Resources */,
+				E63C78B61A302F5F00D28668 /* forumDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +453,8 @@
 				E6D6C2C31A2FFB5100858161 /* APIClient.swift in Sources */,
 				E6D6C2DA1A2FFE9800858161 /* BaseTableViewController.swift in Sources */,
 				E67F89431A1C7B5E00044035 /* DynamicCell.swift in Sources */,
+				E63C78B71A302F5F00D28668 /* forumDetailCell.swift in Sources */,
+				E63C78B81A302F5F00D28668 /* forumDetailViewController.swift in Sources */,
 				E63FD7D91A133CB000177E3E /* Community.swift in Sources */,
 				E63FD6D21A13340100177E3E /* Welcome.swift in Sources */,
 				E64C09571A2C625900AD9138 /* DynamicDetailController.swift in Sources */,
