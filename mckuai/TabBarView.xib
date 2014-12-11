@@ -411,9 +411,9 @@
     </objects>
     <resources>
         <image name="chat_no" width="28" height="28"/>
-        <image name="community_no" width="56" height="56"/>
-        <image name="home_no" width="56" height="56"/>
-        <image name="mine_no" width="56" height="56"/>
-        <image name="mine_on" width="56" height="56"/>
+        <image name="community_no" width="28" height="28"/>
+        <image name="home_no" width="28" height="28"/>
+        <image name="mine_no" width="28" height="28"/>
+        <image name="mine_on" width="28" height="28"/>
     </resources>
 </document>

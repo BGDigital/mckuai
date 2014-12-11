@@ -52,33 +52,33 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRT-7B-aV0">
-                                            <rect key="frame" x="185" y="49" width="89" height="14"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="89" id="aes-Fo-Muc"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评论" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7h-Px-EeD">
                                             <rect key="frame" x="282" y="49" width="22" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRT-7B-aV0">
+                                            <rect key="frame" x="207" y="49" width="48" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="48" id="zby-Sd-tIb"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="T7h-Px-EeD" firstAttribute="leading" secondItem="tRT-7B-aV0" secondAttribute="trailing" constant="8" symbolic="YES" id="0Gc-ac-bSn"/>
+                                        <constraint firstItem="tRT-7B-aV0" firstAttribute="baseline" secondItem="b97-pv-KJX" secondAttribute="baseline" id="1Md-FG-Wuh"/>
                                         <constraint firstItem="OaE-TP-dc7" firstAttribute="top" secondItem="Fmd-4Q-z57" secondAttribute="topMargin" id="2nH-1r-MCZ"/>
-                                        <constraint firstItem="T7h-Px-EeD" firstAttribute="firstBaseline" secondItem="tRT-7B-aV0" secondAttribute="firstBaseline" id="3vq-S5-d7C"/>
+                                        <constraint firstItem="tRT-7B-aV0" firstAttribute="baseline" secondItem="T7h-Px-EeD" secondAttribute="baseline" id="Efb-LO-r4A"/>
                                         <constraint firstItem="T7h-Px-EeD" firstAttribute="trailing" secondItem="ss5-IT-RVX" secondAttribute="trailing" id="WCO-V1-FGi"/>
-                                        <constraint firstItem="T7h-Px-EeD" firstAttribute="baseline" secondItem="tRT-7B-aV0" secondAttribute="baseline" id="WoG-CY-g2Z"/>
                                         <constraint firstItem="ss5-IT-RVX" firstAttribute="top" secondItem="OaE-TP-dc7" secondAttribute="top" id="X3y-pB-fpy"/>
                                         <constraint firstItem="T7h-Px-EeD" firstAttribute="firstBaseline" secondItem="b97-pv-KJX" secondAttribute="firstBaseline" id="YSx-iK-Z5C"/>
-                                        <constraint firstItem="tRT-7B-aV0" firstAttribute="baseline" secondItem="b97-pv-KJX" secondAttribute="baseline" id="YXq-yT-66V"/>
                                         <constraint firstItem="b97-pv-KJX" firstAttribute="leading" secondItem="OaE-TP-dc7" secondAttribute="trailing" constant="8" symbolic="YES" id="cAi-bg-zHj"/>
                                         <constraint firstItem="b97-pv-KJX" firstAttribute="leading" secondItem="ss5-IT-RVX" secondAttribute="leading" id="fWx-gq-uzJ"/>
+                                        <constraint firstItem="tRT-7B-aV0" firstAttribute="firstBaseline" secondItem="T7h-Px-EeD" secondAttribute="firstBaseline" id="fuF-HU-Nqf"/>
+                                        <constraint firstItem="tRT-7B-aV0" firstAttribute="leading" secondItem="b97-pv-KJX" secondAttribute="trailing" constant="24" id="lEF-M3-vtl"/>
                                         <constraint firstItem="OaE-TP-dc7" firstAttribute="leading" secondItem="Fmd-4Q-z57" secondAttribute="leadingMargin" id="lwj-mH-0pi"/>
                                         <constraint firstItem="T7h-Px-EeD" firstAttribute="top" secondItem="ss5-IT-RVX" secondAttribute="bottom" constant="21" id="oop-Oo-Hpy"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ss5-IT-RVX" secondAttribute="trailing" constant="8" id="vtr-qt-JfJ"/>

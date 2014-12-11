@@ -63,9 +63,7 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
                 
                 self.refreshControl.endRefreshing()
             }
-            }, failure: { (error) -> Void in
-                
-        })
+            }, failure: { (error) -> Void in })
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
