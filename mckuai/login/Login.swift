@@ -13,7 +13,7 @@ class Login: UIViewController,TencentSessionDelegate{
     var tencentOAuth:TencentOAuth!
     var permissionsArray=["get_user_info"]
     var http_url = UserCenterUrl;
-    var json = JSON("")
+    var json: JSON!
     @IBOutlet weak var login_btn: UIButton!
     @IBOutlet weak var in_btn: UIButton!
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class Login: UIViewController,TencentSessionDelegate{
     }
     
     @IBAction func loginAction(sender: UIButton) {
-        tencentOAuth = TencentOAuth(appId: "222222", andDelegate: self)
+        tencentOAuth = TencentOAuth(appId: "101155101", andDelegate: self)
         tencentOAuth.authorize(permissionsArray,inSafari:false)
         
     }
@@ -79,7 +79,7 @@ class Login: UIViewController,TencentSessionDelegate{
                     var userId = self.json["dataObject"].int
                     if(state == "ok") {
                         NSUserDefaults.standardUserDefaults().setObject(userId, forKey: "appUserIdSave")
-                        appUserIdSave = userId
+                        appUserIdSave = userId!
                         UIView.animateWithDuration(0.3,
                             animations : {
                                 self.view.alpha = 0

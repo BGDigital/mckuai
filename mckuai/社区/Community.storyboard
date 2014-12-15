@@ -103,40 +103,10 @@
                     <navigationItem key="navigationItem" title="社区" id="J7p-Ps-Z9Q">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="isV-xl-ncl"/>
                     </navigationItem>
-                    <connections>
-                        <segue destination="prI-Bz-eC0" kind="push" id="CNA-62-Siv"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvn-5n-21k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="206" y="205"/>
-        </scene>
-        <!--Dynamic Detail Controller-->
-        <scene sceneID="80Z-bp-kKM">
-            <objects>
-                <viewController id="prI-Bz-eC0" customClass="DynamicDetailController" customModule="mckuai" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hH7-wf-Klu"/>
-                        <viewControllerLayoutGuide type="bottom" id="4FX-ng-KxQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7Ac-NO-4Bj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifk-sy-gN4">
-                                <rect key="frame" x="0.0" y="62" width="320" height="506"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="FAA-Gu-lz6">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vs3-Kq-QDz"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tMJ-gK-gHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="617" y="314"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2bO-tO-flT">

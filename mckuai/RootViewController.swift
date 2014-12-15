@@ -20,7 +20,7 @@ class RootViewController: UITabBarController , ChangeTableDelegate{
     var welcome:UIViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //appUserIdSave=2
         initControllerView()
         customTabBar()
         rootController = self
@@ -32,6 +32,7 @@ class RootViewController: UITabBarController , ChangeTableDelegate{
         self.view.addSubview(welcome.view)
         }
         */
+        
         if(appUserIdSave == nil){
             loginView=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as UIViewController
             self.view.addSubview(loginView.view)
@@ -95,12 +96,15 @@ class RootViewController: UITabBarController , ChangeTableDelegate{
         default: println("default")
             
         }
+        self.selectedIndex = index
+
         if(index == 3 && appUserIdSave == nil){
             var alertView = UIAlertView(title: "QQ帐号一键登录", message: "", delegate: self, cancelButtonTitle: "确定")
             alertView.show()
         }else {
             self.selectedIndex = index
         }
+
         
     }
     

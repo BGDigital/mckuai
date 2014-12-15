@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
 
 class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     

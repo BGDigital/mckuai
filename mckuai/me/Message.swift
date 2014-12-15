@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import SwiftyJSON
 
 class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     var json = JSON("")

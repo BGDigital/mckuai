@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E62888FC1A3E870800C45131 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62888F71A3E870800C45131 /* Login.storyboard */; };
 		E62888FD1A3E870800C45131 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62888F81A3E870800C45131 /* Login.swift */; };
-		E62888FE1A3E870800C45131 /* OcFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E62888FB1A3E870800C45131 /* OcFile.m */; };
 		E62889091A3E876300C45131 /* Dynamic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62889001A3E876300C45131 /* Dynamic.storyboard */; };
 		E628890A1A3E876300C45131 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62889011A3E876300C45131 /* Dynamic.swift */; };
 		E628890B1A3E876300C45131 /* DynamicAddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62889021A3E876300C45131 /* DynamicAddCell.swift */; };
@@ -116,8 +115,6 @@
 		E62888F71A3E870800C45131 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E62888F81A3E870800C45131 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		E62888F91A3E870800C45131 /* mckuai-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mckuai-Bridging-Header.h"; sourceTree = "<group>"; };
-		E62888FA1A3E870800C45131 /* OcFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OcFile.h; sourceTree = "<group>"; };
-		E62888FB1A3E870800C45131 /* OcFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OcFile.m; sourceTree = "<group>"; };
 		E62889001A3E876300C45131 /* Dynamic.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dynamic.storyboard; sourceTree = "<group>"; };
 		E62889011A3E876300C45131 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		E62889021A3E876300C45131 /* DynamicAddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicAddCell.swift; sourceTree = "<group>"; };
@@ -251,8 +248,6 @@
 				E62889121A3E886A00C45131 /* Images.xcassets */,
 				E62888F61A3E870800C45131 /* login */,
 				E62888F91A3E870800C45131 /* mckuai-Bridging-Header.h */,
-				E62888FA1A3E870800C45131 /* OcFile.h */,
-				E62888FB1A3E870800C45131 /* OcFile.m */,
 				E6D6C2C51A2FFC0800858161 /* ThirdParty */,
 				E6BCFC621A1A30CA009857B0 /* Common */,
 				E63FD7DA1A133D3B00177E3E /* Chat */,
@@ -549,7 +544,6 @@
 				E67377711A19E7CA006DAE76 /* DHCarouselView.swift in Sources */,
 				E67B865F1A3E7AA400B782E1 /* HotTableViewController.swift in Sources */,
 				E6D6C2C31A2FFB5100858161 /* APIClient.swift in Sources */,
-				E62888FE1A3E870800C45131 /* OcFile.m in Sources */,
 				E6D6C2DA1A2FFE9800858161 /* BaseTableViewController.swift in Sources */,
 				E67F89431A1C7B5E00044035 /* DynamicCell.swift in Sources */,
 				E63C78B71A302F5F00D28668 /* forumDetailCell.swift in Sources */,

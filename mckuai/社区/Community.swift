@@ -13,7 +13,8 @@ class Community: BaseTableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        //navigation bar 背景
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             var nodes = AppContext.sharedInstance.getCommunityData()
             dispatch_async(dispatch_get_main_queue(), {

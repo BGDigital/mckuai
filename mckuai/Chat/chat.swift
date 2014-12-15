@@ -12,7 +12,8 @@ class chat: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //navigation bar 背景
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         // Do any additional setup after loading the view.
     }
 

@@ -38,6 +38,7 @@ class UserCenter: UIViewController {
     var http_url = UserCenterUrl;
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         /*
         //navigation bar 背景
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
