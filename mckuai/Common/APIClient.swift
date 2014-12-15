@@ -41,6 +41,11 @@ class APIClient {
         self.getJSONData("zone.do?act=one", parameters: dict, success: success, failure: failure)
     }
     
+    //获取首页数据
+    func getHomePageData(success: (JSON) -> Void, failure: (NSError) -> Void) {
+        self.getJSONData("index.do?act=all", parameters: nil, success: success, failure: failure)
+    }
+    
     /*
     func getLatestTopics(nodeID: NSString, success: (JSON) -> Void, failure: (NSError) -> Void) {
         let dict = ["node_id": nodeID]

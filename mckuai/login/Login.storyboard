@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Login-->
+        <scene sceneID="ig1-rv-Wg5">
+            <objects>
+                <viewController storyboardIdentifier="login" id="oeY-7k-7Es" customClass="Login" customModule="mckuai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eYQ-k8-RL1"/>
+                        <viewControllerLayoutGuide type="bottom" id="yDk-PF-c4K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2tY-5R-iPb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="cab-Kc-Ncx">
+                                <rect key="frame" x="140" y="0.0" width="320" height="395"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3v-qN-NZw">
+                                <rect key="frame" x="165" y="461" width="270" height="58"/>
+                                <state key="normal" title="QQ账号登录" backgroundImage="login_normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginAction:" destination="oeY-7k-7Es" eventType="touchUpInside" id="EBb-a6-eEX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-WN-Lka">
+                                <rect key="frame" x="341" y="547" width="94" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="&gt;&gt; 随便逛逛">
+                                    <color key="titleColor" red="0.17254901960784313" green="0.77254901960784317" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="inAction:" destination="oeY-7k-7Es" eventType="touchUpInside" id="rFD-JA-MNH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cab-Kc-Ncx" firstAttribute="centerX" secondItem="M3v-qN-NZw" secondAttribute="centerX" id="3eA-fo-tWj"/>
+                            <constraint firstItem="nxx-WN-Lka" firstAttribute="top" secondItem="M3v-qN-NZw" secondAttribute="bottom" constant="28" id="U0n-AW-6uU"/>
+                            <constraint firstItem="M3v-qN-NZw" firstAttribute="trailing" secondItem="nxx-WN-Lka" secondAttribute="trailing" id="VTd-wM-e4Y"/>
+                            <constraint firstAttribute="bottom" secondItem="nxx-WN-Lka" secondAttribute="bottom" constant="20" symbolic="YES" id="boj-jg-h7r"/>
+                            <constraint firstItem="cab-Kc-Ncx" firstAttribute="top" secondItem="2tY-5R-iPb" secondAttribute="top" id="dIm-sm-55X"/>
+                            <constraint firstItem="M3v-qN-NZw" firstAttribute="centerX" secondItem="2tY-5R-iPb" secondAttribute="centerX" id="ndb-zE-tkq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="in_btn" destination="nxx-WN-Lka" id="JW0-lc-eXj"/>
+                        <outlet property="login_btn" destination="M3v-qN-NZw" id="RR0-f5-Kdc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OfK-dU-5Z3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="763.125" y="317.95774647887322"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="login_bg" width="320" height="395"/>
+        <image name="login_normal" width="270" height="58"/>
+    </resources>
+</document>

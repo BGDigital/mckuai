@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="fCk-nU-HxI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fCk-nU-HxI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -11,7 +11,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7gp-bk-ZhO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.32862262428227773" green="0.87519728539999997" blue="0.19435841950147015" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="mWJ-Qw-Eh4" kind="relationship" relationship="rootViewController" id="h1k-Es-Gj9"/>
@@ -21,31 +23,138 @@
             </objects>
             <point key="canvasLocation" x="-288" y="267.90666666666664"/>
         </scene>
-        <!--用户中心-->
+        <!--我的-->
         <scene sceneID="ewa-vb-Vtq">
             <objects>
-                <viewController id="mWJ-Qw-Eh4" customClass="userCenter" customModule="mckuai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mWJ-Qw-Eh4" customClass="UserCenter" customModule="mckuai" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lDa-KC-t0m"/>
+                        <viewControllerLayoutGuide type="bottom" id="ldK-Wf-ZKh"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zq6-Fb-o7G">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户中心" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2br-1j-IVq">
-                                <rect key="frame" x="126" y="273" width="68" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="JUC-s5-3Ew">
+                                <rect key="frame" x="0.0" y="64" width="320" height="134"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="headBg" translatesAutoresizingMaskIntoConstraints="NO" id="V57-4l-CJL">
+                                <rect key="frame" x="120" y="71" width="80" height="80"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="神" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggs-Nk-zuq">
+                                <rect key="frame" x="199" y="72" width="25" height="25"/>
+                                <color key="backgroundColor" red="0.086274509803921567" green="0.58039215686274515" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUn-H3-dWU">
+                                <rect key="frame" x="199" y="102" width="25" height="25"/>
+                                <color key="backgroundColor" red="0.090196078431372548" green="0.5725490196078431" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lV.12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwc-78-val">
+                                <rect key="frame" x="126" y="174" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="defaultIcon" translatesAutoresizingMaskIntoConstraints="NO" id="aVE-rf-400">
+                                <rect key="frame" x="123" y="75" width="73" height="73"/>
+                            </imageView>
+                            <button opaque="NO" tag="30" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9f-oq-ymH">
+                                <rect key="frame" x="194" y="206" width="70" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="有什么反应">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeStatusClicked:" destination="mWJ-Qw-Eh4" eventType="touchUpInside" id="sh0-Pn-Nua"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfY-Rn-kHR">
+                                <rect key="frame" x="56" y="206" width="60" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="做了什么">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeStatusClicked:" destination="mWJ-Qw-Eh4" eventType="touchUpInside" id="hEu-oS-F6V"/>
+                                </connections>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="line" translatesAutoresizingMaskIntoConstraints="NO" id="Dfy-u5-PmS">
+                                <rect key="frame" x="159" y="206" width="1" height="30"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wc1-QX-zZH">
+                                <rect key="frame" x="0.0" y="244" width="320" height="281"/>
+                                <connections>
+                                    <segue destination="mHP-bm-J9g" kind="embed" id="2FE-Gz-atS"/>
+                                </connections>
+                            </containerView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="centerLineOne" translatesAutoresizingMaskIntoConstraints="NO" id="88M-IP-eo7">
+                                <rect key="frame" x="-1" y="242" width="320" height="4"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="用户名字" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfw-NP-q1W">
+                                <rect key="frame" x="98" y="156" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="用户中心" id="DYV-ZV-B8T"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="我的" id="DYV-ZV-B8T">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Wep-Dr-h4d"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="container_v" destination="wc1-QX-zZH" id="Zgz-St-hY2"/>
+                        <outlet property="dynamic_btn" destination="MfY-Rn-kHR" id="Efe-BC-oSf"/>
+                        <outlet property="fuzhu" destination="Ggs-Nk-zuq" id="l4d-0V-x0P"/>
+                        <outlet property="headImage" destination="aVE-rf-400" id="mE8-zk-aF9"/>
+                        <outlet property="level" destination="gwc-78-val" id="D1e-Zf-qSj"/>
+                        <outlet property="message_btn" destination="b9f-oq-ymH" id="6gP-EW-P1K"/>
+                        <outlet property="mingren" destination="MUn-H3-dWU" id="CEs-L8-t5G"/>
+                        <outlet property="userName" destination="sfw-NP-q1W" id="SXp-r6-ZKI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xn2-4u-bUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44.799999999999997" y="267.90666666666664"/>
+            <point key="canvasLocation" x="318" y="267"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CjJ-bg-6Bs">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="mHP-bm-J9g" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hfU-m2-JKR"/>
+                        <viewControllerLayoutGuide type="bottom" id="aM2-Ap-8kp"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bt8-TI-rwi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="281"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d9e-tv-xFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="684" y="266.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="320" height="198"/>
+        <image name="centerLineOne" width="320" height="1"/>
+        <image name="defaultIcon" width="73" height="73"/>
+        <image name="headBg" width="80" height="80"/>
+        <image name="line" width="1" height="1"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

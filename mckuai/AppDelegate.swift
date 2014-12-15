@@ -40,6 +40,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func openURL(application:UIApplication,url:NSURL,sourceApplication:NSString,annotation:AnyObject) -> Bool {
+        return TencentOAuth.HandleOpenURL(url)
+    }
+    
+    
+    func handleOpenURL(application:UIApplication,url:NSURL) -> Bool {
+        return TencentOAuth.HandleOpenURL(url)
+    }
 
 
 }

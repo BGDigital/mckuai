@@ -8,14 +8,66 @@
 
 import UIKit
 
-class homeController: UIViewController, DHCarouselViewDelegate {
+class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewDataSource {
     
     var carouselView: DHCarouselView!
 
     @IBOutlet var scrollView: UIScrollView!
     
+    @IBOutlet weak var topUserhead: UIImageView!
+    
+    @IBOutlet weak var topUsername: UILabel!
+    
+    @IBOutlet weak var topUserCountReply: UILabel!
+    
+    @IBOutlet weak var topUserCountTiezi: UILabel!
+    
+    @IBOutlet weak var famouseUserCView: UICollectionView!
+    
+
+    
+    
+    var data:JSON!{
+        didSet{
+            if(data["user"].type ==  Type.Array){
+                famouseUsers = data["user"].arrayValue
+            }
+        }
+    }
+    
+    var famouseUsers:Array<JSON>!{
+        didSet{
+            topOneUser =  famouseUsers[0]
+            famouseUserCView.reloadData()
+        }
+    }
+    
+    var topOneUser:JSON!{
+        didSet{
+            topUsername.text = topOneUser["nike"].stringValue
+            topUserCountReply.text = topOneUser["talkNum"].stringValue
+            topUserCountTiezi.text = topOneUser["homeNum"].stringValue
+            var src = topOneUser["headImg"].stringValue
+            GTUtil.loadImageView(img: topUserhead,url: src)
+        }
+    }
+    
+    var bannerImages:Array<JSON>!{
+        didSet{
+            
+        }
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        initData()
+     
+        famouseUserCView.dataSource = self
         
         InitCarouselView(115)
         
@@ -33,9 +85,14 @@ class homeController: UIViewController, DHCarouselViewDelegate {
         carouselView = DHCarouselView(frame: CGRect(origin: CGPointZero, size: CGSize(width: self.view.frame.size.width, height: high)))
         carouselView.delegate = self
         
-        carouselView.carouselDataArray = ["defaultuse.jpg","B_Champagne Saucer.jpg","B_Beer Glassware.jpg","B_Champagne Flute.jpg"]
+        carouselView.carouselDataArray = [
+            "http://cdn.mckuai.com/banner/20141209/201412091444140687.jpg",
+            "http://cdn.mckuai.com/banner/20141209/201412091102260156.jpg",
+            "http://cdn.mckuai.com/banner/20141205/201412051824380984.jpg",
+            "http://cdn.mckuai.com/banner/20141209/201412091102260156.jpg",
+            "http://cdn.mckuai.com/banner/20141209/201412091104130875.jpg"
+        ]
         carouselView.loadCarouselDataThenStart()
-        
         self.view.addSubview(carouselView)
     }
 
@@ -48,7 +105,7 @@ class homeController: UIViewController, DHCarouselViewDelegate {
         super.viewDidLayoutSubviews()
         if(self.scrollView != nil){//iPhone的滚动
             //var size = desc.text.textSizeWithFont(desc.font, constrainedToSize: CGSize(width:306, height:1000))
-            scrollView.contentSize = CGSize(width: 320, height: 800)
+            scrollView.contentSize = CGSize(width: 320, height: 600)
             self.view.layoutIfNeeded()
         }
     }
@@ -56,4 +113,50 @@ class homeController: UIViewController, DHCarouselViewDelegate {
     func carouselView(carouselView: DHCarouselView, didSelectedPageAtIndex index: NSInteger) {
         //
     }
+    
+    
+    //初始化数据
+    func initData(){
+        APIClient.sharedInstance.getHomePageData({
+            (json) -> Void in
+            if "ok" == json["state"].stringValue {
+                AppContext.sharedInstance.saveHomePageData(json.object)
+                self.data = json["dataObject"]
+            }
+            }, {
+                (err) -> Void in
+                if let d = AppContext.sharedInstance.getHomePageData(){
+                    self.data = d["dataObject"]
+                }
+            }
+        )
+    }
+    func collectionView(collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int{
+            println("明星用户")
+            if(famouseUsers != nil){
+                return famouseUsers.count-1
+            }
+            else{
+                return 0
+            }
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
+
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("famouse",forIndexPath:indexPath) as FamouseUser
+                        println("here")
+            let user = famouseUsers[indexPath.row+1]
+            
+            GTUtil.loadImageView(img: cell.userhead,url: user["headImg"].stringValue)
+            return cell
+    }
+    
+}
+
+class FamouseUser:UICollectionViewCell {
+    
+    @IBOutlet weak var userhead: UIImageView!
+    
 }

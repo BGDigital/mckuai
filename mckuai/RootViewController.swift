@@ -11,10 +11,12 @@ import UIKit
 var rootController:RootViewController!
 
 let appID:String = "3Z8C4UK6GU"
+var appUserIdSave=NSUserDefaults.standardUserDefaults().objectForKey("userId") as Int!
 
 class RootViewController: UITabBarController , ChangeTableDelegate{
     
     let launchImgUrl = "http://pic2.zhimg.com/cf3bcf3ca5c7a503e7b58d0f498f14bc.jpg"
+    var loginView:UIViewController!
     var welcome:UIViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +24,21 @@ class RootViewController: UITabBarController , ChangeTableDelegate{
         initControllerView()
         customTabBar()
         rootController = self
-        /**/
+        /*
         if(!NSUserDefaults.standardUserDefaults().boolForKey("Launched")) {
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "Launched")
-            
-            welcome = UIStoryboard(name:"Launch",bundle:nil).instantiateViewControllerWithIdentifier("welcome") as UIViewController
-            self.view.addSubview(welcome.view)
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "Launched")
+        
+        welcome = UIStoryboard(name:"Launch",bundle:nil).instantiateViewControllerWithIdentifier("welcome") as UIViewController
+        self.view.addSubview(welcome.view)
         }
-        /**/
+        */
+        if(appUserIdSave == nil){
+            loginView=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as UIViewController
+            self.view.addSubview(loginView.view)
+            
+        }else {
+            println(appUserIdSave)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,7 +95,21 @@ class RootViewController: UITabBarController , ChangeTableDelegate{
         default: println("default")
             
         }
-        self.selectedIndex = index
+        if(index == 3 && appUserIdSave == nil){
+            var alertView = UIAlertView(title: "QQ帐号一键登录", message: "", delegate: self, cancelButtonTitle: "确定")
+            alertView.show()
+        }else {
+            self.selectedIndex = index
+        }
+        
     }
+    
+    func alertView(alertView: UIAlertView,clickedButtonAtIndex buttonIndex: Int) {
+        if( buttonIndex==0 ) {
+            loginView=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as UIViewController
+            self.view.addSubview(loginView.view)
+        }
+    }
+
     
 }

@@ -11,6 +11,7 @@ import UIKit
 class AppContext {
    
     private let kCommunityKey = "communityData"
+    private let kHomepageKey = "homepageData"
     
     class var sharedInstance : AppContext {
     struct Static {
@@ -20,14 +21,31 @@ class AppContext {
     }
     //缓存全部社区信息
     func saveCommunityData(nodes:AnyObject) {
-        var userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(nodes), forKey: kCommunityKey)
-        userDefaults.synchronize()
+        saveData(key: kCommunityKey,nodes: nodes)
     }
     
     func getCommunityData() -> JSON? {
+        return getData(key: kCommunityKey)
+    }
+    
+    //缓存首页数据
+    func saveHomePageData(nodes:AnyObject){
+        saveData(key: kHomepageKey , nodes: nodes)
+    }
+    
+    func getHomePageData() ->JSON?{
+        return getData(key:kHomepageKey)
+    }
+    
+    private func saveData(#key:String,nodes:AnyObject){
         var userDefaults = NSUserDefaults.standardUserDefaults()
-        var data: AnyObject? = userDefaults.objectForKey(kCommunityKey)
+        userDefaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(nodes), forKey: key)
+        userDefaults.synchronize()
+    }
+    
+    private func getData(#key:String) -> JSON{
+        var userDefaults = NSUserDefaults.standardUserDefaults()
+        var data: AnyObject? = userDefaults.objectForKey(key)
         if let obj: AnyObject = data? {
             var json: AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithData(obj as NSData)
             return JSON(json!)
