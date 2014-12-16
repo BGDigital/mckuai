@@ -10,6 +10,7 @@ import UIKit
 
 class Community: BaseTableViewController {
     var json: JSON!
+    var PostView: PostViewController!=nil
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -31,6 +32,11 @@ class Community: BaseTableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    @IBAction func showPost() {
+        PostView = UIStoryboard(name: "Post", bundle: nil).instantiateViewControllerWithIdentifier("SB_POST") as PostViewController
+        self.navigationController?.pushViewController(PostView, animated: true)
     }
     
     func sendRequest() {

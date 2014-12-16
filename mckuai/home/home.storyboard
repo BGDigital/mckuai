@@ -214,7 +214,9 @@
                         </constraints>
                     </scrollView>
                     <navigationItem key="navigationItem" title="麦块" id="MzD-Q1-GIZ">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="bwf-G3-gTW"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="search" id="bwf-G3-gTW">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="600"/>

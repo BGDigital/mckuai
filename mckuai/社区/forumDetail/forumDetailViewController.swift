@@ -23,6 +23,7 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     var currentPage = 1
     var itemCount = 0
     var pageSize = 0
+    var PostView: PostViewController!=nil
     
     var refreshControl = UIRefreshControl()
     override func viewDidLoad() {
@@ -39,6 +40,11 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func showPost() {
+        PostView = UIStoryboard(name: "Post", bundle: nil).instantiateViewControllerWithIdentifier("SB_POST") as PostViewController
+        self.navigationController?.pushViewController(PostView, animated: true)
     }
     
     func sendRequest() {

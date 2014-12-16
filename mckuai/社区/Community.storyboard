@@ -101,7 +101,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="社区" id="J7p-Ps-Z9Q">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="isV-xl-ncl"/>
+                        <barButtonItem key="rightBarButtonItem" image="bankuai_fatie" id="isV-xl-ncl">
+                            <connections>
+                                <action selector="showPost" destination="dGU-Tt-3mr" id="1GS-dp-zNP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvn-5n-21k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -115,6 +119,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2vq-uA-F1i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="dGU-Tt-3mr" kind="relationship" relationship="rootViewController" id="LrB-JS-2L1"/>
@@ -315,6 +324,7 @@
     </scenes>
     <resources>
         <image name="bankuai_count2" width="13" height="13"/>
+        <image name="bankuai_fatie" width="44" height="44"/>
         <image name="bankuai_huodong" width="15" height="15"/>
         <image name="image1" width="20" height="20"/>
         <image name="image2" width="20" height="20"/>

@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--详情-->
+        <!--版块-->
         <scene sceneID="oUD-xV-OzY">
             <objects>
                 <viewController storyboardIdentifier="SB_forumDetail" id="XeI-7A-DLz" customClass="forumDetailViewController" customModule="mckuai" customModuleProvider="target" sceneMemberID="viewController">
@@ -164,7 +164,14 @@
                             <constraint firstItem="Cgk-mE-VZV" firstAttribute="top" secondItem="OBq-s8-V5h" secondAttribute="top" id="pVg-Al-oN6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="详情" id="tlu-pR-WYL"/>
+                    <navigationItem key="navigationItem" title="版块" id="tlu-pR-WYL">
+                        <barButtonItem key="rightBarButtonItem" image="bankuai_fatie" id="oe2-HX-5xg">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="showPost" destination="XeI-7A-DLz" id="3OQ-3L-3JS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="caption" destination="9fB-a1-0NT" id="84Q-AY-a5R"/>
                         <outlet property="dese" destination="4mH-kd-rxp" id="Mha-bg-AYb"/>
@@ -185,6 +192,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5an-co-p6a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -199,6 +209,7 @@
     <resources>
         <image name="bankuai" width="20" height="20"/>
         <image name="bankuai_count1" width="16" height="16"/>
+        <image name="bankuai_fatie" width="44" height="44"/>
         <image name="message" width="11" height="11"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

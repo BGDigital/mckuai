@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E626E1361A40167000506234 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E626E1351A40167000506234 /* Post.storyboard */; };
+		E626E1381A40168E00506234 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E626E1371A40168E00506234 /* PostViewController.swift */; };
 		E62888FC1A3E870800C45131 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62888F71A3E870800C45131 /* Login.storyboard */; };
 		E62888FD1A3E870800C45131 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62888F81A3E870800C45131 /* Login.swift */; };
 		E62889091A3E876300C45131 /* Dynamic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62889001A3E876300C45131 /* Dynamic.storyboard */; };
@@ -112,6 +114,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E626E1351A40167000506234 /* Post.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
+		E626E1371A40168E00506234 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		E62888F71A3E870800C45131 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E62888F81A3E870800C45131 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		E62888F91A3E870800C45131 /* mckuai-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mckuai-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -204,6 +208,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E626E1331A40164D00506234 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				E626E1351A40167000506234 /* Post.storyboard */,
+				E626E1371A40168E00506234 /* PostViewController.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		E62888F61A3E870800C45131 /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +318,7 @@
 		E63FD7D51A133C5B00177E3E /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				E626E1331A40164D00506234 /* Post */,
 				E66879461A25F0DF00BE48CE /* DynamicHeader */,
 				E63C78B21A302F5F00D28668 /* forumDetail */,
 				E63FD7D61A133C9500177E3E /* Community.storyboard */,
@@ -521,6 +535,7 @@
 				E6BCFC681A1A324B009857B0 /* TabBarView.xib in Resources */,
 				E62889131A3E886A00C45131 /* Images.xcassets in Resources */,
 				E63C78B61A302F5F00D28668 /* forumDetail.storyboard in Resources */,
+				E626E1361A40167000506234 /* Post.storyboard in Resources */,
 				E628890C1A3E876300C45131 /* dynamicNoData.storyboard in Resources */,
 				E62889091A3E876300C45131 /* Dynamic.storyboard in Resources */,
 				E62888FC1A3E870800C45131 /* Login.storyboard in Resources */,
@@ -562,6 +577,7 @@
 				E62888FD1A3E870800C45131 /* Login.swift in Sources */,
 				E628890A1A3E876300C45131 /* Dynamic.swift in Sources */,
 				E62C21801A03F34E004DBFD0 /* RootViewController.swift in Sources */,
+				E626E1381A40168E00506234 /* PostViewController.swift in Sources */,
 				E628890E1A3E876300C45131 /* HttpUrlConstant.swift in Sources */,
 				E63FD6D11A13340100177E3E /* TabBarViewController.swift in Sources */,
 				E6D6C2C91A2FFC0800858161 /* Alamofire-SwiftyJSON.swift in Sources */,
