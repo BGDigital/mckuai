@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9bD-cV-DbX" customClass="RadiusView" customModule="mckuai" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bD-cV-DbX" customClass="RadiusView" customModule="mckuai" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="20" width="320" height="51"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dj-h1-F1l">
@@ -117,7 +117,7 @@
                                 <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="1eG-Qk-V4i"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z64-dO-UCJ">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z64-dO-UCJ">
                             <rect key="frame" x="210" y="5" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="5Rf-Eh-kFo">
@@ -137,7 +137,7 @@
                                 <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="KfU-Ux-LzK"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nK0-vw-qBv">
+                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nK0-vw-qBv">
                             <rect key="frame" x="20" y="4" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="6R7-R9-hjU">
@@ -158,7 +158,7 @@
                                 <action selector="changeTabBar:" destination="iN0-l3-epB" eventType="touchUpInside" id="yCX-di-EP7"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n13-UF-AQV">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n13-UF-AQV">
                             <rect key="frame" x="270" y="5" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="DCC-nZ-Qzb">

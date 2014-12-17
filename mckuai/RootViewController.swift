@@ -59,18 +59,17 @@ class RootViewController: UITabBarController , ChangeTableDelegate{
         
     }
     
-    var tabBarView:TabBarViewController!
-    //加载工具栏
-    func customTabBar()
-    {
+    var tabBarView = CustomTabBar()
+    // 自定义TabBar
+    func customTabBar(){
+        
         self.tabBar.hidden = true;
-        var array = NSBundle.mainBundle().loadNibNamed("TabBarView", owner: self, options: nil)
-            as  [TabBarViewController]!
-        tabBarView = array[0]
+        var array = NSBundle.mainBundle().loadNibNamed("CustomTabBarView", owner: self, options: nil)
+        tabBarView = array[0] as CustomTabBar
         tabBarView.changeTableDelegate = self
-        tabBarView.frame = CGRect(x: 0, y: self.view.frame.size.height - 69 , width: self.view.frame.size.width, height: 70)
+        tabBarView.dynamicButton.selected = true
+        tabBarView.frame = CGRect(x: 0, y: self.view.frame.size.height - 49 , width: 320, height: 49)
         self.view.addSubview(tabBarView)
-        tabBarView.initSelected()
     }
     
     //显示或影藏
