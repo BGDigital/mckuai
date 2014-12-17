@@ -71,16 +71,22 @@ class Community: BaseTableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell") as? DynamicCell
         let data = self.datasource[indexPath.row] as JSON
-        cell?.update(data)
         // Configure the cell...
+        cell?.update(data)
         return cell!
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let data = self.datasource[indexPath.row] as JSON
+        let tiezi = data["id"].stringValue
+        TieziController.loadTiezi(presentNavigator: self.navigationController!, id: tiezi)
+    }
+
     
     func onPullToFresh() {
         self.sendRequest()
     }
     
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

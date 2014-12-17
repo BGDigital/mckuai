@@ -19,7 +19,11 @@ class APIClient {
         }
         return Static.instance
     }
-    
+    //Post请求
+    private func Send(path: NSString, parameters: [String : AnyObject]?) {
+        Alamofire.request(.POST, APIRootURL + path, parameters: parameters)
+    }
+    //GET
     private func getJSONData(path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
         Alamofire.request(.GET, APIRootURL + path, parameters: parameters)
             .responseSwiftyJSON { (request, response, json, error) in
@@ -44,6 +48,21 @@ class APIClient {
     //获取首页数据
     func getHomePageData(success: (JSON) -> Void, failure: (NSError) -> Void) {
         self.getJSONData("index.do?act=all", parameters: nil, success: success, failure: failure)
+    }
+    
+    
+    //发贴
+    func SendPost(userId: Int, forumId: Int, forumName: NSString, talkTypeId: Int, talkTypeName: NSString, talkTitle: NSString, content: NSString) {
+        let dict = [
+        "userId": userId,
+        "forumId": forumId,
+        "forumName": forumName,
+        "talkTypeId": talkTypeId,
+        "talkTypeName": talkTypeName,
+        "talkTitle": talkTitle,
+        "content": content
+        ]
+        self.Send("talk.do?act=addTalk", parameters: dict)
     }
     
     /*

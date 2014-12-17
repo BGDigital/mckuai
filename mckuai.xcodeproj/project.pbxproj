@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E626E1361A40167000506234 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E626E1351A40167000506234 /* Post.storyboard */; };
 		E626E1381A40168E00506234 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E626E1371A40168E00506234 /* PostViewController.swift */; };
+		E626E13D1A408C1F00506234 /* tiezi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E626E13B1A408C1F00506234 /* tiezi.storyboard */; };
+		E626E13E1A408C1F00506234 /* TieziController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E626E13C1A408C1F00506234 /* TieziController.swift */; };
 		E62888FC1A3E870800C45131 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62888F71A3E870800C45131 /* Login.storyboard */; };
 		E62888FD1A3E870800C45131 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62888F81A3E870800C45131 /* Login.swift */; };
 		E62889091A3E876300C45131 /* Dynamic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62889001A3E876300C45131 /* Dynamic.storyboard */; };
@@ -116,6 +118,8 @@
 /* Begin PBXFileReference section */
 		E626E1351A40167000506234 /* Post.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		E626E1371A40168E00506234 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		E626E13B1A408C1F00506234 /* tiezi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tiezi.storyboard; sourceTree = "<group>"; };
+		E626E13C1A408C1F00506234 /* TieziController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TieziController.swift; sourceTree = "<group>"; };
 		E62888F71A3E870800C45131 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		E62888F81A3E870800C45131 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		E62888F91A3E870800C45131 /* mckuai-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mckuai-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -217,6 +221,15 @@
 			path = Post;
 			sourceTree = "<group>";
 		};
+		E626E13A1A408C1F00506234 /* tiezi */ = {
+			isa = PBXGroup;
+			children = (
+				E626E13B1A408C1F00506234 /* tiezi.storyboard */,
+				E626E13C1A408C1F00506234 /* TieziController.swift */,
+			);
+			path = tiezi;
+			sourceTree = "<group>";
+		};
 		E62888F61A3E870800C45131 /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +271,7 @@
 		E62C217A1A03F34E004DBFD0 /* mckuai */ = {
 			isa = PBXGroup;
 			children = (
+				E626E13A1A408C1F00506234 /* tiezi */,
 				E62889121A3E886A00C45131 /* Images.xcassets */,
 				E62888F61A3E870800C45131 /* login */,
 				E62888F91A3E870800C45131 /* mckuai-Bridging-Header.h */,
@@ -525,6 +539,7 @@
 			files = (
 				E62C21831A03F34E004DBFD0 /* Main.storyboard in Resources */,
 				E62C21881A03F34E004DBFD0 /* LaunchScreen.xib in Resources */,
+				E626E13D1A408C1F00506234 /* tiezi.storyboard in Resources */,
 				E63FD7DE1A133DBF00177E3E /* home.storyboard in Resources */,
 				E62889301A3E89AE00C45131 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				E63FD7E21A1344DB00177E3E /* userCenter.storyboard in Resources */,
@@ -573,6 +588,7 @@
 				E6D6C2CA1A2FFC0800858161 /* SwiftyJSON.swift in Sources */,
 				E628890D1A3E876300C45131 /* DynamicReplyCell.swift in Sources */,
 				E63FD7E01A133E0400177E3E /* homeController.swift in Sources */,
+				E626E13E1A408C1F00506234 /* TieziController.swift in Sources */,
 				E6D6C2DC1A300C2100858161 /* AppContext.swift in Sources */,
 				E62888FD1A3E870800C45131 /* Login.swift in Sources */,
 				E628890A1A3E876300C45131 /* Dynamic.swift in Sources */,

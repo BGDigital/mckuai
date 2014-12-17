@@ -68,7 +68,10 @@ class HotTableViewController:UITableViewController {
     }
     
     
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let tiezi = hotTiezi[indexPath.row]["id"].stringValue
+        TieziController.loadTiezi(presentNavigator: self.navigationController!, id: tiezi)
+    }
     
     
 }

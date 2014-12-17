@@ -115,7 +115,9 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
         if (self.datasource.count == indexPath.row) {
             onLoadMore()
         } else {
-            //正常Cell的点击
+            let data = self.datasource[indexPath.row] as JSON
+            let tiezi = data["id"].stringValue
+            TieziController.loadTiezi(presentNavigator: self.navigationController!, id: tiezi)
         }
     }
     
