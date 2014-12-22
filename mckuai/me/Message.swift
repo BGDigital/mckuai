@@ -20,7 +20,7 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     
     var dynamicNoData:UIViewController!=nil
     func initData() {
-        var paramDictionary :Dictionary<String,String> = ["act":"message","id":String(2)]
+        var paramDictionary :Dictionary<String,String> = ["act":"message","id":String(appUserIdSave)]
         Alamofire.request(.GET,http_url, parameters: paramDictionary)
             .responseJSON { (request, response, data, error) in
                 
@@ -77,8 +77,11 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
             cell.userName.text = self.json["dataObject","message",indexPath.row,"userName"].string
             cell.content.text = self.json["dataObject","message",indexPath.row,"content"].string
             cell.talkTitle.text = self.json["dataObject","message",indexPath.row,"talkTitle"].string
+        
             cell.forumName.text = self.json["dataObject","message",indexPath.row,"forumName"].string
-            cell.insertTime.text = self.json["dataObject","message",indexPath.row,"insertTime"].string
+            var timeTemp = self.json["dataObject","message",indexPath.row,"insertTime"].string
+            cell.insertTime.text = GTUtil.compDate(timeTemp!)
+//            cell.insertTime.text = self.json["dataObject","message",indexPath.row,"insertTime"].string
             cell.replyNum.text = String(self.json["dataObject","message",indexPath.row,"replyNum"].int!)
             cell.content.text = self.json["dataObject","message",indexPath.row,"cont"].string
             return cell
@@ -89,6 +92,13 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
             return 115
     }
-
+    
+    //点击事件
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var tiezi = self.json["dataObject","message",indexPath.row,"cont1"].string!
+        println(tiezi)
+        TieziController.loadTiezi(presentNavigator: self.navigationController!, id: tiezi)
+        
+    }
 
 }
