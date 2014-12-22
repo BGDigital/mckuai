@@ -141,7 +141,7 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
         self.dese.text = forum["shortDres"].stringValue
         self.talkNum.setTitle(forum["talkNum"].stringValue, forState: .Normal)
         var url = forum["icon"].stringValue
-        url = "http://pic.youxigt.com/uploadimg/quan/images1/68831411547537743.jpg"
+        //url = "http://pic.youxigt.com/uploadimg/quan/images1/68831411547537743.jpg"
         setImage(url)
     }
     

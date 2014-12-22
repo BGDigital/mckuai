@@ -24,8 +24,9 @@ class CollectionViewCell: UICollectionViewCell {
         self.caption.text = json["name"].stringValue
         var url = json["icon"].stringValue
         
-        url = "http://pic.youxigt.com/uploadimg/quan/images1/68831411547537743.jpg"
-        setImage(url)
+        //url = "http://pic.youxigt.com/uploadimg/quan/images1/68831411547537743.jpg"
+        //setImage(url)
+        GTUtil.loadImageView(img: self.imageView, url: url)
     }
     
     //异步获取图片

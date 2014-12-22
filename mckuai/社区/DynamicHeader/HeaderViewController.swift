@@ -70,6 +70,12 @@ class HeaderViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
 
     }
+    
+    //显示活动页面
+    @IBAction func showhuodong() {
+        let tiezi = self.huodong["id"].stringValue
+        TieziController.loadTiezi(presentNavigator: self.navigationController!, id: tiezi)
+    }
 
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

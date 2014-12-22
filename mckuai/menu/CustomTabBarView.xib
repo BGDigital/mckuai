@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="YXA-Sh-Tmf" customClass="CustomTabBar" customModule="mckuai" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meun_bg" translatesAutoresizingMaskIntoConstraints="NO" id="0lT-Eo-ea3">
+                    <rect key="frame" x="0.0" y="-49" width="640" height="98"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVP-Pg-Vj2">
+                    <rect key="frame" x="0.0" y="1" width="80" height="44"/>
+                    <state key="normal" image="home_no">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="home_on"/>
+                    <connections>
+                        <action selector="changeTabBar:" destination="YXA-Sh-Tmf" eventType="touchUpInside" id="aWN-fp-lbE"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="首页" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ra-E1-9qw">
+                    <rect key="frame" x="29" y="35" width="22" height="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6K-Av-d7V">
+                    <rect key="frame" x="80" y="1" width="80" height="44"/>
+                    <state key="normal" image="community_no">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="community_on"/>
+                    <connections>
+                        <action selector="changeTabBar:" destination="YXA-Sh-Tmf" eventType="touchUpInside" id="1QZ-kD-h52"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="社区" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5t-R4-i6K">
+                    <rect key="frame" x="109" y="35" width="22" height="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jc-1N-JGD">
+                    <rect key="frame" x="160" y="1" width="80" height="44"/>
+                    <state key="normal" image="chat_no">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="chat_on"/>
+                    <connections>
+                        <action selector="changeTabBar:" destination="YXA-Sh-Tmf" eventType="touchUpInside" id="t0t-Kt-ljc"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="聊天" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tI-ws-gJv">
+                    <rect key="frame" x="189" y="35" width="22" height="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paj-kB-eQO">
+                    <rect key="frame" x="240" y="1" width="80" height="44"/>
+                    <state key="normal" image="mine_no">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="mine_on"/>
+                    <connections>
+                        <action selector="changeTabBar:" destination="YXA-Sh-Tmf" eventType="touchUpInside" id="ZTh-LU-SdL"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9D-Ot-kQM">
+                    <rect key="frame" x="269" y="35" width="22" height="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="IVP-Pg-Vj2" firstAttribute="centerX" secondItem="8ra-E1-9qw" secondAttribute="centerX" id="3Zx-KX-55B"/>
+                <constraint firstItem="g6K-Av-d7V" firstAttribute="leading" secondItem="8ra-E1-9qw" secondAttribute="trailing" constant="29" id="5bM-0z-GzR"/>
+                <constraint firstItem="3jc-1N-JGD" firstAttribute="bottom" secondItem="g6K-Av-d7V" secondAttribute="bottom" id="5bu-mf-9n9"/>
+                <constraint firstItem="4tI-ws-gJv" firstAttribute="bottom" secondItem="0lT-Eo-ea3" secondAttribute="bottom" id="8lV-cW-Tdj"/>
+                <constraint firstItem="4tI-ws-gJv" firstAttribute="firstBaseline" secondItem="k9D-Ot-kQM" secondAttribute="firstBaseline" id="Cua-iY-5vF"/>
+                <constraint firstItem="IVP-Pg-Vj2" firstAttribute="leading" secondItem="0lT-Eo-ea3" secondAttribute="leading" id="CyB-SN-nh3"/>
+                <constraint firstAttribute="trailing" secondItem="Paj-kB-eQO" secondAttribute="trailing" id="EGN-Q3-RRp"/>
+                <constraint firstItem="4tI-ws-gJv" firstAttribute="firstBaseline" secondItem="V5t-R4-i6K" secondAttribute="firstBaseline" id="LHd-Ne-8gI"/>
+                <constraint firstItem="3jc-1N-JGD" firstAttribute="bottom" secondItem="Paj-kB-eQO" secondAttribute="bottom" id="Lqu-fq-EO0"/>
+                <constraint firstItem="3jc-1N-JGD" firstAttribute="centerX" secondItem="4tI-ws-gJv" secondAttribute="centerX" id="VXR-aO-HOO"/>
+                <constraint firstAttribute="bottom" secondItem="IVP-Pg-Vj2" secondAttribute="bottom" constant="4" id="Ve6-aW-8xW"/>
+                <constraint firstItem="8ra-E1-9qw" firstAttribute="firstBaseline" secondItem="V5t-R4-i6K" secondAttribute="firstBaseline" id="WxX-0d-2zI"/>
+                <constraint firstItem="k9D-Ot-kQM" firstAttribute="baseline" secondItem="4tI-ws-gJv" secondAttribute="baseline" id="XqT-xV-c40"/>
+                <constraint firstItem="g6K-Av-d7V" firstAttribute="bottom" secondItem="IVP-Pg-Vj2" secondAttribute="bottom" id="YzR-oX-AR7"/>
+                <constraint firstItem="8ra-E1-9qw" firstAttribute="top" secondItem="YXA-Sh-Tmf" secondAttribute="top" constant="35" id="bCq-Yh-4pj"/>
+                <constraint firstAttribute="trailing" secondItem="k9D-Ot-kQM" secondAttribute="trailing" constant="29" id="bwK-zF-NSj"/>
+                <constraint firstItem="8ra-E1-9qw" firstAttribute="baseline" secondItem="V5t-R4-i6K" secondAttribute="baseline" id="c7k-o4-3VM"/>
+                <constraint firstItem="8ra-E1-9qw" firstAttribute="top" secondItem="YXA-Sh-Tmf" secondAttribute="top" constant="35" id="gMB-Tt-hCh"/>
+                <constraint firstItem="Paj-kB-eQO" firstAttribute="centerX" secondItem="k9D-Ot-kQM" secondAttribute="centerX" id="hGk-dj-vCN"/>
+                <constraint firstItem="IVP-Pg-Vj2" firstAttribute="top" secondItem="YXA-Sh-Tmf" secondAttribute="top" constant="1" id="htq-d1-Ans"/>
+                <constraint firstItem="IVP-Pg-Vj2" firstAttribute="leading" secondItem="YXA-Sh-Tmf" secondAttribute="leading" id="iL6-HD-irQ"/>
+                <constraint firstItem="3jc-1N-JGD" firstAttribute="leading" secondItem="V5t-R4-i6K" secondAttribute="trailing" constant="29" id="jJx-ZG-Yc8"/>
+                <constraint firstItem="3jc-1N-JGD" firstAttribute="top" secondItem="Paj-kB-eQO" secondAttribute="top" id="jkA-7J-N6n"/>
+                <constraint firstItem="IVP-Pg-Vj2" firstAttribute="top" secondItem="g6K-Av-d7V" secondAttribute="top" id="nQZ-aD-jTG"/>
+                <constraint firstAttribute="bottom" secondItem="8ra-E1-9qw" secondAttribute="bottom" id="oDx-91-VJZ"/>
+                <constraint firstItem="IVP-Pg-Vj2" firstAttribute="top" secondItem="YXA-Sh-Tmf" secondAttribute="top" constant="1" id="oF8-Lr-SAl"/>
+                <constraint firstAttribute="bottom" secondItem="IVP-Pg-Vj2" secondAttribute="bottom" constant="4" id="q1o-BO-LxH"/>
+                <constraint firstItem="V5t-R4-i6K" firstAttribute="baseline" secondItem="4tI-ws-gJv" secondAttribute="baseline" id="tdg-PK-vt0"/>
+                <constraint firstItem="V5t-R4-i6K" firstAttribute="centerX" secondItem="g6K-Av-d7V" secondAttribute="centerX" id="u2L-Iu-zf5"/>
+                <constraint firstItem="IVP-Pg-Vj2" firstAttribute="leading" secondItem="YXA-Sh-Tmf" secondAttribute="leading" id="xRT-LQ-SPp"/>
+                <constraint firstItem="g6K-Av-d7V" firstAttribute="top" secondItem="3jc-1N-JGD" secondAttribute="top" id="xvl-Ji-Icb"/>
+                <constraint firstAttribute="bottom" secondItem="8ra-E1-9qw" secondAttribute="bottom" id="ywi-0w-5QQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="oF8-Lr-SAl"/>
+                    <exclude reference="q1o-BO-LxH"/>
+                    <exclude reference="xRT-LQ-SPp"/>
+                    <exclude reference="bCq-Yh-4pj"/>
+                    <exclude reference="ywi-0w-5QQ"/>
+                    <exclude reference="bwK-zF-NSj"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="btn_chat" destination="3jc-1N-JGD" id="JKu-aO-bnE"/>
+                <outlet property="btn_community" destination="g6K-Av-d7V" id="E2h-ll-wB7"/>
+                <outlet property="btn_home" destination="IVP-Pg-Vj2" id="MgU-sx-biY"/>
+                <outlet property="btn_mine" destination="Paj-kB-eQO" id="mHy-75-cdW"/>
+            </connections>
+            <point key="canvasLocation" x="120" y="-61.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chat_no" width="80" height="49"/>
+        <image name="chat_on" width="80" height="49"/>
+        <image name="community_no" width="80" height="49"/>
+        <image name="community_on" width="80" height="49"/>
+        <image name="home_no" width="80" height="49"/>
+        <image name="home_on" width="80" height="49"/>
+        <image name="meun_bg" width="640" height="98"/>
+        <image name="mine_no" width="80" height="49"/>
+        <image name="mine_on" width="80" height="49"/>
+    </resources>
+</document>
