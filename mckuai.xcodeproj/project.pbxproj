@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B7C386C1A487C7100920B83 /* newfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C386B1A487C7100920B83 /* newfile.swift */; };
 		E626E1361A40167000506234 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E626E1351A40167000506234 /* Post.storyboard */; };
 		E626E1381A40168E00506234 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E626E1371A40168E00506234 /* PostViewController.swift */; };
 		E626E13D1A408C1F00506234 /* tiezi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E626E13B1A408C1F00506234 /* tiezi.storyboard */; };
@@ -111,6 +112,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B7C386B1A487C7100920B83 /* newfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newfile.swift; sourceTree = "<group>"; };
 		E626E1351A40167000506234 /* Post.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		E626E1371A40168E00506234 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		E626E13B1A408C1F00506234 /* tiezi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tiezi.storyboard; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			children = (
 				E63FD7E51A1346CC00177E3E /* chat.storyboard */,
 				E63FD7E71A13471F00177E3E /* chat.swift */,
+				0B7C386B1A487C7100920B83 /* newfile.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 			files = (
 				E67377711A19E7CA006DAE76 /* DHCarouselView.swift in Sources */,
 				E67B865F1A3E7AA400B782E1 /* HotTableViewController.swift in Sources */,
+				0B7C386C1A487C7100920B83 /* newfile.swift in Sources */,
 				E6D6C2C31A2FFB5100858161 /* APIClient.swift in Sources */,
 				E6D6C2DA1A2FFE9800858161 /* BaseTableViewController.swift in Sources */,
 				E67F89431A1C7B5E00044035 /* DynamicCell.swift in Sources */,
