@@ -49,6 +49,9 @@ class GTUtil {
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
         formatter.locale = NSLocale(localeIdentifier: NSGregorianCalendar)
         let date = formatter.dateFromString(beginStr)
+        if date == nil {
+            return "时间格式出错"
+        }
         var second:NSTimeInterval
         second = -date!.timeIntervalSinceNow
         if second < 60 {

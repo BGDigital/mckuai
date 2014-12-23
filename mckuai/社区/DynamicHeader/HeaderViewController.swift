@@ -22,7 +22,8 @@ class HeaderViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.sendRequest()
+        /*
         //是否读取缓存数据
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             var nodes = AppContext.sharedInstance.getCommunityData()
@@ -34,7 +35,7 @@ class HeaderViewController: UIViewController, UICollectionViewDataSource, UIColl
                     
                     if (self.huodong != nil) {
                         self.headCaption.text = self.huodong["talkTitle"].stringValue
-                        self.headTime.text = self.huodong["endTime"].stringValue
+                        self.headTime.text = GTUtil.compDate(self.huodong["endTime"].stringValue)
                         self.headReplyNum.text = self.huodong["replyNum"].stringValue
                     }
                 } else {
@@ -42,6 +43,7 @@ class HeaderViewController: UIViewController, UICollectionViewDataSource, UIColl
                 }
             })
         })
+*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,7 +54,7 @@ class HeaderViewController: UIViewController, UICollectionViewDataSource, UIColl
     //获取数据
     func sendRequest() {
         APIClient.sharedInstance.getCommunityData({ (json) -> Void in
-
+            println("从网上获取数据")
             if "ok" == json["state"].stringValue {
                 AppContext.sharedInstance.saveCommunityData(json.object)
                 if (json["dataObject", "forum"].type == Type.Array) {
@@ -61,7 +63,7 @@ class HeaderViewController: UIViewController, UICollectionViewDataSource, UIColl
                     self.huodong = json["dataObject", "huodong", 0] as JSON
                     
                     self.headCaption.text = self.huodong["talkTitle"].stringValue
-                    self.headTime.text = self.huodong["endTime"].stringValue
+                    self.headTime.text = GTUtil.compDate(self.huodong["endTime"].stringValue)
                     self.headReplyNum.text = self.huodong["replyNum"].stringValue
                 }
             }
