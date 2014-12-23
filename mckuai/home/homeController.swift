@@ -24,6 +24,7 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     
     @IBOutlet weak var famouseUserCView: UICollectionView!
     
+    @IBOutlet weak var shenFen:UIImageView!
 
     
     
@@ -49,6 +50,9 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
             topUserCountTiezi.text = topOneUser["homeNum"].stringValue
             var src = topOneUser["headImg"].stringValue
             GTUtil.loadImageView(img: topUserhead,url: src)
+            if topOneUser["isServerActor"].stringValue == "1"{
+                shenFen.image = UIImage(named: "icon_fu")
+            }
         }
     }
     
