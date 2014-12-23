@@ -14,6 +14,7 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     var http_url = UserCenterUrl;
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.hidden = true
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
         initData()
     }
@@ -63,8 +64,12 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        
-        return self.json["dataObject","dynamic"].count
+        let j = self.json["dataObject","dynamic"] as JSON
+        if (j != nil) {
+            return j.count
+        }
+        return 0
+        //return self.json["dataObject","dynamic"].count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -102,15 +107,13 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
         }else{
             return 110
         }
-        
-        
     }
     
     //点击事件
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             var tiezi = self.json["dataObject","dynamic",indexPath.row,"cont1"].string!
             println(tiezi)
-            TieziController.loadTiezi(presentNavigator: self.navigationController!,id: tiezi)
+            TieziController.loadTiezi(presentNavigator: self.navigationController?,id: tiezi)
 
     }
     

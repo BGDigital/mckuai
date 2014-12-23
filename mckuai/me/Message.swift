@@ -14,6 +14,7 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     var http_url = UserCenterUrl;
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.hidden = true
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
         initData()
     }
@@ -97,7 +98,7 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var tiezi = self.json["dataObject","message",indexPath.row,"cont1"].string!
         println(tiezi)
-        TieziController.loadTiezi(presentNavigator: self.navigationController!, id: tiezi)
+        TieziController.loadTiezi(presentNavigator: self.navigationController?, id: tiezi)
         
     }
 

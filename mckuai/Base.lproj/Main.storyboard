@@ -716,7 +716,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hgd-AL-DCH"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jff-BK-35o">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="282"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="327"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -724,7 +724,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etg-iB-UGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="999"/>
+            <point key="canvasLocation" x="867" y="856"/>
         </scene>
         <!--我的-->
         <scene sceneID="ZiV-Z9-ESr">
@@ -744,7 +744,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRu-2Z-5VC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3" y="868"/>
+            <point key="canvasLocation" x="-21" y="856"/>
         </scene>
         <!--我的-->
         <scene sceneID="Iop-Kf-5he">
@@ -824,8 +824,8 @@
                                     <action selector="changeStatusClicked:" destination="9y3-Ee-uvq" eventType="touchUpInside" id="rSX-Gi-gns"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPo-GW-V8G">
-                                <rect key="frame" x="0.0" y="242" width="320" height="282"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KPo-GW-V8G">
+                                <rect key="frame" x="0.0" y="242" width="320" height="327"/>
                                 <connections>
                                     <segue destination="Q6V-N6-XkC" kind="embed" id="DzN-kH-KTM"/>
                                 </connections>
@@ -915,7 +915,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SpD-w9-KwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="427" y="868"/>
+            <point key="canvasLocation" x="427" y="856"/>
         </scene>
     </scenes>
     <resources>

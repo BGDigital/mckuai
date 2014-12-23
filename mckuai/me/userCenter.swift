@@ -37,6 +37,7 @@ class UserCenter: UIViewController {
     var http_url = UserCenterUrl;
     override func viewDidLoad() {
         super.viewDidLoad()
+        //隐藏navigationbar
         self.navigationController?.navigationBar.hidden = true
         //self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         /*
@@ -193,6 +194,7 @@ class UserCenter: UIViewController {
                 messageTableView.view.frame = CGRect(x: 0, y: 0, width: container_v.frame.width, height: container_v.frame.height)
                 container_v.addSubview(messageTableView.view)
             } else {
+                //messageTableView.reloadData()
                 println("缓存view")
             }
             container_v.bringSubviewToFront(messageTableView.view)

@@ -55,12 +55,15 @@ class TieziController: UIViewController,UIWebViewDelegate {
         return true;
     }
     
-    class func loadTiezi(presentNavigator ctl:UINavigationController,id:String){
+    class func loadTiezi(presentNavigator ctl:UINavigationController?,id:String){
         var tiezi = UIStoryboard(name: "tiezi", bundle: nil).instantiateViewControllerWithIdentifier("Tiezi") as TieziController
         
         tiezi.tid = id
-        
-        ctl.pushViewController(tiezi, animated: true)
+        if (ctl != nil) {
+            ctl?.pushViewController(tiezi, animated: true)
+        } else {
+            ctl?.presentViewController(tiezi, animated: true, completion: nil)
+        }
         
     }
     
