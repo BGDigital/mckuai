@@ -84,9 +84,9 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
         //处理加载更多
         if (self.datasource.count == indexPath.row) {
             var loadMoreCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
-            loadMoreCell.textLabel?.text = "加载更多..."
+            loadMoreCell.textLabel.text = "加载更多..."
             loadMoreCell.backgroundColor = UIColor(red: 0.812, green: 0.192, blue: 0.145, alpha: 1.00)
-            loadMoreCell.textLabel?.textAlignment = NSTextAlignment.Center
+            loadMoreCell.textLabel.textAlignment = NSTextAlignment.Center
             //最后一页，不显示加载更多
             if self.datasource.count != 10 {
                 loadMoreCell.hidden = true

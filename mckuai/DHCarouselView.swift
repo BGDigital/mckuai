@@ -64,8 +64,14 @@ extension DHCarouselView {
     for i in 0...carouselDataArray.count - 1 {
       let carouselImgName = carouselDataArray[i]
       let carouselBtn = UIButton(frame: CGRect(x: carouselScrollView.frame.size.width * CGFloat(i + 1), y: 0, width: carouselScrollView.frame.size.width, height: carouselScrollView.frame.size.height))
-      carouselBtn.setBackgroundImage(UIImage(named: carouselImgName), forState: UIControlState.Normal)
-      carouselBtn.setBackgroundImage(UIImage(named: carouselImgName), forState: UIControlState.Highlighted)
+        
+        GTUtil.loadImage(carouselImgName, callback: {
+            (img:UIImage) -> Void in {
+            carouselBtn.setBackgroundImage(img, forState: UIControlState.Normal)
+            carouselBtn.setBackgroundImage(UIImage(named: carouselImgName), forState: UIControlState.Highlighted)
+            }
+        })
+
       carouselBtn.contentMode = UIViewContentMode.ScaleToFill
       carouselBtn.tag = i
       carouselBtn.addTarget(self, action: Selector("carouselBtnTapped:"), forControlEvents: UIControlEvents.TouchUpInside)

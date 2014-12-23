@@ -29,8 +29,8 @@ class HotTableViewCell:UITableViewCell {
         
         countReply.text = json["replyNum"].stringValue
         
-        var src = "http://pic.youxigt.com/uploadimg/quan/images1/41501413785977713.png"
-//        var src = json["mobilePic"].stringValue
+ //       var src = "http://pic.youxigt.com/uploadimg/quan/images1/41501413785977713.png"
+        var src = json["mobilePic"].stringValue
         //loadImg(src)
         GTUtil.loadImageView(img: self.pic, url: src)
     }
