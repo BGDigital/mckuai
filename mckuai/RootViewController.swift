@@ -20,7 +20,7 @@ class RootViewController: UITabBarController{
     var welcome:UIViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //appUserIdSave=2
+        appUserIdSave=2
         
         if(appUserIdSave == nil){
             loginView=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as UIViewController
