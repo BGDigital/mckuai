@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0B7C386C1A487C7100920B83 /* newfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C386B1A487C7100920B83 /* newfile.swift */; };
-		AAA7D1AB1A4943CC0013EFE3 /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA7D1AA1A4943CC0013EFE3 /* home.storyboard */; };
 		E626E1361A40167000506234 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E626E1351A40167000506234 /* Post.storyboard */; };
 		E626E1381A40168E00506234 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E626E1371A40168E00506234 /* PostViewController.swift */; };
 		E626E13D1A408C1F00506234 /* tiezi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E626E13B1A408C1F00506234 /* tiezi.storyboard */; };
@@ -114,7 +113,6 @@
 
 /* Begin PBXFileReference section */
 		0B7C386B1A487C7100920B83 /* newfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newfile.swift; sourceTree = "<group>"; };
-		AAA7D1AA1A4943CC0013EFE3 /* home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = home.storyboard; sourceTree = "<group>"; };
 		E626E1351A40167000506234 /* Post.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		E626E1371A40168E00506234 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		E626E13B1A408C1F00506234 /* tiezi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tiezi.storyboard; sourceTree = "<group>"; };
@@ -356,7 +354,6 @@
 		E63FD7DB1A133D3B00177E3E /* home */ = {
 			isa = PBXGroup;
 			children = (
-				AAA7D1AA1A4943CC0013EFE3 /* home.storyboard */,
 				E67B865C1A3E7AA400B782E1 /* HotTableViewCell.swift */,
 				E67B865D1A3E7AA400B782E1 /* HotTableViewController.swift */,
 				E63FD7DF1A133E0400177E3E /* homeController.swift */,
@@ -537,7 +534,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E62C21831A03F34E004DBFD0 /* Main.storyboard in Resources */,
-				AAA7D1AB1A4943CC0013EFE3 /* home.storyboard in Resources */,
 				E62C21881A03F34E004DBFD0 /* LaunchScreen.xib in Resources */,
 				E626E13D1A408C1F00506234 /* tiezi.storyboard in Resources */,
 				E62889301A3E89AE00C45131 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,

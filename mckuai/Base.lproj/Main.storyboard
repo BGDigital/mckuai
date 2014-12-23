@@ -59,7 +59,7 @@
                         <viewControllerLayoutGuide type="bottom" id="zPd-o6-RmM"/>
                     </layoutGuides>
                     <scrollView key="view" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" id="yFt-2N-cFt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAw-4D-Mwv" userLabel="明星">
@@ -166,7 +166,7 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y4R-mc-UHp" userLabel="top1 标签">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="label_top1" translatesAutoresizingMaskIntoConstraints="NO" id="y4R-mc-UHp" userLabel="top1 标签">
                                         <rect key="frame" x="8" y="35" width="20" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="aKL-M2-pEG"/>
@@ -243,7 +243,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="600"/>
+                    <size key="freeformSize" width="320" height="800"/>
                     <connections>
                         <outlet property="famouseUserCView" destination="Lqo-H9-h9t" id="KYM-8S-ZoB"/>
                         <outlet property="scrollView" destination="yFt-2N-cFt" id="cYr-Gj-TnO"/>
@@ -297,8 +297,8 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9jp-ml-z6e">
                                             <rect key="frame" x="5" y="5" width="120" height="70"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="70" id="HNo-Hb-azh"/>
-                                                <constraint firstAttribute="width" constant="120" id="Jpp-V9-GCu"/>
+                                                <constraint firstAttribute="width" constant="120" id="9Gc-N9-Olw"/>
+                                                <constraint firstAttribute="height" constant="70" id="zAY-Ic-bCP"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这一个帖子的标题，很长很长大哦，非常差咯它咬盏两行" lineBreakMode="tailTruncation" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spO-Ot-Df4">
@@ -309,10 +309,6 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="板块名字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd6-Tc-Ssb">
                                             <rect key="frame" x="130" y="65" width="48" height="9"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="48" id="0Xp-fh-c0F"/>
-                                                <constraint firstAttribute="height" constant="9" id="TuP-6V-7bs"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -320,7 +316,8 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5分钟前" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrH-vC-dPS">
                                             <rect key="frame" x="201" y="65" width="48" height="9"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="48" id="fBq-YA-HjN"/>
+                                                <constraint firstAttribute="height" constant="9" id="ARh-Dk-4JC"/>
+                                                <constraint firstAttribute="width" constant="48" id="XIS-pK-kCC"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -335,7 +332,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" translatesAutoresizingMaskIntoConstraints="NO" id="SbC-W0-H8r">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="message" translatesAutoresizingMaskIntoConstraints="NO" id="SbC-W0-H8r">
                                             <rect key="frame" x="271" y="64" width="12" height="12"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="12" id="hsR-V9-wnZ"/>
@@ -343,24 +340,22 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="spO-Ot-Df4" secondAttribute="trailing" constant="2" id="3lU-Yr-HJx"/>
-                                        <constraint firstItem="9jp-ml-z6e" firstAttribute="leading" secondItem="uh6-pr-FgA" secondAttribute="leadingMargin" constant="-3" id="7ux-bc-IAi"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="9jp-ml-z6e" secondAttribute="bottom" constant="-3.5" id="BUP-4a-q2S"/>
-                                        <constraint firstItem="rd6-Tc-Ssb" firstAttribute="leading" secondItem="spO-Ot-Df4" secondAttribute="leading" id="Hoe-dU-dPD"/>
+                                        <constraint firstItem="jrH-vC-dPS" firstAttribute="top" secondItem="spO-Ot-Df4" secondAttribute="bottom" constant="28" id="AKI-c7-tU1"/>
+                                        <constraint firstItem="jrH-vC-dPS" firstAttribute="leading" secondItem="rd6-Tc-Ssb" secondAttribute="trailing" constant="23" id="Dhh-zK-A7D"/>
                                         <constraint firstItem="tev-bl-XOb" firstAttribute="leading" secondItem="SbC-W0-H8r" secondAttribute="trailing" constant="5" id="NId-YG-WVw"/>
-                                        <constraint firstItem="SbC-W0-H8r" firstAttribute="leading" secondItem="jrH-vC-dPS" secondAttribute="trailing" constant="22" id="PL1-a1-V5G"/>
+                                        <constraint firstItem="jrH-vC-dPS" firstAttribute="firstBaseline" secondItem="tev-bl-XOb" secondAttribute="firstBaseline" id="Nh9-bE-422"/>
+                                        <constraint firstItem="jrH-vC-dPS" firstAttribute="firstBaseline" secondItem="rd6-Tc-Ssb" secondAttribute="firstBaseline" id="PAY-eM-rHH"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="SbC-W0-H8r" secondAttribute="bottom" constant="-4.5" id="R0j-WC-yze"/>
-                                        <constraint firstItem="tev-bl-XOb" firstAttribute="firstBaseline" secondItem="jrH-vC-dPS" secondAttribute="firstBaseline" id="R7C-x0-Uyt"/>
-                                        <constraint firstItem="9jp-ml-z6e" firstAttribute="top" secondItem="uh6-pr-FgA" secondAttribute="topMargin" constant="-3" id="S5F-oh-7sg"/>
-                                        <constraint firstItem="jrH-vC-dPS" firstAttribute="leading" secondItem="rd6-Tc-Ssb" secondAttribute="trailing" constant="23" id="SMO-wB-g1f"/>
-                                        <constraint firstItem="rd6-Tc-Ssb" firstAttribute="firstBaseline" secondItem="jrH-vC-dPS" secondAttribute="firstBaseline" id="Shp-e1-1XP"/>
-                                        <constraint firstItem="rd6-Tc-Ssb" firstAttribute="top" secondItem="spO-Ot-Df4" secondAttribute="bottom" constant="28" id="Tqg-n7-f8H"/>
-                                        <constraint firstItem="rd6-Tc-Ssb" firstAttribute="baseline" secondItem="jrH-vC-dPS" secondAttribute="baseline" id="VUP-3C-pHn"/>
-                                        <constraint firstItem="tev-bl-XOb" firstAttribute="baseline" secondItem="jrH-vC-dPS" secondAttribute="baseline" id="WZA-FG-MNL"/>
-                                        <constraint firstItem="spO-Ot-Df4" firstAttribute="leading" secondItem="9jp-ml-z6e" secondAttribute="trailing" constant="5" id="Wow-Bq-bvD"/>
+                                        <constraint firstItem="9jp-ml-z6e" firstAttribute="top" secondItem="uh6-pr-FgA" secondAttribute="topMargin" constant="-3" id="S11-su-trZ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="jrH-vC-dPS" secondAttribute="bottom" constant="-2.5" id="ZE0-pD-NcD"/>
+                                        <constraint firstItem="SbC-W0-H8r" firstAttribute="leading" secondItem="jrH-vC-dPS" secondAttribute="trailing" constant="22" id="beu-rg-ycj"/>
+                                        <constraint firstItem="9jp-ml-z6e" firstAttribute="leading" secondItem="uh6-pr-FgA" secondAttribute="leadingMargin" constant="-3" id="cUG-2w-ixN"/>
+                                        <constraint firstItem="spO-Ot-Df4" firstAttribute="leading" secondItem="9jp-ml-z6e" secondAttribute="trailing" constant="5" id="hA6-MA-fbs"/>
+                                        <constraint firstItem="rd6-Tc-Ssb" firstAttribute="leading" secondItem="9jp-ml-z6e" secondAttribute="trailing" constant="5" id="nKN-PE-Air"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="tev-bl-XOb" secondAttribute="trailing" constant="-24" id="nx1-oh-LL4"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="rd6-Tc-Ssb" secondAttribute="bottom" constant="-2.5" id="ueo-To-4DT"/>
-                                        <constraint firstItem="SbC-W0-H8r" firstAttribute="top" secondItem="spO-Ot-Df4" secondAttribute="bottom" constant="27" id="utd-Ub-CJP"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="spO-Ot-Df4" secondAttribute="trailing" constant="2" id="oBm-Ey-AyB"/>
+                                        <constraint firstItem="jrH-vC-dPS" firstAttribute="baseline" secondItem="rd6-Tc-Ssb" secondAttribute="baseline" id="rkK-6O-58x"/>
+                                        <constraint firstItem="jrH-vC-dPS" firstAttribute="baseline" secondItem="tev-bl-XOb" secondAttribute="baseline" id="z73-zA-AZc"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -716,7 +711,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hgd-AL-DCH"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jff-BK-35o">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="327"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="282"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -824,8 +819,8 @@
                                     <action selector="changeStatusClicked:" destination="9y3-Ee-uvq" eventType="touchUpInside" id="rSX-Gi-gns"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KPo-GW-V8G">
-                                <rect key="frame" x="0.0" y="242" width="320" height="327"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPo-GW-V8G">
+                                <rect key="frame" x="0.0" y="242" width="320" height="282"/>
                                 <connections>
                                     <segue destination="Q6V-N6-XkC" kind="embed" id="DzN-kH-KTM"/>
                                 </connections>
@@ -931,6 +926,7 @@
         <image name="image1" width="20" height="20"/>
         <image name="image2" width="20" height="20"/>
         <image name="image4" width="20" height="20"/>
+        <image name="label_top1" width="23" height="36"/>
         <image name="message" width="11" height="11"/>
         <image name="meun_bg" width="640" height="98"/>
         <image name="mine_no" width="80" height="49"/>
