@@ -20,7 +20,9 @@ class RootViewController: UITabBarController{
     var welcome:UIViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //修改tabbar的选中颜色
+        tabBar.selectedImageTintColor = UIColor(red: 0.224, green: 0.749, blue: 0.361, alpha: 1.00)
+        //判断是否登录
         if(appUserIdSave == nil){
             loginView=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as UIViewController
             self.view.addSubview(loginView.view)
