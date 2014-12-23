@@ -37,7 +37,8 @@ class UserCenter: UIViewController {
     var http_url = UserCenterUrl;
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.hidden = true
+        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         /*
         //navigation bar 背景
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
@@ -174,10 +175,11 @@ class UserCenter: UIViewController {
             self.message_btn.setTitleColor(UIColor.lightGrayColor(),forState:UIControlState.Normal)
             if(dynamicTableView == nil){
                 dynamicTableView = UIStoryboard(name: "Dynamic", bundle: nil).instantiateViewControllerWithIdentifier("dynamicSb")as Dynamic
-                //dynamicTableView.view.frame = CGRect(x: 0, y: 0, width: container_v.frame.width, height: container_v.frame.height)
+                dynamicTableView.view.frame = CGRect(x: 0, y: 0, width: container_v.frame.width, height: container_v.frame.height)
                 container_v.addSubview(dynamicTableView.view)
             }else{
                 println("缓存view")
+                dynamicTableView.reloadData()
                 //recipesCollection.ReloadData()
             }
             container_v.bringSubviewToFront(dynamicTableView.view)
@@ -188,7 +190,7 @@ class UserCenter: UIViewController {
             
             if(messageTableView == nil){
                 messageTableView = UIStoryboard(name: "Message", bundle: nil).instantiateViewControllerWithIdentifier("messageSb")as Message
-                //messageTableView.view.frame = CGRect(x: 0, y: 0, width: container_v.frame.width, height: container_v.frame.height)
+                messageTableView.view.frame = CGRect(x: 0, y: 0, width: container_v.frame.width, height: container_v.frame.height)
                 container_v.addSubview(messageTableView.view)
             } else {
                 println("缓存view")

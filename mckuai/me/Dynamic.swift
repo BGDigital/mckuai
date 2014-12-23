@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-
 class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
     var json = JSON("")
@@ -20,7 +19,7 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     }
     var dynamicNoData:UIViewController!=nil
     func initData() {
-        var paramDictionary :Dictionary<String,String> = ["act":"dynamic","id":String()]
+        var paramDictionary :Dictionary<String,String> = ["act":"dynamic","id":String(appUserIdSave)]
         Alamofire.request(.GET,http_url, parameters: paramDictionary)
             .responseJSON { (request, response, data, error) in
                 
@@ -74,7 +73,8 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
            let  cell = self.tableView.dequeueReusableCellWithIdentifier("addCell") as DynamicAddCell
            cell.talkTitle.text = self.json["dataObject","dynamic",indexPath.row,"talkTitle"].string
            cell.forumName.text = self.json["dataObject","dynamic",indexPath.row,"forumName"].string
-           cell.insertTime.text = self.json["dataObject","dynamic",indexPath.row,"insertTime"].string
+           var timeTemp = self.json["dataObject","dynamic",indexPath.row,"insertTime"].string
+           cell.insertTime.text = GTUtil.compDate(timeTemp!)
            cell.replyNum.text = String(self.json["dataObject","dynamic",indexPath.row,"replyNum"].int!)
            return cell
         } else {
@@ -84,7 +84,9 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
             cell.replyContent.text = self.json["dataObject","dynamic",indexPath.row,"cont"].string
             cell.talkTitle.text = self.json["dataObject","dynamic",indexPath.row,"talkTitle"].string
             cell.forumName.text = self.json["dataObject","dynamic",indexPath.row,"forumName"].string
-            cell.insertTime.text = self.json["dataObject","dynamic",indexPath.row,"insertTime"].string
+            
+            var timeTemp = self.json["dataObject","dynamic",indexPath.row,"insertTime"].string
+            cell.insertTime.text = GTUtil.compDate(timeTemp!)
             cell.replyNum.text = String(self.json["dataObject","dynamic",indexPath.row,"replyNum"].int!)
             
            return cell
@@ -102,5 +104,18 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
         }
         
         
+    }
+    
+    //点击事件
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            var tiezi = self.json["dataObject","dynamic",indexPath.row,"cont1"].string!
+            println(tiezi)
+            TieziController.loadTiezi(presentNavigator: self.navigationController!,id: tiezi)
+
+    }
+    
+    func reloadData(){
+        println("重新加载数据")
+        self.tableView.reloadData()
     }
 }
