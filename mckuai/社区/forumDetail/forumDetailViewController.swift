@@ -18,7 +18,7 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tv: UITableView!
     
     
-    var datasource: Array<JSON>!
+    var datasource: Array<JSON>! = Array<JSON>()
     var forum_ID = "1"
     var currentPage = 1
     var itemCount = 0
@@ -56,6 +56,7 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
                 
                 if json["dataObject", "talkList"].type == Type.Array {
                     self.datasource = json["dataObject", "talkList"].arrayValue
+                    //self.datasource[1...1] = json["dataObject", "talkList"].arrayValue
                     println(self.datasource.count)
                     self.tv.reloadData()
                 }
@@ -85,7 +86,7 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
         if (self.datasource.count == indexPath.row) {
             var loadMoreCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
             loadMoreCell.textLabel?.text = "加载更多..."
-            loadMoreCell.backgroundColor = UIColor(red: 0.812, green: 0.192, blue: 0.145, alpha: 1.00)
+            //loadMoreCell.backgroundColor = UIColor(red: 0.812, green: 0.192, blue: 0.145, alpha: 1.00)
             loadMoreCell.textLabel?.textAlignment = NSTextAlignment.Center
             //最后一页，不显示加载更多
             if self.datasource.count != 10 {
@@ -142,22 +143,7 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
         self.talkNum.setTitle(forum["talkNum"].stringValue, forState: .Normal)
         var url = forum["icon"].stringValue
         //url = "http://pic.youxigt.com/uploadimg/quan/images1/68831411547537743.jpg"
-        setImage(url)
-    }
-    
-    //异步获取图片
-    func setImage(url: String) {
-        //println(url)
-        if (url != "") {
-            Alamofire.request(.GET, url).response() {
-                (_, _, data, _) in
-                if data != nil {
-                    self.imageView.image = UIImage(data: data! as NSData)
-                } else {
-                    self.imageView.image = UIImage(named: "home_on")
-                }
-            }
-        }
+        GTUtil.loadImageView(img: self.imageView, url: url)
     }
 
 }
