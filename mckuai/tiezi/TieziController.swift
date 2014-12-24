@@ -30,10 +30,9 @@ class TieziController: UIViewController,UIWebViewDelegate {
         super.viewDidLoad()
 //        println(tid)
         if let id = tid {
-            
 //            println("here")
-//            var url = NSURL(string: APIRootURL + "talk.do?act=one&id="+id)
-            var url = NSURL(string: "http://www.baidu.com")
+            var url = NSURL(string: APIRootURL + "talk.do?act=one&id="+id)
+            //var url = NSURL(string: "http://www.baidu.com")
             var req = NSURLRequest(URL: url!)
             println(req)
             webview.loadRequest(req)
