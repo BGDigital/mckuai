@@ -81,7 +81,7 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
      
         famouseUserCView.dataSource = self
         
-        InitCarouselView(115)
+        InitCarouselView(125)
         
         //navigation bar 背景
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)

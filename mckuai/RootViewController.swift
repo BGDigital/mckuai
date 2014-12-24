@@ -30,7 +30,7 @@ class RootViewController: UITabBarController{
         }else {
             println(appUserIdSave)
         }
-        appUserIdSave=2
+        appUserIdSave=6
     }
     
     override func didReceiveMemoryWarning() {
