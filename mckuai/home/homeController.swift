@@ -33,6 +33,9 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
             if(data["user"].type ==  Type.Array){
                 famouseUsers = data["user"].arrayValue
             }
+            if(data["banner"].type == Type.Array){
+                bannerImages = data["banner"].arrayValue
+            }
         }
     }
     
@@ -58,7 +61,12 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     
     var bannerImages:Array<JSON>!{
         didSet{
-            
+            var imgUrls = bannerImages.map({(var json) -> String in
+                return json["imgUrl"].stringValue                
+            })
+            carouselView.carouselDataArray = imgUrls
+            carouselView.loadCarouselDataThenStart()
+            self.view.addSubview(carouselView)
         }
     }
     
@@ -88,16 +96,18 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     func InitCarouselView(high: CGFloat) {
         carouselView = DHCarouselView(frame: CGRect(origin: CGPointZero, size: CGSize(width: self.view.frame.size.width, height: high)))
         carouselView.delegate = self
-        
-        carouselView.carouselDataArray = [
-            "http://cdn.mckuai.com/banner/20141209/201412091444140687.jpg",
-            "http://cdn.mckuai.com/banner/20141209/201412091102260156.jpg",
-            "http://cdn.mckuai.com/banner/20141205/201412051824380984.jpg",
-            "http://cdn.mckuai.com/banner/20141209/201412091102260156.jpg",
-            "http://cdn.mckuai.com/banner/20141209/201412091104130875.jpg"
-        ]
-        carouselView.loadCarouselDataThenStart()
-        self.view.addSubview(carouselView)
+        carouselView.carouselPeriodTime = 4.0
+//        carouselView.carouselDataArray = [
+//            "http://cdn.mckuai.com/banner/20141209/201412091444140687.jpg",
+//            "http://cdn.mckuai.com/banner/20141209/201412091102260156.jpg",
+//            "http://cdn.mckuai.com/banner/20141205/201412051824380984.jpg",
+//            "http://cdn.mckuai.com/banner/20141209/201412091102260156.jpg",
+//            "http://cdn.mckuai.com/banner/20141209/201412091104130875.jpg"
+//        ]
+//        
+//        carouselView.loadCarouselDataThenStart()
+//        self.view.addSubview(carouselView)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -115,7 +125,9 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     }
     
     func carouselView(carouselView: DHCarouselView, didSelectedPageAtIndex index: NSInteger) {
-        //
+        var banner = bannerImages[index]
+        
+        TieziController.loadTiezi(presentNavigator: self.navigationController!, id: banner["id"].stringValue)
     }
     
     
@@ -126,6 +138,7 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
             if "ok" == json["state"].stringValue {
                 AppContext.sharedInstance.saveHomePageData(json.object)
                 self.data = json["dataObject"]
+//                println(json);
             }
             }, {
                 (err) -> Void in
@@ -137,7 +150,7 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     }
     func collectionView(collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int{
-            println("明星用户")
+//            println("明星用户")
             if(famouseUsers != nil){
                 return famouseUsers.count-1
             }
@@ -150,7 +163,7 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
 
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("famouse",forIndexPath:indexPath) as FamouseUser
-                        println("here")
+//                        println("here")
             let user = famouseUsers[indexPath.row+1]
             
             GTUtil.loadImageView(img: cell.userhead,url: user["headImg"].stringValue)

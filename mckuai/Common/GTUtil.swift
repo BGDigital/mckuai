@@ -79,12 +79,12 @@ class GTUtil {
         }
     }
     
-    class func loadImage(url:String,callback:(UIImage) -> Void){
+    class func loadImage(url:String,callback:(UIImage?) -> Void){
         if(url != ""){
             Alamofire.request(.GET, url).response() {
                 (_, _, data, _) in
                 if data != nil {
-                    callback(UIImage(data: data! as NSData)!)
+                    callback(UIImage(data: data! as NSData))
                 }
             }
         }
