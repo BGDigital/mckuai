@@ -54,6 +54,8 @@
 		E67B865F1A3E7AA400B782E1 /* HotTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B865D1A3E7AA400B782E1 /* HotTableViewController.swift */; };
 		E67B86621A3E7B8100B782E1 /* GTUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B86611A3E7B8100B782E1 /* GTUtil.swift */; };
 		E67F89431A1C7B5E00044035 /* DynamicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67F89421A1C7B5E00044035 /* DynamicCell.swift */; };
+		E6A3C5861A4AA8E2002485FC /* Reply.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A3C5841A4AA8E2002485FC /* Reply.storyboard */; };
+		E6A3C5871A4AA8E2002485FC /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A3C5851A4AA8E2002485FC /* ReplyViewController.swift */; };
 		E6AD7C931A42D7B200792770 /* userCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD7C921A42D7B200792770 /* userCenter.swift */; };
 		E6BCFC651A1A30F2009857B0 /* FilletButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCFC631A1A30F2009857B0 /* FilletButton.swift */; };
 		E6BCFC661A1A30F2009857B0 /* RadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BCFC641A1A30F2009857B0 /* RadiusView.swift */; };
@@ -164,6 +166,8 @@
 		E67B865D1A3E7AA400B782E1 /* HotTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotTableViewController.swift; sourceTree = "<group>"; };
 		E67B86611A3E7B8100B782E1 /* GTUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GTUtil.swift; sourceTree = "<group>"; };
 		E67F89421A1C7B5E00044035 /* DynamicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicCell.swift; sourceTree = "<group>"; };
+		E6A3C5841A4AA8E2002485FC /* Reply.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reply.storyboard; sourceTree = "<group>"; };
+		E6A3C5851A4AA8E2002485FC /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
 		E6AD7C921A42D7B200792770 /* userCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userCenter.swift; sourceTree = "<group>"; };
 		E6BCFC631A1A30F2009857B0 /* FilletButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilletButton.swift; sourceTree = "<group>"; };
 		E6BCFC641A1A30F2009857B0 /* RadiusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusView.swift; sourceTree = "<group>"; };
@@ -330,6 +334,7 @@
 		E63FD7D51A133C5B00177E3E /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				E6A3C5831A4AA8E2002485FC /* Reply */,
 				E626E1331A40164D00506234 /* Post */,
 				E66879461A25F0DF00BE48CE /* DynamicHeader */,
 				E63C78B21A302F5F00D28668 /* forumDetail */,
@@ -385,6 +390,15 @@
 				E6D6C2AF1A2EE72E00858161 /* HeaderViewController.swift */,
 			);
 			path = DynamicHeader;
+			sourceTree = "<group>";
+		};
+		E6A3C5831A4AA8E2002485FC /* Reply */ = {
+			isa = PBXGroup;
+			children = (
+				E6A3C5841A4AA8E2002485FC /* Reply.storyboard */,
+				E6A3C5851A4AA8E2002485FC /* ReplyViewController.swift */,
+			);
+			path = Reply;
 			sourceTree = "<group>";
 		};
 		E6BCFC621A1A30CA009857B0 /* Common */ = {
@@ -546,6 +560,7 @@
 				E628890C1A3E876300C45131 /* dynamicNoData.storyboard in Resources */,
 				E62889091A3E876300C45131 /* Dynamic.storyboard in Resources */,
 				E62888FC1A3E870800C45131 /* Login.storyboard in Resources */,
+				E6A3C5861A4AA8E2002485FC /* Reply.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +599,7 @@
 				E626E13E1A408C1F00506234 /* TieziController.swift in Sources */,
 				E6D6C2DC1A300C2100858161 /* AppContext.swift in Sources */,
 				E62888FD1A3E870800C45131 /* Login.swift in Sources */,
+				E6A3C5871A4AA8E2002485FC /* ReplyViewController.swift in Sources */,
 				E628890A1A3E876300C45131 /* Dynamic.swift in Sources */,
 				E62C21801A03F34E004DBFD0 /* RootViewController.swift in Sources */,
 				E626E1381A40168E00506234 /* PostViewController.swift in Sources */,
