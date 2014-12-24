@@ -28,16 +28,17 @@ class TieziController: UIViewController,UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(tid)
+//        println(tid)
         if let id = tid {
             
-            println("here")
-            var url = NSURL(string: "http://118.144.83.145:8081/talk.do?act=one&id="+id)
+//            println("here")
+//            var url = NSURL(string: APIRootURL + "talk.do?act=one&id="+id)
+            var url = NSURL(string: "http://www.baidu.com")
             var req = NSURLRequest(URL: url!)
+            println(req)
             webview.loadRequest(req)
         }
         webview.delegate = self
-
     }
     
 
