@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--发贴-->
         <scene sceneID="dYo-IV-Oth">
             <objects>
-                <viewController storyboardIdentifier="SB_POST" id="pRL-wA-qnf" customClass="PostViewController" customModule="mckuai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SB_POST" hidesBottomBarWhenPushed="YES" id="pRL-wA-qnf" customClass="PostViewController" customModule="mckuai" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xsC-qI-EXA"/>
                         <viewControllerLayoutGuide type="bottom" id="suU-9e-Pm1"/>
@@ -131,22 +131,19 @@
                                     <action selector="setTypeSelected:" destination="pRL-wA-qnf" eventType="touchUpInside" id="w6l-YH-9aC"/>
                                 </connections>
                             </button>
-                            <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zIt-Wh-hg3">
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zIt-Wh-hg3">
                                 <rect key="frame" x="0.0" y="230" width="320" height="1"/>
                                 <color key="backgroundColor" red="0.89411764705882357" green="0.89411764705882357" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="9sG-hk-Dmf"/>
+                                    <constraint firstAttribute="height" constant="1" id="vBn-Ja-CK6"/>
+                                </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="标题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oe4-yB-fU6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="标题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oe4-yB-fU6">
                                 <rect key="frame" x="18" y="239" width="293" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cjr-bT-Ql7">
-                                <rect key="frame" x="18" y="284" width="293" height="276"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOh-7X-88Z">
                                 <rect key="frame" x="7" y="88" width="70" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -197,8 +194,27 @@
                                     <action selector="setBankuaiSelect:" destination="pRL-wA-qnf" eventType="touchUpInside" id="aHg-5M-Lq8"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MrY-Za-Mcu">
+                                <rect key="frame" x="21" y="277" width="286" height="1"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Uib-MJ-neP"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cjr-bT-Ql7">
+                                <rect key="frame" x="18" y="284" width="293" height="276"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="MrY-Za-Mcu" secondAttribute="trailing" constant="-3" id="5pp-Hh-aDJ"/>
+                            <constraint firstItem="zIt-Wh-hg3" firstAttribute="leading" secondItem="QPx-Di-EP3" secondAttribute="leadingMargin" constant="-16" id="Fgf-P2-YHs"/>
+                            <constraint firstItem="MrY-Za-Mcu" firstAttribute="leading" secondItem="QPx-Di-EP3" secondAttribute="leadingMargin" constant="5" id="Htl-Ew-mkW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zIt-Wh-hg3" secondAttribute="trailing" constant="-16" id="Q6z-Ts-pbt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="发贴" id="Yaw-qT-fer">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="MnR-Bf-cwd">

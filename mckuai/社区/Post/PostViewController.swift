@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import QuartzCore
 
-class PostViewController: UIViewController {
+class PostViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var caption: UITextField!
     @IBOutlet weak var text: UITextView!
@@ -22,6 +23,18 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        text.delegate = self
+        if (text.text == "") {
+            textViewDidEndEditing(text)
+        }
+        var tapDismiss = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        self.view.addGestureRecognizer(tapDismiss)
+        //textView 边框
+        //UIColor(red: 0.502, green: 0.502, blue: 0.502, alpha: 1.00).CGColor
+        //text.layer.borderColor = UIColor.redColor().CGColor
+        //text.layer.borderWidth = 1.0
+        //text.layer.cornerRadius = 5.0
 
         // Do any additional setup after loading the view.
     }
@@ -29,6 +42,26 @@ class PostViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func dismissKeyboard(){
+        text.resignFirstResponder()
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if (textView.text == "") {
+            textView.text = "内容"
+            textView.textColor = UIColor.lightGrayColor()
+        }
+        textView.resignFirstResponder()
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView){
+        if (textView.text == "内容"){
+            textView.text = ""
+            textView.textColor = UIColor.blackColor()
+        }
+        textView.becomeFirstResponder()
     }
     
     //设置版块的选中状态
@@ -85,6 +118,8 @@ class PostViewController: UIViewController {
         
         //发贴
         APIClient.sharedInstance.SendPost(1, forumId: forumId, forumName: forumName, talkTypeId: talkTypeId, talkTypeName: talkTypeName, talkTitle: caption.text, content: text.text)
+        
+        self.navigationController?.popViewControllerAnimated(true)
         println("发贴成功,怎么返回呢？")
     }
 
