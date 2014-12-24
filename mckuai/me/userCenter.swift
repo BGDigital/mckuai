@@ -39,6 +39,7 @@ class UserCenter: UIViewController {
         super.viewDidLoad()
         //隐藏navigationbar
         self.navigationController?.navigationBar.hidden = true
+
         //self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         /*
         //navigation bar 背景
@@ -51,6 +52,10 @@ class UserCenter: UIViewController {
         initData()
         changeStatusClicked(self.dynamic_btn)
 
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = false
     }
     
     func initData() {
@@ -177,6 +182,7 @@ class UserCenter: UIViewController {
             if(dynamicTableView == nil){
                 dynamicTableView = UIStoryboard(name: "Dynamic", bundle: nil).instantiateViewControllerWithIdentifier("dynamicSb")as Dynamic
                 dynamicTableView.view.frame = CGRect(x: 0, y: 0, width: container_v.frame.width, height: container_v.frame.height)
+                dynamicTableView.NavigationController = self.navigationController
                 container_v.addSubview(dynamicTableView.view)
             }else{
                 println("缓存view")
@@ -192,6 +198,7 @@ class UserCenter: UIViewController {
             if(messageTableView == nil){
                 messageTableView = UIStoryboard(name: "Message", bundle: nil).instantiateViewControllerWithIdentifier("messageSb")as Message
                 messageTableView.view.frame = CGRect(x: 0, y: 0, width: container_v.frame.width, height: container_v.frame.height)
+                messageTableView.NavigationController = self.navigationController
                 container_v.addSubview(messageTableView.view)
             } else {
                 //messageTableView.reloadData()
