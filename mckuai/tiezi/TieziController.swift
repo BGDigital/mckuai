@@ -32,7 +32,7 @@ class TieziController: UIViewController,UIWebViewDelegate {
         if let id = tid {
 //            println("here")
             var url = NSURL(string: APIRootURL + "talk.do?act=one&id="+id)
-            //var url = NSURL(string: "http://www.baidu.com")
+//            url = NSURL(string: "http://192.168.10.104/")
             var req = NSURLRequest(URL: url!)
             println(req)
             webview.loadRequest(req)
