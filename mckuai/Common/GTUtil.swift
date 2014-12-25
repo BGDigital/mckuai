@@ -18,7 +18,7 @@ class GTUtil {
                 if data != nil {
                     img.image = UIImage(data: data! as NSData)
                 } else {
-                    img.image = UIImage(named: "home_on")
+                    img.image = UIImage(named: "bankuai_faild")
                 }
             }
         }
@@ -79,6 +79,7 @@ class GTUtil {
         }
     }
     
+    //这个是轮播图用的
     class func loadImage(url:String,callback:(UIImage?) -> Void){
         if(url != ""){
             Alamofire.request(.GET, url).response() {

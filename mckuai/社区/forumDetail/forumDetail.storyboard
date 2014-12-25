@@ -32,13 +32,13 @@
                                                 <constraint firstAttribute="width" constant="44" id="By7-Nl-Fw6"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fB-a1-0NT">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fB-a1-0NT">
                                             <rect key="frame" x="60" y="8" width="150" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.72941176470588232" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabelLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mH-kd-rxp">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mH-kd-rxp">
                                             <rect key="frame" x="60" y="31" width="246" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,7 +50,7 @@
                                                 <constraint firstAttribute="width" constant="57" id="cd7-h2-90f"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <state key="normal" title="Button" image="bankuai_count1">
+                                            <state key="normal" title="999" image="bankuai_count1">
                                                 <color key="titleColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -89,13 +89,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzj-nV-xZG">
-                                                    <rect key="frame" x="8" y="8" width="300" height="21"/>
+                                                    <rect key="frame" x="8" y="8" width="300" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJx-rv-NZ0">
-                                                    <rect key="frame" x="8" y="37" width="110" height="14"/>
+                                                    <rect key="frame" x="8" y="38" width="122" height="13"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="cfg-YA-jfA"/>
                                                     </constraints>
@@ -104,18 +104,18 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alg-qN-mKs">
-                                                    <rect key="frame" x="130" y="37" width="100" height="14"/>
+                                                    <rect key="frame" x="142" y="38" width="75" height="13"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="FPa-Ef-ENg"/>
+                                                        <constraint firstAttribute="width" constant="75" id="FPa-Ef-ENg"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.58823529411764708" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGA-Cr-KnX">
-                                                    <rect key="frame" x="263" y="36" width="49" height="15"/>
+                                                    <rect key="frame" x="275" y="37" width="37" height="14"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="49" id="NUn-j2-73p"/>
+                                                        <constraint firstAttribute="width" constant="37" id="NUn-j2-73p"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <state key="normal" title="9999" image="message">
@@ -123,27 +123,38 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bankuai_img" translatesAutoresizingMaskIntoConstraints="NO" id="Lyq-yP-W1O">
+                                                    <rect key="frame" x="225" y="36" width="15" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="2y1-ih-pTt"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="gGA-Cr-KnX" firstAttribute="bottom" secondItem="alg-qN-mKs" secondAttribute="bottom" id="ClO-ko-m1I"/>
-                                                <constraint firstItem="gGA-Cr-KnX" firstAttribute="leading" secondItem="alg-qN-mKs" secondAttribute="trailing" constant="33" id="E7O-oy-n23"/>
+                                                <constraint firstItem="gGA-Cr-KnX" firstAttribute="leading" secondItem="alg-qN-mKs" secondAttribute="trailing" constant="58" id="E7O-oy-n23"/>
                                                 <constraint firstItem="gzj-nV-xZG" firstAttribute="top" secondItem="gWC-S5-ovu" secondAttribute="topMargin" id="FDN-UL-Jww"/>
+                                                <constraint firstItem="Lyq-yP-W1O" firstAttribute="top" secondItem="gzj-nV-xZG" secondAttribute="bottom" constant="6" id="NPX-qL-vwI"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="fJx-rv-NZ0" secondAttribute="bottom" constant="4.5" id="OYF-Mc-Sgr"/>
                                                 <constraint firstItem="fJx-rv-NZ0" firstAttribute="top" secondItem="gzj-nV-xZG" secondAttribute="bottom" constant="8" symbolic="YES" id="Z6W-Fv-q8I"/>
-                                                <constraint firstItem="gGA-Cr-KnX" firstAttribute="baseline" secondItem="alg-qN-mKs" secondAttribute="firstBaseline" id="ZB2-z5-5NA"/>
+                                                <constraint firstItem="gGA-Cr-KnX" firstAttribute="baseline" secondItem="alg-qN-mKs" secondAttribute="firstBaseline" constant="-1" id="ZB2-z5-5NA"/>
                                                 <constraint firstItem="gGA-Cr-KnX" firstAttribute="trailing" secondItem="gWC-S5-ovu" secondAttribute="trailingMargin" id="b57-mx-avI"/>
                                                 <constraint firstItem="fJx-rv-NZ0" firstAttribute="leading" secondItem="gzj-nV-xZG" secondAttribute="leading" id="bYg-xi-WCm"/>
                                                 <constraint firstItem="gGA-Cr-KnX" firstAttribute="top" secondItem="gzj-nV-xZG" secondAttribute="bottom" constant="7" id="f5u-E4-W47"/>
                                                 <constraint firstItem="alg-qN-mKs" firstAttribute="leading" secondItem="fJx-rv-NZ0" secondAttribute="trailing" constant="12" id="haZ-3v-cHB"/>
                                                 <constraint firstItem="alg-qN-mKs" firstAttribute="baseline" secondItem="fJx-rv-NZ0" secondAttribute="baseline" id="i4X-cL-Qqj"/>
+                                                <constraint firstItem="Lyq-yP-W1O" firstAttribute="bottom" secondItem="gGA-Cr-KnX" secondAttribute="bottom" id="kZT-dj-Npm"/>
                                                 <constraint firstItem="alg-qN-mKs" firstAttribute="firstBaseline" secondItem="fJx-rv-NZ0" secondAttribute="firstBaseline" id="kha-bG-WNL"/>
-                                                <constraint firstItem="gGA-Cr-KnX" firstAttribute="firstBaseline" secondItem="alg-qN-mKs" secondAttribute="firstBaseline" id="mUC-Kf-63S"/>
+                                                <constraint firstItem="gGA-Cr-KnX" firstAttribute="firstBaseline" secondItem="alg-qN-mKs" secondAttribute="firstBaseline" constant="-1" id="mUC-Kf-63S"/>
                                                 <constraint firstItem="fJx-rv-NZ0" firstAttribute="leading" secondItem="gWC-S5-ovu" secondAttribute="leadingMargin" id="vD7-jb-bYn"/>
+                                                <constraint firstItem="Lyq-yP-W1O" firstAttribute="leading" secondItem="alg-qN-mKs" secondAttribute="trailing" constant="8" symbolic="YES" id="vjq-Fv-5Dc"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="gzj-nV-xZG" secondAttribute="trailing" constant="4" id="zD6-GA-E8d"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="caption" destination="gzj-nV-xZG" id="qFr-3E-OZV"/>
+                                            <outlet property="imageView" destination="Lyq-yP-W1O" id="85h-FT-Fkq"/>
+                                            <outlet property="img" destination="Lyq-yP-W1O" id="RWJ-3K-H3i"/>
                                             <outlet property="replyNum" destination="gGA-Cr-KnX" id="Em9-Em-L7x"/>
                                             <outlet property="time" destination="alg-qN-mKs" id="kUW-d4-2s4"/>
                                             <outlet property="username" destination="fJx-rv-NZ0" id="48F-Xl-6Bd"/>
@@ -210,6 +221,7 @@
         <image name="bankuai" width="20" height="20"/>
         <image name="bankuai_count1" width="16" height="16"/>
         <image name="bankuai_fatie" width="44" height="44"/>
+        <image name="bankuai_img" width="15" height="15"/>
         <image name="message" width="11" height="11"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
