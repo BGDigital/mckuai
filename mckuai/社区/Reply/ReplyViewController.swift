@@ -66,8 +66,8 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
     
     //供外部调用的接口
     class func loadReply(presentNavigator ctl:UINavigationController?,id:String){
-        var tiezi = UIStoryboard(name: "Reply", bundle: nil).instantiateViewControllerWithIdentifier("Reply") as ReplyViewController
-        ctl?.pushViewController(tiezi, animated: true)
+        var ReplyCtl = UIStoryboard(name: "Reply", bundle: nil).instantiateViewControllerWithIdentifier("Reply") as ReplyViewController
+        ctl?.pushViewController(ReplyCtl, animated: true)
         
     }
 
