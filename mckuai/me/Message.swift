@@ -17,7 +17,6 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     var http_url = UserCenterUrl;
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.NavigationController.navigationBar.hidden = true
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
         initData()
     }
