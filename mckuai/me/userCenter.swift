@@ -37,10 +37,13 @@ class UserCenter: UIViewController {
     var http_url = UserCenterUrl;
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         //隐藏navigationbar
         self.navigationController?.navigationBar.hidden = true
 
-        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
+        
         /*
         //navigation bar 背景
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
@@ -56,6 +59,10 @@ class UserCenter: UIViewController {
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = false
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = true
     }
     
     func initData() {
