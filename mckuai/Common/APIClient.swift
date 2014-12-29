@@ -35,6 +35,18 @@ class APIClient {
                 }
         }
     }
+    
+    //POST
+    private func getJSONDataByPost(path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
+        Alamofire.request(.POST, APIRootURL + path, parameters: parameters)
+            .responseSwiftyJSON { (request, response, json, error) in
+                if let err = error? {
+                    failure(err)
+                } else {
+                    success(json)
+                }
+        }
+    }
     //获取社区数据
     func getCommunityData(success: (JSON) -> Void, failure: (NSError) -> Void) {
         self.getJSONData("zone.do?act=all", parameters: nil, success: success, failure: failure)
@@ -81,4 +93,23 @@ class APIClient {
         self.getJSONData("nodes/all.json", parameters: nil, success: success, failure: failure)
     }
     */
+    
+
+    //QQ登录
+    func qqLoginByPost(accessToken:String,openId:String,nickName:String,gender:String,headImg:String,success: (JSON) -> Void, failure: (NSError) -> Void){
+        let dict = [
+            "accessToken": accessToken,
+            "openId": openId,
+            "nickName": nickName,
+            "gender": gender,
+            "headImg": headImg,
+        ]
+        self.getJSONDataByPost("user.do?act=login", parameters: dict, success: success, failure: failure)
+    }
+    //获取用户信息
+    func getUserOneInfo()(userId: Int, page: Int, success: (JSON) -> Void, failure: (NSError) -> Void) {
+        let dict = ["id": userId, "page": page]
+        self.getJSONData("user.do?act=dynamic", parameters: dict, success: success, failure: failure)
+    }
+
 }

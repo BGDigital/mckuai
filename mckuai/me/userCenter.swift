@@ -37,25 +37,31 @@ class UserCenter: UIViewController {
     var http_url = UserCenterUrl;
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
-        //隐藏navigationbar
-        self.navigationController?.navigationBar.hidden = true
+        if(appUserIdSave != nil){
+            
+            self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
+            //隐藏navigationbar
+            self.navigationController?.navigationBar.hidden = true
+            /*
+            //navigation bar 背景
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
+            self.navigationController?.navigationBar.clipsToBounds = true;
+            self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+            self.navigationController?.navigationBar.translucent=true
+            setRightBarButtonItem()
+            */
+            initData()
+            changeStatusClicked(self.dynamic_btn)
+        }else{
+            
 
-        
-        /*
-        //navigation bar 背景
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.clipsToBounds = true;
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
-        self.navigationController?.navigationBar.translucent=true
-        setRightBarButtonItem()
-        */
-        initData()
-        changeStatusClicked(self.dynamic_btn)
+        }
+
 
     }
+    
+
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = false
@@ -85,24 +91,26 @@ class UserCenter: UIViewController {
                         self.showNoLogin()
                     } else {
                         var url = self.json["dataObject","user","headImg"].string!
-                        let image = self.imageCache[url]
-                        if (image == nil) {
-                            
-                            //println("缓存中没有图片，从网上获取")
-                            let imgURL: NSURL = NSURL(string:url)!
-                            let request:NSURLRequest = NSURLRequest(URL: imgURL)
-                            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response:NSURLResponse!,data:NSData!,error:NSError!)->Void in
-                                var img=UIImage(data:data)
-                                self.headImage.image=img
-                                self.headImage.contentMode = UIViewContentMode.ScaleAspectFit
-                                self.imageCache[url] = img })
-                            
-                        }
-                        else
-                        {
-                            //println("缓存中有图片，直接显示出来")
-                            self.headImage.image=image
-                        }
+                        
+                        GTUtil.loadImageView(img: self.headImage, url: url)
+//                        let image = self.imageCache[url]
+//                        if (image == nil) {
+//                            
+//                            //println("缓存中没有图片，从网上获取")
+//                            let imgURL: NSURL = NSURL(string:url)!
+//                            let request:NSURLRequest = NSURLRequest(URL: imgURL)
+//                            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response:NSURLResponse!,data:NSData!,error:NSError!)->Void in
+//                                var img=UIImage(data:data)
+//                                self.headImage.image=img
+//                                self.headImage.contentMode = UIViewContentMode.ScaleAspectFit
+//                                self.imageCache[url] = img })
+//                            
+//                        }
+//                        else
+//                        {
+//                            //println("缓存中有图片，直接显示出来")
+//                            self.headImage.image=image
+//                        }
                         
                         self.userName.text = self.json["dataObject","user","nike"].string
                         self.level.text = "LV."+String(self.json["dataObject","user","level"].int!)
@@ -198,6 +206,9 @@ class UserCenter: UIViewController {
             }
             container_v.bringSubviewToFront(dynamicTableView.view)
         }else if(btn_tag == 30){
+             
+//            OtherCenter.openOtherCenter(presentNavigator: self.navigationController, id: 2)
+            
             println("加载个人消息")
             self.message_btn.setTitleColor(UIColor.greenColor(),forState:UIControlState.Normal)
             self.dynamic_btn.setTitleColor(UIColor.lightGrayColor(),forState:UIControlState.Normal)
