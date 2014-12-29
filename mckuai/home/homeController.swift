@@ -80,12 +80,14 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         initData()
      
         famouseUserCView.dataSource = self
-        
+        famouseUserCView.scrollEnabled = false
         InitCarouselView(125)
         
         //navigation bar 背景
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
-
+        
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 255, green: 255, blue: 255, alpha: 100)
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: 550)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -97,16 +99,6 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         carouselView = DHCarouselView(frame: CGRect(origin: CGPointZero, size: CGSize(width: self.view.frame.size.width, height: high)))
         carouselView.delegate = self
         carouselView.carouselPeriodTime = 4.0
-//        carouselView.carouselDataArray = [
-//            "http://cdn.mckuai.com/banner/20141209/201412091444140687.jpg",
-//            "http://cdn.mckuai.com/banner/20141209/201412091102260156.jpg",
-//            "http://cdn.mckuai.com/banner/20141205/201412051824380984.jpg",
-//            "http://cdn.mckuai.com/banner/20141209/201412091102260156.jpg",
-//            "http://cdn.mckuai.com/banner/20141209/201412091104130875.jpg"
-//        ]
-//        
-//        carouselView.loadCarouselDataThenStart()
-//        self.view.addSubview(carouselView)
 
     }
 
