@@ -34,10 +34,11 @@ class TieziController: UIViewController,UIWebViewDelegate {
             var url = NSURL(string: APIRootURL + "talk.do?act=one&id="+id)
 //            url = NSURL(string: "http://192.168.10.104/")
             var req = NSURLRequest(URL: url!)
-            println(req)
+//            println(req)
             webview.loadRequest(req)
         }
         webview.delegate = self
+        
     }
     
 
@@ -47,9 +48,11 @@ class TieziController: UIViewController,UIWebViewDelegate {
             var fun = url.host
             var arg0 = url.query
             
-            if fun! == "getuid" {
-                var uid = self.loginId
-            }
+            
+            let param = GTUtil.getQueryDictionary(arg0!)
+            
+            dispatchAction(fun!,param: param);
+            
             return false;
         }
         return true;
@@ -67,5 +70,15 @@ class TieziController: UIViewController,UIWebViewDelegate {
         
     }
     
-    
+    private func dispatchAction(action:String,param:[String:String]) {
+        println(param)
+        if action == "getuid" {
+            var uid = self.loginId
+        }
+        if action == "viewuser" && param["id"] != nil{
+            if let id = param["id"]!.toInt(){
+                OtherCenter.openOtherCenter(presentNavigator: self.navigationController, id: id)
+            }
+        }
+    }
 }
