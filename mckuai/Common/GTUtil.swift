@@ -80,6 +80,7 @@ class GTUtil {
     }
     
     //这个是轮播图用的
+    //也可以用于加载一个UIimage对象
     class func loadImage(url:String,callback:(UIImage?) -> Void){
         if(url != ""){
             Alamofire.request(.GET, url).response() {
@@ -89,5 +90,23 @@ class GTUtil {
                 }
             }
         }
+    }
+    //将url 的querystring 分离成dictionary
+    
+    class func getQueryDictionary(query:String) -> [String:String]{
+        var components = query.componentsSeparatedByString("&")
+        var rs = [String:String]()
+        
+        
+        for p in components {
+            var tmp = p.componentsSeparatedByString("=")
+            var key = tmp[0]
+            var val = tmp[1]
+            
+            rs[key] = val
+            
+        }
+        
+        return rs
     }
 }
