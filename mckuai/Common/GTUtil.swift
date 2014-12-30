@@ -91,5 +91,22 @@ class GTUtil {
             }
         }
     }
+    //将url 的querystring 分离成dictionary
     
+    class func getQueryDictionary(query:String) -> [String:String]{
+        var components = query.componentsSeparatedByString("&")
+        var rs = [String:String]()
+        
+        
+        for p in components {
+            var tmp = p.componentsSeparatedByString("=")
+            var key = tmp[0]
+            var val = tmp[1]
+            
+            rs[key] = val
+            
+        }
+        
+        return rs
+    }
 }
