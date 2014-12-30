@@ -80,6 +80,7 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
         var getType = self.json["dataObject","dynamic",indexPath.row,"type"].string
         if(getType == "talk_add") {
            let  cell = self.tableView.dequeueReusableCellWithIdentifier("addCell") as DynamicAddCell
+//           cell.selectionStyle = .None
            cell.talkTitle.text = self.json["dataObject","dynamic",indexPath.row,"talkTitle"].string
            cell.forumName.text = self.json["dataObject","dynamic",indexPath.row,"forumName"].string
            var timeTemp = self.json["dataObject","dynamic",indexPath.row,"insertTime"].string
@@ -88,7 +89,7 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
            return cell
         } else {
            let  cell = self.tableView.dequeueReusableCellWithIdentifier("replyCell") as DynamicReplyCell
-            
+//            cell.selectionStyle = .None
             cell.replyName.text = self.json["dataObject","dynamic",indexPath.row,"operUserName"].string
             cell.replyContent.text = self.json["dataObject","dynamic",indexPath.row,"cont"].string
             cell.talkTitle.text = self.json["dataObject","dynamic",indexPath.row,"talkTitle"].string
@@ -115,6 +116,7 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     
     //点击事件
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
             var tiezi = self.json["dataObject","dynamic",indexPath.row,"cont1"].string!
             println(tiezi)
             TieziController.loadTiezi(presentNavigator: self.NavigationController,id: tiezi)

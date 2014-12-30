@@ -93,6 +93,7 @@ class UserCenter: UIViewController {
                         var url = self.json["dataObject","user","headImg"].string!
                         
                         GTUtil.loadImageView(img: self.headImage, url: url)
+                        self.headImage.contentMode = UIViewContentMode.ScaleAspectFit
 //                        let image = self.imageCache[url]
 //                        if (image == nil) {
 //                            

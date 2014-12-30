@@ -18,4 +18,14 @@ class DynamicAddCell:UITableViewCell {
     @IBOutlet weak var replyNum: UILabel!
     @IBOutlet weak var replyIcon: UIImageView!
     
+    
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        //设置不能选中
+//        self.selectionStyle = .None
+//    }
+//
+//    override func setSelected(selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//    }
 }

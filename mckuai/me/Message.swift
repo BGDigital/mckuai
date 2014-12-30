@@ -98,6 +98,7 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     
     //点击事件
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         var tiezi = self.json["dataObject","message",indexPath.row,"cont1"].string!
         println(tiezi)
         TieziController.loadTiezi(presentNavigator: self.NavigationController, id: tiezi)

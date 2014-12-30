@@ -19,4 +19,14 @@ class DynamicReplyCell:UITableViewCell {
     @IBOutlet var insertTime: UILabel!
     @IBOutlet var replyNum: UILabel!
     
+    
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        //设置不能选中
+//        self.selectionStyle = .None
+//    }
+//    
+//    override func setSelected(selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//    }
 }
