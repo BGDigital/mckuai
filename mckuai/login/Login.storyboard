@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Login-->
@@ -23,8 +22,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3v-qN-NZw">
                                 <rect key="frame" x="25" y="429" width="270" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="58" id="4Sf-39-ZIF"/>
-                                    <constraint firstAttribute="width" secondItem="M3v-qN-NZw" secondAttribute="height" multiplier="135:29" id="VRe-eK-G2s"/>
+                                    <constraint firstAttribute="height" constant="58" id="s7a-aK-fJH"/>
                                 </constraints>
                                 <state key="normal" title="QQ账号登录" backgroundImage="login_normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,7 +34,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-WN-Lka">
                                 <rect key="frame" x="201" y="515" width="94" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="5Db-3s-rUv"/>
+                                    <constraint firstAttribute="height" constant="33" id="vmO-tU-2ie"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="&gt;&gt; 随便逛逛">
@@ -50,14 +48,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gm7-vb-eiv" firstAttribute="leading" secondItem="2tY-5R-iPb" secondAttribute="leading" id="581-Pc-gvL"/>
-                            <constraint firstItem="nxx-WN-Lka" firstAttribute="top" secondItem="M3v-qN-NZw" secondAttribute="bottom" constant="28" id="BBm-3z-F5w"/>
-                            <constraint firstItem="M3v-qN-NZw" firstAttribute="centerX" secondItem="gm7-vb-eiv" secondAttribute="centerX" id="EBU-Ji-Myd"/>
-                            <constraint firstItem="M3v-qN-NZw" firstAttribute="top" secondItem="gm7-vb-eiv" secondAttribute="bottom" constant="34" id="Gdl-JK-PaE"/>
-                            <constraint firstAttribute="bottom" secondItem="nxx-WN-Lka" secondAttribute="bottom" constant="20" symbolic="YES" id="SuA-hw-Ndl"/>
-                            <constraint firstAttribute="trailing" secondItem="gm7-vb-eiv" secondAttribute="trailing" id="TFa-nP-Pot"/>
-                            <constraint firstItem="gm7-vb-eiv" firstAttribute="top" secondItem="2tY-5R-iPb" secondAttribute="top" id="ugc-v9-Jqy"/>
-                            <constraint firstItem="nxx-WN-Lka" firstAttribute="trailing" secondItem="M3v-qN-NZw" secondAttribute="trailing" id="zxC-0b-zuY"/>
+                            <constraint firstItem="M3v-qN-NZw" firstAttribute="centerX" secondItem="gm7-vb-eiv" secondAttribute="centerX" id="5Fa-C9-Ap4"/>
+                            <constraint firstItem="gm7-vb-eiv" firstAttribute="top" secondItem="2tY-5R-iPb" secondAttribute="top" id="RjE-am-dmP"/>
+                            <constraint firstAttribute="trailing" secondItem="gm7-vb-eiv" secondAttribute="trailing" id="ZJ0-Pa-Yew"/>
+                            <constraint firstItem="nxx-WN-Lka" firstAttribute="top" secondItem="M3v-qN-NZw" secondAttribute="bottom" constant="28" id="feg-ne-VRX"/>
+                            <constraint firstItem="M3v-qN-NZw" firstAttribute="trailing" secondItem="nxx-WN-Lka" secondAttribute="trailing" id="n6m-kk-qjd"/>
+                            <constraint firstAttribute="bottom" secondItem="nxx-WN-Lka" secondAttribute="bottom" constant="20" symbolic="YES" id="oRC-qa-vRz"/>
+                            <constraint firstItem="M3v-qN-NZw" firstAttribute="top" secondItem="gm7-vb-eiv" secondAttribute="bottom" constant="34" id="pkg-II-4t8"/>
+                            <constraint firstItem="gm7-vb-eiv" firstAttribute="leading" secondItem="2tY-5R-iPb" secondAttribute="leading" id="tJl-1K-6Hk"/>
                         </constraints>
                     </view>
                     <connections>

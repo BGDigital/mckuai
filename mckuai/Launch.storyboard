@@ -353,7 +353,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="page1_bg.jpg" width="320" height="49"/>
+        <image name="page1_bg.jpg" width="34" height="34"/>
         <image name="page1_center_I.png" width="750" height="1335"/>
         <image name="page1_desc_I.png" width="750" height="1335"/>
         <image name="page2_bg.jpg" width="1178" height="768"/>

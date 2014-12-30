@@ -11,12 +11,18 @@ import UIKit
 //var rootController:RootViewController!
 
 let appID:String = "3Z8C4UK6GU"
-var appUserIdSave=NSUserDefaults.standardUserDefaults().objectForKey("userId") as Int!
 
+let tencentAppKey = "101155101"
+var appUserIdSave=NSUserDefaults.standardUserDefaults().objectForKey("userId") as Int!
+var loginView:McLogin!
+
+var _lastSelectedIndex = 0
+
+var selectedIndex = 0
 class RootViewController: UITabBarController{
     
     //let launchImgUrl = "http://pic2.zhimg.com/cf3bcf3ca5c7a503e7b58d0f498f14bc.jpg"
-    var loginView:UIViewController!
+
     var welcome:UIViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +30,7 @@ class RootViewController: UITabBarController{
         tabBar.selectedImageTintColor = UIColor(red: 0.224, green: 0.749, blue: 0.361, alpha: 1.00)
         //判断是否登录
         if(appUserIdSave == nil){
-            loginView=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as UIViewController
-            self.view.addSubview(loginView.view)
-            
+           McLogin.showLoginView(self)
         }else {
             println(appUserIdSave)
         }
@@ -37,13 +41,27 @@ class RootViewController: UITabBarController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+//    
+//    func alertView(alertView: UIAlertView,clickedButtonAtIndex buttonIndex: Int) {
+//        if( buttonIndex==0 ) {
+//            loginView=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as UIViewController
+//            self.view.addSubview(loginView.view
+//        }
+//    }
     
-    func alertView(alertView: UIAlertView,clickedButtonAtIndex buttonIndex: Int) {
-        if( buttonIndex==0 ) {
-            loginView=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as UIViewController
-            self.view.addSubview(loginView.view)
+     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
+        if(item.tag == 3 && appUserIdSave == nil){
+//            McLogin.showLoginView(self)
+//              self.view.window?.rootViewController?.presentViewController(moreViewController, animated: false, completion: nil)
         }
-    }
+        
+        
 
-    
+     }
+
+
+//    override func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+//        println("shouldSelectViewController")
+//    }
+//    
 }

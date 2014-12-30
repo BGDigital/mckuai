@@ -13,6 +13,8 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     //该导航需要设置的
     var NavigationController:UINavigationController!
     
+    var userId = appUserIdSave
+    
     var json = JSON("")
     var http_url = UserCenterUrl;
     override func viewDidLoad() {
@@ -22,7 +24,7 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     }
     var dynamicNoData:UIViewController!=nil
     func initData() {
-        var paramDictionary :Dictionary<String,String> = ["act":"dynamic","id":String(appUserIdSave)]
+        var paramDictionary :Dictionary<String,String> = ["act":"dynamic","id":String(userId)]
         Alamofire.request(.GET,http_url, parameters: paramDictionary)
             .responseJSON { (request, response, data, error) in
                 

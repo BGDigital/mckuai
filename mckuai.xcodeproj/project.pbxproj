@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0B7C386C1A487C7100920B83 /* newfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C386B1A487C7100920B83 /* newfile.swift */; };
+		0BDA0A7C1A4F1AC4008B888D /* OtherCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BDA0A7B1A4F1AC4008B888D /* OtherCenter.storyboard */; };
+		0BDA0A7E1A4F1EE6008B888D /* OtherCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA0A7D1A4F1EE6008B888D /* OtherCenter.swift */; };
 		0BE195361A4D2D5700F4262B /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0BE195341A4D2D5700F4262B /* TencentOpenApi_IOS_Bundle.bundle */; };
 		0BE195371A4D2D5700F4262B /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE195351A4D2D5700F4262B /* TencentOpenAPI.framework */; };
+		0BE1953D1A4D472900F4262B /* McLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1953C1A4D472900F4262B /* McLogin.storyboard */; };
+		0BE1953F1A4D474200F4262B /* McLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE1953E1A4D474200F4262B /* McLogin.swift */; };
 		E626E1361A40167000506234 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E626E1351A40167000506234 /* Post.storyboard */; };
 		E626E1381A40168E00506234 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E626E1371A40168E00506234 /* PostViewController.swift */; };
 		E626E13D1A408C1F00506234 /* tiezi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E626E13B1A408C1F00506234 /* tiezi.storyboard */; };
@@ -115,8 +119,12 @@
 
 /* Begin PBXFileReference section */
 		0B7C386B1A487C7100920B83 /* newfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newfile.swift; sourceTree = "<group>"; };
+		0BDA0A7B1A4F1AC4008B888D /* OtherCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OtherCenter.storyboard; sourceTree = "<group>"; };
+		0BDA0A7D1A4F1EE6008B888D /* OtherCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCenter.swift; sourceTree = "<group>"; };
 		0BE195341A4D2D5700F4262B /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		0BE195351A4D2D5700F4262B /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		0BE1953C1A4D472900F4262B /* McLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = McLogin.storyboard; sourceTree = "<group>"; };
+		0BE1953E1A4D474200F4262B /* McLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McLogin.swift; sourceTree = "<group>"; };
 		E626E1351A40167000506234 /* Post.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		E626E1371A40168E00506234 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		E626E13B1A408C1F00506234 /* tiezi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tiezi.storyboard; sourceTree = "<group>"; };
@@ -208,6 +216,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BDA0A791A4F1844008B888D /* zone */ = {
+			isa = PBXGroup;
+			children = (
+				0BDA0A7B1A4F1AC4008B888D /* OtherCenter.storyboard */,
+				0BDA0A7D1A4F1EE6008B888D /* OtherCenter.swift */,
+			);
+			name = zone;
+			sourceTree = "<group>";
+		};
 		E618A7AF1A41857800EA7B3F /* menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +257,8 @@
 			children = (
 				E62888F71A3E870800C45131 /* Login.storyboard */,
 				E62888F81A3E870800C45131 /* Login.swift */,
+				0BE1953C1A4D472900F4262B /* McLogin.storyboard */,
+				0BE1953E1A4D474200F4262B /* McLogin.swift */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -276,6 +295,7 @@
 		E62C217A1A03F34E004DBFD0 /* mckuai */ = {
 			isa = PBXGroup;
 			children = (
+				0BDA0A791A4F1844008B888D /* zone */,
 				E618A7AF1A41857800EA7B3F /* menu */,
 				E626E13A1A408C1F00506234 /* tiezi */,
 				E62889121A3E886A00C45131 /* Images.xcassets */,
@@ -547,6 +567,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BDA0A7C1A4F1AC4008B888D /* OtherCenter.storyboard in Resources */,
+				0BE1953D1A4D472900F4262B /* McLogin.storyboard in Resources */,
 				E62C21831A03F34E004DBFD0 /* Main.storyboard in Resources */,
 				E62C21881A03F34E004DBFD0 /* LaunchScreen.xib in Resources */,
 				E626E13D1A408C1F00506234 /* tiezi.storyboard in Resources */,
@@ -579,6 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E67377711A19E7CA006DAE76 /* DHCarouselView.swift in Sources */,
+				0BE1953F1A4D474200F4262B /* McLogin.swift in Sources */,
 				E67B865F1A3E7AA400B782E1 /* HotTableViewController.swift in Sources */,
 				0B7C386C1A487C7100920B83 /* newfile.swift in Sources */,
 				E6D6C2C31A2FFB5100858161 /* APIClient.swift in Sources */,
@@ -595,6 +618,7 @@
 				E62889101A3E876300C45131 /* Message.swift in Sources */,
 				E6D6C2CA1A2FFC0800858161 /* SwiftyJSON.swift in Sources */,
 				E628890D1A3E876300C45131 /* DynamicReplyCell.swift in Sources */,
+				0BDA0A7E1A4F1EE6008B888D /* OtherCenter.swift in Sources */,
 				E63FD7E01A133E0400177E3E /* homeController.swift in Sources */,
 				E626E13E1A408C1F00506234 /* TieziController.swift in Sources */,
 				E6D6C2DC1A300C2100858161 /* AppContext.swift in Sources */,
@@ -749,7 +773,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = mckuai/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -770,7 +794,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = mckuai/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
