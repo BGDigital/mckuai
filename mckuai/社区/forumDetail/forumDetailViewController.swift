@@ -61,20 +61,6 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
         // Dispose of any resources that can be recreated.
     }
     
-//    func loaddata() {
-//        var indicator = WIndicator.showIndicatorAddedTo(self.view, animation: true)
-//        indicator.text = "正在加载数据..."
-//        
-//        dispatch_async(dispatch_get_global_queue(0,0), { () -> Void in
-//            sleep(2)
-//            
-//            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                WIndicator.removeIndicatorFrom(self.view, animation: true)
-//            })
-//            
-//        })
-//    }
-    
     @IBAction func showPost() {
         PostView = UIStoryboard(name: "Post", bundle: nil).instantiateViewControllerWithIdentifier("SB_POST") as PostViewController
         self.navigationController?.pushViewController(PostView, animated: true)

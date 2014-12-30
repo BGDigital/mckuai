@@ -16,6 +16,7 @@ class PostViewController: UIViewController, UITextViewDelegate {
     
     var lastBtn1: UIButton!
     var lastBtn2: UIButton!
+    var userId: Int!=1
     var forumId: Int!=0
     var forumName: String!
     var talkTypeId: Int!=0
@@ -117,8 +118,20 @@ class PostViewController: UIViewController, UITextViewDelegate {
         }
         
         //发贴
-        APIClient.sharedInstance.SendPost(1, forumId: forumId, forumName: forumName, talkTypeId: talkTypeId, talkTypeName: talkTypeName, talkTitle: caption.text, content: text.text)
         
+
+            var indicator = WIndicator.showIndicatorAddedTo(self.view, animation: true)
+            indicator.text = "正在发送数据..."
+            
+            dispatch_async(dispatch_get_global_queue(0,0), { () -> Void in
+                APIClient.sharedInstance.SendPost(self.userId, forumId: self.forumId, forumName: self.forumName, talkTypeId: self.talkTypeId, talkTypeName: self.talkTypeName, talkTitle: self.caption.text, content: self.text.text)
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    WIndicator.removeIndicatorFrom(self.view, animation: true)
+                })
+                
+            })
+
         self.navigationController?.popViewControllerAnimated(true)
         println("发贴成功,怎么返回呢？")
     }
