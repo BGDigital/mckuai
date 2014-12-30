@@ -87,12 +87,7 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         
         self.navigationController?.navigationBar.tintColor = UIColor(red: 255, green: 255, blue: 255, alpha: 100)
-        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: 550)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     func InitCarouselView(high: CGFloat) {
@@ -111,7 +106,12 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         super.viewDidLayoutSubviews()
         if(self.scrollView != nil){//iPhone的滚动
             //var size = desc.text.textSizeWithFont(desc.font, constrainedToSize: CGSize(width:306, height:1000))
-            scrollView.contentSize = CGSize(width: 320, height: 600)
+//            var rect = CGRect.zeroRect;
+//            for v in scrollView.subviews {
+//                rect = CGRectUnion(rect, v.frame)
+//            }
+            //ScrollView 合适的大小为:
+            scrollView.contentSize = CGSize(width: 320, height: 725)
             self.view.layoutIfNeeded()
         }
     }
@@ -155,7 +155,7 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
 
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("famouse",forIndexPath:indexPath) as FamouseUser
-//                        println("here")
+            
             let user = famouseUsers[indexPath.row+1]
             
             GTUtil.loadImageView(img: cell.userhead,url: user["headImg"].stringValue)

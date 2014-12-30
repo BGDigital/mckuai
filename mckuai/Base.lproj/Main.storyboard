@@ -58,11 +58,11 @@
                         <viewControllerLayoutGuide type="bottom" id="zPd-o6-RmM"/>
                     </layoutGuides>
                     <scrollView key="view" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" indicatorStyle="white" id="yFt-2N-cFt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="550"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="780"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAw-4D-Mwv" userLabel="明星">
-                                <rect key="frame" x="0.0" y="375" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="595" width="320" height="216"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Po-vc-wVr" userLabel="标题">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
@@ -215,9 +215,9 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOU-yM-zbp">
-                                <rect key="frame" x="0.0" y="125" width="320" height="250"/>
+                                <rect key="frame" x="0.0" y="125" width="320" height="470"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="2kA-wq-LnP"/>
+                                    <constraint firstAttribute="height" constant="470" id="2kA-wq-LnP"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="zaQ-xd-uWC" kind="embed" id="5AA-gl-5so"/>
@@ -241,7 +241,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="550"/>
+                    <size key="freeformSize" width="320" height="780"/>
                     <connections>
                         <outlet property="famouseUserCView" destination="Lqo-H9-h9t" id="KYM-8S-ZoB"/>
                         <outlet property="scrollView" destination="yFt-2N-cFt" id="cYr-Gj-TnO"/>
@@ -254,14 +254,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSl-AK-qe0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="427" y="245"/>
+            <point key="canvasLocation" x="766" y="100"/>
         </scene>
         <!--热帖推荐-->
         <scene sceneID="XgH-Cl-RTv">
             <objects>
                 <tableViewController id="zaQ-xd-uWC" userLabel="热帖推荐" customClass="HotTableViewController" customModule="mckuai" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="1" sectionFooterHeight="1" id="xzP-ww-PT7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="ezt-UT-phn" userLabel="标题">
@@ -369,7 +369,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fU-wA-CQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="153"/>
+            <point key="canvasLocation" x="1173" y="-16"/>
         </scene>
         <!--社区-->
         <scene sceneID="s7E-3d-2gg">

@@ -80,6 +80,7 @@ class GTUtil {
     }
     
     //这个是轮播图用的
+    //也可以用于加载一个UIimage对象
     class func loadImage(url:String,callback:(UIImage?) -> Void){
         if(url != ""){
             Alamofire.request(.GET, url).response() {
