@@ -32,8 +32,8 @@ class HotTableViewController:UITableViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        self.tableView.separatorStyle = .None
-        self.tableView.scrollEnabled = false
+//        分隔线
+//        self.tableView.separatorStyle = .None
         APIClient.sharedInstance.getHomePageData({
             (json) -> Void in
              if "ok" == json["state"].stringValue {

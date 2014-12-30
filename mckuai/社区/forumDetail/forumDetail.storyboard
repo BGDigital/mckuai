@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -10,7 +11,7 @@
         <!--版块-->
         <scene sceneID="oUD-xV-OzY">
             <objects>
-                <viewController storyboardIdentifier="SB_forumDetail" id="XeI-7A-DLz" customClass="forumDetailViewController" customModule="mckuai" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SB_forumDetail" hidesBottomBarWhenPushed="YES" id="XeI-7A-DLz" customClass="forumDetailViewController" customModule="mckuai" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fu7-gr-V7S"/>
                         <viewControllerLayoutGuide type="bottom" id="rqU-jA-UvW"/>
