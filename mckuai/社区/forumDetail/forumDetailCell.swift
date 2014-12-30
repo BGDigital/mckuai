@@ -34,7 +34,7 @@ class forumDetailCell: UITableViewCell {
         if json["hasVideo"].int16Value == 1 {
             self.img.image = UIImage(named: "bankuai_video")
         } else {
-            if json["hasImg"].int16Value == 1 {
+            if json["hasImg"].intValue == 1 {
                 self.img.image = UIImage(named: "bankuai_img")
             }
         }
