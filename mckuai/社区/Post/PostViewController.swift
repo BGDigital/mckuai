@@ -29,6 +29,8 @@ class PostViewController: UIViewController, UITextViewDelegate {
         if (text.text == "") {
             textViewDidEndEditing(text)
         }
+        
+        userId = appUserIdSave
         var tapDismiss = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         self.view.addGestureRecognizer(tapDismiss)
         //textView 边框
