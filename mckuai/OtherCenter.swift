@@ -40,7 +40,6 @@ class OtherCenter: UIViewController{
             containerView.addSubview(dynamicTableView.view)
         }else{
             println("缓存view")
-            dynamicTableView.reloadData()
         }
         containerView.bringSubviewToFront(dynamicTableView.view)
         

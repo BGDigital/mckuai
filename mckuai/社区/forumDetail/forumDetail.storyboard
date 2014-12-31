@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -95,7 +94,7 @@
                                                     <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJx-rv-NZ0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJx-rv-NZ0">
                                                     <rect key="frame" x="8" y="37" width="122" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="cfg-YA-jfA"/>
@@ -135,12 +134,10 @@
                                                 <constraint firstItem="Lyq-yP-W1O" firstAttribute="leading" secondItem="alg-qN-mKs" secondAttribute="trailing" constant="8" symbolic="YES" id="NcU-mb-ALL"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="fJx-rv-NZ0" secondAttribute="bottom" constant="4.5" id="OYF-Mc-Sgr"/>
                                                 <constraint firstItem="fJx-rv-NZ0" firstAttribute="top" secondItem="gzj-nV-xZG" secondAttribute="bottom" constant="8" symbolic="YES" id="Z6W-Fv-q8I"/>
-                                                <constraint firstItem="gGA-Cr-KnX" firstAttribute="baseline" secondItem="alg-qN-mKs" secondAttribute="firstBaseline" constant="-1" id="ZB2-z5-5NA"/>
                                                 <constraint firstItem="gGA-Cr-KnX" firstAttribute="trailing" secondItem="gWC-S5-ovu" secondAttribute="trailingMargin" id="b57-mx-avI"/>
                                                 <constraint firstItem="fJx-rv-NZ0" firstAttribute="leading" secondItem="gzj-nV-xZG" secondAttribute="leading" id="bYg-xi-WCm"/>
                                                 <constraint firstItem="gGA-Cr-KnX" firstAttribute="top" secondItem="gzj-nV-xZG" secondAttribute="bottom" constant="7" id="f5u-E4-W47"/>
                                                 <constraint firstItem="alg-qN-mKs" firstAttribute="leading" secondItem="fJx-rv-NZ0" secondAttribute="trailing" constant="12" id="haZ-3v-cHB"/>
-                                                <constraint firstItem="alg-qN-mKs" firstAttribute="baseline" secondItem="fJx-rv-NZ0" secondAttribute="baseline" id="i4X-cL-Qqj"/>
                                                 <constraint firstItem="alg-qN-mKs" firstAttribute="firstBaseline" secondItem="fJx-rv-NZ0" secondAttribute="firstBaseline" id="kha-bG-WNL"/>
                                                 <constraint firstItem="gGA-Cr-KnX" firstAttribute="firstBaseline" secondItem="alg-qN-mKs" secondAttribute="firstBaseline" constant="-1" id="mUC-Kf-63S"/>
                                                 <constraint firstItem="fJx-rv-NZ0" firstAttribute="leading" secondItem="gWC-S5-ovu" secondAttribute="leadingMargin" id="vD7-jb-bYn"/>

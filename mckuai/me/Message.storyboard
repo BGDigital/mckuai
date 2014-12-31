@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -68,9 +67,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="五分钟前" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReY-3m-LR7">
-                                            <rect key="frame" x="148" y="92" width="48" height="15"/>
+                                            <rect key="frame" x="148" y="92" width="50" height="15"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="48" id="WoD-BQ-lWH"/>
+                                                <constraint firstAttribute="width" constant="50" id="WoD-BQ-lWH"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,7 +128,7 @@
                                         <constraint firstItem="cIh-bw-0nI" firstAttribute="top" secondItem="FPg-Iz-atD" secondAttribute="topMargin" constant="-7" id="we7-3E-NhR"/>
                                         <constraint firstItem="8Tv-5J-BXm" firstAttribute="firstBaseline" secondItem="7ZK-In-Cnt" secondAttribute="firstBaseline" id="wgd-Gm-bH9"/>
                                         <constraint firstItem="ReY-3m-LR7" firstAttribute="leading" secondItem="f0j-Vt-ahm" secondAttribute="trailing" constant="27" id="yD4-c3-BCp"/>
-                                        <constraint firstItem="w41-xD-rsx" firstAttribute="leading" secondItem="ReY-3m-LR7" secondAttribute="trailing" constant="83" id="zTs-0r-TUd"/>
+                                        <constraint firstItem="w41-xD-rsx" firstAttribute="leading" secondItem="ReY-3m-LR7" secondAttribute="trailing" constant="81" id="zTs-0r-TUd"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
