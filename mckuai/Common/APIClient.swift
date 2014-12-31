@@ -106,40 +106,6 @@ class APIClient {
         self.Send("talk.do?act=replyTalk", parameters: dict)
     }
     
-    /*
-    act=followTalk&
-    userId="+login_userId+"&  当前登录用户
-    operUserId="+hostUserId+"&  楼主贴用户id
-    isNew="+isNew+"& 是否是新帖
-    forumId="+forumId+"& 版块id
-    forumName="+forumName+"& 版块名字
-    talkId="+hostTalkId+"& 楼主帖子id
-    content="+encodeURIComponent(encodeURIComponent(talkContent))+"&   跟帖内容
-    talkTitle="+encodeURIComponent(encodeURIComponent(hostTalkTitle)) 楼主帖子标题
-    
-    var act="act=replyTalk&
-    userId="+login_userId+"&
-    replyContext="+encodeURIComponent(encodeURIComponent(replyContext))+"&
-    talkId="+data_itemId+"&
-    replyId="+replyId_id+"&
-    replyUserName="+encodeURIComponent(encodeURIComponent(replyUserName));
-    //=========================
-    
-    func getLatestTopics(nodeID: NSString, success: (JSON) -> Void, failure: (NSError) -> Void) {
-        let dict = ["node_id": nodeID]
-        self.getJSONData("topics/show.json", parameters: dict, success: success, failure: failure)
-    }
-    
-    func getReplies(topicID: NSString, success: (JSON) -> Void, failure: (NSError) -> Void) {
-        let dict = ["topic_id": topicID]
-        self.getJSONData("replies/show.json", parameters: dict, success: success, failure: failure)
-    }
-    
-    func getNodes(success: (JSON) -> Void, failure: (NSError) -> Void) {
-        self.getJSONData("nodes/all.json", parameters: nil, success: success, failure: failure)
-    }
-    */
-    
 
     //QQ登录
     func qqLoginByPost(accessToken:String,openId:String,nickName:String,gender:String,headImg:String,success: (JSON) -> Void, failure: (NSError) -> Void){

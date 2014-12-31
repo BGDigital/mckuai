@@ -12,6 +12,19 @@ import QuartzCore
 class ReplyViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var textView: UITextView!
+    
+    var bType: String!
+    
+    var forumId: Int!
+    var operUserId: Int!
+    var isNew: Int!
+    var forumName: String!
+    var talkId: Int!
+    var talkTitle: String!
+    var replyId: Int!
+    var replyUserName: String!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,10 +49,14 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
             UIAlertView(title: "提示", message: "你的评论还没有内容，总得写点什么", delegate: nil, cancelButtonTitle: "确定").show()
             return
         }
-        /*
-        //发贴
-        APIClient.sharedInstance.SendPost(1, forumId: forumId, forumName: forumName, talkTypeId: talkTypeId, talkTypeName: talkTypeName, talkTitle: caption.text, content: text.text)
-        */
+        
+        if self.bType == "gentie" {
+            //跟贴
+            APIClient.sharedInstance.SendFollow(appUserIdSave, operUserId: operUserId, isNew: isNew, forumId: forumId, forumName: forumName, talkId: talkId, content: textView.text, talkTitle: talkTitle)
+        } else {
+            //回复
+            APIClient.sharedInstance.SendReply(appUserIdSave, replyContext: textView.text, talkId: talkId, replyId: replyId, replyUserName: replyUserName)
+        }
         
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -65,8 +82,19 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
     }
     
     //供外部调用的接口
-    class func loadReply(presentNavigator ctl:UINavigationController?,id:String){
+    class func loadReply(presentNavigator ctl:UINavigationController?,dict: [String: String]){
         var ReplyCtl = UIStoryboard(name: "Reply", bundle: nil).instantiateViewControllerWithIdentifier("Reply") as ReplyViewController
+        
+        ReplyCtl.bType = dict["type"]
+        ReplyCtl.forumId = dict["forumId"]?.toInt()
+        ReplyCtl.operUserId = dict["hostUserId"]?.toInt()
+        ReplyCtl.isNew = dict["isNew"]?.toInt()
+        ReplyCtl.forumName = dict["forumName"]
+        ReplyCtl.talkId = dict["hostTalkId"]?.toInt()
+        ReplyCtl.talkTitle = dict["hostTalkTitle"]
+        ReplyCtl.replyId = dict["replyId"]?.toInt()
+        ReplyCtl.replyUserName = dict["replyUserName"]
+
         ctl?.pushViewController(ReplyCtl, animated: true)
         
     }
