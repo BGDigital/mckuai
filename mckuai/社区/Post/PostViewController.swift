@@ -13,6 +13,12 @@ class PostViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var caption: UITextField!
     @IBOutlet weak var text: UITextView!
+    //发贴类型按钮
+    @IBOutlet weak var subBtn1: UIButton!
+    @IBOutlet weak var subBtn2: UIButton!
+    @IBOutlet weak var subBtn3: UIButton!
+    @IBOutlet weak var subBtn4: UIButton!
+    @IBOutlet weak var subBtn5: UIButton!
     
     var lastBtn1: UIButton!
     var lastBtn2: UIButton!
@@ -79,6 +85,83 @@ class PostViewController: UIViewController, UITextViewDelegate {
         }
         lastBtn1 = sender
         
+        //这里会改变下面类型的文字
+        switch (forumId) {
+        case 1:
+            subBtn1.hidden = false
+            subBtn2.hidden = false
+            subBtn3.hidden = false
+            subBtn4.hidden = false
+            subBtn5.hidden = false
+            subBtn1.setTitle("闲聊", forState: .Normal)
+            subBtn2.setTitle("资讯攻略", forState: .Normal)
+            subBtn3.setTitle("视频", forState: .Normal)
+            subBtn4.setTitle("美图", forState: .Normal)
+            subBtn5.setTitle("新人", forState: .Normal)
+        case 2:
+            subBtn1.hidden = false
+            subBtn2.hidden = false
+            subBtn3.hidden = false
+            subBtn4.hidden = false
+            subBtn5.hidden = true
+            subBtn1.setTitle("教程", forState: .Normal)
+            subBtn2.setTitle("技巧", forState: .Normal)
+            subBtn3.setTitle("红石研究", forState: .Normal)
+            subBtn4.setTitle("讨论", forState: .Normal)
+        case 3:
+            subBtn1.hidden = false
+            subBtn2.hidden = false
+            subBtn3.hidden = true
+            subBtn4.hidden = true
+            subBtn5.hidden = true
+            subBtn1.setTitle("社区活动", forState: .Normal)
+            subBtn2.setTitle("服务器活动", forState: .Normal)
+        case 4:
+            subBtn1.hidden = false
+            subBtn2.hidden = false
+            subBtn3.hidden = false
+            subBtn4.hidden = true
+            subBtn5.hidden = true
+            subBtn1.setTitle("地图", forState: .Normal)
+            subBtn2.setTitle("皮肤", forState: .Normal)
+            subBtn3.setTitle("其它", forState: .Normal)
+        case 5:
+            subBtn1.hidden = false
+            subBtn2.hidden = false
+            subBtn3.hidden = false
+            subBtn4.hidden = false
+            subBtn5.hidden = false
+            subBtn1.setTitle("单人游戏", forState: .Normal)
+            subBtn2.setTitle("多人游戏", forState: .Normal)
+            subBtn3.setTitle("MOD", forState: .Normal)
+            subBtn4.setTitle("材质包", forState: .Normal)
+            subBtn5.setTitle("麦块反馈", forState: .Normal)
+        case 6:
+            subBtn1.hidden = false
+            subBtn2.hidden = false
+            subBtn3.hidden = false
+            subBtn4.hidden = false
+            subBtn5.hidden = false
+            subBtn1.setTitle("求助", forState: .Normal)
+            subBtn2.setTitle("教程", forState: .Normal)
+            subBtn3.setTitle("资讯", forState: .Normal)
+            subBtn4.setTitle("攻略", forState: .Normal)
+            subBtn5.setTitle("插件", forState: .Normal)
+        case 7:
+            subBtn1.hidden = false
+            subBtn2.hidden = false
+            subBtn3.hidden = false
+            subBtn4.hidden = false
+            subBtn5.hidden = false
+            subBtn1.setTitle("其它", forState: .Normal)
+            subBtn2.setTitle("生存", forState: .Normal)
+            subBtn3.setTitle("娱乐", forState: .Normal)
+            subBtn4.setTitle("竞技", forState: .Normal)
+            subBtn5.setTitle("创造", forState: .Normal)
+        default:
+            break;
+        }
+
         println("板块按钮tag:\(sender.tag)")
     }
     //设置类型的选中状态

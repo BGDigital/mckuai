@@ -226,6 +226,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="caption" destination="Oe4-yB-fU6" id="J32-Bw-DQY"/>
+                        <outlet property="subBtn1" destination="HJm-s8-MvJ" id="vQR-q9-66p"/>
+                        <outlet property="subBtn2" destination="fU4-D9-pCx" id="ep4-bJ-b2h"/>
+                        <outlet property="subBtn3" destination="D6s-kR-IJV" id="f7N-R6-sQk"/>
+                        <outlet property="subBtn4" destination="KAu-mc-Vzx" id="J2I-xo-oSB"/>
+                        <outlet property="subBtn5" destination="Cvc-NY-VIh" id="F3c-aQ-Cbf"/>
                         <outlet property="text" destination="cjr-bT-Ql7" id="0PD-b4-lpA"/>
                     </connections>
                 </viewController>
