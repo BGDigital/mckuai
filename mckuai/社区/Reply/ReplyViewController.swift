@@ -86,15 +86,19 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
         var ReplyCtl = UIStoryboard(name: "Reply", bundle: nil).instantiateViewControllerWithIdentifier("Reply") as ReplyViewController
         
         ReplyCtl.bType = dict["type"]
-        ReplyCtl.forumId = dict["forumId"]?.toInt()
-        ReplyCtl.operUserId = dict["hostUserId"]?.toInt()
-        ReplyCtl.isNew = dict["isNew"]?.toInt()
-        ReplyCtl.forumName = dict["forumName"]
-        ReplyCtl.talkId = dict["hostTalkId"]?.toInt()
-        ReplyCtl.talkTitle = dict["hostTalkTitle"]
-        ReplyCtl.replyId = dict["replyId"]?.toInt()
-        ReplyCtl.replyUserName = dict["replyUserName"]
-
+        if ReplyCtl.bType! == "huifu" {
+            ReplyCtl.talkId = dict["data_itemId"]?.toInt()
+            ReplyCtl.replyId = dict["replyId_id"]?.toInt()
+            ReplyCtl.replyUserName = dict["replyUserName"]
+        } else {
+            ReplyCtl.forumId = dict["forumId"]?.toInt()
+            ReplyCtl.operUserId = dict["hostUserId"]?.toInt()
+            ReplyCtl.isNew = dict["isNew"]?.toInt()
+            ReplyCtl.forumName = dict["forumName"]
+            ReplyCtl.talkId = dict["hostTalkId"]?.toInt()
+            ReplyCtl.talkTitle = dict["hostTalkTitle"]
+        
+        }
         ctl?.pushViewController(ReplyCtl, animated: true)
         
     }

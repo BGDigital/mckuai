@@ -20,8 +20,9 @@ class TieziController: UIViewController,UIWebViewDelegate {
             if let uid = appUserIdSave{
                 return String(uid)
             }else{
-                var loginView=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as UIViewController
-                self.navigationController!.pushViewController(loginView,animated:true)
+                McLogin.showLoginView(self)
+//                var loginView=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as UIViewController
+//                self.navigationController!.pushViewController(loginView,animated:true)
                 return nil
             }
             
@@ -85,11 +86,12 @@ class TieziController: UIViewController,UIWebViewDelegate {
                 OtherCenter.openOtherCenter(presentNavigator: self.navigationController, id: id)
             }
         }
-        
+        var param1 = param;
         if action == "reply" {
+            println("Reply...........")
             if let uid = self.loginId{
-                param["type"] == "huifu"
-                ReplyViewController.loadReply(presentNavigator: self.navigationController, dict: param)
+                param1["type"] = "huifu"
+                ReplyViewController.loadReply(presentNavigator: self.navigationController, dict: param1)
             }
         }
     }

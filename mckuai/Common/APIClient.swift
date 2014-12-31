@@ -74,7 +74,8 @@ class APIClient {
         "talkTypeId": talkTypeId,
         "talkTypeName": talkTypeName,
         "talkTitle": talkTitle,
-        "content": content
+        "content": content,
+        "device": "ios"
         ]
         self.Send("talk.do?act=addTalk", parameters: dict)
     }
@@ -89,7 +90,8 @@ class APIClient {
             "forumName": forumName,
             "talkId": talkId,
             "content": content,
-            "talkTitle": talkTitle
+            "talkTitle": talkTitle,
+            "device": "ios"
         ]
         self.Send("talk.do?act=followTalk", parameters: dict)
     }
@@ -101,7 +103,8 @@ class APIClient {
             "replyContext": replyContext,
             "talkId": talkId,
             "replyId": replyId,
-            "replyUserName": replyUserName
+            "replyUserName": replyUserName,
+            "device": "ios"
         ]
         self.Send("talk.do?act=replyTalk", parameters: dict)
     }
