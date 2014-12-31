@@ -15,15 +15,44 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     var NavigationController:UINavigationController!
     var json = JSON("")
     var http_url = UserCenterUrl;
+    
+    var datasource: Array<JSON>!
+    
+    var currentPage = 1
+    var itemCount = 0
+    var pageSize = 0
+    
+    var refreshView = UIRefreshControl()
+    var refreshing: Bool = false {
+        didSet {
+            if (self.refreshing) {
+                self.refreshView.beginRefreshing()
+                self.refreshView.attributedTitle = NSAttributedString(string: "正在刷新...")
+            }
+            else {
+                self.refreshView.endRefreshing()
+                self.refreshView.attributedTitle = NSAttributedString(string: "正在刷新...")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
+        
+        //下拉刷新
+        refreshView.attributedTitle = NSAttributedString(string: "松开刷新列表")
+        refreshView.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshView)
+        
         initData()
     }
     
     var dynamicNoData:UIViewController!=nil
     func initData() {
-        var paramDictionary :Dictionary<String,String> = ["act":"message","id":String(appUserIdSave)]
+        
+        self.refreshing = true
+        var paramDictionary :Dictionary<String,String> = ["act":"message","id":String(appUserIdSave),"page":String(currentPage)]
         Alamofire.request(.GET,http_url, parameters: paramDictionary)
             .responseJSON { (request, response, data, error) in
                 
@@ -35,14 +64,30 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
                     var jsonParse = data as NSDictionary
                     self.json = JSON(jsonParse)
                     var count = self.json["dataObject","message"].count
-                    println("count\(count)")
-                    println(self.json["state"])
+                    
+                    self.itemCount = self.json["dataObject","pageInfo","allCount"].intValue
+                    self.currentPage = self.json["dataObject","pageInfo","page"].intValue
+
                     if(count == 0) {
                         self.showDefaultView()
                     }else {
-                        self.tableView.reloadData()
-                    }
+                        
+                        if let dataList = self.json["dataObject", "message"].array {
+                            if self.datasource == nil {
+                                self.datasource = dataList
+                            } else {
+                                self.datasource = self.datasource + dataList
+                            }
+                            
+                            println("self.datasource:\(self.datasource.count)")
+                            self.tableView.reloadData()
+                        }
 
+                        
+//                        self.tableView.reloadData()
+                    }
+                    
+                    self.refreshing = false
                     
                 }
         }
@@ -70,39 +115,81 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         
-        return self.json["dataObject","message"].count
+        if (self.datasource != nil) {
+            return self.datasource.count + 1
+        }
+        return 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        
+        //处理加载更多
+        if (self.datasource.count == indexPath.row) {
+            var loadMoreCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
+            loadMoreCell.textLabel?.text = "加载更多..."
+            //loadMoreCell.backgroundColor = UIColor(red: 0.812, green: 0.192, blue: 0.145, alpha: 1.00)
+            loadMoreCell.textLabel?.textAlignment = NSTextAlignment.Center
+            //最后一页，不显示加载更多
+            loadMoreCell.hidden = (self.itemCount <= self.datasource.count)
+            return loadMoreCell
+        }else{
+            
             let  cell = self.tableView.dequeueReusableCellWithIdentifier("messageCell") as MessageCell
-        
-            cell.userName.text = self.json["dataObject","message",indexPath.row,"userName"].string
-            cell.content.text = self.json["dataObject","message",indexPath.row,"content"].string
-            cell.talkTitle.text = self.json["dataObject","message",indexPath.row,"talkTitle"].string
-        
-            cell.forumName.text = self.json["dataObject","message",indexPath.row,"forumName"].string
-            var timeTemp = self.json["dataObject","message",indexPath.row,"insertTime"].string
-            cell.insertTime.text = GTUtil.compDate(timeTemp!)
-//            cell.insertTime.text = self.json["dataObject","message",indexPath.row,"insertTime"].string
-            cell.replyNum.text = String(self.json["dataObject","message",indexPath.row,"replyNum"].int!)
-            cell.content.text = self.json["dataObject","message",indexPath.row,"cont"].string
+            
+
+            
+            
+            var data = self.datasource[indexPath.row] as JSON
+            cell.update(data)
             return cell
+            
+        }
+        
+
 
         
         
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if(self.datasource.count == indexPath.row){
+            return 30
+        }else{
             return 115
+        }
     }
     
     //点击事件
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        var tiezi = self.json["dataObject","message",indexPath.row,"cont1"].string!
-        println(tiezi)
-        TieziController.loadTiezi(presentNavigator: self.NavigationController, id: tiezi)
         
+        if (self.datasource.count == indexPath.row) {
+            onLoadMore()
+        }else{
+            let data = self.datasource[indexPath.row] as JSON
+            let tiezi = data["id"].stringValue
+            println(tiezi)
+            TieziController.loadTiezi(presentNavigator: self.NavigationController, id: tiezi)
+        }
+
+        
+    }
+    
+    
+    func onRefresh() {
+        self.currentPage = 1
+        self.datasource.removeAll()
+        self.initData()
+    }
+    
+    func onLoadMore() {
+        var nextPage = self.currentPage+1
+        if ((nextPage*self.pageSize) - self.itemCount >= self.pageSize) {
+            UIAlertView(title: "提示", message: "已到最后一页", delegate: nil, cancelButtonTitle: "确定").show()
+        } else {
+            self.currentPage = nextPage
+        }
+        self.initData()
     }
 
 }

@@ -202,8 +202,6 @@ class UserCenter: UIViewController {
                 container_v.addSubview(dynamicTableView.view)
             }else{
                 println("缓存view")
-                dynamicTableView.reloadData()
-                //recipesCollection.ReloadData()
             }
             container_v.bringSubviewToFront(dynamicTableView.view)
         }else if(btn_tag == 30){

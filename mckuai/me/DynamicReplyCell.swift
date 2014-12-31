@@ -20,13 +20,23 @@ class DynamicReplyCell:UITableViewCell {
     @IBOutlet var replyNum: UILabel!
     
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        //设置不能选中
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        //设置不能选中
 //        self.selectionStyle = .None
-//    }
-//    
-//    override func setSelected(selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//    }
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    func update(json: JSON) {
+        self.replyName.text = json["operUserName"].string
+        self.replyContent.text = json["cont"].string
+        self.talkTitle.text = json["talkTitle"].string
+        self.forumName.text = json["forumName"].string
+        var timeTemp = json["insertTime"].string
+        self.insertTime.text = GTUtil.compDate(timeTemp!)
+        self.replyNum.text = String(json["replyNum"].int!)
+    }
 }
