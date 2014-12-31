@@ -8,7 +8,7 @@
 
 import UIKit
 
-class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewDataSource {
+class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate{
     
     var carouselView: DHCarouselView!
 
@@ -80,6 +80,7 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         initData()
      
         famouseUserCView.dataSource = self
+        famouseUserCView.delegate = self
         famouseUserCView.scrollEnabled = false
         InitCarouselView(125)
         
@@ -162,6 +163,17 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
             return cell
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+
+        let user = famouseUsers[indexPath.row+1]
+                println(user)
+        OtherCenter.openOtherCenter(presentNavigator: self.navigationController, id: user["id"].intValue)
+    }
+    
+    @IBAction func toTopOneuser(){
+        OtherCenter.openOtherCenter(presentNavigator: self.navigationController, id: topOneUser["id"].intValue)
+    }
 }
 
 class FamouseUser:UICollectionViewCell {
