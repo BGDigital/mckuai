@@ -12,6 +12,8 @@ import UIKit
 class TieziController: UIViewController,UIWebViewDelegate {
     @IBOutlet weak var webview: UIWebView!
     
+    @IBOutlet weak var hello: UIView!
+    
     var tid:String?
     var loginId:String!{
         get{
@@ -34,11 +36,14 @@ class TieziController: UIViewController,UIWebViewDelegate {
             var url = NSURL(string: APIRootURL + "talk.do?act=one&id="+id)
 //            url = NSURL(string: "http://192.168.10.104/")
             var req = NSURLRequest(URL: url!)
-//            println(req)
+            println(req)
             webview.loadRequest(req)
         }
         webview.delegate = self
         
+//        hello.backgroundColor = UIColor(red: 249, green: 249, blue: 249, alpha: 1)
+        
+        println(hello.backgroundColor)
     }
     
 
@@ -71,14 +76,37 @@ class TieziController: UIViewController,UIWebViewDelegate {
     }
     
     private func dispatchAction(action:String,param:[String:String]) {
-        println(param)
         if action == "getuid" {
             var uid = self.loginId
+            
         }
         if action == "viewuser" && param["id"] != nil{
             if let id = param["id"]!.toInt(){
                 OtherCenter.openOtherCenter(presentNavigator: self.navigationController, id: id)
             }
+        }
+        
+        if action == "reply" {
+            if let uid = self.loginId{
+                param["type"] == "huifu"
+                ReplyViewController.loadReply(presentNavigator: self.navigationController, dict: param)
+            }
+        }
+    }
+    @IBAction func rePost(){
+        println("跟帖")
+        if let uid = self.loginId{
+            if let query = webview.stringByEvaluatingJavaScriptFromString("getParameters()"){
+//                println("返回内容："+query)
+                var param = GTUtil.getQueryDictionary(query)
+                param["type"] = "gentie"
+                println(param)
+                ReplyViewController.loadReply(presentNavigator: self.navigationController, dict: param)
+            }else{
+                println("没有内容")
+            }
+        }else{
+            println("未登录用户")
         }
     }
 }

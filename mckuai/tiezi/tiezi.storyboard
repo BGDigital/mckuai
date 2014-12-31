@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KVc-Sn-Mrd">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -20,62 +21,53 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTJ-gS-JfW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
-                                </variation>
                             </webView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ue8-tg-81W">
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ue8-tg-81W">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XM9-Tb-Fpe">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <state key="normal" image="message">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="回复">
-                                                    <attributes>
-                                                        <font key="NSFont" size="12" name="STHeitiSC-Medium"/>
-                                                        <font key="NSOriginalFont" size="12" name="STHeitiSC-Medium"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="27" y="8" width="41" height="15"/>
-                                        </variation>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="XM9-Tb-Fpe"/>
-                                    </mask>
-                                </variation>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="557" width="400" height="43"/>
-                                    <mask key="subviews">
-                                        <include reference="XM9-Tb-Fpe"/>
-                                    </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNW-GI-NzB">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="511" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="rePost" destination="78T-mq-cFh" eventType="touchUpInside" id="tYs-py-2F1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dTJ-gS-JfW" secondAttribute="trailing" id="28W-RG-GEg"/>
+                            <constraint firstItem="Ue8-tg-81W" firstAttribute="leading" secondItem="Uif-Xt-vVy" secondAttribute="leadingMargin" constant="-16" id="9pO-w2-IfY">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="cAT-8n-GHA" firstAttribute="top" secondItem="Ue8-tg-81W" secondAttribute="bottom" id="G3K-dx-3yw"/>
                             <constraint firstItem="dTJ-gS-JfW" firstAttribute="leading" secondItem="Uif-Xt-vVy" secondAttribute="leading" id="I6m-fD-Csi"/>
                             <constraint firstItem="dTJ-gS-JfW" firstAttribute="bottom" secondItem="cAT-8n-GHA" secondAttribute="top" id="IJA-GW-S32"/>
+                            <constraint firstItem="Ue8-tg-81W" firstAttribute="top" secondItem="dTJ-gS-JfW" secondAttribute="bottom" id="Q7N-Ep-Wqd"/>
                             <constraint firstItem="dTJ-gS-JfW" firstAttribute="top" secondItem="Uif-Xt-vVy" secondAttribute="top" id="hyL-2a-h9y"/>
-                            <constraint firstItem="cAT-8n-GHA" firstAttribute="top" secondItem="dTJ-gS-JfW" secondAttribute="bottom" constant="43" id="k5z-nK-M5q"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ue8-tg-81W" secondAttribute="trailing" constant="-16" id="nZm-hh-W7L">
+                            <constraint firstItem="cAT-8n-GHA" firstAttribute="top" secondItem="dTJ-gS-JfW" secondAttribute="bottom" constant="43" id="k5z-nK-M5q">
+                                <variation key="widthClass=compact" constant="43"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ue8-tg-81W" secondAttribute="trailing" id="nZm-hh-W7L">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Ue8-tg-81W"/>
+                                <exclude reference="GNW-GI-NzB"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="9pO-w2-IfY"/>
+                                <exclude reference="Q7N-Ep-Wqd"/>
                                 <exclude reference="nZm-hh-W7L"/>
                                 <exclude reference="G3K-dx-3yw"/>
                                 <exclude reference="k5z-nK-M5q"/>
@@ -84,11 +76,14 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Ue8-tg-81W"/>
+                                <include reference="GNW-GI-NzB"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="IJA-GW-S32"/>
+                                <include reference="9pO-w2-IfY"/>
+                                <include reference="Q7N-Ep-Wqd"/>
                                 <include reference="nZm-hh-W7L"/>
-                                <include reference="G3K-dx-3yw"/>
+                                <exclude reference="IJA-GW-S32"/>
+                                <exclude reference="G3K-dx-3yw"/>
                                 <include reference="k5z-nK-M5q"/>
                             </mask>
                         </variation>
@@ -99,6 +94,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="hello" destination="Ue8-tg-81W" id="3e3-3B-unQ"/>
                         <outlet property="webview" destination="dTJ-gS-JfW" id="Omg-dw-GAG"/>
                     </connections>
                 </viewController>
@@ -127,7 +123,4 @@
             <point key="canvasLocation" x="300" y="296"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="message" width="11" height="11"/>
-    </resources>
 </document>
