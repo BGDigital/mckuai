@@ -14,6 +14,7 @@ class TieziController: UIViewController,UIWebViewDelegate {
     
     @IBOutlet weak var hello: UIView!
     
+    @IBOutlet weak var comment_border: UIView!
     var tid:String?
     var loginId:String!{
         get{
@@ -42,9 +43,11 @@ class TieziController: UIViewController,UIWebViewDelegate {
         }
         webview.delegate = self
         
-//        hello.backgroundColor = UIColor(red: 249, green: 249, blue: 249, alpha: 1)
         
-        println(hello.backgroundColor)
+        comment_border.layer.borderWidth = 1;
+        var bdc = UIColor(red: 228/255, green: 228/255, blue: 228/255, alpha: 1)
+        comment_border.layer.borderColor = bdc.CGColor
+        
     }
     
 
