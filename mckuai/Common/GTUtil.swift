@@ -100,11 +100,12 @@ class GTUtil {
         
         for p in components {
             var tmp = p.componentsSeparatedByString("=")
+            if tmp.count < 2 {
+                continue
+            }
             var key = tmp[0]
             var val = tmp[1]
-            
             rs[key] = val
-            
         }
         
         return rs
