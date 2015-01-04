@@ -15,7 +15,7 @@ let appID:String = "3Z8C4UK6GU"
 let tencentAppKey = "101155101"
 var appUserIdSave=NSUserDefaults.standardUserDefaults().objectForKey("userId") as Int!
 var loginView:McLogin!
-
+var loginViewOld:Login!
 var _lastSelectedIndex = 0
 
 var selectedIndex = 0
@@ -30,10 +30,10 @@ class RootViewController: UITabBarController{
         tabBar.selectedImageTintColor = UIColor(red: 0.224, green: 0.749, blue: 0.361, alpha: 1.00)
         //判断是否登录
         if(appUserIdSave == nil){
-//            var loginView=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as Login
-//            self.view.addSubview(loginView.view)
+            loginViewOld=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as Login
+            self.view.addSubview(loginViewOld.view)
 
-           McLogin.showLoginView(self)
+//           McLogin.showLoginView(self)
         }else {
             println(appUserIdSave)
         }
