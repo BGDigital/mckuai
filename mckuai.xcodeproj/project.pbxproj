@@ -41,7 +41,6 @@
 		E62C217E1A03F34E004DBFD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C217D1A03F34E004DBFD0 /* AppDelegate.swift */; };
 		E62C21801A03F34E004DBFD0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C217F1A03F34E004DBFD0 /* RootViewController.swift */; };
 		E62C21831A03F34E004DBFD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62C21811A03F34E004DBFD0 /* Main.storyboard */; };
-		E62C21881A03F34E004DBFD0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E62C21861A03F34E004DBFD0 /* LaunchScreen.xib */; };
 		E62C21941A03F34E004DBFD0 /* mckuaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C21931A03F34E004DBFD0 /* mckuaiTests.swift */; };
 		E63C78B61A302F5F00D28668 /* forumDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63C78B31A302F5F00D28668 /* forumDetail.storyboard */; };
 		E63C78B71A302F5F00D28668 /* forumDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C78B41A302F5F00D28668 /* forumDetailCell.swift */; };
@@ -158,7 +157,6 @@
 		E62C217D1A03F34E004DBFD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E62C217F1A03F34E004DBFD0 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = ../RootViewController.swift; sourceTree = "<group>"; };
 		E62C21821A03F34E004DBFD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E62C21871A03F34E004DBFD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E62C218D1A03F34E004DBFD0 /* mckuaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mckuaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E62C21921A03F34E004DBFD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E62C21931A03F34E004DBFD0 /* mckuaiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mckuaiTests.swift; sourceTree = "<group>"; };
@@ -316,7 +314,6 @@
 				E62C217D1A03F34E004DBFD0 /* AppDelegate.swift */,
 				E63FD6CB1A13340100177E3E /* Launch.storyboard */,
 				E63FD6CE1A13340100177E3E /* Welcome.swift */,
-				E62C21861A03F34E004DBFD0 /* LaunchScreen.xib */,
 				E62C217B1A03F34E004DBFD0 /* Supporting Files */,
 			);
 			path = mckuai;
@@ -587,7 +584,6 @@
 				0BDA0A7C1A4F1AC4008B888D /* OtherCenter.storyboard in Resources */,
 				0BE1953D1A4D472900F4262B /* McLogin.storyboard in Resources */,
 				E62C21831A03F34E004DBFD0 /* Main.storyboard in Resources */,
-				E62C21881A03F34E004DBFD0 /* LaunchScreen.xib in Resources */,
 				E626E13D1A408C1F00506234 /* tiezi.storyboard in Resources */,
 				E63FD7E61A1346CC00177E3E /* chat.storyboard in Resources */,
 				0BE195361A4D2D5700F4262B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -691,14 +687,6 @@
 			);
 			name = Main.storyboard;
 			path = ..;
-			sourceTree = "<group>";
-		};
-		E62C21861A03F34E004DBFD0 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E62C21871A03F34E004DBFD0 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
