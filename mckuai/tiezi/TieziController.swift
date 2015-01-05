@@ -21,7 +21,7 @@ class TieziController: UIViewController,UIWebViewDelegate {
             if let uid = appUserIdSave{
                 return String(uid)
             }else{
-                McLogin.showLoginView(self)
+                McLogin.showLoginView(self.navigationController!)
 //                var loginView=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as UIViewController
 //                self.navigationController!.pushViewController(loginView,animated:true)
                 return nil
