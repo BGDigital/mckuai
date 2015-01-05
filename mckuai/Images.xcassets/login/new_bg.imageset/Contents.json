@@ -6,18 +6,19 @@
     },
     {
       "idiom" : "iphone",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "登录5.png"
     },
     {
       "idiom" : "iphone",
-      "filename" : "new_bg.png",
+      "filename" : "登录4.png",
       "subtype" : "retina4",
       "scale" : "2x"
     },
     {
       "idiom" : "iphone",
       "scale" : "3x",
-      "filename" : "6p.png"
+      "filename" : "登录6p.png"
     }
   ],
   "info" : {

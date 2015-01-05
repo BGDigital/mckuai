@@ -134,6 +134,7 @@ class TieziController: UIViewController,UIWebViewDelegate {
     }
     
     func afterReply(){
+        println("afterReply().........")
         webview.stringByEvaluatingJavaScriptFromString("addReplyHtml()");
     }
 }

@@ -23,7 +23,7 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
     var talkTitle: String!
     var replyId: Int!
     var replyUserName: String!
-    
+    var isOver: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +57,12 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
             //回复
             APIClient.sharedInstance.SendReply(appUserIdSave, replyContext: textView.text, talkId: talkId, replyId: replyId, replyUserName: replyUserName)
         }
-        
         self.navigationController?.popViewControllerAnimated(true)
+        
+        if isOver == "yes" {
+            println("调用xyz的刷新JS，刷新页面！")
+            (self.navigationController?.topViewController as TieziController).afterReply()
+        }
     }
     
     func dismissKeyboard(){
@@ -86,6 +90,8 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
         var ReplyCtl = UIStoryboard(name: "Reply", bundle: nil).instantiateViewControllerWithIdentifier("Reply") as ReplyViewController
         
         ReplyCtl.bType = dict["type"]
+        ReplyCtl.isOver = dict["isOver"]
+        println(ReplyCtl.isOver)
         if ReplyCtl.bType! == "huifu" {
             ReplyCtl.talkId = dict["data_itemId"]?.toInt()
             ReplyCtl.replyId = dict["replyId_id"]?.toInt()
