@@ -57,7 +57,7 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
             //回复
             APIClient.sharedInstance.SendReply(appUserIdSave, replyContext: textView.text, talkId: talkId, replyId: replyId, replyUserName: replyUserName)
         }
-        
+
         self.navigationController?.popViewControllerAnimated(true)
     }
     

@@ -58,5 +58,6 @@ class RootViewController: UITabBarController, UITabBarControllerDelegate{
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         //返回false不变，返回true要变
         return !(selectItemTag == 3 && appUserIdSave == nil)
+        //return true
     }
 }
