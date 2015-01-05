@@ -40,7 +40,7 @@ class RootViewController: UITabBarController, UITabBarControllerDelegate{
             println(appUserIdSave)
         }
         //测试ID，一叶之秋
-        //appUserIdSave=6
+        appUserIdSave=2
     }
     
     override func didReceiveMemoryWarning() {
