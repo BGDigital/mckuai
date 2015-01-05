@@ -21,7 +21,7 @@ class TieziController: UIViewController,UIWebViewDelegate {
             if let uid = appUserIdSave{
                 return String(uid)
             }else{
-                McLogin.showLoginView(self)
+                McLogin.showLoginView(self.navigationController!)
 //                var loginView=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as UIViewController
 //                self.navigationController!.pushViewController(loginView,animated:true)
                 return nil
@@ -47,7 +47,7 @@ class TieziController: UIViewController,UIWebViewDelegate {
         comment_border.layer.borderWidth = 1;
         var bdc = UIColor(red: 228/255, green: 228/255, blue: 228/255, alpha: 1)
         comment_border.layer.borderColor = bdc.CGColor
-        
+
     }
     
 
@@ -113,5 +113,9 @@ class TieziController: UIViewController,UIWebViewDelegate {
         }else{
             println("未登录用户")
         }
+    }
+    
+    func afterReply(){
+        webview.stringByEvaluatingJavaScriptFromString("addReplyHtml()");
     }
 }

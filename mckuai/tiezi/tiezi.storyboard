@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KVc-Sn-Mrd">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--帖子详情-->
@@ -16,9 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvC-OT-VeD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="1"/>
+                                </variation>
+                            </view>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTJ-gS-JfW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="553"/>
+                                </variation>
                             </webView>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ue8-tg-81W">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -209,25 +221,42 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ue8-tg-81W" firstAttribute="top" secondItem="dTJ-gS-JfW" secondAttribute="bottom" id="Cof-4z-yIf"/>
+                            <constraint firstItem="nvC-OT-VeD" firstAttribute="top" secondItem="Uif-Xt-vVy" secondAttribute="topMargin" id="0Y4-3c-VHz"/>
+                            <constraint firstItem="dTJ-gS-JfW" firstAttribute="top" secondItem="nvC-OT-VeD" secondAttribute="top" id="9I1-3a-G4q"/>
+                            <constraint firstItem="Ue8-tg-81W" firstAttribute="top" secondItem="dTJ-gS-JfW" secondAttribute="bottom" id="Cof-4z-yIf">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="dTJ-gS-JfW" firstAttribute="top" secondItem="Uif-Xt-vVy" secondAttribute="topMargin" id="F1Z-SF-ff1"/>
                             <constraint firstItem="cAT-8n-GHA" firstAttribute="top" secondItem="Ue8-tg-81W" secondAttribute="bottom" id="G3K-dx-3yw"/>
                             <constraint firstItem="Ue8-tg-81W" firstAttribute="leading" secondItem="Uif-Xt-vVy" secondAttribute="leading" id="PIH-p4-qa1"/>
                             <constraint firstItem="Ue8-tg-81W" firstAttribute="trailing" secondItem="dTJ-gS-JfW" secondAttribute="trailing" id="TG1-Kr-gCg"/>
+                            <constraint firstItem="rGg-4R-viQ" firstAttribute="bottom" secondItem="nvC-OT-VeD" secondAttribute="top" id="ZZu-sC-Ko4">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="dTJ-gS-JfW" firstAttribute="top" secondItem="Uif-Xt-vVy" secondAttribute="top" id="bQE-RU-7OE"/>
                             <constraint firstItem="Ue8-tg-81W" firstAttribute="top" secondItem="rGg-4R-viQ" secondAttribute="bottom" id="eYz-S8-v6W"/>
+                            <constraint firstItem="dTJ-gS-JfW" firstAttribute="top" secondItem="rGg-4R-viQ" secondAttribute="bottom" id="gEL-s0-rSa"/>
                             <constraint firstItem="Ue8-tg-81W" firstAttribute="bottom" secondItem="cAT-8n-GHA" secondAttribute="top" id="oPN-Ep-kfz"/>
                             <constraint firstItem="dTJ-gS-JfW" firstAttribute="leading" secondItem="Ue8-tg-81W" secondAttribute="leading" id="obW-pS-t70"/>
+                            <constraint firstItem="dTJ-gS-JfW" firstAttribute="top" secondItem="Uif-Xt-vVy" secondAttribute="topMargin" id="qsA-CG-ixF"/>
                             <constraint firstAttribute="trailing" secondItem="dTJ-gS-JfW" secondAttribute="trailing" id="tBD-PT-bcf"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="nvC-OT-VeD"/>
                                 <exclude reference="dTJ-gS-JfW"/>
                                 <exclude reference="Ue8-tg-81W"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="9I1-3a-G4q"/>
+                                <exclude reference="F1Z-SF-ff1"/>
                                 <exclude reference="bQE-RU-7OE"/>
+                                <exclude reference="gEL-s0-rSa"/>
                                 <exclude reference="obW-pS-t70"/>
+                                <exclude reference="qsA-CG-ixF"/>
                                 <exclude reference="tBD-PT-bcf"/>
+                                <exclude reference="0Y4-3c-VHz"/>
+                                <exclude reference="ZZu-sC-Ko4"/>
                                 <exclude reference="Cof-4z-yIf"/>
                                 <exclude reference="PIH-p4-qa1"/>
                                 <exclude reference="TG1-Kr-gCg"/>
@@ -238,13 +267,20 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="nvC-OT-VeD"/>
                                 <include reference="dTJ-gS-JfW"/>
                                 <include reference="Ue8-tg-81W"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="bQE-RU-7OE"/>
+                                <include reference="9I1-3a-G4q"/>
+                                <exclude reference="F1Z-SF-ff1"/>
+                                <exclude reference="bQE-RU-7OE"/>
+                                <exclude reference="gEL-s0-rSa"/>
                                 <include reference="obW-pS-t70"/>
+                                <exclude reference="qsA-CG-ixF"/>
                                 <include reference="tBD-PT-bcf"/>
+                                <exclude reference="0Y4-3c-VHz"/>
+                                <include reference="ZZu-sC-Ko4"/>
                                 <include reference="Cof-4z-yIf"/>
                                 <include reference="PIH-p4-qa1"/>
                                 <include reference="TG1-Kr-gCg"/>
@@ -267,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UyM-GA-LuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1111.5" y="296"/>
+            <point key="canvasLocation" x="1066.5" y="296"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3RB-DW-g8a">
