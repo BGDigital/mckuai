@@ -179,7 +179,7 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
             }else{
                 
                 let data = self.datasource[indexPath.row] as JSON
-                let tiezi = data["id"].stringValue
+                let tiezi = data["cont1"].stringValue
 //                var tiezi = self.json["dataObject","dynamic",indexPath.row,"cont1"].string!
                 println(tiezi)
                 TieziController.loadTiezi(presentNavigator: self.NavigationController,id: tiezi)

@@ -30,15 +30,16 @@ class RootViewController: UITabBarController{
         tabBar.selectedImageTintColor = UIColor(red: 0.224, green: 0.749, blue: 0.361, alpha: 1.00)
         //判断是否登录
         if(appUserIdSave == nil){
-            loginViewOld=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as Login
-            self.view.addSubview(loginViewOld.view)
+//            loginViewOld=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as Login
+//            self.view.addSubview(loginViewOld.view)
 
-//           McLogin.showLoginView(self)
+           McLogin.showLoginView(self)
         }else {
             println(appUserIdSave)
         }
         //测试ID，一叶之秋
-        //appUserIdSave=6
+
+//        appUserIdSave=6
     }
     
     override func didReceiveMemoryWarning() {
