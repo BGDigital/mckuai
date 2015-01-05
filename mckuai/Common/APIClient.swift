@@ -10,10 +10,8 @@
 import UIKit
 import Alamofire
 
-//let APIRootURL = "http://221.237.152.39:8081/"
-//let APIRootURL = "http://118.144.83.145:8081/"
-
-let APIRootURL = "http://192.168.99.117/"
+let APIRootURL = "http://118.144.83.145:8081/"
+//let APIRootURL = "http://192.168.99.117"
 
 class APIClient {
    
