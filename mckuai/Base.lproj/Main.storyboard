@@ -32,7 +32,7 @@
         <scene sceneID="C75-IP-uMr">
             <objects>
                 <navigationController id="2K1-1h-LZY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="首页" image="home_no" id="mfA-Ee-kh9"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="首页" image="home_test_no" id="mfA-Ee-kh9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RGJ-5q-Tkf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -491,7 +491,7 @@
         <scene sceneID="ged-Yv-Abg">
             <objects>
                 <navigationController id="hgs-Uj-Tt7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="社区" image="community_no" id="4Ta-vF-NKR"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="社区" image="community_test_no" id="4Ta-vF-NKR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N3Z-vV-ddq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -736,7 +736,7 @@
         <scene sceneID="ZiV-Z9-ESr">
             <objects>
                 <navigationController id="nch-TB-mun" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="3" title="我的" image="mine_no" id="Gn7-rd-ox2"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="我的" image="mine_test_no" id="Gn7-rd-ox2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rWQ-QY-gFD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -936,18 +936,18 @@
         <image name="bankuai_count2" width="13" height="13"/>
         <image name="bankuai_fatie" width="44" height="44"/>
         <image name="bankuai_huodong" width="15" height="15"/>
-        <image name="community_no" width="80" height="49"/>
+        <image name="community_test_no" width="28" height="25"/>
         <image name="defaultIcon" width="73" height="73"/>
         <image name="headBg" width="100" height="100"/>
         <image name="home" width="13" height="13"/>
-        <image name="home_no" width="80" height="49"/>
+        <image name="home_test_no" width="28" height="25"/>
         <image name="image1" width="20" height="20"/>
         <image name="image2" width="20" height="20"/>
         <image name="image4" width="20" height="20"/>
         <image name="label_top1" width="23" height="36"/>
         <image name="message" width="11" height="11"/>
         <image name="meun_bg" width="640" height="98"/>
-        <image name="mine_no" width="80" height="49"/>
+        <image name="mine_test_no" width="28" height="25"/>
         <image name="tiezi" width="13" height="13"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
