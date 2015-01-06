@@ -205,7 +205,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
         var btn_tag=sender.tag
         if(btn_tag == 20){
             println("加载动态消息")
-            self.dynamic_btn.setTitleColor(UIColor.greenColor(),forState:UIControlState.Normal)
+            self.dynamic_btn.setTitleColor(UIColor(red: 0.098, green: 0.690, blue: 0.243, alpha: 1.00),forState:UIControlState.Normal)
             self.message_btn.setTitleColor(UIColor.lightGrayColor(),forState:UIControlState.Normal)
             if(dynamicTableView == nil){
                 dynamicTableView = UIStoryboard(name: "Dynamic", bundle: nil).instantiateViewControllerWithIdentifier("dynamicSb")as Dynamic
@@ -221,7 +221,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
 //            OtherCenter.openOtherCenter(presentNavigator: self.navigationController, id: 2)
             
             println("加载个人消息")
-            self.message_btn.setTitleColor(UIColor.greenColor(),forState:UIControlState.Normal)
+            self.message_btn.setTitleColor(UIColor(red: 0.098, green: 0.690, blue: 0.243, alpha: 1.00),forState:UIControlState.Normal)
             self.dynamic_btn.setTitleColor(UIColor.lightGrayColor(),forState:UIControlState.Normal)
             
             if(messageTableView == nil){
