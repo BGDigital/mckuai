@@ -18,8 +18,6 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     
     @IBOutlet weak var topUsername: UILabel!
     
-    @IBOutlet weak var topUserCountReply: UILabel!
-    
     @IBOutlet weak var topUserCountTiezi: UILabel!
     
     @IBOutlet weak var famouseUserCView: UICollectionView!
@@ -49,8 +47,7 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     var topOneUser:JSON!{
         didSet{
             topUsername.text = topOneUser["nike"].stringValue
-            topUserCountReply.text = topOneUser["talkNum"].stringValue
-            topUserCountTiezi.text = topOneUser["homeNum"].stringValue
+            topUserCountTiezi.text = topOneUser["talkNum"].stringValue
             var src = topOneUser["headImg"].stringValue
             GTUtil.loadImageView(img: topUserhead,url: src)
             if topOneUser["isServerActor"].stringValue == "1"{

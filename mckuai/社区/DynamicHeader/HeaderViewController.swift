@@ -22,6 +22,8 @@ class HeaderViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cv.showsHorizontalScrollIndicator = false
+        cv.showsVerticalScrollIndicator = false
         self.sendRequest()
         /*
         //是否读取缓存数据
