@@ -40,7 +40,7 @@ class DynamicCell: UITableViewCell {
     }
     
     func update(json: JSON) {
-        self.title.text = json["talkTitle"].stringValue
+        self.title.text = json["talkTitle"].stringValue+"\n "
         self.username.text = json["userName"].stringValue
         self.time.text = GTUtil.compDate(json["replyTime"].stringValue)
         self.replyNum.text = json["replyNum"].stringValue

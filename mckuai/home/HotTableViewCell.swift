@@ -21,7 +21,7 @@ class HotTableViewCell:UITableViewCell {
     func update(json:JSON){
         self.selectionStyle = .None
         
-        title.text = json["talkTitle"].stringValue
+        title.text = json["talkTitle"].stringValue+"\n "
         
         bankuai.text = json["forumName"].stringValue
      

@@ -150,8 +150,8 @@
                                                 <rect key="frame" x="300" y="0.0" width="20" height="20"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日明星" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tis-mH-gdU">
-                                                <rect key="frame" x="8" y="1" width="56" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <rect key="frame" x="8" y="2" width="52" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -281,8 +281,8 @@
                                     <rect key="frame" x="300" y="0.0" width="20" height="20"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热帖推荐" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hL-xP-8ki">
-                                    <rect key="frame" x="8" y="1" width="56" height="17"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <rect key="frame" x="8" y="1" width="52" height="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -303,20 +303,20 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9jp-ml-z6e">
-                                            <rect key="frame" x="8" y="12" width="98" height="55"/>
+                                            <rect key="frame" x="8" y="8" width="98" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="98" id="OrT-0C-CYm"/>
                                                 <constraint firstAttribute="height" constant="55" id="lac-tl-D6R"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="这一个帖子的标题，很长很长大哦，非常差咯它咬盏两行" lineBreakMode="tailTruncation" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spO-Ot-Df4">
-                                            <rect key="frame" x="114" y="12" width="198" height="40"/>
+                                            <rect key="frame" x="114" y="8" width="198" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="板块名字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd6-Tc-Ssb">
-                                            <rect key="frame" x="114" y="58" width="60" height="9"/>
+                                            <rect key="frame" x="114" y="52" width="60" height="9"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="NKK-Ln-T0f"/>
                                                 <constraint firstAttribute="height" constant="9" id="aJR-Bu-TSG"/>
@@ -326,7 +326,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5分钟前" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrH-vC-dPS">
-                                            <rect key="frame" x="201" y="58" width="48" height="9"/>
+                                            <rect key="frame" x="201" y="52" width="48" height="9"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="48" id="rxn-WB-WvM"/>
                                             </constraints>
@@ -335,29 +335,29 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" translatesAutoresizingMaskIntoConstraints="NO" id="SbC-W0-H8r">
-                                            <rect key="frame" x="275" y="57" width="11" height="11"/>
+                                            <rect key="frame" x="275" y="51" width="11" height="11"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="122" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tev-bl-XOb">
-                                            <rect key="frame" x="287" y="55" width="20" height="14"/>
+                                            <rect key="frame" x="288" y="49" width="20" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.49411764705882355" green="0.49411764705882355" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="tev-bl-XOb" firstAttribute="top" secondItem="uh6-pr-FgA" secondAttribute="topMargin" constant="47" id="1ah-3Y-Bzi"/>
+                                        <constraint firstItem="tev-bl-XOb" firstAttribute="top" secondItem="uh6-pr-FgA" secondAttribute="topMargin" constant="41" id="1ah-3Y-Bzi"/>
                                         <constraint firstItem="spO-Ot-Df4" firstAttribute="top" secondItem="9jp-ml-z6e" secondAttribute="top" id="30U-yk-YEK"/>
                                         <constraint firstItem="rd6-Tc-Ssb" firstAttribute="leading" secondItem="spO-Ot-Df4" secondAttribute="leading" id="AYt-cD-irC"/>
                                         <constraint firstItem="spO-Ot-Df4" firstAttribute="leading" secondItem="9jp-ml-z6e" secondAttribute="trailing" constant="8" symbolic="YES" id="FP8-wP-uzj"/>
                                         <constraint firstItem="rd6-Tc-Ssb" firstAttribute="firstBaseline" secondItem="jrH-vC-dPS" secondAttribute="firstBaseline" id="IgS-4D-RXp"/>
                                         <constraint firstItem="spO-Ot-Df4" firstAttribute="trailing" secondItem="uh6-pr-FgA" secondAttribute="trailingMargin" id="Pa8-h6-8UZ"/>
                                         <constraint firstItem="jrH-vC-dPS" firstAttribute="baseline" secondItem="rd6-Tc-Ssb" secondAttribute="baseline" id="RT5-mU-F1J"/>
-                                        <constraint firstItem="9jp-ml-z6e" firstAttribute="top" secondItem="uh6-pr-FgA" secondAttribute="topMargin" constant="4" id="Rd5-6c-TSi"/>
+                                        <constraint firstItem="9jp-ml-z6e" firstAttribute="top" secondItem="uh6-pr-FgA" secondAttribute="topMargin" id="Rd5-6c-TSi"/>
                                         <constraint firstItem="9jp-ml-z6e" firstAttribute="leading" secondItem="uh6-pr-FgA" secondAttribute="leadingMargin" id="eue-vp-lCt"/>
-                                        <constraint firstItem="rd6-Tc-Ssb" firstAttribute="bottom" secondItem="9jp-ml-z6e" secondAttribute="bottom" id="m4p-79-OHc"/>
+                                        <constraint firstItem="rd6-Tc-Ssb" firstAttribute="bottom" secondItem="9jp-ml-z6e" secondAttribute="bottom" constant="-2" id="m4p-79-OHc"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="SbC-W0-H8r" secondAttribute="trailing" constant="26" id="nI7-7j-otF"/>
-                                        <constraint firstItem="tev-bl-XOb" firstAttribute="leading" secondItem="SbC-W0-H8r" secondAttribute="trailing" constant="1" id="oo7-WO-i9O"/>
-                                        <constraint firstItem="SbC-W0-H8r" firstAttribute="top" secondItem="uh6-pr-FgA" secondAttribute="topMargin" constant="49" id="xPS-8K-Rb7"/>
+                                        <constraint firstItem="tev-bl-XOb" firstAttribute="leading" secondItem="SbC-W0-H8r" secondAttribute="trailing" constant="2" id="oo7-WO-i9O"/>
+                                        <constraint firstItem="SbC-W0-H8r" firstAttribute="top" secondItem="uh6-pr-FgA" secondAttribute="topMargin" constant="43" id="xPS-8K-Rb7"/>
                                         <constraint firstItem="jrH-vC-dPS" firstAttribute="leading" secondItem="rd6-Tc-Ssb" secondAttribute="trailing" constant="27" id="xgp-wV-26i"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -538,7 +538,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="版块" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHj-nU-WDq">
                                 <rect key="frame" x="5" y="2" width="26" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="热帖推荐" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEM-aJ-6if">

@@ -137,19 +137,12 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
             
             let  cell = self.tableView.dequeueReusableCellWithIdentifier("messageCell") as MessageCell
             
-
-            
-            
             var data = self.datasource[indexPath.row] as JSON
             cell.update(data)
             return cell
             
         }
-        
-
-
-        
-        
+    
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if(self.datasource.count == indexPath.row){
