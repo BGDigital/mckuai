@@ -15,7 +15,11 @@ class TieziController: UIViewController,UIWebViewDelegate {
     @IBOutlet weak var hello: UIView!
     
     @IBOutlet weak var comment_border: UIView!
+    
+    @IBOutlet weak var loading: UIView!
+    
     var tid:String?
+    
     var loginId:String!{
         get{
             if let uid = appUserIdSave{
@@ -64,8 +68,22 @@ class TieziController: UIViewController,UIWebViewDelegate {
             
             return false;
         }
+        
         return true;
     }
+    func webViewDidStartLoad(webView: UIWebView) {
+        loading.hidden = false
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        loading.hidden = true
+    }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+        var label = loading.subviews[0] as UILabel;
+        label.text = "加载出错"
+    }
+    
     
     class func loadTiezi(presentNavigator ctl:UINavigationController?,id:String){
         var tiezi = UIStoryboard(name: "tiezi", bundle: nil).instantiateViewControllerWithIdentifier("Tiezi") as TieziController
