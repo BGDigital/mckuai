@@ -54,8 +54,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
             initData()
             changeStatusClicked(self.dynamic_btn)
         }else{
-            
-
+            McLogin.showLoginView(self)
         }
 
 

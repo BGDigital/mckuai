@@ -53,14 +53,14 @@ class RootViewController: UITabBarController, UITabBarControllerDelegate{
     
      override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
         selectItemTag = item.tag
-        if(item.tag == 3 && appUserIdSave == nil){
+        if(item.tag == 3 && (appUserIdSave == nil || appUserIdSave == 0)){
             McLogin.showLoginView(self)
         }
      }
 
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         //返回false不变，返回true要变
-        return !(selectItemTag == 3 && appUserIdSave == nil)
+        return !(selectItemTag == 3 && (appUserIdSave == nil || appUserIdSave == 0))
         //return true
     }
 }
