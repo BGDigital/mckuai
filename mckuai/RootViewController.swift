@@ -13,7 +13,8 @@ import UIKit
 let appID:String = "3Z8C4UK6GU"
 
 let tencentAppKey = "101155101"
-var appUserIdSave=NSUserDefaults.standardUserDefaults().objectForKey("userId") as Int!
+//var appUserIdSave=NSUserDefaults.standardUserDefaults().objectForKey("userId") as Int!
+var appUserIdSave: Int!
 var loginView:McLogin!
 var loginViewOld:Login!
 var selectItemTag = 0
@@ -30,14 +31,16 @@ class RootViewController: UITabBarController, UITabBarControllerDelegate{
         delegate = self
         //修改tabbar的选中颜色
         tabBar.selectedImageTintColor = UIColor(red: 0.224, green: 0.749, blue: 0.361, alpha: 1.00)
+        //读取用户登录信息
+        var userDefault = NSUserDefaults.standardUserDefaults()
+        appUserIdSave = userDefault.integerForKey("appUserIdSave")
+        println("appUserIdSave:\(appUserIdSave)")
         //判断是否登录
-        if(appUserIdSave == nil){
+        if(appUserIdSave == nil || appUserIdSave == 0){
 //            loginViewOld=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as Login
 //            self.view.addSubview(loginViewOld.view)
 
            McLogin.showLoginView(self)
-        }else {
-            println(appUserIdSave)
         }
         //测试ID，一叶之秋
         //appUserIdSave=6

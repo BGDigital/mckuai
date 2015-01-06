@@ -14,7 +14,7 @@ class forumDetailCell: UITableViewCell {
     @IBOutlet weak var caption: UILabel!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var replyNum: UIButton!    
+    @IBOutlet weak var replyNum: UILabel!
     @IBOutlet weak var img: UIImageView!
 
     
@@ -30,7 +30,7 @@ class forumDetailCell: UITableViewCell {
         self.caption.text = json["talkTitle"].stringValue
         self.username.text = json["userName"].stringValue
         self.time.text = GTUtil.compDate(json["replyTime"].stringValue)
-        self.replyNum.setTitle(json["replyNum"].stringValue, forState: UIControlState.Normal)
+        self.replyNum.text = json["replyNum"].stringValue
         if json["hasVideo"].int16Value == 1 {
             self.img.image = UIImage(named: "bankuai_video")
         } else {

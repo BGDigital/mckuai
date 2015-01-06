@@ -94,9 +94,13 @@ class McLogin: UIViewController,TencentSessionDelegate {
                 println(json)
                 if json["state"].stringValue == "ok" {
                     println("从服务器登录成功")
-                    var userId = json["dataObject"].int
-                    NSUserDefaults.standardUserDefaults().setObject(userId, forKey: "appUserIdSave")
-                    appUserIdSave = userId!
+                    var userId = json["dataObject"].intValue
+                    //保存登录信息
+                    var userDefault = NSUserDefaults.standardUserDefaults()
+                    userDefault.setInteger(userId, forKey: "appUserIdSave")
+                    userDefault.synchronize()
+                    
+                    appUserIdSave = userId
                     self.removeLoginView()
                     
                 }else{

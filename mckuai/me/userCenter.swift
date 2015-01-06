@@ -62,11 +62,13 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     }
     
     @IBAction func userLogout() {
-        UIAlertView(title: "提示", message: "注销后将不能再进入个人中心!", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定").show()
+        UIAlertView(title: "提示", message: "你确定要注销吗？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定").show()
     }
     
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if buttonIndex == 1 {
+            var userDefault = NSUserDefaults.standardUserDefaults()
+            userDefault.removeObjectForKey("appUserIdSave")
             appUserIdSave = nil
             self.tabBarController?.selectedIndex = 0
             println("用户已退出！")
