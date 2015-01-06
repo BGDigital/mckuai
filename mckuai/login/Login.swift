@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Alamofire
+
 class Login: UIViewController,TencentSessionDelegate{
     
     var tencentOAuth:TencentOAuth!

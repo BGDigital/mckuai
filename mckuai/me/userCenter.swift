@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-
 
 class UserCenter: UIViewController, UIAlertViewDelegate {
     var rightButtonItem:UIBarButtonItem?

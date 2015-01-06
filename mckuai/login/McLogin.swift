@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import Alamofire
+
 class McLogin: UIViewController,TencentSessionDelegate {
     
     var tencentOAuth:TencentOAuth!
@@ -120,6 +120,7 @@ class McLogin: UIViewController,TencentSessionDelegate {
     class func showLoginView(prentView:UIViewController){
         loginView=UIStoryboard(name:"McLogin",bundle:nil).instantiateViewControllerWithIdentifier("mcLogin") as McLogin
         prentView.view.addSubview(loginView.view)
+        //prentView.presentViewController(loginView, animated: true, completion: nil)
 
     }
     

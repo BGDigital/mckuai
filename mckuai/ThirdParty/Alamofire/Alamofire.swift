@@ -22,6 +22,17 @@
 
 import Foundation
 
+//不用Alamofire框架直接使用源码，要加这个东西
+class Alamofire {
+    class func request(method: Method, _ URLString: URLStringConvertible, parameters: [String: AnyObject]? = nil, encoding: ParameterEncoding = .URL) -> Request {
+        return Manager.sharedInstance.request(method,URLString,parameters: parameters?,encoding: encoding)
+    }
+    
+    class var manager : Manager {
+        return Manager.sharedInstance
+    }
+}
+
 /// Alamofire errors
 public let AlamofireErrorDomain = "com.alamofire.error"
 

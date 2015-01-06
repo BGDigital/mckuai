@@ -12,7 +12,7 @@
             <objects>
                 <tabBarController id="sFg-L0-DoZ" customClass="RootViewController" customModule="mckuai" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="meun_bg" id="LlU-rN-fo6">
+                    <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="750" id="LlU-rN-fo6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -922,10 +922,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="750" width="375" height="49"/>
         <image name="Logout" width="44" height="44"/>
         <image name="background" width="375" height="244"/>
         <image name="bankuai_count2" width="13" height="13"/>
-        <image name="bankuai_fatie" width="44" height="44"/>
+        <image name="bankuai_fatie" width="22" height="22"/>
         <image name="bankuai_huodong" width="15" height="15"/>
         <image name="community_test_no" width="28" height="25"/>
         <image name="defaultIcon" width="73" height="73"/>
@@ -936,7 +937,6 @@
         <image name="image4" width="20" height="20"/>
         <image name="label_top1" width="23" height="36"/>
         <image name="message" width="11" height="11"/>
-        <image name="meun_bg" width="640" height="98"/>
         <image name="mine_test_no" width="28" height="25"/>
         <image name="tiezi" width="13" height="13"/>
     </resources>

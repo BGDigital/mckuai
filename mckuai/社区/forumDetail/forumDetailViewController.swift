@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class forumDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 

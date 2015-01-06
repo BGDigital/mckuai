@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Alamofire
 import UIKit
 
 class GTUtil {
@@ -59,7 +58,7 @@ class GTUtil {
         } else if (second/60) < 60 {
             var tmp = second/60
             var s = getStr(tmp)
-            return "\(s) 分钟前"
+            return "\(s)分钟前"
         } else if (second/60/60) < 24 {
             var tmp = second/60/60
             var s = getStr(tmp)

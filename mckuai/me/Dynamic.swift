@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Alamofire
+
 class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate {
     
     //该导航需要设置的
