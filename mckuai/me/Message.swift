@@ -167,7 +167,7 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
             onLoadMore()
         }else{
             let data = self.datasource[indexPath.row] as JSON
-            let tiezi = data["id"].stringValue
+            let tiezi = data["cont1"].stringValue
             println(tiezi)
             TieziController.loadTiezi(presentNavigator: self.NavigationController, id: tiezi)
         }
