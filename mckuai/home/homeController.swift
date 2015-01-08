@@ -94,7 +94,12 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         carouselView.carouselPeriodTime = 4.0
 
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        println("home appear")
+        famouseUserCView.scrollEnabled = false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

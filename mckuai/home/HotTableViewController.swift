@@ -33,6 +33,7 @@ class HotTableViewController:UITableViewController {
         super.viewDidLoad()
 //        分隔线
 //        self.tableView.separatorStyle = .None
+        self.tableView.scrollEnabled = false
         APIClient.sharedInstance.getHomePageData({
             (json) -> Void in
              if "ok" == json["state"].stringValue {
