@@ -55,7 +55,7 @@
                                             </state>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvx-CY-sqx">
-                                            <rect key="frame" x="1" y="59" width="320" height="1"/>
+                                            <rect key="frame" x="0.0" y="59" width="320" height="1"/>
                                             <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
                                     </subviews>
@@ -64,7 +64,7 @@
                                         <constraint firstItem="mvx-CY-sqx" firstAttribute="top" secondItem="Hxl-LI-JiX" secondAttribute="bottom" constant="7" id="3Z2-q4-bag"/>
                                         <constraint firstAttribute="trailing" secondItem="4mH-kd-rxp" secondAttribute="trailing" constant="14" id="Bdr-5T-Qrb"/>
                                         <constraint firstItem="EIo-Aw-YoW" firstAttribute="leading" secondItem="9fB-a1-0NT" secondAttribute="trailing" constant="41" id="I5Z-wM-9EH"/>
-                                        <constraint firstItem="mvx-CY-sqx" firstAttribute="leading" secondItem="0FI-iC-vcz" secondAttribute="leading" constant="1" id="KDD-iG-Tqc"/>
+                                        <constraint firstItem="mvx-CY-sqx" firstAttribute="leading" secondItem="0FI-iC-vcz" secondAttribute="leading" id="KDD-iG-Tqc"/>
                                         <constraint firstItem="4mH-kd-rxp" firstAttribute="leading" secondItem="9fB-a1-0NT" secondAttribute="leading" id="QoN-7Z-Zvw"/>
                                         <constraint firstItem="Hxl-LI-JiX" firstAttribute="bottom" secondItem="0FI-iC-vcz" secondAttribute="bottomMargin" id="REm-oo-CgE"/>
                                         <constraint firstItem="Hxl-LI-JiX" firstAttribute="leading" secondItem="0FI-iC-vcz" secondAttribute="leadingMargin" id="RMd-e4-VGx"/>
@@ -77,7 +77,7 @@
                                         <constraint firstItem="EIo-Aw-YoW" firstAttribute="top" secondItem="0FI-iC-vcz" secondAttribute="top" constant="11" id="qfU-oZ-pNn"/>
                                         <constraint firstItem="9fB-a1-0NT" firstAttribute="top" secondItem="0FI-iC-vcz" secondAttribute="topMargin" id="t77-oJ-huM"/>
                                         <constraint firstItem="9fB-a1-0NT" firstAttribute="top" secondItem="Hxl-LI-JiX" secondAttribute="top" id="tNV-rn-URc"/>
-                                        <constraint firstAttribute="trailing" secondItem="mvx-CY-sqx" secondAttribute="trailing" constant="-1" id="vs7-zd-daP"/>
+                                        <constraint firstAttribute="trailing" secondItem="mvx-CY-sqx" secondAttribute="trailing" id="vs7-zd-daP"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -203,7 +203,7 @@
     <resources>
         <image name="bankuai" width="20" height="20"/>
         <image name="bankuai_count1" width="16" height="16"/>
-        <image name="bankuai_fatie" width="44" height="44"/>
+        <image name="bankuai_fatie" width="22" height="22"/>
         <image name="bankuai_img" width="15" height="15"/>
         <image name="message" width="11" height="11"/>
     </resources>

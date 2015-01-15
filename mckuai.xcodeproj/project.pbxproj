@@ -737,7 +737,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8e142584-be33-45f7-a072-c7a954c872dd";
+				PROVISIONING_PROFILE = "5fb6c159-1fa8-4cc9-ac09-edaf12273ccc";
 				SWIFT_OBJC_BRIDGING_HEADER = "mckuai/mckuai-Bridging-Header.h";
 			};
 			name = Debug;
@@ -748,7 +748,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chengdu Zhipu Network Technology Co., Ltd. (RPLF9PJ3L4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chengdu Zhipu Network Technology Co., Ltd. (RPLF9PJ3L4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -759,7 +759,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8e142584-be33-45f7-a072-c7a954c872dd";
+				PROVISIONING_PROFILE = "5fb6c159-1fa8-4cc9-ac09-edaf12273ccc";
 				SWIFT_OBJC_BRIDGING_HEADER = "mckuai/mckuai-Bridging-Header.h";
 			};
 			name = Release;

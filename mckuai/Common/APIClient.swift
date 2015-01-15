@@ -20,9 +20,32 @@ class APIClient {
         return Static.instance
     }
     //Post请求
-    private func Send(path: NSString, parameters: [String : AnyObject]?) {
-        Alamofire.request(.POST, APIRootURL + path, parameters: parameters)
+    private func Send(path: NSString, parameters: [String : AnyObject]?, view: UIView, ctl:UINavigationController?) -> Bool {
+        
+        var indicator = WIndicator.showIndicatorAddedTo(view, animation: true)
+        indicator.text = "努力发布中..."
+        dispatch_async(dispatch_get_global_queue(0,0), { () -> Void in
+            
+            //-----------
+            sleep(6)
+            Alamofire.request(.POST, APIRootURL + path, parameters: parameters).responseSwiftyJSON {
+                (_, _, json, error) in
+                println("\(APIRootURL + path)，Send Successfull!!  返回值：\(json)")
+                if json["state"].stringValue == "ok" {
+                    //UIAlertView(title: "提示", message: "发表成功", delegate: nil, cancelButtonTitle: "确定").show()
+                    ctl?.popViewControllerAnimated(true)
+                }
+            }
+
+            //-----------
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                WIndicator.removeIndicatorFrom(view, animation: true)
+            })
+        })
+        return true
     }
+    
     //GET
     private func getJSONData(path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
         Alamofire.request(.GET, APIRootURL + path, parameters: parameters)
@@ -64,7 +87,7 @@ class APIClient {
     
     
     //发贴
-    func SendPost(userId: Int, forumId: Int, forumName: NSString, talkTypeId: Int, talkTypeName: NSString, talkTitle: NSString, content: NSString) {
+    func SendPost(ctl:UINavigationController?, parentView: UIView, userId: Int, forumId: Int, forumName: NSString, talkTypeId: Int, talkTypeName: NSString, talkTitle: NSString, content: NSString) -> Void {
         let dict = [
         "userId": userId,
         "forumId": forumId,
@@ -75,11 +98,11 @@ class APIClient {
         "content": content,
         "device": "ios"
         ]
-        self.Send("talk.do?act=addTalk", parameters: dict)
+        self.Send("talk.do?act=addTalk", parameters: dict, view: parentView, ctl:ctl)
     }
     
     //跟贴
-    func SendFollow(userId: Int, operUserId: Int, isNew: Int, forumId: Int, forumName: NSString, talkId: Int, content: NSString, talkTitle: NSString) {
+    func SendFollow(ctl:UINavigationController?, parentView: UIView, userId: Int, operUserId: Int, isNew: Int, forumId: Int, forumName: NSString, talkId: Int, content: NSString, talkTitle: NSString) -> Void {
         let dict = [
             "userId": userId,
             "operUserId": operUserId,
@@ -91,11 +114,11 @@ class APIClient {
             "talkTitle": talkTitle,
             "device": "ios"
         ]
-        self.Send("talk.do?act=followTalk", parameters: dict)
+        self.Send("talk.do?act=followTalk", parameters: dict, view: parentView, ctl:ctl)
     }
     
     //回复
-    func SendReply(userId: Int, replyContext: NSString, talkId: Int, replyId: Int, replyUserName: NSString) {
+    func SendReply(ctl:UINavigationController?, parentView: UIView, userId: Int, replyContext: NSString, talkId: Int, replyId: Int, replyUserName: NSString) -> Void {
         let dict = [
             "userId": userId,
             "replyContext": replyContext,
@@ -104,7 +127,7 @@ class APIClient {
             "replyUserName": replyUserName,
             "device": "ios"
         ]
-        self.Send("talk.do?act=replyTalk", parameters: dict)
+        self.Send("talk.do?act=replyTalk", parameters: dict, view: parentView, ctl:ctl)
     }
     
 

@@ -52,12 +52,14 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
         
         if self.bType == "gentie" {
             //跟贴
-            APIClient.sharedInstance.SendFollow(appUserIdSave, operUserId: operUserId, isNew: isNew, forumId: forumId, forumName: forumName, talkId: talkId, content: textView.text, talkTitle: talkTitle)
+            APIClient.sharedInstance.SendFollow(self.navigationController?, parentView: self.view, userId: appUserIdSave, operUserId: operUserId, isNew: isNew, forumId: forumId, forumName: forumName, talkId: talkId, content: textView.text, talkTitle: talkTitle)
         } else {
             //回复
-            APIClient.sharedInstance.SendReply(appUserIdSave, replyContext: textView.text, talkId: talkId, replyId: replyId, replyUserName: replyUserName)
+            APIClient.sharedInstance.SendReply(self.navigationController?, parentView: self.view, userId: appUserIdSave, replyContext: textView.text, talkId: talkId, replyId: replyId, replyUserName: replyUserName)
         }
-        self.navigationController?.popViewControllerAnimated(true)
+
+        //self.navigationController?.popViewControllerAnimated(true)
+        
         
         if isOver == "yes" {
             println("调用xyz的刷新JS，刷新页面！")
