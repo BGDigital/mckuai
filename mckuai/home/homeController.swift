@@ -72,8 +72,6 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         initData()
      
         famouseUserCView.dataSource = self
@@ -128,6 +126,17 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     
     //初始化数据
     func initData(){
+        
+        //判断网络是已连接
+        if Reachability.isConnectedToNetwork() {
+            UIAlertController.showAlert(self, title: "出错啦！", message: "\n请在3G或WIFI状态下使用麦块", cancelButtonTitle: "取消", okButtonTitle: "好", okHandler: {
+                (UIAlertAction) in
+                println("点击了好!")
+            })
+            return
+        }
+
+        
         APIClient.sharedInstance.getHomePageData({
             (json) -> Void in
             if "ok" == json["state"].stringValue {

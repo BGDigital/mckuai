@@ -29,6 +29,7 @@ class RootViewController: UITabBarController, UITabBarControllerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
+        
         //修改tabbar的选中颜色
         tabBar.selectedImageTintColor = UIColor(red: 0.224, green: 0.749, blue: 0.361, alpha: 1.00)
         //读取用户登录信息
@@ -37,9 +38,6 @@ class RootViewController: UITabBarController, UITabBarControllerDelegate{
         println("appUserIdSave:\(appUserIdSave)")
         //判断是否登录
         if(appUserIdSave == nil || appUserIdSave == 0){
-//            loginViewOld=UIStoryboard(name:"Login",bundle:nil).instantiateViewControllerWithIdentifier("login") as Login
-//            self.view.addSubview(loginViewOld.view)
-
            McLogin.showLoginView(self)
         }
         //测试ID，一叶之秋
