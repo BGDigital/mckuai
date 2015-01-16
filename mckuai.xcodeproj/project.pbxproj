@@ -52,7 +52,7 @@
 		E63FD7E61A1346CC00177E3E /* chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63FD7E51A1346CC00177E3E /* chat.storyboard */; };
 		E63FD7E81A13471F00177E3E /* chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD7E71A13471F00177E3E /* chat.swift */; };
 		E64264481A68C15000488803 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64264471A68C15000488803 /* Reachability.swift */; };
-		E642644A1A69660200488803 /* MCAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64264491A69660200488803 /* MCAlert.swift */; };
+		E642644C1A696F6800488803 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E642644B1A696F6800488803 /* SweetAlert.swift */; };
 		E64C09571A2C625900AD9138 /* DynamicDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64C09561A2C625900AD9138 /* DynamicDetailController.swift */; };
 		E67377711A19E7CA006DAE76 /* DHCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67377701A19E7CA006DAE76 /* DHCarouselView.swift */; };
 		E67B865E1A3E7AA400B782E1 /* HotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B865C1A3E7AA400B782E1 /* HotTableViewCell.swift */; };
@@ -150,7 +150,7 @@
 		E63FD7E51A1346CC00177E3E /* chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = chat.storyboard; sourceTree = "<group>"; };
 		E63FD7E71A13471F00177E3E /* chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chat.swift; sourceTree = "<group>"; };
 		E64264471A68C15000488803 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		E64264491A69660200488803 /* MCAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MCAlert.swift; sourceTree = "<group>"; };
+		E642644B1A696F6800488803 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
 		E64C09561A2C625900AD9138 /* DynamicDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicDetailController.swift; sourceTree = "<group>"; };
 		E67377701A19E7CA006DAE76 /* DHCarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DHCarouselView.swift; path = ../DHCarouselView.swift; sourceTree = "<group>"; };
 		E67B865C1A3E7AA400B782E1 /* HotTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotTableViewCell.swift; sourceTree = "<group>"; };
@@ -419,7 +419,6 @@
 			isa = PBXGroup;
 			children = (
 				E67B86611A3E7B8100B782E1 /* GTUtil.swift */,
-				E64264491A69660200488803 /* MCAlert.swift */,
 				E6D6C2DB1A300C2100858161 /* AppContext.swift */,
 				E6D6C2D91A2FFE9800858161 /* BaseTableViewController.swift */,
 				E6D6C2C21A2FFB5100858161 /* APIClient.swift */,
@@ -427,6 +426,7 @@
 				E6BCFC641A1A30F2009857B0 /* RadiusView.swift */,
 				E67377701A19E7CA006DAE76 /* DHCarouselView.swift */,
 				E64264471A68C15000488803 /* Reachability.swift */,
+				E642644B1A696F6800488803 /* SweetAlert.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -594,7 +594,6 @@
 				E69FCD8E1A5297C6003E11B1 /* WIndicator.swift in Sources */,
 				E62889101A3E876300C45131 /* Message.swift in Sources */,
 				E6D6C2CA1A2FFC0800858161 /* SwiftyJSON.swift in Sources */,
-				E642644A1A69660200488803 /* MCAlert.swift in Sources */,
 				E628890D1A3E876300C45131 /* DynamicReplyCell.swift in Sources */,
 				0BDA0A7E1A4F1EE6008B888D /* OtherCenter.swift in Sources */,
 				E63FD7E01A133E0400177E3E /* homeController.swift in Sources */,
@@ -607,6 +606,7 @@
 				E626E1381A40168E00506234 /* PostViewController.swift in Sources */,
 				E628890E1A3E876300C45131 /* HttpUrlConstant.swift in Sources */,
 				E6D6C2C91A2FFC0800858161 /* Alamofire-SwiftyJSON.swift in Sources */,
+				E642644C1A696F6800488803 /* SweetAlert.swift in Sources */,
 				E63FD7E81A13471F00177E3E /* chat.swift in Sources */,
 				E6BCFC651A1A30F2009857B0 /* FilletButton.swift in Sources */,
 				E628890B1A3E876300C45131 /* DynamicAddCell.swift in Sources */,

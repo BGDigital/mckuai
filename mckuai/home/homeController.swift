@@ -128,11 +128,16 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     func initData(){
         
         //判断网络是已连接
-        if Reachability.isConnectedToNetwork() {
-            UIAlertController.showAlert(self, title: "出错啦！", message: "\n请在3G或WIFI状态下使用麦块", cancelButtonTitle: "取消", okButtonTitle: "好", okHandler: {
-                (UIAlertAction) in
-                println("点击了好!")
-            })
+        if !Reachability.isConnectedToNetwork() {
+            SweetAlert().showAlert("出错啦", subTitle: "检查一下流量开关或连上WiFi再试试", style: AlertStyle.Warning, buttonTitle:"", buttonColor:UIColorFromRGB(0xD0D0D0) , otherButtonTitle:  "知道了", otherButtonColor: UIColorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
+                if isOtherButton == true {
+                    
+                    println("Cancel Button  Pressed")
+                }
+                else {
+//                    SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.Success)
+                }
+            }
             return
         }
 
