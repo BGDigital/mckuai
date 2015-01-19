@@ -18,7 +18,8 @@ class DHCarouselView: UIView {
   var carouselPageControl: UIPageControl!
   var carouselLoopTimer: NSTimer!
   var carouselDataArray = [String]()
-  var carouselPeriodTime = 2.0
+    var carouseTitle:Array<String>?
+    var carouselPeriodTime = 2.0
   var carouselAutoplay = true
   var delegate: DHCarouselViewDelegate!
   
@@ -45,17 +46,22 @@ class DHCarouselView: UIView {
   func setPageControl() {
     carouselPageControl = UIPageControl(frame: CGRect(x: 0, y: carouselScrollView.frame.size.height - pageControllHeight, width: carouselScrollView.frame.size.width, height: pageControllHeight))
     carouselPageControl.numberOfPages = 1
-    self.addSubview(carouselPageControl)
+
     carouselPageControl.center = CGPointMake(self.center.x, carouselPageControl.center.y)
   }
-  
+//增加清空轮播图功能
+    func emptyCarouseView(){
+        for v in self.carouselScrollView.subviews{
+            v.removeFromSuperview()
+        }
+    }
 }
 
 extension DHCarouselView {
   
   func loadCarouselDataThenStart () {
     if carouselDataArray.count <= 0 {
-      
+      return
     }
     
     carouselScrollView.contentSize = CGSize(width: carouselScrollView.frame.size.width * CGFloat(carouselDataArray.count + 2), height: carouselScrollView.frame.size.height)
@@ -68,16 +74,32 @@ extension DHCarouselView {
         
         GTUtil.loadImage(carouselImgName, callback: {
             (img:UIImage?) -> Void in
-//            println(img)
             carouselBtn.setBackgroundImage(img, forState: UIControlState.Normal)
             carouselBtn.setBackgroundImage(UIImage(named: carouselImgName), forState: UIControlState.Highlighted)
-            
         })
-
+        
+        
       carouselBtn.contentMode = UIViewContentMode.ScaleToFill
       carouselBtn.tag = i
       carouselBtn.addTarget(self, action: Selector("carouselBtnTapped:"), forControlEvents: UIControlEvents.TouchUpInside)
+    
       carouselScrollView.addSubview(carouselBtn)
+        //添加帖子的标题
+        if carouseTitle != nil{
+            var label = UILabel();
+            label.text = " "+carouseTitle![i]
+            var size = label.sizeThatFits(CGSize.zeroSize)
+            size.width = carouselScrollView.frame.size.width
+            size.height = 25
+            let orgin = CGPoint(x: carouselScrollView.frame.size.width * CGFloat(i + 1), y: carouselScrollView.frame.size.height - size.height)
+            label.frame = CGRect(origin: orgin, size: size)
+            label.textColor = UIColor(white: 0.9, alpha: 1)
+            label.backgroundColor = UIColor(white: 0, alpha: 0.5)
+//            label.numberOfLines = 1
+            label.font = label.font.fontWithSize(12.0)
+            carouselScrollView.addSubview(label)
+        }
+
     }
     
     let lastCarouselImg = carouselDataArray[carouselDataArray.count - 1]
@@ -178,3 +200,4 @@ extension DHCarouselView: UIScrollViewDelegate {
   }
   
 }
+
