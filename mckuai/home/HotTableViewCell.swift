@@ -27,6 +27,7 @@ class HotTableViewCell:UITableViewCell {
         time.text = GTUtil.compDate(json["replyTime"].stringValue)//要用分钟数
         
         countReply.text = json["replyNum"].stringValue
+//        countReply.sizeToFit()
         
  //       var src = "http://pic.youxigt.com/uploadimg/quan/images1/41501413785977713.png"
         var src = json["mobilePic"].stringValue
