@@ -20,6 +20,8 @@ class TieziController: UIViewController,UIWebViewDelegate {
     
     var tid:String?
     
+    var pull = UIRefreshControl()
+    
     var loginId:String!{
         get{
             if let uid = appUserIdSave{
@@ -37,21 +39,31 @@ class TieziController: UIViewController,UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        println(tid)
-        if let id = tid {
-//            println("here")
-            var url = NSURL(string: APIRootURL + "talk.do?act=one&id="+id)
-//            url = NSURL(string: "http://192.168.10.104/")
-            var req = NSURLRequest(URL: url!)
-            println(req)
-            webview.loadRequest(req)
-        }
+        load()
         webview.delegate = self
-        
-        
         comment_border.layer.borderWidth = 1;
         var bdc = UIColor(red: 228/255, green: 228/255, blue: 228/255, alpha: 1)
         comment_border.layer.borderColor = bdc.CGColor
-
+        pull.attributedTitle = NSAttributedString(string:"再往下拉就刷新了^_^")
+        pull.addTarget(self, action: "onPull", forControlEvents: UIControlEvents.ValueChanged)
+        
+        self.webview.scrollView.addSubview(pull)
+        
+    }
+    func onPull(){
+        pull.beginRefreshing()
+        self.webview.reload()
+        pull.endRefreshing()
+    }
+    
+    func load(){
+        if let id = tid {
+            var url = NSURL(string: APIRootURL + "talk.do?act=one&id="+id)
+            //            url = NSURL(string: "http://192.168.10.104/")
+            var req = NSURLRequest(URL: url!)
+//            println(req)
+            webview.loadRequest(req)
+        }
     }
     
 
