@@ -125,7 +125,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
                         self.userName.text = self.json["dataObject","user","nike"].string
                         self.level.text = "LV."+String(self.json["dataObject","user","level"].int!)
                         var isServerActor = self.json["dataObject","user","isServerActor"].int
-                        
+                        isServerActor=1
                         if(isServerActor == 1){
                             self.fuzhu.text = "腐"
                             self.mingren.hidden = true
@@ -143,7 +143,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     }
     
     func showNoLogin(){
-        var loginAlertView = UIAlertView(title: "登陆提示框", message: nil, delegate: self, cancelButtonTitle: "取消")
+        var loginAlertView = UIAlertView(title: "当前网络不通,请检查", message: nil, delegate: self, cancelButtonTitle: "确定")
         loginAlertView.show()
     }
     

@@ -21,16 +21,20 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     var itemCount = 0
     var pageSize = 0
     
-    var refreshView = UIRefreshControl()
+    //上拉加载更多
+    var LoadMoreText = UILabel()
+    let tableFooterView = UIView()
+    var normalTipe:String = "上拉查看更多"
+    var refreshViewM = UIRefreshControl()
     var refreshing: Bool = false {
         didSet {
             if (self.refreshing) {
-                self.refreshView.beginRefreshing()
-                self.refreshView.attributedTitle = NSAttributedString(string: "正在刷新...")
+                self.refreshViewM.beginRefreshing()
+                self.refreshViewM.attributedTitle = NSAttributedString(string: "正在刷新...")
             }
             else {
-                self.refreshView.endRefreshing()
-                self.refreshView.attributedTitle = NSAttributedString(string: "正在刷新...")
+                self.refreshViewM.endRefreshing()
+                self.refreshViewM.attributedTitle = NSAttributedString(string: "正在刷新...")
             }
         }
     }
@@ -40,12 +44,46 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
         
         //下拉刷新
-        refreshView.attributedTitle = NSAttributedString(string: "松开刷新列表")
-        refreshView.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(refreshView)
+        refreshViewM.attributedTitle = NSAttributedString(string: "松开刷新列表")
+        refreshViewM.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshViewM)
         
         initData()
+        createTableFooter()
+        self.tableView.tableFooterView?.hidden = true
     }
+    
+    //初始化tv的footerview
+    func createTableFooter() {
+        self.tableView.tableFooterView = nil
+        tableFooterView.frame = CGRectMake(0, 0, self.tableView.bounds.size.width, 40)
+        //println(UIScreen.mainScreen().bounds.size.width)
+        //不知道为什么，这里取控件的宽度有问题
+        LoadMoreText.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 40)
+        LoadMoreText.text = self.normalTipe
+        LoadMoreText.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.235, alpha: 1.00)
+        LoadMoreText.textAlignment = .Center
+        tableFooterView.addSubview(LoadMoreText)
+        self.tableView.tableFooterView = tableFooterView
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        //开始上拉到特定位置后改变列表底部的提示
+        if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height+30) {
+            LoadMoreText.text = "松开载入更多"
+        } else {
+            LoadMoreText.text = self.normalTipe
+        }
+    }
+    
+    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        LoadMoreText.text = self.normalTipe
+        //上拉到一定程度后松开就开始加载更多
+        if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height + 30) {
+            onLoadMore()
+        }
+    }
+    
     
     var dynamicNoData:UIViewController!=nil
     func initData() {
@@ -58,7 +96,11 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
                 if data == nil {
                     println("取不到数据，不显示")
                     //self.tableView.hidden = true
-                    self.showDefaultView()
+                    if(self.currentPage==1){
+                        self.showDefaultView()
+                    }
+                    
+                    self.refreshing = false
                 } else {
                     var jsonParse = data as NSDictionary
                     self.json = JSON(jsonParse)
@@ -68,7 +110,13 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
                     self.currentPage = self.json["dataObject","pageInfo","page"].intValue
 
                     if(count == 0) {
-                        self.showDefaultView()
+                        if(self.currentPage==1){
+                            self.showDefaultView()
+                        }else{
+                            self.normalTipe = "没有更多的动态消息"
+                            self.LoadMoreText.text = self.normalTipe
+                        }
+                        
                     }else {
                         
                         if let dataList = self.json["dataObject", "message"].array {
@@ -87,6 +135,7 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
                     }
                     
                     self.refreshing = false
+                    self.tableView.tableFooterView?.hidden = false
                     
                 }
         }
@@ -115,7 +164,7 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
         // Return the number of rows in the section.
         
         if (self.datasource != nil) {
-            return self.datasource.count + 1
+            return self.datasource.count
         }
         return 0
     }
@@ -123,31 +172,31 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
-        //处理加载更多
-        if (self.datasource.count == indexPath.row) {
-            var loadMoreCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
-            loadMoreCell.textLabel?.text = "加载更多..."
-            //loadMoreCell.backgroundColor = UIColor(red: 0.812, green: 0.192, blue: 0.145, alpha: 1.00)
-            loadMoreCell.textLabel?.textAlignment = NSTextAlignment.Center
-            //最后一页，不显示加载更多
-            loadMoreCell.hidden = (self.itemCount <= self.datasource.count)
-            return loadMoreCell
-        }else{
-            
+//        //处理加载更多
+//        if (self.datasource.count == indexPath.row) {
+//            var loadMoreCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
+//            loadMoreCell.textLabel?.text = "加载更多..."
+//            //loadMoreCell.backgroundColor = UIColor(red: 0.812, green: 0.192, blue: 0.145, alpha: 1.00)
+//            loadMoreCell.textLabel?.textAlignment = NSTextAlignment.Center
+//            //最后一页，不显示加载更多
+//            loadMoreCell.hidden = (self.itemCount <= self.datasource.count)
+//            return loadMoreCell
+//        }else{
+        
             let  cell = self.tableView.dequeueReusableCellWithIdentifier("messageCell") as MessageCell
             
             var data = self.datasource[indexPath.row] as JSON
             cell.update(data)
             return cell
             
-        }
+//        }
     
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if(self.datasource.count == indexPath.row){
             return 30
         }else{
-            return 115
+            return 110
         }
     }
     
@@ -170,6 +219,7 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     
     func onRefresh() {
         self.currentPage = 1
+        self.normalTipe = "上拉查看更多"
         self.datasource.removeAll()
         self.initData()
     }
