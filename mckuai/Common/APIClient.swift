@@ -39,22 +39,38 @@ class APIClient {
     }
     
     //GET
-    private func getJSONData(view: UIView, path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
+    private func getJSONData(showHud: Bool, view: UIView, path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
         if GTUtil.CheckNetBreak() {return}
-        var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-        hud.labelText = "正在获取"
-
+        if showHud {
+            var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+            hud.labelText = "正在获取"
+            
             Alamofire.request(.GET, APIRootURL + path, parameters: parameters)
-            .responseSwiftyJSON { (request, response, json, error) in
-                if let err = error? {
-                    hud.hide(true)
-                    GTUtil.showCustomHUD(view, title: "获取数据出错", imgName: "bankuai")
-                    failure(err)
-                } else {
-                    hud.hide(true)
-                    success(json)
-                }
+                .responseSwiftyJSON { (request, response, json, error) in
+                    if let err = error? {
+                        hud.hide(true)
+                        GTUtil.showCustomHUD(view, title: "获取数据出错", imgName: "bankuai")
+                        failure(err)
+                    } else {
+                        hud.hide(true)
+                        success(json)
+                    }
+            }
+        } else {
+        
+            Alamofire.request(.GET, APIRootURL + path, parameters: parameters)
+                .responseSwiftyJSON { (request, response, json, error) in
+                    if let err = error? {
+                        
+                        GTUtil.showCustomHUD(view, title: "获取数据出错", imgName: "bankuai")
+                        failure(err)
+                    } else {
+                        
+                        success(json)
+                    }
+            }
         }
+        
  
     }
     
@@ -78,18 +94,18 @@ class APIClient {
     }
     //获取社区数据
     func getCommunityData(view: UIView, success: (JSON) -> Void, failure: (NSError) -> Void) {
-        self.getJSONData(view, path: "zone.do?act=iphoneAll", parameters: nil, success: success, failure: failure)
+        self.getJSONData(true, view: view, path: "zone.do?act=iphoneAll", parameters: nil, success: success, failure: failure)
     }
     
     //获取社区版块信息
     func getCommunityBankuaiData(view: UIView, forumID: String, page: String, success: (JSON) -> Void, failure: (NSError) -> Void) {
         let dict = ["forumId": forumID, "page": page]
-        self.getJSONData(view, path: "zone.do?act=one", parameters: dict, success: success, failure: failure)
+        self.getJSONData(true, view: view, path: "zone.do?act=one", parameters: dict, success: success, failure: failure)
     }
     
     //获取首页数据
     func getHomePageData(view: UIView, success: (JSON) -> Void, failure: (NSError) -> Void) {
-        self.getJSONData(view, path: "index.do?act=all", parameters: nil, success: success, failure: failure)
+        self.getJSONData(true, view: view, path: "index.do?act=all", parameters: nil, success: success, failure: failure)
     }
     
     
@@ -152,7 +168,7 @@ class APIClient {
     //获取用户信息
     func getUserOneInfo(view: UIView, userId: Int, page: Int, success: (JSON) -> Void, failure: (NSError) -> Void) {
         let dict = ["id": userId, "page": page]
-        self.getJSONData(view, path: "user.do?act=dynamic", parameters: dict, success: success, failure: failure)
+        self.getJSONData(false, view: view, path: "user.do?act=dynamic", parameters: dict, success: success, failure: failure)
     }
 
 }

@@ -46,7 +46,7 @@ class OtherCenter: UIViewController{
     func initData(){
         APIClient.sharedInstance.getUserOneInfo(self.view, userId: userId, page: page, success: { (json) -> Void in
             self.getData = json
-            println(self.getData)
+            //println(self.getData)
             if self.getData["state"].stringValue == "ok" {
                 println("获取他人消息成功")
                 
