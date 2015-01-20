@@ -58,9 +58,6 @@
 		E67B865F1A3E7AA400B782E1 /* HotTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B865D1A3E7AA400B782E1 /* HotTableViewController.swift */; };
 		E67B86621A3E7B8100B782E1 /* GTUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67B86611A3E7B8100B782E1 /* GTUtil.swift */; };
 		E67F89431A1C7B5E00044035 /* DynamicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67F89421A1C7B5E00044035 /* DynamicCell.swift */; };
-		E69FCD8D1A5297C6003E11B1 /* WActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69FCD8A1A5297C6003E11B1 /* WActivityIndicator.swift */; };
-		E69FCD8E1A5297C6003E11B1 /* WIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69FCD8B1A5297C6003E11B1 /* WIndicator.swift */; };
-		E69FCD8F1A5297C6003E11B1 /* WIndicatorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69FCD8C1A5297C6003E11B1 /* WIndicatorText.swift */; };
 		E6A3C5861A4AA8E2002485FC /* Reply.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A3C5841A4AA8E2002485FC /* Reply.storyboard */; };
 		E6A3C5871A4AA8E2002485FC /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A3C5851A4AA8E2002485FC /* ReplyViewController.swift */; };
 		E6AD7C931A42D7B200792770 /* userCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AD7C921A42D7B200792770 /* userCenter.swift */; };
@@ -153,9 +150,6 @@
 		E67B865D1A3E7AA400B782E1 /* HotTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotTableViewController.swift; sourceTree = "<group>"; };
 		E67B86611A3E7B8100B782E1 /* GTUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GTUtil.swift; sourceTree = "<group>"; };
 		E67F89421A1C7B5E00044035 /* DynamicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicCell.swift; sourceTree = "<group>"; };
-		E69FCD8A1A5297C6003E11B1 /* WActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WActivityIndicator.swift; sourceTree = "<group>"; };
-		E69FCD8B1A5297C6003E11B1 /* WIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WIndicator.swift; sourceTree = "<group>"; };
-		E69FCD8C1A5297C6003E11B1 /* WIndicatorText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WIndicatorText.swift; sourceTree = "<group>"; };
 		E6A3C5841A4AA8E2002485FC /* Reply.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reply.storyboard; sourceTree = "<group>"; };
 		E6A3C5851A4AA8E2002485FC /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
 		E6AD7C921A42D7B200792770 /* userCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userCenter.swift; sourceTree = "<group>"; };
@@ -387,16 +381,6 @@
 			path = SweetAlert;
 			sourceTree = "<group>";
 		};
-		E69FCD881A5297B2003E11B1 /* WIndicator */ = {
-			isa = PBXGroup;
-			children = (
-				E69FCD8A1A5297C6003E11B1 /* WActivityIndicator.swift */,
-				E69FCD8B1A5297C6003E11B1 /* WIndicator.swift */,
-				E69FCD8C1A5297C6003E11B1 /* WIndicatorText.swift */,
-			);
-			path = WIndicator;
-			sourceTree = "<group>";
-		};
 		E6A3C5831A4AA8E2002485FC /* Reply */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,7 +418,6 @@
 			children = (
 				E64265681A6AA89500488803 /* SweetAlert */,
 				E6CC7BDB1A5BEA6D0009776D /* Alamofire */,
-				E69FCD881A5297B2003E11B1 /* WIndicator */,
 				E6D6C2C61A2FFC0800858161 /* SwiftyJSON */,
 			);
 			path = ThirdParty;
@@ -569,9 +552,7 @@
 				0B7C386C1A487C7100920B83 /* newfile.swift in Sources */,
 				E6D6C2C31A2FFB5100858161 /* APIClient.swift in Sources */,
 				E6D6C2DA1A2FFE9800858161 /* BaseTableViewController.swift in Sources */,
-				E69FCD8D1A5297C6003E11B1 /* WActivityIndicator.swift in Sources */,
 				E67F89431A1C7B5E00044035 /* DynamicCell.swift in Sources */,
-				E69FCD8F1A5297C6003E11B1 /* WIndicatorText.swift in Sources */,
 				E6CC7BDD1A5C00590009776D /* Alamofire.swift in Sources */,
 				E63C78B71A302F5F00D28668 /* forumDetailCell.swift in Sources */,
 				E642656A1A6AA8D900488803 /* SweetAlert.swift in Sources */,
@@ -581,7 +562,6 @@
 				E64264481A68C15000488803 /* Reachability.swift in Sources */,
 				E63FD6D21A13340100177E3E /* Welcome.swift in Sources */,
 				E62889111A3E876300C45131 /* MessageCell.swift in Sources */,
-				E69FCD8E1A5297C6003E11B1 /* WIndicator.swift in Sources */,
 				E62889101A3E876300C45131 /* Message.swift in Sources */,
 				E6D6C2CA1A2FFC0800858161 /* SwiftyJSON.swift in Sources */,
 				E628890D1A3E876300C45131 /* DynamicReplyCell.swift in Sources */,

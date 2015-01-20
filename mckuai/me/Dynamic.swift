@@ -240,7 +240,9 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     func onRefresh() {
         self.currentPage = 1
         self.normalTipe = "上拉查看更多"
-        self.datasource.removeAll()
+        if self.datasource != nil {
+            self.datasource.removeAll()
+        }
         self.initData()
     }
     

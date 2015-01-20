@@ -27,10 +27,10 @@ class DynamicCell: UITableViewCell {
     }
     
     func update(json: JSON) {
-        self.title.text = json["talkTitle"].stringValue+"\n "
-        self.desc.text = json["userName"].stringValue
-        self.replynum.setTitle(json["replyNum"].stringValue, forState: .Normal)
-        var url = json["mobilePic"].stringValue
+        self.title.text = json["name"].stringValue+"\n "
+        self.desc.text = json["shortDres"].stringValue
+        self.replynum.setTitle(json["talkNum"].stringValue, forState: .Normal)
+        var url = json["icon"].stringValue
         setImage(url)
     }
     

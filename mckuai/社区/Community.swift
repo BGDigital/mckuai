@@ -11,6 +11,7 @@ import UIKit
 class Community: BaseTableViewController {
     var json: JSON!
     var PostView: PostViewController!=nil
+    var forumDetailc: forumDetailViewController!=nil
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -25,13 +26,12 @@ class Community: BaseTableViewController {
     }
     
     func sendRequest() {
-        self.refreshing = true
         APIClient.sharedInstance.getCommunityData(self.view, { (json) -> Void in
             self.refreshing = false
             if "ok" == json["state"].stringValue {
                 AppContext.sharedInstance.saveCommunityData(json.object)
-                if (json["dataObject", "recTalk"].type == Type.Array) {
-                    self.datasource = json["dataObject", "recTalk"].arrayValue
+                if (json["dataObject"].type == Type.Array) {
+                    self.datasource = json["dataObject"].arrayValue
                 }
             }
             }) { (error) -> Void in
@@ -45,7 +45,10 @@ class Community: BaseTableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        if (self.datasource != nil) {
+            return self.datasource.count
+        }
+        return 0
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat  {
@@ -58,7 +61,8 @@ class Community: BaseTableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (self.datasource != nil) {
-            return self.datasource.count
+            let d = self.datasource[section] as JSON
+            return d["list"].count
         }
         return 0
         
@@ -69,7 +73,8 @@ class Community: BaseTableViewController {
         v.backgroundColor = UIColor(red: 0.933, green: 0.933, blue: 0.933, alpha: 1.00)
         var label = UILabel(frame: CGRectMake(10, 0, 90, 20))
         label.textColor = UIColor(red: 0.439, green: 0.439, blue: 0.439, alpha: 1.00)
-        label.text = "休闲娱乐"
+        let d = self.datasource[section] as JSON
+        label.text = d["name"].stringValue
         label.font = UIFont(name: label.font.fontName, size: 13)
         v.addSubview(label)
         return v
@@ -78,16 +83,26 @@ class Community: BaseTableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell") as? DynamicCell
-        let data = self.datasource[indexPath.row] as JSON
-        // Configure the cell...
-        cell?.update(data)
+        if !self.datasource.isEmpty {
+            let d = self.datasource[indexPath.section] as JSON
+            let data = d["list", indexPath.row] as JSON
+            // Configure the cell...
+            cell?.update(data)
+        }
         return cell!
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let data = self.datasource[indexPath.row] as JSON
-        let tiezi = data["id"].stringValue
-        TieziController.loadTiezi(presentNavigator: self.navigationController!, id: tiezi)
+        forumDetailc = UIStoryboard(name: "forumDetail", bundle: nil).instantiateViewControllerWithIdentifier("SB_forumDetail") as forumDetailViewController
+        
+        let d = self.datasource[indexPath.section] as JSON
+        let data = d["list", indexPath.row] as JSON
+        var forumid = data["id"].stringValue
+        forumDetailc.forum_ID = forumid
+        self.navigationController?.pushViewController(forumDetailc, animated: true)
+//        let data = self.datasource[indexPath.row] as JSON
+//        let tiezi = data["id"].stringValue
+//        TieziController.loadTiezi(presentNavigator: self.navigationController!, id: tiezi)
     }
 
     

@@ -133,19 +133,19 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     //初始化数据
     func initData(){
         println("尝试加载数据")
-        //判断网络是已连接
-        if !Reachability.isConnectedToNetwork() {
-            SweetAlert().showAlert("出错啦", subTitle: "检查一下流量开关或连上WiFi再试试", style: AlertStyle.Warning, buttonTitle:"", buttonColor:UIColorFromRGB(0xD0D0D0) , otherButtonTitle:  "知道了", otherButtonColor: UIColorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
-                if isOtherButton == true {
-                    
-                    println("Cancel Button  Pressed")
-                }
-                else {
-//                    SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.Success)
-                }
-            }
-            return
-        }
+//        //判断网络是已连接
+//        if !Reachability.isConnectedToNetwork() {
+//            SweetAlert().showAlert("出错啦", subTitle: "检查一下流量开关或连上WiFi再试试", style: AlertStyle.Warning, buttonTitle:"", buttonColor:UIColorFromRGB(0xD0D0D0) , otherButtonTitle:  "知道了", otherButtonColor: UIColorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
+//                if isOtherButton == true {
+//                    
+//                    println("Cancel Button  Pressed")
+//                }
+//                else {
+////                    SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.Success)
+//                }
+//            }
+//            return
+//        }
 
         
         APIClient.sharedInstance.getHomePageData(self.view, {

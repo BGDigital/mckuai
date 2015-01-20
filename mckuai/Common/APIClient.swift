@@ -23,36 +23,47 @@ class APIClient {
     //Post请求
     private func Send(path: NSString, parameters: [String : AnyObject]?, view: UIView, ctl:UINavigationController?) -> Bool {
         
-        var indicator = WIndicator.showIndicatorAddedTo(view, animation: true)
-        indicator.text = "努力发布中..."
-        dispatch_async(dispatch_get_global_queue(0,0), { () -> Void in
-            
-            //-----------
+        //判断网络是已连接
+        if !Reachability.isConnectedToNetwork() {
+            SweetAlert().showAlert("出错啦", subTitle: "检查一下流量开关或连上WiFi再试试", style: AlertStyle.Warning, buttonTitle:"", buttonColor:UIColorFromRGB(0xD0D0D0) , otherButtonTitle:  "知道了", otherButtonColor: UIColorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
+                if isOtherButton == true {
+                    
+                    println("Cancel Button  Pressed")
+                }
+                else {
+                    //                    SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.Success)
+                }
+            }
+            return false
+        }
             
             Alamofire.request(.POST, APIRootURL + path, parameters: parameters).responseSwiftyJSON {
                 (_, _, json, error) in
                 println("\(APIRootURL + path)，Send Successfull!!  返回值：\(json)")
                 if json["state"].stringValue == "ok" {
-                    //UIAlertView(title: "提示", message: "发表成功", delegate: nil, cancelButtonTitle: "确定").show()
+                    UIAlertView(title: "提示", message: "发布成功", delegate: nil, cancelButtonTitle: "确定").show()
                     ctl?.popViewControllerAnimated(true)
                 }
             }
-
-            //-----------
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                WIndicator.removeIndicatorFrom(view, animation: true)
-            })
-        })
         return true
     }
     
     //GET
     private func getJSONData(view: UIView, path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
-        var indicator1 = WIndicator.showIndicatorAddedTo(view, animation: true)
-        indicator1.text = "努力发布中..."
-        dispatch_async(dispatch_get_global_queue(0,0), { () -> Void in
-//            sleep(6)
+        //判断网络是已连接
+        if !Reachability.isConnectedToNetwork() {
+            SweetAlert().showAlert("出错啦", subTitle: "检查一下流量开关或连上WiFi再试试", style: AlertStyle.Warning, buttonTitle:"", buttonColor:UIColorFromRGB(0xD0D0D0) , otherButtonTitle:  "知道了", otherButtonColor: UIColorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
+                if isOtherButton == true {
+                    
+                    println("Cancel Button  Pressed")
+                }
+                else {
+                    //                    SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.Success)
+                }
+            }
+            return
+        }
+
             Alamofire.request(.GET, APIRootURL + path, parameters: parameters)
             .responseSwiftyJSON { (request, response, json, error) in
                 if let err = error? {
@@ -61,14 +72,25 @@ class APIClient {
                     success(json)
                 }
         }
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                WIndicator.removeIndicatorFrom(view, animation: true)
-            })
-        })
+ 
     }
     
     //POST
-    private func getJSONDataByPost(path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
+    private func getJSONDataByPost(view: UIView, path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
+        //判断网络是已连接
+        if !Reachability.isConnectedToNetwork() {
+            SweetAlert().showAlert("出错啦", subTitle: "检查一下流量开关或连上WiFi再试试", style: AlertStyle.Warning, buttonTitle:"", buttonColor:UIColorFromRGB(0xD0D0D0) , otherButtonTitle:  "知道了", otherButtonColor: UIColorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
+                if isOtherButton == true {
+                    
+                    println("Cancel Button  Pressed")
+                }
+                else {
+
+                }
+            }
+            return
+        }
+        
         Alamofire.request(.POST, APIRootURL + path, parameters: parameters)
             .responseSwiftyJSON { (request, response, json, error) in
                 if let err = error? {
@@ -80,7 +102,7 @@ class APIClient {
     }
     //获取社区数据
     func getCommunityData(view: UIView, success: (JSON) -> Void, failure: (NSError) -> Void) {
-        self.getJSONData(view, path: "zone.do?act=all", parameters: nil, success: success, failure: failure)
+        self.getJSONData(view, path: "zone.do?act=iphoneAll", parameters: nil, success: success, failure: failure)
     }
     
     //获取社区版块信息
@@ -141,7 +163,7 @@ class APIClient {
     
 
     //QQ登录
-    func qqLoginByPost(accessToken:String,openId:String,nickName:String,gender:String,headImg:String,success: (JSON) -> Void, failure: (NSError) -> Void){
+    func qqLoginByPost(view: UIView, accessToken:String,openId:String,nickName:String,gender:String,headImg:String,success: (JSON) -> Void, failure: (NSError) -> Void){
         let dict = [
             "accessToken": accessToken,
             "openId": openId,
@@ -149,7 +171,7 @@ class APIClient {
             "gender": gender,
             "headImg": headImg,
         ]
-        self.getJSONDataByPost("user.do?act=login", parameters: dict, success: success, failure: failure)
+        self.getJSONDataByPost(view, path: "user.do?act=login", parameters: dict, success: success, failure: failure)
     }
     //获取用户信息
     func getUserOneInfo(view: UIView, userId: Int, page: Int, success: (JSON) -> Void, failure: (NSError) -> Void) {

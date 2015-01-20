@@ -45,18 +45,19 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         self.caption.text = "正在获取数据..."
-        self.dese.text = "正在获取数据..."
-        self.talkNum.setTitle("正在获取数据...", forState: .Normal)
+        self.dese.text = ""
+        self.talkNum.setTitle("", forState: .Normal)
         //下拉刷新
         refreshControl.attributedTitle = NSAttributedString(string: "松开刷新列表")
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
         
         self.tv.addSubview(refreshControl)
-        createTableFooter()
+        
         //加载数据进度
         sendRequest()
+
         // Do any additional setup after loading the view.
-        self.tv.separatorStyle = .None
+        //self.tv.separatorStyle = .None
     }
 
     
@@ -76,18 +77,26 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         //开始上拉到特定位置后改变列表底部的提示
+        if self.datasource != nil {
+        if (self.itemCount != self.datasource.count) {
         if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height+30) {
             LoadMoreText.text = "松开载入更多"
         } else {
             LoadMoreText.text = "上拉查看更多"
         }
+        }
+        }
     }
     
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if self.datasource != nil {
+        if (self.itemCount != self.datasource.count) {
         LoadMoreText.text = "上拉查看更多"
         //上拉到一定程度后松开就开始加载更多
         if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height + 30) {
             onLoadMore()
+        }
+        }
         }
     }
 
@@ -104,7 +113,7 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     
     func sendRequest() {
         println("正在加载第\(self.forum_ID)的第：\(self.currentPage)页")
-        self.refreshing = true
+        
         APIClient.sharedInstance.getCommunityBankuaiData(self.view, forumID: self.forum_ID, page: "\(self.currentPage)", success: { (json) -> Void in
             if json["state"].stringValue == "ok" {
                 if let data = json["dataObject", "talkList"].array {
@@ -125,6 +134,12 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
                 self.setHead(json["dataObject", "forum"] as JSON)
                 
                 self.refreshing = false
+                
+                if self.datasource != nil {
+                    if self.itemCount != self.datasource.count {
+                        self.createTableFooter()
+                    }
+                }
             }
             }, failure: { (error) -> Void in })
     }
@@ -149,9 +164,10 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
 //            return loadMoreCell
 //        }
         var cell = tableView.dequeueReusableCellWithIdentifier("forumCell") as forumDetailCell
-        var data = self.datasource[indexPath.row] as JSON
-        cell.update(data)
-        
+        if !self.datasource.isEmpty {
+            var data = self.datasource[indexPath.row] as JSON
+            cell.update(data)
+        }
         return cell
     }
     

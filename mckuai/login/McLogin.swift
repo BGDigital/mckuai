@@ -90,7 +90,7 @@ class McLogin: UIViewController,TencentSessionDelegate {
             var gender:String = userInfo["gender"] as String!
             var headImg:String = userInfo["figureurl_qq_2"] as String!
             println(nickName)
-            APIClient.sharedInstance.qqLoginByPost(accessToken, openId: openId, nickName: nickName, gender: gender, headImg: headImg,success: { (json) -> Void in
+            APIClient.sharedInstance.qqLoginByPost(self.view, accessToken: accessToken, openId: openId, nickName: nickName, gender: gender, headImg: headImg,success: { (json) -> Void in
                 println(json)
                 if json["state"].stringValue == "ok" {
                     println("从服务器登录成功")
