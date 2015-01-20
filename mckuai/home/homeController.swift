@@ -186,17 +186,17 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
             bdb.backgroundColor = UIColor(white: 239/255, alpha: 1)
             cell.addSubview(bdb)
         }else{
-            tableView.frame.size = CGSize(width: tableView.frame.size.width, height: cell.frame.height * 12.0)
+            tableView.frame.size = CGSize(width: tableView.frame.size.width, height: cell.frame.height * CGFloat(hotTiezi.count))
+            self.scrollView.layoutIfNeeded()
         }
         
+        println(index)
         return cell;
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        println("热门帖子数量:")
         if(hotTiezi != nil){
-//            println(hotTiezi.count)
-            return hotTiezi.count*2
+            return hotTiezi.count
         }else{
             return 0
         }
