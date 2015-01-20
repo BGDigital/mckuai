@@ -3,3 +3,4 @@
 //
 
 #import <TencentOpenAPI/TencentOAuth.h>
+#import "MBProgressHUD.h"

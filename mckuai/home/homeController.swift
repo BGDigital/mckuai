@@ -133,20 +133,6 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     //初始化数据
     func initData(){
         println("尝试加载数据")
-//        //判断网络是已连接
-//        if !Reachability.isConnectedToNetwork() {
-//            SweetAlert().showAlert("出错啦", subTitle: "检查一下流量开关或连上WiFi再试试", style: AlertStyle.Warning, buttonTitle:"", buttonColor:UIColorFromRGB(0xD0D0D0) , otherButtonTitle:  "知道了", otherButtonColor: UIColorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
-//                if isOtherButton == true {
-//                    
-//                    println("Cancel Button  Pressed")
-//                }
-//                else {
-////                    SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.Success)
-//                }
-//            }
-//            return
-//        }
-
         
         APIClient.sharedInstance.getHomePageData(self.view, {
             (json) -> Void in
@@ -180,8 +166,8 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         
         if index < hotTiezi.count-1{
             var bdb = UIView()
-            var size = CGSize(width: self.scrollView.frame.size.width - 18, height: 1.0)
-            var org = CGPoint(x: 0, y: cell.frame.size.height-1)
+            var size = CGSize(width: self.scrollView.frame.size.width - 10, height: 1.0)
+            var org = CGPoint(x: 5, y: cell.frame.size.height-1)
             bdb.frame = CGRect(origin: org, size: size)
             bdb.backgroundColor = UIColor(white: 239/255, alpha: 1)
             cell.addSubview(bdb)

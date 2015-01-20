@@ -81,20 +81,8 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     }
     
     func initData() {
+        if GTUtil.CheckNetBreak() {return}
         var paramDictionary :Dictionary<String,String> = ["act":"one","id":"\(appUserIdSave)"]
-        //判断网络是已连接
-        if !Reachability.isConnectedToNetwork() {
-            SweetAlert().showAlert("出错啦", subTitle: "检查一下流量开关或连上WiFi再试试", style: AlertStyle.Warning, buttonTitle:"", buttonColor:UIColorFromRGB(0xD0D0D0) , otherButtonTitle:  "知道了", otherButtonColor: UIColorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
-                if isOtherButton == true {
-                    
-                    println("Cancel Button  Pressed")
-                }
-                else {
-                    //                    SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.Success)
-                }
-            }
-            return
-        }
         
         Alamofire.request(.GET,http_url, parameters: paramDictionary)
             .responseJSON { (request, response, data, error) in
@@ -117,24 +105,6 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
                         
                         GTUtil.loadImageView(img: self.headImage, url: url)
                         self.headImage.contentMode = UIViewContentMode.ScaleAspectFit
-//                        let image = self.imageCache[url]
-//                        if (image == nil) {
-//                            
-//                            //println("缓存中没有图片，从网上获取")
-//                            let imgURL: NSURL = NSURL(string:url)!
-//                            let request:NSURLRequest = NSURLRequest(URL: imgURL)
-//                            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response:NSURLResponse!,data:NSData!,error:NSError!)->Void in
-//                                var img=UIImage(data:data)
-//                                self.headImage.image=img
-//                                self.headImage.contentMode = UIViewContentMode.ScaleAspectFit
-//                                self.imageCache[url] = img })
-//                            
-//                        }
-//                        else
-//                        {
-//                            //println("缓存中有图片，直接显示出来")
-//                            self.headImage.image=image
-//                        }
                         
                         self.userName.text = self.json["dataObject","user","nike"].string
                         self.level.text = "LV."+String(self.json["dataObject","user","level"].int!)
@@ -152,12 +122,13 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
                         }
                     }
                 }
+    
         }
 
     }
     
     func showNoLogin(){
-        var loginAlertView = UIAlertView(title: "当前网络不通,请检查", message: nil, delegate: self, cancelButtonTitle: "确定")
+        var loginAlertView = UIAlertView(title: "提示", message: "获取数据失败", delegate: self, cancelButtonTitle: "确定")
         loginAlertView.show()
     }
     

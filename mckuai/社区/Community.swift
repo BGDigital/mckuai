@@ -9,6 +9,9 @@
 import UIKit
 
 class Community: BaseTableViewController {
+    
+    @IBOutlet var tv: UITableView!
+    
     var json: JSON!
     var PostView: PostViewController!=nil
     var forumDetailc: forumDetailViewController!=nil
@@ -18,6 +21,8 @@ class Community: BaseTableViewController {
         //navigation bar 背景
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         self.sendRequest()
+        self.tv.separatorStyle = .None
+        self.tv.layoutIfNeeded()
     }
     
     @IBAction func showPost() {
@@ -82,14 +87,24 @@ class Community: BaseTableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell") as? DynamicCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell") as DynamicCell
         if !self.datasource.isEmpty {
             let d = self.datasource[indexPath.section] as JSON
             let data = d["list", indexPath.row] as JSON
             // Configure the cell...
-            cell?.update(data)
+            //画分割线
+                var cellheight = 60
+                var bdb = UIView()
+                var size = CGSize(width: self.tv.frame.size.width - 10, height: 1.0)
+                var org = CGPoint(x: 5, y: cellheight-1)
+                bdb.frame = CGRect(origin: org, size: size)
+                bdb.backgroundColor = UIColor(white: 239/255, alpha: 1)
+                cell.addSubview(bdb)
+
+            cell.update(data)
         }
-        return cell!
+
+        return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

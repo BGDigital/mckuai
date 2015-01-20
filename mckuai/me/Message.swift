@@ -87,8 +87,12 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     
     var dynamicNoData:UIViewController!=nil
     func initData() {
-        
-        self.refreshing = true
+        if GTUtil.CheckNetBreak() {return}
+
+        var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        hud.labelText = "正在获取"
+
+        //self.refreshing = true
         var paramDictionary :Dictionary<String,String> = ["act":"message","id":String(appUserIdSave),"page":String(currentPage)]
         Alamofire.request(.GET,http_url, parameters: paramDictionary)
             .responseJSON { (request, response, data, error) in
@@ -138,6 +142,7 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
                     self.tableView.tableFooterView?.hidden = false
                     
                 }
+                hud.hide(true)
         }
         
     }
@@ -170,26 +175,12 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        
-//        //处理加载更多
-//        if (self.datasource.count == indexPath.row) {
-//            var loadMoreCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
-//            loadMoreCell.textLabel?.text = "加载更多..."
-//            //loadMoreCell.backgroundColor = UIColor(red: 0.812, green: 0.192, blue: 0.145, alpha: 1.00)
-//            loadMoreCell.textLabel?.textAlignment = NSTextAlignment.Center
-//            //最后一页，不显示加载更多
-//            loadMoreCell.hidden = (self.itemCount <= self.datasource.count)
-//            return loadMoreCell
-//        }else{
-        
             let  cell = self.tableView.dequeueReusableCellWithIdentifier("messageCell") as MessageCell
-            
+        if !self.datasource.isEmpty {
             var data = self.datasource[indexPath.row] as JSON
             cell.update(data)
+        }
             return cell
-            
-//        }
     
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -220,7 +211,9 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     func onRefresh() {
         self.currentPage = 1
         self.normalTipe = "上拉查看更多"
-        self.datasource.removeAll()
+        if self.datasource != nil {
+            self.datasource.removeAll()
+        }
         self.initData()
     }
     

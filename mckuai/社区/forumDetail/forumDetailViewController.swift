@@ -57,7 +57,8 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
         sendRequest()
 
         // Do any additional setup after loading the view.
-        //self.tv.separatorStyle = .None
+        self.tv.separatorStyle = .None
+        self.tv.layoutIfNeeded()
     }
 
     
@@ -152,32 +153,20 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-//        //处理加载更多
-//        if (self.datasource.count == indexPath.row) {
-//            var loadMoreCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
-//            loadMoreCell.textLabel?.text = "加载更多..."
-//            //loadMoreCell.backgroundColor = UIColor(red: 0.812, green: 0.192, blue: 0.145, alpha: 1.00)
-//            loadMoreCell.textLabel?.textAlignment = NSTextAlignment.Center
-//            //最后一页，不显示加载更多
-//            loadMoreCell.hidden = (self.itemCount <= self.datasource.count)
-//            return loadMoreCell
-//        }
         var cell = tableView.dequeueReusableCellWithIdentifier("forumCell") as forumDetailCell
         if !self.datasource.isEmpty {
             var data = self.datasource[indexPath.row] as JSON
             cell.update(data)
         }
+        
+        var cellheight = 64
+        var bdb = UIView()
+        var size = CGSize(width: self.tv.frame.size.width - 10, height: 1.0)
+        var org = CGPoint(x: 5, y: cellheight-1)
+        bdb.frame = CGRect(origin: org, size: size)
+        bdb.backgroundColor = UIColor(white: 239/255, alpha: 1)
+        cell.addSubview(bdb)
         return cell
-    }
-    
-    //动态设置Cell的高度
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if (self.datasource.count == indexPath.row) {
-            return 30
-        } else {
-            return 64
-        }
     }
     
     //点击事件
@@ -193,7 +182,9 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     
     func onRefresh() {
         self.currentPage = 1
-        self.datasource.removeAll()
+        if self.datasource != nil {
+            self.datasource.removeAll()
+        }
         self.sendRequest()
     }
 

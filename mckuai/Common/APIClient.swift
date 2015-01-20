@@ -21,54 +21,37 @@ class APIClient {
     }
     
     //Post请求
-    private func Send(path: NSString, parameters: [String : AnyObject]?, view: UIView, ctl:UINavigationController?) -> Bool {
+    private func Send(path: NSString, parameters: [String : AnyObject]?, view: UIView, ctl:UINavigationController?) -> Void {
+        if GTUtil.CheckNetBreak() {return}
+            var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+            hud.labelText = "发布中"
         
-        //判断网络是已连接
-        if !Reachability.isConnectedToNetwork() {
-            SweetAlert().showAlert("出错啦", subTitle: "检查一下流量开关或连上WiFi再试试", style: AlertStyle.Warning, buttonTitle:"", buttonColor:UIColorFromRGB(0xD0D0D0) , otherButtonTitle:  "知道了", otherButtonColor: UIColorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
-                if isOtherButton == true {
-                    
-                    println("Cancel Button  Pressed")
-                }
-                else {
-                    //                    SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.Success)
-                }
-            }
-            return false
-        }
-            
             Alamofire.request(.POST, APIRootURL + path, parameters: parameters).responseSwiftyJSON {
                 (_, _, json, error) in
                 println("\(APIRootURL + path)，Send Successfull!!  返回值：\(json)")
                 if json["state"].stringValue == "ok" {
-                    UIAlertView(title: "提示", message: "发布成功", delegate: nil, cancelButtonTitle: "确定").show()
+                    //UIAlertView(title: "提示", message: "发布成功", delegate: nil, cancelButtonTitle: "确定").show()
+                    hud.hide(true)
+                    GTUtil.showCustomHUD(view, title: "发布成功", imgName: "bankuai")
                     ctl?.popViewControllerAnimated(true)
                 }
             }
-        return true
     }
     
     //GET
     private func getJSONData(view: UIView, path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
-        //判断网络是已连接
-        if !Reachability.isConnectedToNetwork() {
-            SweetAlert().showAlert("出错啦", subTitle: "检查一下流量开关或连上WiFi再试试", style: AlertStyle.Warning, buttonTitle:"", buttonColor:UIColorFromRGB(0xD0D0D0) , otherButtonTitle:  "知道了", otherButtonColor: UIColorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
-                if isOtherButton == true {
-                    
-                    println("Cancel Button  Pressed")
-                }
-                else {
-                    //                    SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.Success)
-                }
-            }
-            return
-        }
+        if GTUtil.CheckNetBreak() {return}
+        var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        hud.labelText = "正在获取"
 
             Alamofire.request(.GET, APIRootURL + path, parameters: parameters)
             .responseSwiftyJSON { (request, response, json, error) in
                 if let err = error? {
+                    hud.hide(true)
+                    GTUtil.showCustomHUD(view, title: "获取数据出错", imgName: "bankuai")
                     failure(err)
                 } else {
+                    hud.hide(true)
                     success(json)
                 }
         }
@@ -77,25 +60,18 @@ class APIClient {
     
     //POST
     private func getJSONDataByPost(view: UIView, path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
-        //判断网络是已连接
-        if !Reachability.isConnectedToNetwork() {
-            SweetAlert().showAlert("出错啦", subTitle: "检查一下流量开关或连上WiFi再试试", style: AlertStyle.Warning, buttonTitle:"", buttonColor:UIColorFromRGB(0xD0D0D0) , otherButtonTitle:  "知道了", otherButtonColor: UIColorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
-                if isOtherButton == true {
-                    
-                    println("Cancel Button  Pressed")
-                }
-                else {
+        if GTUtil.CheckNetBreak() {return}
+        var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        hud.labelText = "登录中"
 
-                }
-            }
-            return
-        }
-        
         Alamofire.request(.POST, APIRootURL + path, parameters: parameters)
             .responseSwiftyJSON { (request, response, json, error) in
                 if let err = error? {
+                    hud.hide(true)
+                    GTUtil.showCustomHUD(view, title: "登录失败", imgName: "bankuai")
                     failure(err)
                 } else {
+                    hud.hide(true)
                     success(json)
                 }
         }

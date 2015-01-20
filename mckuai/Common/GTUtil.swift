@@ -23,6 +23,40 @@ class GTUtil {
         }
     }
     
+    class func showCustomHUD(view: UIView, title: String, imgName: String) {
+        var h = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        h.labelText = title
+        h.mode = MBProgressHUDModeCustomView
+        h.customView = UIImageView(image: UIImage(named: imgName))
+        h.showAnimated(true, whileExecutingBlock: { () -> Void in
+            sleep(2)
+            return
+        }) { () -> Void in
+            h.removeFromSuperview()
+            h = nil
+        }
+    }
+    
+    class func CheckNetBreak() -> Bool {
+        //判断网络是已连接
+        if !Reachability.isConnectedToNetwork() {
+            SweetAlert().showAlert("出错啦", subTitle: "检查一下流量开关或连上WiFi再试试", style: AlertStyle.Warning, buttonTitle:"", buttonColor:UIColorFromRGB(0xD0D0D0) , otherButtonTitle:  "知道了", otherButtonColor: UIColorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
+                if isOtherButton == true {
+                    
+                    println("Cancel Button  Pressed")
+                }
+                else {
+                    //                    SweetAlert().showAlert("Deleted!", subTitle: "Your imaginary file has been deleted!", style: AlertStyle.Success)
+                }
+            }
+            //网络不可用
+            return true
+        } else {
+            //网络可用
+            return false
+        }
+    }
+    
     //截取小数点后的数
     class func getStr(str: Double) -> String {
         let d = "\(str)"

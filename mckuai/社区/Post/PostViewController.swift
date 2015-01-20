@@ -207,7 +207,7 @@ class PostViewController: UIViewController, UITextViewDelegate {
 
 
         //self.navigationController?.popViewControllerAnimated(true)
-        println("发贴成功,怎么返回呢？")
+//        println("发贴成功,怎么返回呢？")
     }
 
     /*

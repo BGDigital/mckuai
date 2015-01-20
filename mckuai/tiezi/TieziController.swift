@@ -16,12 +16,11 @@ class TieziController: UIViewController,UIWebViewDelegate {
     
     @IBOutlet weak var comment_border: UIView!
     
-    @IBOutlet weak var loading: UIView!
     
     var tid:String?
     
     var pull = UIRefreshControl()
-    
+    var hud = MBProgressHUD()
     var loginId:String!{
         get{
             if let uid = appUserIdSave{
@@ -84,16 +83,18 @@ class TieziController: UIViewController,UIWebViewDelegate {
         return true;
     }
     func webViewDidStartLoad(webView: UIWebView) {
-        loading.hidden = false
+        self.hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        self.hud.labelText = "正在加载"
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        loading.hidden = true
+        self.hud.hide(true)
     }
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
-        var label = loading.subviews[0] as UILabel;
-        label.text = "加载出错"
+        self.hud.hide(true)
+        
+        GTUtil.showCustomHUD(self.view, title: "出错啦,请检查网络上否正常", imgName: "bankuai")
     }
     
     

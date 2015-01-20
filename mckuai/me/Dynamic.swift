@@ -91,7 +91,11 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     var dynamicNoData:UIViewController!=nil
     
     func initData() {
-        self.refreshing = true
+        //self.refreshing = true
+        if GTUtil.CheckNetBreak() {return}
+        var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        hud.labelText = "正在获取"
+        
         var paramDictionary :Dictionary<String,String> = ["act":"dynamic","id":String(userId),"page":String(currentPage)]
         Alamofire.request(.GET,http_url, parameters: paramDictionary)
             .responseJSON { (request, response, data, error) in
@@ -136,6 +140,7 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
                     self.refreshing = false
                     self.tableView.tableFooterView?.hidden = false
                 }
+                hud.hide(true)
         }
 
     }
@@ -187,14 +192,17 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
 //        }else{
             if(getType == "talk_add") {
                 let  cell = self.tableView.dequeueReusableCellWithIdentifier("addCell") as DynamicAddCell
-
+                if !self.datasource.isEmpty {
                 var data = self.datasource[indexPath.row] as JSON
                 cell.update(data)
+                }
                 return cell
             } else {
                 let  cell = self.tableView.dequeueReusableCellWithIdentifier("replyCell") as DynamicReplyCell
+                if !self.datasource.isEmpty {
                 var data = self.datasource[indexPath.row] as JSON
                 cell.update(data)
+                }
                 return cell
             }
 
