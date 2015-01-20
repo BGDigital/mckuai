@@ -180,7 +180,7 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         
         if index < hotTiezi.count-1{
             var bdb = UIView()
-            var size = CGSize(width: self.scrollView.frame.size.width - 18, height: 1.0)
+            var size = CGSize(width: self.scrollView.frame.size.width, height: 1.0)
             var org = CGPoint(x: 0, y: cell.frame.size.height-1)
             bdb.frame = CGRect(origin: org, size: size)
             bdb.backgroundColor = UIColor(white: 239/255, alpha: 1)
