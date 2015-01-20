@@ -10,23 +10,11 @@ import UIKit
 
 class DynamicCell: UITableViewCell {
 
-    @IBOutlet weak var imgComm: UIImageView!
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var username: UILabel!
-    @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var replyNum: UILabel!
   
-    /*
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        //fatalError("init(coder:) has not been implemented")
-    }
-    */
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var replynum: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,9 +28,8 @@ class DynamicCell: UITableViewCell {
     
     func update(json: JSON) {
         self.title.text = json["talkTitle"].stringValue+"\n "
-        self.username.text = json["userName"].stringValue
-        self.time.text = GTUtil.compDate(json["replyTime"].stringValue)
-        self.replyNum.text = json["replyNum"].stringValue
+        self.desc.text = json["userName"].stringValue
+        self.replynum.setTitle(json["replyNum"].stringValue, forState: .Normal)
         var url = json["mobilePic"].stringValue
         setImage(url)
     }
@@ -54,9 +41,9 @@ class DynamicCell: UITableViewCell {
             Alamofire.request(.GET, url).response() {
             (_, _, data, _) in
                 if data != nil {
-                    self.imgComm.image = UIImage(data: data! as NSData)
+                    self.img.image = UIImage(data: data! as NSData)
                 } else {
-                    self.imgComm.image = UIImage(named: "home_on")
+                    self.img.image = UIImage(named: "home_on")
                 }
             }
         }

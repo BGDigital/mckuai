@@ -19,6 +19,7 @@ class APIClient {
         }
         return Static.instance
     }
+    
     //Post请求
     private func Send(path: NSString, parameters: [String : AnyObject]?, view: UIView, ctl:UINavigationController?) -> Bool {
         
@@ -27,7 +28,7 @@ class APIClient {
         dispatch_async(dispatch_get_global_queue(0,0), { () -> Void in
             
             //-----------
-            sleep(6)
+            
             Alamofire.request(.POST, APIRootURL + path, parameters: parameters).responseSwiftyJSON {
                 (_, _, json, error) in
                 println("\(APIRootURL + path)，Send Successfull!!  返回值：\(json)")
@@ -47,8 +48,12 @@ class APIClient {
     }
     
     //GET
-    private func getJSONData(path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
-        Alamofire.request(.GET, APIRootURL + path, parameters: parameters)
+    private func getJSONData(view: UIView, path: NSString, parameters: [String : AnyObject]?, success: (JSON) -> Void, failure: (NSError) -> Void) {
+        var indicator1 = WIndicator.showIndicatorAddedTo(view, animation: true)
+        indicator1.text = "努力发布中..."
+        dispatch_async(dispatch_get_global_queue(0,0), { () -> Void in
+//            sleep(6)
+            Alamofire.request(.GET, APIRootURL + path, parameters: parameters)
             .responseSwiftyJSON { (request, response, json, error) in
                 if let err = error? {
                     failure(err)
@@ -56,6 +61,10 @@ class APIClient {
                     success(json)
                 }
         }
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                WIndicator.removeIndicatorFrom(view, animation: true)
+            })
+        })
     }
     
     //POST
@@ -70,19 +79,19 @@ class APIClient {
         }
     }
     //获取社区数据
-    func getCommunityData(success: (JSON) -> Void, failure: (NSError) -> Void) {
-        self.getJSONData("zone.do?act=all", parameters: nil, success: success, failure: failure)
+    func getCommunityData(view: UIView, success: (JSON) -> Void, failure: (NSError) -> Void) {
+        self.getJSONData(view, path: "zone.do?act=all", parameters: nil, success: success, failure: failure)
     }
     
     //获取社区版块信息
-    func getCommunityBankuaiData(forumID: String, page: String, success: (JSON) -> Void, failure: (NSError) -> Void) {
+    func getCommunityBankuaiData(view: UIView, forumID: String, page: String, success: (JSON) -> Void, failure: (NSError) -> Void) {
         let dict = ["forumId": forumID, "page": page]
-        self.getJSONData("zone.do?act=one", parameters: dict, success: success, failure: failure)
+        self.getJSONData(view, path: "zone.do?act=one", parameters: dict, success: success, failure: failure)
     }
     
     //获取首页数据
-    func getHomePageData(success: (JSON) -> Void, failure: (NSError) -> Void) {
-        self.getJSONData("index.do?act=all", parameters: nil, success: success, failure: failure)
+    func getHomePageData(view: UIView, success: (JSON) -> Void, failure: (NSError) -> Void) {
+        self.getJSONData(view, path: "index.do?act=all", parameters: nil, success: success, failure: failure)
     }
     
     
@@ -143,9 +152,9 @@ class APIClient {
         self.getJSONDataByPost("user.do?act=login", parameters: dict, success: success, failure: failure)
     }
     //获取用户信息
-    func getUserOneInfo()(userId: Int, page: Int, success: (JSON) -> Void, failure: (NSError) -> Void) {
+    func getUserOneInfo(view: UIView, userId: Int, page: Int, success: (JSON) -> Void, failure: (NSError) -> Void) {
         let dict = ["id": userId, "page": page]
-        self.getJSONData("user.do?act=dynamic", parameters: dict, success: success, failure: failure)
+        self.getJSONData(view, path: "user.do?act=dynamic", parameters: dict, success: success, failure: failure)
     }
 
 }

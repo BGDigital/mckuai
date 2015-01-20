@@ -17,24 +17,6 @@ class Community: BaseTableViewController {
         //navigation bar 背景
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         self.sendRequest()
-        /*
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            var nodes = AppContext.sharedInstance.getCommunityData()
-            dispatch_async(dispatch_get_main_queue(), {
-                if let json = nodes? {
-                    self.datasource = json["dataObject", "recTalk"].arrayValue
-                } else {
-                    self.sendRequest()
-                }
-            })
-        })
-*/
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     @IBAction func showPost() {
@@ -44,7 +26,7 @@ class Community: BaseTableViewController {
     
     func sendRequest() {
         self.refreshing = true
-        APIClient.sharedInstance.getCommunityData({ (json) -> Void in
+        APIClient.sharedInstance.getCommunityData(self.view, { (json) -> Void in
             self.refreshing = false
             if "ok" == json["state"].stringValue {
                 AppContext.sharedInstance.saveCommunityData(json.object)
@@ -61,13 +43,36 @@ class Community: BaseTableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat  {
+        return 20;
+    }
+    
+//    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "section"
+//    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (self.datasource != nil) {
             return self.datasource.count
         }
         return 0
         
+    }
+    //自定义Section样式
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var v = UIView()
+        v.backgroundColor = UIColor(red: 0.933, green: 0.933, blue: 0.933, alpha: 1.00)
+        var label = UILabel(frame: CGRectMake(10, 0, 90, 20))
+        label.textColor = UIColor(red: 0.439, green: 0.439, blue: 0.439, alpha: 1.00)
+        label.text = "休闲娱乐"
+        label.font = UIFont(name: label.font.fontName, size: 13)
+        v.addSubview(label)
+        return v
     }
 
     

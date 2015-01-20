@@ -148,7 +148,7 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         }
 
         
-        APIClient.sharedInstance.getHomePageData({
+        APIClient.sharedInstance.getHomePageData(self.view, {
             (json) -> Void in
             if "ok" == json["state"].stringValue {
                 AppContext.sharedInstance.saveHomePageData(json.object)

@@ -105,7 +105,7 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     func sendRequest() {
         println("正在加载第\(self.forum_ID)的第：\(self.currentPage)页")
         self.refreshing = true
-        APIClient.sharedInstance.getCommunityBankuaiData(self.forum_ID, page: "\(self.currentPage)", success: { (json) -> Void in
+        APIClient.sharedInstance.getCommunityBankuaiData(self.view, forumID: self.forum_ID, page: "\(self.currentPage)", success: { (json) -> Void in
             if json["state"].stringValue == "ok" {
                 if let data = json["dataObject", "talkList"].array {
                     if self.datasource == nil {
