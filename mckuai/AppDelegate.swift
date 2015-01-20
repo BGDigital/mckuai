@@ -15,7 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-
+//        var cacheSizeMemory = 20 * 1024 * 1024
+//        var cacheSizeDisk = 100 * 1024 * 1024
+//        var sharedCache = NSURLCache(memoryCapacity: cacheSizeMemory, diskCapacity: cacheSizeDisk, diskPath: "SOME_PATH")
+//        NSURLCache.setSharedURLCache(sharedCache)
         return true
     }
 
