@@ -18,6 +18,7 @@ class Community: BaseTableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.tv.frame = CGRectMake(0, 0, self.tv.frame.size.width, self.tv.frame.size.height)
         //navigation bar 背景
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         self.sendRequest()
@@ -122,6 +123,7 @@ class Community: BaseTableViewController {
 
     
     func onPullToFresh() {
+        self.tv.frame = CGRectMake(0, 0, self.tv.frame.size.width, self.tv.frame.size.height)
         self.sendRequest()
     }
     

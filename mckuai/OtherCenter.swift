@@ -52,7 +52,7 @@ class OtherCenter: UIViewController{
                 println("获取他人消息成功")
                 self.setUserInfo()
             }else{
-                self.navigationController?.popViewControllerAnimated(true)
+//                self.navigationController?.popViewControllerAnimated(true)
             }
             
             }, failure: { (error) -> Void in })

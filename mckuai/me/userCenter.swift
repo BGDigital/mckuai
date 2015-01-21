@@ -228,7 +228,6 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
         self.userName.text = self.json["dataObject","user","nike"].string
         self.level.text = "LV."+String(self.json["dataObject","user","level"].int!)
         var isServerActor = self.json["dataObject","user","isServerActor"].int
-        isServerActor=1
         if(isServerActor == 1){
             self.fuzhu.text = "腐"
             self.mingren.hidden = true
