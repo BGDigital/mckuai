@@ -61,10 +61,10 @@ class ReplyViewController: UIViewController, UITextViewDelegate {
         //self.navigationController?.popViewControllerAnimated(true)
         
         
-        if isOver == "yes" {
-            println("调用xyz的刷新JS，刷新页面！")
-            (self.navigationController?.topViewController as TieziController).afterReply()
-        }
+//        if isOver == "yes" {
+//            println("调用xyz的刷新JS，刷新页面！")
+//            (self.navigationController?.topViewController as TieziController).afterReply()
+//        }
     }
     
     func dismissKeyboard(){

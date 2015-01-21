@@ -13,6 +13,7 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     var carouselView: DHCarouselView!
 
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet weak var starView: UIView!
     
     
     @IBOutlet weak var famouseUserCView: UICollectionView!
@@ -61,6 +62,8 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     @IBOutlet weak var hotTieziView: UITableView!
     
     var pull = UIRefreshControl()
+    let fpic: CGFloat = 0.36
+    var picHeight: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +72,8 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         famouseUserCView.dataSource = self
         famouseUserCView.delegate = self
         famouseUserCView.scrollEnabled = false
-        InitCarouselView(125)
+        picHeight = (UIScreen.mainScreen().bounds.width * fpic)
+        InitCarouselView(picHeight)
         
         hotTieziView.scrollEnabled = false
         hotTieziView.delegate = self
@@ -88,6 +92,8 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         pull.tintColor = UIColor(white: 0.95, alpha: 1)
 
         self.scrollView.addSubview(pull)
+        self.scrollView.layoutSubviews()
+        
     }
     
     func onPullToFresh(){
@@ -101,7 +107,8 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         carouselView.delegate = self
         carouselView.carouselPeriodTime = 4.0
         
-        self.view.addSubview(carouselView)
+        //self.view.addSubview(carouselView)
+        self.hotTieziView.tableHeaderView = carouselView
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -117,7 +124,11 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if(self.scrollView != nil){//
-            scrollView.contentSize = CGSize(width: 320, height: 650)
+            
+            self.hotTieziView.frame.size.height = CGFloat(self.picHeight)+72*6+20
+            self.starView.frame = CGRectMake(0, self.hotTieziView.frame.size.height, self.starView.frame.size.width, self.starView.frame.size.height)
+            
+            scrollView.contentSize = CGSize(width: UIScreen.mainScreen().bounds.size.width, height: self.hotTieziView.frame.size.height+self.starView.frame.size.height+3)
             self.view.layoutIfNeeded()
         }
     }
@@ -155,6 +166,31 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     
     /*热门帖子的delegate*/
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat  {
+        return 20;
+    }
+    
+    //自定义Section样式
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var v = UIView()
+        v.backgroundColor = UIColor(red: 0.933, green: 0.933, blue: 0.933, alpha: 1.00)
+        var label = UILabel(frame: CGRectMake(10, 0, 90, 20))
+        label.textColor = UIColor(red: 0.439, green: 0.439, blue: 0.439, alpha: 1.00)
+        label.text = "热贴推荐"
+        label.font = UIFont(name: label.font.fontName, size: 13)
+        v.addSubview(label)
+        
+        var img = UIImageView(frame: CGRect(x: UIScreen.mainScreen().bounds.size.width-20, y: 0, width: 20, height: 20))
+        img.image = UIImage(named: "image1")
+        v.addSubview(img)
+        
+        return v
+    }
+    
     
     func tableView(tableView:UITableView,cellForRowAtIndexPath indexPath:NSIndexPath) ->UITableViewCell{
 //        println("获取cell")
@@ -172,8 +208,9 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
             bdb.backgroundColor = UIColor(white: 239/255, alpha: 1)
             cell.addSubview(bdb)
         }else{
-            tableView.frame.size = CGSize(width: tableView.frame.size.width, height: cell.frame.height * CGFloat(hotTiezi.count))
-            self.scrollView.layoutIfNeeded()
+//            tableView.frame.size = CGSize(width: tableView.frame.size.width, height: cell.frame.height * CGFloat(hotTiezi.count)+CGFloat(self.picHeight))
+//            
+//            self.scrollView.layoutIfNeeded()
         }
         
         println(index)
@@ -214,19 +251,21 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
 
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("famouse",forIndexPath:indexPath) as FamouseUser
+            if !famouseUsers.isEmpty {
+                let user = famouseUsers[indexPath.row]
             
-            let user = famouseUsers[indexPath.row+1]
-            
-            GTUtil.loadImageView(img: cell.userhead,url: user["headImg"].stringValue)
+                GTUtil.loadImageView(img: cell.userhead,url: user["headImg"].stringValue)
+            }
             return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-
-        let user = famouseUsers[indexPath.row+1]
+        if !famouseUsers.isEmpty {
+            let user = famouseUsers[indexPath.row]
                 println(user)
-        OtherCenter.openOtherCenter(presentNavigator: self.navigationController, id: user["id"].intValue)
+            OtherCenter.openOtherCenter(presentNavigator: self.navigationController, id: user["id"].intValue)
+        }
     }
     
 }

@@ -94,7 +94,7 @@ class TieziController: UIViewController,UIWebViewDelegate {
     func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
         self.hud.hide(true)
         
-        GTUtil.showCustomHUD(self.view, title: "出错啦,请检查网络上否正常", imgName: "bankuai")
+        GTUtil.showCustomHUD(self.view, title: "出错啦,加载失败", imgName: "HUD_ERROR")
     }
     
     

@@ -41,7 +41,6 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.caption.text = "正在获取数据..."
@@ -50,7 +49,6 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
         //下拉刷新
         refreshControl.attributedTitle = NSAttributedString(string: "松开刷新列表")
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
-        
         self.tv.addSubview(refreshControl)
         
         //加载数据进度

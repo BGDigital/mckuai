@@ -21,7 +21,7 @@ class APIClient {
     }
     
     //Post请求
-    private func Send(path: NSString, parameters: [String : AnyObject]?, view: UIView, ctl:UINavigationController?) -> Void {
+    private func Send(path: NSString, parameters: [String : AnyObject]?, view: UIView, ctl:UINavigationController?, isOver: String) -> Void {
         if GTUtil.CheckNetBreak() {return}
             var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
             hud.labelText = "发布中"
@@ -32,8 +32,13 @@ class APIClient {
                 if json["state"].stringValue == "ok" {
                     //UIAlertView(title: "提示", message: "发布成功", delegate: nil, cancelButtonTitle: "确定").show()
                     hud.hide(true)
-                    GTUtil.showCustomHUD(view, title: "发布成功", imgName: "bankuai")
+                    GTUtil.showCustomHUD(view, title: "发布成功", imgName: "HUD_OK")
                     ctl?.popViewControllerAnimated(true)
+                            if isOver == "yes" {
+                                println("调用xyz的刷新JS，刷新页面！")
+                                (ctl?.topViewController as TieziController).afterReply()
+                            }
+
                 }
             }
     }
@@ -49,7 +54,7 @@ class APIClient {
                 .responseSwiftyJSON { (request, response, json, error) in
                     if let err = error? {
                         hud.hide(true)
-                        GTUtil.showCustomHUD(view, title: "获取数据出错", imgName: "bankuai")
+                        GTUtil.showCustomHUD(view, title: "获取数据出错", imgName: "HUD_ERROR")
                         failure(err)
                     } else {
                         hud.hide(true)
@@ -62,7 +67,7 @@ class APIClient {
                 .responseSwiftyJSON { (request, response, json, error) in
                     if let err = error? {
                         
-                        GTUtil.showCustomHUD(view, title: "获取数据出错", imgName: "bankuai")
+                        GTUtil.showCustomHUD(view, title: "获取数据出错", imgName: "HUD_ERROR")
                         failure(err)
                     } else {
                         
@@ -84,7 +89,7 @@ class APIClient {
             .responseSwiftyJSON { (request, response, json, error) in
                 if let err = error? {
                     hud.hide(true)
-                    GTUtil.showCustomHUD(view, title: "登录失败", imgName: "bankuai")
+                    GTUtil.showCustomHUD(view, title: "登录失败", imgName: "HUD_ERROR")
                     failure(err)
                 } else {
                     hud.hide(true)
@@ -121,7 +126,7 @@ class APIClient {
         "content": content,
         "device": "ios"
         ]
-        self.Send("talk.do?act=addTalk", parameters: dict, view: parentView, ctl:ctl)
+        self.Send("talk.do?act=addTalk", parameters: dict, view: parentView, ctl:ctl, isOver:"false")
     }
     
     //跟贴
@@ -137,7 +142,7 @@ class APIClient {
             "talkTitle": talkTitle,
             "device": "ios"
         ]
-        self.Send("talk.do?act=followTalk", parameters: dict, view: parentView, ctl:ctl)
+        self.Send("talk.do?act=followTalk", parameters: dict, view: parentView, ctl:ctl, isOver:"yes")
     }
     
     //回复
@@ -150,7 +155,7 @@ class APIClient {
             "replyUserName": replyUserName,
             "device": "ios"
         ]
-        self.Send("talk.do?act=replyTalk", parameters: dict, view: parentView, ctl:ctl)
+        self.Send("talk.do?act=replyTalk", parameters: dict, view: parentView, ctl:ctl, isOver:"yes")
     }
     
 
