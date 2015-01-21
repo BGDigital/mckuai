@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sFg-L0-DoZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sFg-L0-DoZ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -65,10 +64,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAw-4D-Mwv" userLabel="明星">
                                 <rect key="frame" x="0.0" y="585" width="320" height="70"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Po-vc-wVr" userLabel="标题">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Po-vc-wVr" userLabel="标题">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="image4" translatesAutoresizingMaskIntoConstraints="NO" id="gyB-AU-cdp">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image4" translatesAutoresizingMaskIntoConstraints="NO" id="gyB-AU-cdp">
                                                 <rect key="frame" x="300" y="0.0" width="20" height="20"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日明星" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tis-mH-gdU">
@@ -681,7 +680,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRX-kl-zS1">
+                            <button opaque="NO" tag="30" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRX-kl-zS1">
                                 <rect key="frame" x="204" y="206" width="70" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="有什么反应">
@@ -781,15 +780,11 @@
                             <constraint firstItem="KPo-GW-V8G" firstAttribute="trailing" secondItem="rV9-Mg-Ycq" secondAttribute="trailing" id="fGq-gd-k7o"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eRX-kl-zS1" secondAttribute="trailing" constant="30" id="hqz-D3-8ii"/>
                             <constraint firstAttribute="centerX" secondItem="ATk-fc-ep6" secondAttribute="centerX" constant="-2" id="iwt-zc-FDL"/>
-                            <constraint firstItem="eRX-kl-zS1" firstAttribute="firstBaseline" secondItem="9Nt-Xg-46E" secondAttribute="baseline" id="lSG-bO-VXE"/>
-                            <constraint firstItem="eRX-kl-zS1" firstAttribute="top" secondItem="9Nt-Xg-46E" secondAttribute="top" id="mzY-2e-YTD"/>
                             <constraint firstItem="9Nt-Xg-46E" firstAttribute="leading" secondItem="OEb-SS-Y3k" secondAttribute="leadingMargin" constant="34" id="oMS-2P-0mD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tPG-0V-8RD" secondAttribute="trailing" constant="-16" id="pXA-jN-UrS"/>
                             <constraint firstAttribute="centerX" secondItem="ZMQ-oL-owx" secondAttribute="centerX" constant="-52" id="vhb-eG-u8J"/>
-                            <constraint firstItem="eRX-kl-zS1" firstAttribute="leading" secondItem="ZMQ-oL-owx" secondAttribute="leading" constant="3" id="x1r-VY-fhc"/>
                             <constraint firstAttribute="trailing" secondItem="Dfy-H2-SKH" secondAttribute="trailing" id="yDQ-ha-nEv"/>
                             <constraint firstItem="rV9-Mg-Ycq" firstAttribute="trailing" secondItem="Dfy-H2-SKH" secondAttribute="trailing" id="z4h-dm-5Zb"/>
-                            <constraint firstItem="eRX-kl-zS1" firstAttribute="baseline" secondItem="9Nt-Xg-46E" secondAttribute="firstBaseline" id="zFU-1Q-cBn"/>
                             <constraint firstItem="Cws-4Q-w1g" firstAttribute="leading" secondItem="9Nt-Xg-46E" secondAttribute="trailing" constant="50" id="zyI-HO-2o7"/>
                         </constraints>
                     </view>
