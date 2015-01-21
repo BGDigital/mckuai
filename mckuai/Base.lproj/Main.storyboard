@@ -58,11 +58,11 @@
                         <viewControllerLayoutGuide type="top" id="bpR-52-5g9"/>
                         <viewControllerLayoutGuide type="bottom" id="zPd-o6-RmM"/>
                     </layoutGuides>
-                    <scrollView key="view" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" indicatorStyle="white" id="yFt-2N-cFt">
+                    <scrollView key="view" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" id="yFt-2N-cFt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="680"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="72" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="xzP-ww-PT7" userLabel="热帖">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="72" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="xzP-ww-PT7" userLabel="热帖">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="585"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -143,13 +143,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAw-4D-Mwv" userLabel="明星">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAw-4D-Mwv" userLabel="明星">
                                 <rect key="frame" x="0.0" y="585" width="320" height="70"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Po-vc-wVr" userLabel="标题">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Po-vc-wVr" userLabel="标题">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="image4" translatesAutoresizingMaskIntoConstraints="NO" id="gyB-AU-cdp">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image4" translatesAutoresizingMaskIntoConstraints="NO" id="gyB-AU-cdp">
                                                 <rect key="frame" x="300" y="0.0" width="20" height="20"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日明星" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tis-mH-gdU">
@@ -165,7 +165,7 @@
                                             <constraint firstItem="gyB-AU-cdp" firstAttribute="top" secondItem="5Po-vc-wVr" secondAttribute="top" id="o7N-s5-Lgw"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lqo-H9-h9t">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lqo-H9-h9t">
                                         <rect key="frame" x="0.0" y="22" width="320" height="43"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -206,7 +206,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="5Po-vc-wVr" firstAttribute="top" secondItem="TAw-4D-Mwv" secondAttribute="top" id="0AT-2D-oO1"/>
+                                    <constraint firstItem="5Po-vc-wVr" firstAttribute="top" secondItem="TAw-4D-Mwv" secondAttribute="top" id="8Dc-kV-ciK"/>
+                                    <constraint firstItem="5Po-vc-wVr" firstAttribute="top" secondItem="TAw-4D-Mwv" secondAttribute="top" id="KC7-iS-m5T"/>
+                                    <constraint firstItem="5Po-vc-wVr" firstAttribute="leading" secondItem="Lqo-H9-h9t" secondAttribute="leading" id="O6r-Aq-qRr"/>
+                                    <constraint firstItem="5Po-vc-wVr" firstAttribute="trailing" secondItem="Lqo-H9-h9t" secondAttribute="trailing" id="aGb-Gd-h38"/>
+                                    <constraint firstItem="5Po-vc-wVr" firstAttribute="top" secondItem="TAw-4D-Mwv" secondAttribute="top" id="eGR-MV-mAx"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Po-vc-wVr" secondAttribute="bottom" constant="50" id="i6b-vt-hzU"/>
                                     <constraint firstAttribute="height" constant="70" id="iIN-sI-od8"/>
+                                    <constraint firstItem="Lqo-H9-h9t" firstAttribute="top" secondItem="5Po-vc-wVr" secondAttribute="bottom" constant="2" id="iVS-8S-hRf"/>
                                     <constraint firstItem="5Po-vc-wVr" firstAttribute="leading" secondItem="TAw-4D-Mwv" secondAttribute="leading" id="uPZ-ZJ-pTf"/>
                                     <constraint firstAttribute="trailing" secondItem="5Po-vc-wVr" secondAttribute="trailing" id="wv8-qX-Trc"/>
                                 </constraints>
@@ -270,7 +278,7 @@
                                             <color key="textColor" red="0.58823529409999997" green="0.58823529409999997" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qp8-Ko-Bxq">
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qp8-Ko-Bxq">
                                             <rect key="frame" x="255" y="10" width="57" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="57" id="iTx-cm-UC8"/>
