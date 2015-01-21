@@ -12,6 +12,9 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     
     //该导航需要设置的
     var NavigationController:UINavigationController!
+    
+    var userInfo:UserCenter!
+    
     var json = JSON("")
     var http_url = UserCenterUrl;
     
@@ -87,7 +90,10 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     
     var dynamicNoData:UIViewController!=nil
     func initData() {
-        if GTUtil.CheckNetBreak() {return}
+        if GTUtil.CheckNetBreak() {
+            self.refreshing = false
+            return
+        }
 
         var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
         hud.labelText = "正在获取"
@@ -108,6 +114,10 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
                 } else {
                     var jsonParse = data as NSDictionary
                     self.json = JSON(jsonParse)
+                    println(self.userInfo)
+                    self.userInfo.json = self.json
+                    self.userInfo.setUserInfo()
+                    
                     var count = self.json["dataObject","message"].count
                     
                     self.itemCount = self.json["dataObject","pageInfo","allCount"].intValue
@@ -133,13 +143,19 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
                             println("self.datasource:\(self.datasource.count)")
                             self.tableView.reloadData()
                         }
-
+                        
+                        
+                        if(self.datasource.count>=10){
+                            self.tableView.tableFooterView?.hidden = false
+                        }
                         
 //                        self.tableView.reloadData()
                     }
                     
                     self.refreshing = false
-                    self.tableView.tableFooterView?.hidden = false
+                    
+
+                    
                     
                 }
                 hud.hide(true)
@@ -220,7 +236,7 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     func onLoadMore() {
         var nextPage = self.currentPage+1
         if ((nextPage*self.pageSize) - self.itemCount >= self.pageSize) {
-            UIAlertView(title: "提示", message: "已到最后一页", delegate: nil, cancelButtonTitle: "确定").show()
+//            UIAlertView(title: "提示", message: "已到最后一页", delegate: nil, cancelButtonTitle: "确定").show()
         } else {
             self.currentPage = nextPage
         }

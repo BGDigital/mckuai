@@ -36,6 +36,7 @@ class OtherCenter: UIViewController{
             dynamicTableView.userId = self.userId
             dynamicTableView.view.frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: containerView.frame.height)
             dynamicTableView.NavigationController = self.navigationController
+            dynamicTableView.otherUser =  self
             containerView.addSubview(dynamicTableView.view)
         }else{
             println("缓存view")
@@ -49,25 +50,7 @@ class OtherCenter: UIViewController{
             //println(self.getData)
             if self.getData["state"].stringValue == "ok" {
                 println("获取他人消息成功")
-                
-                var url = self.getData["dataObject","user","headImg"].string!
-                GTUtil.loadImageView(img: self.headImg, url: url)
-                self.userName.text = self.getData["dataObject","user","nike"].string
-                self.level.text = "LV."+String(self.getData["dataObject","user","level"].int!)
-                var isServerActor = self.getData["dataObject","user","isServerActor"].int
-                
-                if(isServerActor == 1){
-                    self.shen.text = "腐"
-                    self.mingren.hidden = true
-                } else if(isServerActor == 2){
-                    self.shen.text = "名"
-                    self.mingren.hidden = true
-                } else {
-                    self.mingren.hidden = true
-                    self.shen.hidden = true
-                }
-                
-                
+                self.setUserInfo()
             }else{
                 self.navigationController?.popViewControllerAnimated(true)
             }
@@ -153,6 +136,24 @@ class OtherCenter: UIViewController{
 
     }
     
+    func setUserInfo(){
+        var url = self.getData["dataObject","user","headImg"].string!
+        GTUtil.loadImageView(img: self.headImg, url: url)
+        self.userName.text = self.getData["dataObject","user","nike"].string
+        self.level.text = "LV."+String(self.getData["dataObject","user","level"].int!)
+        var isServerActor = self.getData["dataObject","user","isServerActor"].int
+        
+        if(isServerActor == 1){
+            self.shen.text = "腐"
+            self.mingren.hidden = true
+        } else if(isServerActor == 2){
+            self.shen.text = "名"
+            self.mingren.hidden = true
+        } else {
+            self.mingren.hidden = true
+            self.shen.hidden = true
+        }
+    }
     
     
 }

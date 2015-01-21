@@ -13,7 +13,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     var rightButton:UIButton?
     let ITEM_WIDTH:CGFloat = 45
     let ITEM_HEIGHT:CGFloat = 45
-    
+    var isLoginout:Bool = false
     @IBOutlet weak var headImage: UIImageView!
     
     @IBOutlet weak var userName: UILabel!
@@ -35,6 +35,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     var http_url = UserCenterUrl;
     override func viewDidLoad() {
         super.viewDidLoad()
+        isLoginout = false
         if(appUserIdSave != nil){
             
             self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -49,8 +50,11 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
             self.navigationController?.navigationBar.translucent=true
             setRightBarButtonItem()
             */
-            initData()
-            changeStatusClicked(self.dynamic_btn)
+//            initData()
+            if !initData() {
+                changeStatusClicked(self.dynamic_btn)
+            }
+            //changeStatusClicked(self.dynamic_btn)
         }else{
             McLogin.showLoginView(self)
         }
@@ -67,6 +71,9 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
             var userDefault = NSUserDefaults.standardUserDefaults()
             userDefault.removeObjectForKey("appUserIdSave")
             appUserIdSave = nil
+            dynamicTableView = nil
+            messageTableView = nil
+            isLoginout = true
             self.tabBarController?.selectedIndex = 0
             println("用户已退出！")
         }
@@ -78,52 +85,42 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = true
+        if(isLoginout){
+            viewDidLoad()
+        }
+        
     }
     
-    func initData() {
-        if GTUtil.CheckNetBreak() {return}
-        var paramDictionary :Dictionary<String,String> = ["act":"one","id":"\(appUserIdSave)"]
-        
-        Alamofire.request(.GET,http_url, parameters: paramDictionary)
-            .responseJSON { (request, response, data, error) in
-                
-                if data == nil {
-                    println("取不到数据，不显示")
-                    //self.tableView.hidden = true
-                    self.showNoLogin()
-                    
-                } else {
-                    var jsonParse = data as NSDictionary
-                    self.json = JSON(jsonParse)
-                    var count = self.json["dataObject","user"].count
-                    println("count\(count)")
-                    println(self.json["state"])
-                    if(count == 0) {
-                        self.showNoLogin()
-                    } else {
-                        var url = self.json["dataObject","user","headImg"].string!
-                        
-                        GTUtil.loadImageView(img: self.headImage, url: url)
-                        self.headImage.contentMode = UIViewContentMode.ScaleAspectFit
-                        
-                        self.userName.text = self.json["dataObject","user","nike"].string
-                        self.level.text = "LV."+String(self.json["dataObject","user","level"].int!)
-                        var isServerActor = self.json["dataObject","user","isServerActor"].int
-                        isServerActor=1
-                        if(isServerActor == 1){
-                            self.fuzhu.text = "腐"
-                            self.mingren.hidden = true
-                        } else if(isServerActor == 2){
-                            self.fuzhu.text = "名"
-                            self.mingren.hidden = true
-                        } else {
-                            self.mingren.hidden = true
-                            self.fuzhu.hidden = true
-                        }
+    func initData() -> Bool   {
+        var flag:Bool = false
+        flag = GTUtil.CheckNetBreak()
+        if(!flag){
+            var paramDictionary :Dictionary<String,String> = ["act":"one","id":"\(appUserIdSave)"]
+            
+                    Alamofire.request(.GET,http_url, parameters: paramDictionary)
+                        .responseJSON { (request, response, data, error) in
+            
+                            if data == nil {
+                                println("取不到数据，不显示")
+                                //self.tableView.hidden = true
+                                self.showNoLogin()
+                                flag = true
+            
+                            } else {
+                                var jsonParse = data as NSDictionary
+                                self.json = JSON(jsonParse)
+                                var count = self.json["dataObject","user"].count
+                                if(count == 0) {
+                                    self.showNoLogin()
+                                    flag = true
+                                }
+                            }
+            
                     }
-                }
-    
+
         }
+        return flag
+
 
     }
     
@@ -193,6 +190,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
                 dynamicTableView = UIStoryboard(name: "Dynamic", bundle: nil).instantiateViewControllerWithIdentifier("dynamicSb")as Dynamic
                 dynamicTableView.view.frame = CGRect(x: 0, y: 0, width: container_v.frame.width, height: container_v.frame.height)
                 dynamicTableView.NavigationController = self.navigationController
+                dynamicTableView.userInfo = self
                 container_v.addSubview(dynamicTableView.view)
             }else{
                 println("缓存view")
@@ -210,6 +208,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
                 messageTableView = UIStoryboard(name: "Message", bundle: nil).instantiateViewControllerWithIdentifier("messageSb")as Message
                 messageTableView.view.frame = CGRect(x: 0, y: 0, width: container_v.frame.width, height: container_v.frame.height)
                 messageTableView.NavigationController = self.navigationController
+                messageTableView.userInfo = self
                 container_v.addSubview(messageTableView.view)
             } else {
                 //messageTableView.reloadData()
@@ -219,6 +218,28 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     }
     }
 
+    func setUserInfo(){
+        
+        var url = self.json["dataObject","user","headImg"].string!
+        
+        GTUtil.loadImageView(img: self.headImage, url: url)
+        self.headImage.contentMode = UIViewContentMode.ScaleAspectFit
+        
+        self.userName.text = self.json["dataObject","user","nike"].string
+        self.level.text = "LV."+String(self.json["dataObject","user","level"].int!)
+        var isServerActor = self.json["dataObject","user","isServerActor"].int
+        isServerActor=1
+        if(isServerActor == 1){
+            self.fuzhu.text = "腐"
+            self.mingren.hidden = true
+        } else if(isServerActor == 2){
+            self.fuzhu.text = "名"
+            self.mingren.hidden = true
+        } else {
+            self.mingren.hidden = true
+            self.fuzhu.hidden = true
+        }
+    }
 
 
 

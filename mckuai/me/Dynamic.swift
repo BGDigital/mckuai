@@ -15,6 +15,8 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     
 //    @IBOutlet var tv: UITableView!
     
+    var userInfo:UserCenter!
+    var otherUser:OtherCenter!
     var userId = appUserIdSave
     
     var json = JSON("")
@@ -72,16 +74,18 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
+        
         //开始上拉到特定位置后改变列表底部的提示
         if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height+30) {
             LoadMoreText.text = "松开载入更多"
         } else {
             LoadMoreText.text = self.normalTipe
         }
+        println(LoadMoreText.text)
     }
     
     override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        LoadMoreText.text = "上拉查看更多"
+        LoadMoreText.text = self.normalTipe
         //上拉到一定程度后松开就开始加载更多
         if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height + 30) {
             onLoadMore()
@@ -92,7 +96,10 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     
     func initData() {
         //self.refreshing = true
-        if GTUtil.CheckNetBreak() {return}
+        if GTUtil.CheckNetBreak() {
+            self.refreshing = false
+            return
+        }
         var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
         hud.labelText = "正在获取"
         
@@ -101,7 +108,6 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
             .responseJSON { (request, response, data, error) in
                 
                 if data == nil {
-                    println("取不到数据，不显示")
                     if(self.currentPage==1){
                         self.showDefaultView()
                     }
@@ -110,6 +116,19 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
                 } else {
                     var jsonParse = data as NSDictionary
                     self.json = JSON(jsonParse)
+                    
+                    if(self.userInfo != nil){
+                        self.userInfo.json = self.json
+                        self.userInfo.setUserInfo()
+                    }
+                    
+                    if(self.otherUser != nil){
+                        self.otherUser.getData = self.json
+                        self.otherUser.setUserInfo()
+                    }
+                    
+                    
+                    
                     var count = self.json["dataObject","dynamic"].count
                     self.itemCount = self.json["dataObject","pageInfo","allCount"].intValue
                     self.currentPage = self.json["dataObject","pageInfo","page"].intValue
@@ -134,11 +153,15 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
                             self.tableView.reloadData()
                         }
                         
+                        if(self.datasource.count>=10){
+                            self.tableView.tableFooterView?.hidden = false
+                        }
 //                        self.tableView.reloadData()
                     }
                     
                     self.refreshing = false
-                    self.tableView.tableFooterView?.hidden = false
+
+                    
                 }
                 hud.hide(true)
         }
@@ -257,7 +280,7 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     func onLoadMore() {
         var nextPage = self.currentPage+1
         if ((nextPage*self.pageSize) - self.itemCount >= self.pageSize) {
-            UIAlertView(title: "提示", message: "已到最后一页", delegate: nil, cancelButtonTitle: "确定").show()
+//            UIAlertView(title: "提示", message: "已到最后一页", delegate: nil, cancelButtonTitle: "确定").show()
         } else {
             self.currentPage = nextPage
         }
