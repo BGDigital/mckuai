@@ -119,6 +119,7 @@ class McLogin: UIViewController,TencentSessionDelegate {
     
     class func showLoginView(prentView:UIViewController){
         loginView=UIStoryboard(name:"McLogin",bundle:nil).instantiateViewControllerWithIdentifier("mcLogin") as McLogin
+        loginView.view.frame = CGRectMake(0, 0, prentView.view.frame.size.width, prentView.view.frame.size.height)
         prentView.view.addSubview(loginView.view)
         //prentView.presentViewController(loginView, animated: true, completion: nil)
 
