@@ -46,6 +46,8 @@ class forumDetailCell: UITableViewCell {
         } else {
             if json["hasImg"].intValue == 1 {
                 self.img.image = UIImage(named: "bankuai_img")
+            } else {
+                self.img.image = nil
             }
         }
     }
