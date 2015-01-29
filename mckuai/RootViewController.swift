@@ -37,9 +37,9 @@ class RootViewController: UITabBarController, UITabBarControllerDelegate{
         appUserIdSave = userDefault.integerForKey("appUserIdSave")
         println("appUserIdSave:\(appUserIdSave)")
         //判断是否登录
-        if(appUserIdSave == nil || appUserIdSave == 0){
-           McLogin.showLoginView(self)
-        }
+//        if(appUserIdSave == nil || appUserIdSave == 0){
+//           McLogin.showLoginView(self)
+//        }
         //测试ID，一叶之秋
         //appUserIdSave=2
 

@@ -25,17 +25,7 @@ class forumDetailCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-//    // 自绘分割线
-//    override func drawRect(rect: CGRect) {
-//        var context = UIGraphicsGetCurrentContext()
-//        CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
-//        CGContextFillRect(context, rect)
-//        
-//        CGContextSetStrokeColorWithColor(context, UIColor(red: 0.902, green: 0.902, blue: 0.902, alpha: 1.00).CGColor)
-//        CGContextStrokeRect(context, CGRectMake(10, rect.size.height - 0.1 , rect.size.width-20, 0.1))
-//    }
-    
+        
     func update(json: JSON) {
         self.caption.text = json["talkTitle"].stringValue+"\n "
         self.username.text = json["userName"].stringValue

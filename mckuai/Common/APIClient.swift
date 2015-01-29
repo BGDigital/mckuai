@@ -98,19 +98,19 @@ class APIClient {
         }
     }
     //获取社区数据
-    func getCommunityData(view: UIView, success: (JSON) -> Void, failure: (NSError) -> Void) {
-        self.getJSONData(true, view: view, path: "zone.do?act=iphoneAll", parameters: nil, success: success, failure: failure)
+    func getCommunityData(showHud: Bool,view: UIView, success: (JSON) -> Void, failure: (NSError) -> Void) {
+        self.getJSONData(showHud, view: view, path: "zone.do?act=iphoneAll", parameters: nil, success: success, failure: failure)
     }
     
     //获取社区版块信息
-    func getCommunityBankuaiData(view: UIView, forumID: String, page: String, success: (JSON) -> Void, failure: (NSError) -> Void) {
+    func getCommunityBankuaiData(showHUD: Bool, view: UIView, forumID: String, page: String, success: (JSON) -> Void, failure: (NSError) -> Void) {
         let dict = ["forumId": forumID, "page": page]
-        self.getJSONData(true, view: view, path: "zone.do?act=one", parameters: dict, success: success, failure: failure)
+        self.getJSONData(showHUD, view: view, path: "zone.do?act=one", parameters: dict, success: success, failure: failure)
     }
     
     //获取首页数据
-    func getHomePageData(view: UIView, success: (JSON) -> Void, failure: (NSError) -> Void) {
-        self.getJSONData(true, view: view, path: "index.do?act=all", parameters: nil, success: success, failure: failure)
+    func getHomePageData(showHUD: Bool, view: UIView, success: (JSON) -> Void, failure: (NSError) -> Void) {
+        self.getJSONData(showHUD, view: view, path: "index.do?act=all", parameters: nil, success: success, failure: failure)
     }
     
     

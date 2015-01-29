@@ -8,20 +8,7 @@
 
 import UIKit
 
-class BaseTableViewController: UITableViewController {
-    
-    var refreshing: Bool = false {
-        didSet {
-            if (self.refreshing) {
-                self.refreshControl?.beginRefreshing()
-                self.refreshControl?.attributedTitle = NSAttributedString(string: "正在刷新...")
-            }
-            else {
-                self.refreshControl?.endRefreshing()
-                self.refreshControl?.attributedTitle = NSAttributedString(string: "正在刷新...")
-            }
-        }
-    }
+class BaseTableViewController: UITableViewController, UIScrollViewDelegate {
     
     var datasource: Array<JSON>! {
         didSet {
@@ -29,10 +16,20 @@ class BaseTableViewController: UITableViewController {
         }
     }
     
+    var CBSH_Refresh = CBStoreHouseRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl?.addTarget(self, action: "onPullToFresh", forControlEvents: UIControlEvents.ValueChanged)
+        
+        self.CBSH_Refresh = CBStoreHouseRefreshControl.attachToScrollView(self.tableView, target: self, refreshAction: "onPullToFresh", plist: "storehouse", color: UIColor.blackColor(), lineWidth: 1.5, dropHeight: 80, scale: 1, horizontalRandomness: 150, reverseLoadingAnimation: true, internalAnimationFactor: 0.5)
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.CBSH_Refresh.scrollViewDidScroll()
+    }
+    
+    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.CBSH_Refresh.scrollViewDidEndDragging()
     }
 }

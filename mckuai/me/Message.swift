@@ -12,7 +12,7 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     
     //该导航需要设置的
     var NavigationController:UINavigationController!
-    
+    var CBSH_Refresh = CBStoreHouseRefreshControl()
     var userInfo:UserCenter!
     
     var json = JSON("")
@@ -28,32 +28,16 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     var LoadMoreText = UILabel()
     let tableFooterView = UIView()
     var normalTipe:String = "上拉查看更多"
-    var refreshViewM = UIRefreshControl()
-    var refreshing: Bool = false {
-        didSet {
-            if (self.refreshing) {
-                self.refreshViewM.beginRefreshing()
-                self.refreshViewM.attributedTitle = NSAttributedString(string: "正在刷新...")
-            }
-            else {
-                self.refreshViewM.endRefreshing()
-                self.refreshViewM.attributedTitle = NSAttributedString(string: "正在刷新...")
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
-        
-        //下拉刷新
-        refreshViewM.attributedTitle = NSAttributedString(string: "松开刷新列表")
-        refreshViewM.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(refreshViewM)
+        self.tableView.separatorStyle = .None;
         
         initData()
         createTableFooter()
         self.tableView.tableFooterView?.hidden = true
+        //下拉刷新
+        self.CBSH_Refresh = CBStoreHouseRefreshControl.attachToScrollView(self.tableView, target: self, refreshAction: "onRefresh", plist: "storehouse", color: UIColor.blackColor(), lineWidth: 1.5, dropHeight: 80, scale: 1, horizontalRandomness: 150, reverseLoadingAnimation: true, internalAnimationFactor: 0.5)
     }
     
     //初始化tv的footerview
@@ -71,6 +55,8 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.CBSH_Refresh.scrollViewDidScroll()
+        
         //开始上拉到特定位置后改变列表底部的提示
         if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height+30) {
             LoadMoreText.text = "松开载入更多"
@@ -80,6 +66,8 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.CBSH_Refresh.scrollViewDidEndDragging()
+        
         LoadMoreText.text = self.normalTipe
         //上拉到一定程度后松开就开始加载更多
         if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height + 30) {
@@ -91,14 +79,9 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     var dynamicNoData:UIViewController!=nil
     func initData() {
         if GTUtil.CheckNetBreak() {
-            self.refreshing = false
             return
         }
 
-        var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-        hud.labelText = "正在获取"
-
-        //self.refreshing = true
         var paramDictionary :Dictionary<String,String> = ["act":"message","id":String(appUserIdSave),"page":String(currentPage)]
         Alamofire.request(.GET,http_url, parameters: paramDictionary)
             .responseJSON { (request, response, data, error) in
@@ -109,8 +92,8 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
                     if(self.currentPage==1){
                         self.showDefaultView()
                     }
+                    self.CBSH_Refresh.finishingLoading()
                     
-                    self.refreshing = false
                 } else {
                     var jsonParse = data as NSDictionary
                     self.json = JSON(jsonParse)
@@ -142,23 +125,16 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
                             
                             println("self.datasource:\(self.datasource.count)")
                             self.tableView.reloadData()
+                            self.CBSH_Refresh.finishingLoading()
                         }
                         
                         
                         if(self.datasource.count>=10){
                             self.tableView.tableFooterView?.hidden = false
                         }
-                        
-//                        self.tableView.reloadData()
                     }
-                    
-                    self.refreshing = false
-                    
-
-                    
-                    
+   
                 }
-                hud.hide(true)
         }
         
     }
@@ -174,12 +150,6 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 1
-    }
-    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
@@ -191,7 +161,7 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            let  cell = self.tableView.dequeueReusableCellWithIdentifier("messageCell") as MessageCell
+            let cell = self.tableView.dequeueReusableCellWithIdentifier("messageCell") as MessageCell
         if !self.datasource.isEmpty {
             var data = self.datasource[indexPath.row] as JSON
             cell.update(data)

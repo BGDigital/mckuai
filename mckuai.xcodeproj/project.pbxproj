@@ -42,13 +42,15 @@
 		E62C21801A03F34E004DBFD0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C217F1A03F34E004DBFD0 /* RootViewController.swift */; };
 		E62C21831A03F34E004DBFD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E62C21811A03F34E004DBFD0 /* Main.storyboard */; };
 		E62C21941A03F34E004DBFD0 /* mckuaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C21931A03F34E004DBFD0 /* mckuaiTests.swift */; };
+		E62E55811A7A139400E5730D /* BarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E62E557E1A7A139400E5730D /* BarItem.m */; };
+		E62E55821A7A139400E5730D /* CBStoreHouseRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E62E55801A7A139400E5730D /* CBStoreHouseRefreshControl.m */; };
+		E62E55841A7A140300E5730D /* storehouse.plist in Resources */ = {isa = PBXBuildFile; fileRef = E62E55831A7A140300E5730D /* storehouse.plist */; };
 		E63C78B61A302F5F00D28668 /* forumDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63C78B31A302F5F00D28668 /* forumDetail.storyboard */; };
 		E63C78B71A302F5F00D28668 /* forumDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C78B41A302F5F00D28668 /* forumDetailCell.swift */; };
 		E63C78B81A302F5F00D28668 /* forumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C78B51A302F5F00D28668 /* forumDetailViewController.swift */; };
 		E63FD6CF1A13340100177E3E /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63FD6CB1A13340100177E3E /* Launch.storyboard */; };
 		E63FD6D21A13340100177E3E /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD6CE1A13340100177E3E /* Welcome.swift */; };
 		E63FD7D91A133CB000177E3E /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD7D81A133CB000177E3E /* Community.swift */; };
-		E63FD7E01A133E0400177E3E /* homeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD7DF1A133E0400177E3E /* homeController.swift */; };
 		E63FD7E61A1346CC00177E3E /* chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63FD7E51A1346CC00177E3E /* chat.storyboard */; };
 		E63FD7E81A13471F00177E3E /* chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD7E71A13471F00177E3E /* chat.swift */; };
 		E64264481A68C15000488803 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64264471A68C15000488803 /* Reachability.swift */; };
@@ -135,13 +137,17 @@
 		E62C218D1A03F34E004DBFD0 /* mckuaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mckuaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E62C21921A03F34E004DBFD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E62C21931A03F34E004DBFD0 /* mckuaiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mckuaiTests.swift; sourceTree = "<group>"; };
+		E62E557D1A7A139400E5730D /* BarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarItem.h; sourceTree = "<group>"; };
+		E62E557E1A7A139400E5730D /* BarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarItem.m; sourceTree = "<group>"; };
+		E62E557F1A7A139400E5730D /* CBStoreHouseRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStoreHouseRefreshControl.h; sourceTree = "<group>"; };
+		E62E55801A7A139400E5730D /* CBStoreHouseRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStoreHouseRefreshControl.m; sourceTree = "<group>"; };
+		E62E55831A7A140300E5730D /* storehouse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storehouse.plist; sourceTree = "<group>"; };
 		E63C78B31A302F5F00D28668 /* forumDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = forumDetail.storyboard; sourceTree = "<group>"; };
 		E63C78B41A302F5F00D28668 /* forumDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forumDetailCell.swift; sourceTree = "<group>"; };
 		E63C78B51A302F5F00D28668 /* forumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forumDetailViewController.swift; sourceTree = "<group>"; };
 		E63FD6CB1A13340100177E3E /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		E63FD6CE1A13340100177E3E /* Welcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		E63FD7D81A133CB000177E3E /* Community.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
-		E63FD7DF1A133E0400177E3E /* homeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeController.swift; sourceTree = "<group>"; };
 		E63FD7E51A1346CC00177E3E /* chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = chat.storyboard; sourceTree = "<group>"; };
 		E63FD7E71A13471F00177E3E /* chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chat.swift; sourceTree = "<group>"; };
 		E64264471A68C15000488803 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -243,6 +249,7 @@
 		E62C216F1A03F34E004DBFD0 = {
 			isa = PBXGroup;
 			children = (
+				E62E55831A7A140300E5730D /* storehouse.plist */,
 				0BE195341A4D2D5700F4262B /* TencentOpenApi_IOS_Bundle.bundle */,
 				0BE195351A4D2D5700F4262B /* TencentOpenAPI.framework */,
 				E628892C1A3E895B00C45131 /* Security.framework */,
@@ -316,6 +323,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E62E557C1A7A139400E5730D /* CBStoreHouseRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				E62E557D1A7A139400E5730D /* BarItem.h */,
+				E62E557E1A7A139400E5730D /* BarItem.m */,
+				E62E557F1A7A139400E5730D /* CBStoreHouseRefreshControl.h */,
+				E62E55801A7A139400E5730D /* CBStoreHouseRefreshControl.m */,
+			);
+			path = CBStoreHouseRefreshControl;
+			sourceTree = "<group>";
+		};
 		E63C78B21A302F5F00D28668 /* forumDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,7 +372,6 @@
 			children = (
 				E67B865C1A3E7AA400B782E1 /* HotTableViewCell.swift */,
 				E67B865D1A3E7AA400B782E1 /* HotTableViewController.swift */,
-				E63FD7DF1A133E0400177E3E /* homeController.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -428,6 +445,7 @@
 		E6D6C2C51A2FFC0800858161 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				E62E557C1A7A139400E5730D /* CBStoreHouseRefreshControl */,
 				E66F744F1A6E867B00AC40A9 /* MBProgressHUD */,
 				E64265681A6AA89500488803 /* SweetAlert */,
 				E6CC7BDB1A5BEA6D0009776D /* Alamofire */,
@@ -538,6 +556,7 @@
 				E62889131A3E886A00C45131 /* Images.xcassets in Resources */,
 				E63C78B61A302F5F00D28668 /* forumDetail.storyboard in Resources */,
 				E626E1361A40167000506234 /* Post.storyboard in Resources */,
+				E62E55841A7A140300E5730D /* storehouse.plist in Resources */,
 				E628890C1A3E876300C45131 /* dynamicNoData.storyboard in Resources */,
 				E62889091A3E876300C45131 /* Dynamic.storyboard in Resources */,
 				E62888FC1A3E870800C45131 /* Login.storyboard in Resources */,
@@ -572,6 +591,7 @@
 				E642656A1A6AA8D900488803 /* SweetAlert.swift in Sources */,
 				E63C78B81A302F5F00D28668 /* forumDetailViewController.swift in Sources */,
 				E67B86621A3E7B8100B782E1 /* GTUtil.swift in Sources */,
+				E62E55821A7A139400E5730D /* CBStoreHouseRefreshControl.m in Sources */,
 				E63FD7D91A133CB000177E3E /* Community.swift in Sources */,
 				E64264481A68C15000488803 /* Reachability.swift in Sources */,
 				E63FD6D21A13340100177E3E /* Welcome.swift in Sources */,
@@ -580,7 +600,6 @@
 				E6D6C2CA1A2FFC0800858161 /* SwiftyJSON.swift in Sources */,
 				E628890D1A3E876300C45131 /* DynamicReplyCell.swift in Sources */,
 				0BDA0A7E1A4F1EE6008B888D /* OtherCenter.swift in Sources */,
-				E63FD7E01A133E0400177E3E /* homeController.swift in Sources */,
 				E626E13E1A408C1F00506234 /* TieziController.swift in Sources */,
 				E6D6C2DC1A300C2100858161 /* AppContext.swift in Sources */,
 				E62888FD1A3E870800C45131 /* Login.swift in Sources */,
@@ -590,6 +609,7 @@
 				E626E1381A40168E00506234 /* PostViewController.swift in Sources */,
 				E628890E1A3E876300C45131 /* HttpUrlConstant.swift in Sources */,
 				E6D6C2C91A2FFC0800858161 /* Alamofire-SwiftyJSON.swift in Sources */,
+				E62E55811A7A139400E5730D /* BarItem.m in Sources */,
 				E63FD7E81A13471F00177E3E /* chat.swift in Sources */,
 				E6BCFC651A1A30F2009857B0 /* FilletButton.swift in Sources */,
 				E628890B1A3E876300C45131 /* DynamicAddCell.swift in Sources */,

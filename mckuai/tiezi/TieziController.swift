@@ -16,7 +16,7 @@ class TieziController: UIViewController,UIWebViewDelegate {
     
     @IBOutlet weak var comment_border: UIView!
     
-    
+    var firstLoad = true
     var tid:String?
     
     var pull = UIRefreshControl()
@@ -51,8 +51,8 @@ class TieziController: UIViewController,UIWebViewDelegate {
     }
     func onPull(){
         pull.beginRefreshing()
+        firstLoad = false
         self.webview.reload()
-        pull.endRefreshing()
     }
     
     func load(){
@@ -83,12 +83,16 @@ class TieziController: UIViewController,UIWebViewDelegate {
         return true;
     }
     func webViewDidStartLoad(webView: UIWebView) {
-        self.hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        self.hud.labelText = "正在加载"
+        if firstLoad {
+            self.hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            self.hud.labelText = "正在加载"
+        }
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        self.hud.hide(true)
+        if firstLoad {self.hud.hide(true)}
+            
+        pull.endRefreshing()
     }
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError) {

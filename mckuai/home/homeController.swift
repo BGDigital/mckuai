@@ -8,7 +8,7 @@
 
 import UIKit
 
-class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate{
+class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate, UIScrollViewDelegate{
     
     var carouselView: DHCarouselView!
 
@@ -61,7 +61,7 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     
     @IBOutlet weak var hotTieziView: UITableView!
     
-    var pull = UIRefreshControl()
+    var CBSH_Refresh = CBStoreHouseRefreshControl()
     let fpic: CGFloat = 0.36
     var picHeight: CGFloat!
     
@@ -87,19 +87,21 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 100)
         
-        pull.attributedTitle = NSAttributedString(string: "再拉就刷新了哦^_^")
-        pull.addTarget(self, action: "onPullToFresh", forControlEvents: UIControlEvents.ValueChanged)
-        pull.tintColor = UIColor(white: 0.95, alpha: 1)
-
-        self.scrollView.addSubview(pull)
+        self.CBSH_Refresh = CBStoreHouseRefreshControl.attachToScrollView(self.scrollView, target: self, refreshAction: "onPullToFresh", plist: "storehouse", color: UIColor.blackColor(), lineWidth: 1.5, dropHeight: 80, scale: 1, horizontalRandomness: 150, reverseLoadingAnimation: true, internalAnimationFactor: 0.5)
         self.scrollView.layoutSubviews()
         
     }
     
     func onPullToFresh(){
-        pull.beginRefreshing()
         initData();
-        pull.endRefreshing()
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.CBSH_Refresh.scrollViewDidScroll()
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.CBSH_Refresh.scrollViewDidEndDragging()
     }
     
     func InitCarouselView(high: CGFloat) {
@@ -144,16 +146,16 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     //初始化数据
     func initData(){
         println("尝试加载数据")
-        
-        APIClient.sharedInstance.getHomePageData(self.view, {
+        APIClient.sharedInstance.getHomePageData(false, view:self.view, {
             (json) -> Void in
             if "ok" == json["state"].stringValue {
                 AppContext.sharedInstance.saveHomePageData(json.object)
                 self.data = json["dataObject"]
-//                println(json);
+                self.CBSH_Refresh.finishingLoading()
             }
             }, {
                 (err) -> Void in
+                self.CBSH_Refresh.finishingLoading()
                 if let d = AppContext.sharedInstance.getHomePageData(){
                     self.data = d["dataObject"]
                 }
@@ -269,6 +271,8 @@ class homeController: UIViewController, DHCarouselViewDelegate,UICollectionViewD
     }
     
 }
+
+
 
 class FamouseUser:UICollectionViewCell {
     

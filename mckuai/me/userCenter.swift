@@ -95,6 +95,9 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
         var flag:Bool = false
         flag = GTUtil.CheckNetBreak()
         if(!flag){
+            var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            hud.labelText = "正在获取"
+            
             var paramDictionary :Dictionary<String,String> = ["act":"one","id":"\(appUserIdSave)"]
             
                     Alamofire.request(.GET,http_url, parameters: paramDictionary)
@@ -105,7 +108,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
                                 //self.tableView.hidden = true
                                 self.showNoLogin()
                                 flag = true
-            
+                                hud.hide(true)
                             } else {
                                 var jsonParse = data as NSDictionary
                                 self.json = JSON(jsonParse)
@@ -114,6 +117,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
                                     self.showNoLogin()
                                     flag = true
                                 }
+                                hud.hide(true)
                             }
             
                     }
@@ -125,8 +129,9 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     }
     
     func showNoLogin(){
-        var loginAlertView = UIAlertView(title: "提示", message: "获取数据失败", delegate: self, cancelButtonTitle: "确定")
-        loginAlertView.show()
+        //var loginAlertView = UIAlertView(title: "提示", message: "获取数据失败", delegate: self, cancelButtonTitle: "确定")
+        //loginAlertView.show()
+        GTUtil.showCustomHUD(view, title: "获取数据出错", imgName: "HUD_ERROR")
     }
     
     override func didReceiveMemoryWarning() {
@@ -134,23 +139,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     func setRightBarButtonItem() {
-        //self.rightButtonItem=UIBarButtonItem(image:UIImage(named: "searchCenter_d"),style: UIBarButtonItemStyle.Plain, target: self,action: "rightBarButtonItemClicked")
-        //self.rightButtonItem.frame=CGRectMake(0,0,32,32)
-        //self.rightButtonItem.setBackgroundImage(UIImage(named: "searchCenter_d"),forState:UIControlState.Normal)
-        //self.navigationItem.rightBarButtonItem = self.rightButtonItem
-        //self.navigationItem.rightBarButtonItem.frame=CGRectMake(0,0,32,32)
         self.rightButton = UIButton.buttonWithType(UIButtonType.Custom) as? UIButton
         self.rightButton!.frame=CGRectMake(0,0,ITEM_WIDTH,ITEM_HEIGHT)
         self.rightButton!.tag=10

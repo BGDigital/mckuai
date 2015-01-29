@@ -22,24 +22,11 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     var itemCount = 0
     var pageSize = 0
     var PostView: PostViewController!=nil
-    var refreshControl = UIRefreshControl()
+    var CBSH_Refresh = CBStoreHouseRefreshControl()
     
     //上拉加载更多
     var LoadMoreText = UILabel()
     let tableFooterView = UIView()
-    
-    var refreshing: Bool = false {
-        didSet {
-            if (self.refreshing) {
-                self.refreshControl.beginRefreshing()
-                self.refreshControl.attributedTitle = NSAttributedString(string: "正在刷新...")
-            }
-            else {
-                self.refreshControl.endRefreshing()
-                self.refreshControl.attributedTitle = NSAttributedString(string: "正在刷新...")
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +34,7 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
         self.dese.text = ""
         self.talkNum.setTitle("", forState: .Normal)
         //下拉刷新
-        refreshControl.attributedTitle = NSAttributedString(string: "松开刷新列表")
-        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
-        self.tv.addSubview(refreshControl)
+        self.CBSH_Refresh = CBStoreHouseRefreshControl.attachToScrollView(self.tv, target: self, refreshAction: "onRefresh", plist: "storehouse", color: UIColor.blackColor(), lineWidth: 1.5, dropHeight: 80, scale: 1, horizontalRandomness: 150, reverseLoadingAnimation: true, internalAnimationFactor: 0.5)
         
         //加载数据进度
         sendRequest()
@@ -75,6 +60,8 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.CBSH_Refresh.scrollViewDidScroll()
+        
         //开始上拉到特定位置后改变列表底部的提示
         if self.datasource != nil {
         if (self.itemCount != self.datasource.count) {
@@ -88,6 +75,8 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.CBSH_Refresh.scrollViewDidEndDragging()
+        
         if self.datasource != nil {
         if (self.itemCount != self.datasource.count) {
         LoadMoreText.text = "上拉查看更多"
@@ -112,8 +101,8 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     
     func sendRequest() {
         println("正在加载第\(self.forum_ID)的第：\(self.currentPage)页")
-        
-        APIClient.sharedInstance.getCommunityBankuaiData(self.view, forumID: self.forum_ID, page: "\(self.currentPage)", success: { (json) -> Void in
+        var isShowHud = self.datasource == nil
+        APIClient.sharedInstance.getCommunityBankuaiData(isShowHud, view:self.view, forumID: self.forum_ID, page: "\(self.currentPage)", success: { (json) -> Void in
             if json["state"].stringValue == "ok" {
                 if let data = json["dataObject", "talkList"].array {
                     if self.datasource == nil {
@@ -132,7 +121,7 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
                 //顶部信息
                 self.setHead(json["dataObject", "forum"] as JSON)
                 
-                self.refreshing = false
+                self.CBSH_Refresh.finishingLoading()
                 
                 if self.datasource != nil {
                     if self.itemCount != self.datasource.count {
@@ -140,7 +129,9 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
                     }
                 }
             }
-            }, failure: { (error) -> Void in })
+            }, failure: { (error) -> Void in
+                self.CBSH_Refresh.finishingLoading()
+        })
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

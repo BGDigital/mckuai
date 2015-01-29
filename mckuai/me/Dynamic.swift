@@ -8,13 +8,12 @@
 
 import UIKit
 
-class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class Dynamic: UITableViewController, UIScrollViewDelegate {
     
     //该导航需要设置的
     var NavigationController:UINavigationController!
     
-//    @IBOutlet var tv: UITableView!
-    
+    @IBOutlet var tv: UITableView!
     var userInfo:UserCenter!
     var otherUser:OtherCenter!
     var userId = appUserIdSave
@@ -31,29 +30,13 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     var LoadMoreText = UILabel()
     let tableFooterView = UIView()
     var normalTipe:String = "上拉查看更多"
-    
-    var refreshView = UIRefreshControl()
-    var refreshing: Bool = false {
-        didSet {
-            if (self.refreshing) {
-                self.refreshView.beginRefreshing()
-                self.refreshView.attributedTitle = NSAttributedString(string: "正在刷新...")
-            }
-            else {
-                self.refreshView.endRefreshing()
-                self.refreshView.attributedTitle = NSAttributedString(string: "正在刷新...")
-            }
-        }
-    }
-    
+    var CBSH_Refresh = CBStoreHouseRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
+        self.tableView.separatorStyle = .None;
         //下拉刷新
-        refreshView.attributedTitle = NSAttributedString(string: "松开刷新列表")
-        refreshView.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(refreshView)
+        self.CBSH_Refresh = CBStoreHouseRefreshControl.attachToScrollView(self.tableView, target: self, refreshAction: "onRefresh", plist: "storehouse", color: UIColor.blackColor(), lineWidth: 1.5, dropHeight: 80, scale: 1, horizontalRandomness: 150, reverseLoadingAnimation: false, internalAnimationFactor: 0.5)
         initData()
         createTableFooter()
         self.tableView.tableFooterView?.hidden = true
@@ -72,7 +55,7 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
         tableFooterView.addSubview(LoadMoreText)
         self.tableView.tableFooterView = tableFooterView
     }
-    
+
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         
         //开始上拉到特定位置后改变列表底部的提示
@@ -81,10 +64,11 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
         } else {
             LoadMoreText.text = self.normalTipe
         }
-        println(LoadMoreText.text)
+        self.CBSH_Refresh.scrollViewDidScroll()
     }
     
     override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.CBSH_Refresh.scrollViewDidEndDragging()
         LoadMoreText.text = self.normalTipe
         //上拉到一定程度后松开就开始加载更多
         if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height + 30) {
@@ -97,22 +81,16 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
     func initData() {
         //self.refreshing = true
         if GTUtil.CheckNetBreak() {
-            self.refreshing = false
             return
         }
-        var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-        hud.labelText = "正在获取"
         
         var paramDictionary :Dictionary<String,String> = ["act":"dynamic","id":String(userId),"page":String(currentPage)]
         Alamofire.request(.GET,http_url, parameters: paramDictionary)
             .responseJSON { (request, response, data, error) in
-                
                 if data == nil {
                     if(self.currentPage==1){
                         self.showDefaultView()
                     }
-                    
-                    self.refreshing = false
                 } else {
                     var jsonParse = data as NSDictionary
                     self.json = JSON(jsonParse)
@@ -156,14 +134,10 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
                         if(self.datasource.count>=10){
                             self.tableView.tableFooterView?.hidden = false
                         }
-//                        self.tableView.reloadData()
                     }
-                    
-                    self.refreshing = false
-
-                    
+  
                 }
-                hud.hide(true)
+                self.CBSH_Refresh.finishingLoading()
         }
 
     }
@@ -173,71 +147,41 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
         self.dynamicNoData.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(self.dynamicNoData.view)
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 1
-    }
-    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-//        let j = self.json["dataObject","dynamic"] as JSON
-//        if (j != nil) {
-//            return j.count + 1
-//        }
-//        return 0
         
         if (self.datasource != nil) {
             return self.datasource.count
         }
         return 0
-        //return self.json["dataObject","dynamic"].count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var getType = self.json["dataObject","dynamic",indexPath.row,"type"].string
-        
-//        //处理加载更多
-//        if (self.datasource.count == indexPath.row) {
-//            var loadMoreCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
-//            loadMoreCell.textLabel?.text = "加载更多..."
-//            //loadMoreCell.backgroundColor = UIColor(red: 0.812, green: 0.192, blue: 0.145, alpha: 1.00)
-//            loadMoreCell.textLabel?.textAlignment = NSTextAlignment.Center
-//            //最后一页，不显示加载更多
-//            loadMoreCell.hidden = (self.itemCount <= self.datasource.count)
-//            return loadMoreCell
-//        }else{
+        var getType = self.json["dataObject","dynamic",indexPath.row,"type"].stringValue
             if(getType == "talk_add") {
                 let  cell = self.tableView.dequeueReusableCellWithIdentifier("addCell") as DynamicAddCell
                 if !self.datasource.isEmpty {
-                var data = self.datasource[indexPath.row] as JSON
-                cell.update(data)
+                    var data = self.datasource[indexPath.row] as JSON
+                    cell.update(data)
                 }
                 return cell
             } else {
                 let  cell = self.tableView.dequeueReusableCellWithIdentifier("replyCell") as DynamicReplyCell
                 if !self.datasource.isEmpty {
-                var data = self.datasource[indexPath.row] as JSON
-                cell.update(data)
+                    var data = self.datasource[indexPath.row] as JSON
+                    cell.update(data)
                 }
                 return cell
             }
 
-            
-//        }
-        
-        
-        
-
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        var getType = self.json["dataObject","dynamic",indexPath.row,"type"].string
+        var getType = self.json["dataObject","dynamic",indexPath.row,"type"].stringValue
         if(self.datasource.count == indexPath.row){
             return 30
         }else{
@@ -274,6 +218,7 @@ class Dynamic: UITableViewController, UITableViewDataSource, UITableViewDelegate
         if self.datasource != nil {
             self.datasource.removeAll()
         }
+        
         self.initData()
     }
     
