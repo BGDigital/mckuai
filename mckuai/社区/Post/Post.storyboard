@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -36,7 +36,7 @@
                                 <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVx-v7-kMX">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVx-v7-kMX">
                                 <rect key="frame" x="163" y="88" width="70" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,7 +48,7 @@
                                     <action selector="setBankuaiSelect:" destination="pRL-wA-qnf" eventType="touchUpInside" id="L45-hX-MrH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nR7-j4-4VW">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nR7-j4-4VW">
                                 <rect key="frame" x="241" y="88" width="70" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,7 +60,7 @@
                                     <action selector="setBankuaiSelect:" destination="pRL-wA-qnf" eventType="touchUpInside" id="BYm-kg-Muc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jx3-pc-DKg">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jx3-pc-DKg">
                                 <rect key="frame" x="85" y="129" width="70" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,7 +72,7 @@
                                     <action selector="setBankuaiSelect:" destination="pRL-wA-qnf" eventType="touchUpInside" id="u8n-ah-PaR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJm-s8-MvJ">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJm-s8-MvJ">
                                 <rect key="frame" x="7" y="189" width="55" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,7 +84,7 @@
                                     <action selector="setTypeSelected:" destination="pRL-wA-qnf" eventType="touchUpInside" id="XHk-iq-thl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU4-D9-pCx">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU4-D9-pCx">
                                 <rect key="frame" x="70" y="189" width="55" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,7 +96,7 @@
                                     <action selector="setTypeSelected:" destination="pRL-wA-qnf" eventType="touchUpInside" id="Vai-FL-kUg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6s-kR-IJV">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6s-kR-IJV">
                                 <rect key="frame" x="133" y="189" width="55" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -108,8 +108,11 @@
                                     <action selector="setTypeSelected:" destination="pRL-wA-qnf" eventType="touchUpInside" id="zX2-xg-8IF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAu-mc-Vzx">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAu-mc-Vzx">
                                 <rect key="frame" x="196" y="189" width="55" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="C93-Xg-KrO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="美图" backgroundImage="post_small_normal">
@@ -120,7 +123,7 @@
                                     <action selector="setTypeSelected:" destination="pRL-wA-qnf" eventType="touchUpInside" id="FJp-07-Ukc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvc-NY-VIh">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvc-NY-VIh">
                                 <rect key="frame" x="256" y="189" width="55" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -132,20 +135,22 @@
                                     <action selector="setTypeSelected:" destination="pRL-wA-qnf" eventType="touchUpInside" id="w6l-YH-9aC"/>
                                 </connections>
                             </button>
-                            <view autoresizesSubviews="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zIt-Wh-hg3">
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIt-Wh-hg3">
                                 <rect key="frame" x="0.0" y="230" width="320" height="1"/>
                                 <color key="backgroundColor" red="0.89411764705882357" green="0.89411764705882357" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="9sG-hk-Dmf"/>
-                                    <constraint firstAttribute="height" constant="1" id="vBn-Ja-CK6"/>
+                                    <constraint firstAttribute="height" constant="1" id="kY8-LR-vaZ"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="标题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oe4-yB-fU6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="标题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oe4-yB-fU6">
                                 <rect key="frame" x="18" y="239" width="293" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZHc-Bo-2y8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOh-7X-88Z">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOh-7X-88Z">
                                 <rect key="frame" x="7" y="88" width="70" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -159,7 +164,7 @@
                                     <action selector="setBankuaiSelect:" destination="pRL-wA-qnf" eventType="touchUpInside" id="Gjl-lD-ZA0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfF-w8-MB3">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfF-w8-MB3">
                                 <rect key="frame" x="85" y="88" width="70" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -171,7 +176,7 @@
                                     <action selector="setBankuaiSelect:" destination="pRL-wA-qnf" eventType="touchUpInside" id="IuE-1A-gQ6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd7-V3-NKt">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd7-V3-NKt">
                                 <rect key="frame" x="7" y="129" width="70" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -183,7 +188,7 @@
                                     <action selector="setBankuaiSelect:" destination="pRL-wA-qnf" eventType="touchUpInside" id="YVl-C4-XTY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8As-kU-3jb">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8As-kU-3jb">
                                 <rect key="frame" x="163" y="129" width="70" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -195,14 +200,14 @@
                                     <action selector="setBankuaiSelect:" destination="pRL-wA-qnf" eventType="touchUpInside" id="aHg-5M-Lq8"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MrY-Za-Mcu">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrY-Za-Mcu">
                                 <rect key="frame" x="21" y="277" width="286" height="1"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Uib-MJ-neP"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cjr-bT-Ql7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjr-bT-Ql7">
                                 <rect key="frame" x="18" y="284" width="293" height="276"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
@@ -211,10 +216,55 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zIt-Wh-hg3" firstAttribute="top" secondItem="Cvc-NY-VIh" secondAttribute="bottom" constant="8" id="17m-7Z-hqs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MrY-Za-Mcu" secondAttribute="trailing" constant="-3" id="5pp-Hh-aDJ"/>
-                            <constraint firstItem="zIt-Wh-hg3" firstAttribute="leading" secondItem="QPx-Di-EP3" secondAttribute="leadingMargin" constant="-16" id="Fgf-P2-YHs"/>
+                            <constraint firstItem="8As-kU-3jb" firstAttribute="leading" secondItem="jx3-pc-DKg" secondAttribute="trailing" constant="8" id="6zI-vd-npV"/>
+                            <constraint firstItem="cjr-bT-Ql7" firstAttribute="top" secondItem="MrY-Za-Mcu" secondAttribute="bottom" constant="6" id="8Pe-Jw-YBZ"/>
+                            <constraint firstItem="8As-kU-3jb" firstAttribute="top" secondItem="KVx-v7-kMX" secondAttribute="bottom" constant="8" id="8xy-0D-Euy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Oe4-yB-fU6" secondAttribute="trailing" constant="-7" id="908-BY-Azs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cvc-NY-VIh" secondAttribute="trailing" constant="-7" id="ACF-ZH-gIj"/>
+                            <constraint firstItem="Cvc-NY-VIh" firstAttribute="leading" secondItem="KAu-mc-Vzx" secondAttribute="trailing" constant="5" id="ASs-6p-jFO"/>
+                            <constraint firstItem="jx3-pc-DKg" firstAttribute="top" secondItem="rfF-w8-MB3" secondAttribute="bottom" constant="8" id="AdH-K2-Eyk"/>
+                            <constraint firstItem="D6s-kR-IJV" firstAttribute="top" secondItem="dd7-V3-NKt" secondAttribute="bottom" constant="27" id="DGF-DV-IcA"/>
+                            <constraint firstItem="SOh-7X-88Z" firstAttribute="width" secondItem="jx3-pc-DKg" secondAttribute="width" id="FdX-qA-vab"/>
                             <constraint firstItem="MrY-Za-Mcu" firstAttribute="leading" secondItem="QPx-Di-EP3" secondAttribute="leadingMargin" constant="5" id="Htl-Ew-mkW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zIt-Wh-hg3" secondAttribute="trailing" constant="-16" id="Q6z-Ts-pbt"/>
+                            <constraint firstItem="HJm-s8-MvJ" firstAttribute="width" secondItem="KAu-mc-Vzx" secondAttribute="width" id="Hxk-HK-Pgj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zIt-Wh-hg3" secondAttribute="trailing" constant="-16" id="L6e-uD-aoY"/>
+                            <constraint firstItem="Oe4-yB-fU6" firstAttribute="top" secondItem="D6s-kR-IJV" secondAttribute="bottom" constant="17" id="NdQ-im-dF4"/>
+                            <constraint firstItem="Cvc-NY-VIh" firstAttribute="top" secondItem="dd7-V3-NKt" secondAttribute="bottom" constant="27" id="SB7-QK-4PW"/>
+                            <constraint firstItem="KAu-mc-Vzx" firstAttribute="leading" secondItem="D6s-kR-IJV" secondAttribute="trailing" constant="8" id="SNt-qr-dL9"/>
+                            <constraint firstItem="rfF-w8-MB3" firstAttribute="leading" secondItem="SOh-7X-88Z" secondAttribute="trailing" constant="8" id="TLY-eu-CAu"/>
+                            <constraint firstItem="zIt-Wh-hg3" firstAttribute="leading" secondItem="QPx-Di-EP3" secondAttribute="leadingMargin" constant="-16" id="URz-aV-0Nv"/>
+                            <constraint firstItem="fU4-D9-pCx" firstAttribute="top" secondItem="dd7-V3-NKt" secondAttribute="bottom" constant="27" id="UbF-Q7-dlY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cjr-bT-Ql7" secondAttribute="trailing" constant="-7" id="UkP-sD-uOy"/>
+                            <constraint firstItem="HJm-s8-MvJ" firstAttribute="width" secondItem="D6s-kR-IJV" secondAttribute="width" id="WQM-Xs-EXy"/>
+                            <constraint firstItem="KAu-mc-Vzx" firstAttribute="top" secondItem="dd7-V3-NKt" secondAttribute="bottom" constant="27" id="WnS-j6-XOc"/>
+                            <constraint firstItem="SOh-7X-88Z" firstAttribute="leading" secondItem="QPx-Di-EP3" secondAttribute="leadingMargin" constant="-9" id="ZI0-RB-t8t"/>
+                            <constraint firstItem="Oe4-yB-fU6" firstAttribute="leading" secondItem="QPx-Di-EP3" secondAttribute="leadingMargin" constant="2" id="aBC-EP-kI1"/>
+                            <constraint firstItem="MrY-Za-Mcu" firstAttribute="top" secondItem="Oe4-yB-fU6" secondAttribute="bottom" constant="8" id="akL-8f-Dq9"/>
+                            <constraint firstItem="nR7-j4-4VW" firstAttribute="top" secondItem="xsC-qI-EXA" secondAttribute="bottom" constant="24" id="aug-N8-vn4"/>
+                            <constraint firstItem="SOh-7X-88Z" firstAttribute="width" secondItem="dd7-V3-NKt" secondAttribute="width" id="ctV-QM-aZd"/>
+                            <constraint firstItem="HJm-s8-MvJ" firstAttribute="width" secondItem="fU4-D9-pCx" secondAttribute="width" id="dPe-dG-qN4"/>
+                            <constraint firstItem="HJm-s8-MvJ" firstAttribute="width" secondItem="Cvc-NY-VIh" secondAttribute="width" id="eTX-oj-CyF"/>
+                            <constraint firstItem="fU4-D9-pCx" firstAttribute="leading" secondItem="HJm-s8-MvJ" secondAttribute="trailing" constant="8" id="fTc-Qg-SPJ"/>
+                            <constraint firstItem="nR7-j4-4VW" firstAttribute="leading" secondItem="KVx-v7-kMX" secondAttribute="trailing" constant="8" id="fe3-dW-SAl"/>
+                            <constraint firstItem="suU-9e-Pm1" firstAttribute="top" secondItem="cjr-bT-Ql7" secondAttribute="bottom" constant="8" id="fqw-eb-eDD"/>
+                            <constraint firstItem="KVx-v7-kMX" firstAttribute="top" secondItem="xsC-qI-EXA" secondAttribute="bottom" constant="24" id="gj4-GZ-rng"/>
+                            <constraint firstItem="cjr-bT-Ql7" firstAttribute="leading" secondItem="QPx-Di-EP3" secondAttribute="leadingMargin" constant="2" id="iDE-f7-Ttz"/>
+                            <constraint firstItem="jx3-pc-DKg" firstAttribute="leading" secondItem="dd7-V3-NKt" secondAttribute="trailing" constant="8" id="iYv-aA-PQ6"/>
+                            <constraint firstItem="KVx-v7-kMX" firstAttribute="leading" secondItem="rfF-w8-MB3" secondAttribute="trailing" constant="8" id="m9I-Fk-ULV"/>
+                            <constraint firstItem="D6s-kR-IJV" firstAttribute="leading" secondItem="fU4-D9-pCx" secondAttribute="trailing" constant="8" id="mDp-sO-H8H"/>
+                            <constraint firstItem="8As-kU-3jb" firstAttribute="width" secondItem="SOh-7X-88Z" secondAttribute="width" id="mJp-AI-IQx"/>
+                            <constraint firstItem="SOh-7X-88Z" firstAttribute="top" secondItem="xsC-qI-EXA" secondAttribute="bottom" constant="24" id="n7W-MG-5vA"/>
+                            <constraint firstItem="rfF-w8-MB3" firstAttribute="top" secondItem="xsC-qI-EXA" secondAttribute="bottom" constant="24" id="nqt-sY-msy"/>
+                            <constraint firstItem="HJm-s8-MvJ" firstAttribute="leading" secondItem="QPx-Di-EP3" secondAttribute="leadingMargin" constant="-9" id="oxV-f3-p5q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nR7-j4-4VW" secondAttribute="trailing" constant="-7" id="pJF-2Y-w41"/>
+                            <constraint firstItem="HJm-s8-MvJ" firstAttribute="top" secondItem="dd7-V3-NKt" secondAttribute="bottom" constant="27" id="pVp-Lf-XHS"/>
+                            <constraint firstItem="dd7-V3-NKt" firstAttribute="leading" secondItem="QPx-Di-EP3" secondAttribute="leadingMargin" constant="-9" id="sD0-bZ-1Ed"/>
+                            <constraint firstItem="dd7-V3-NKt" firstAttribute="top" secondItem="SOh-7X-88Z" secondAttribute="bottom" constant="8" id="yHl-kl-WEV"/>
+                            <constraint firstItem="rfF-w8-MB3" firstAttribute="width" secondItem="SOh-7X-88Z" secondAttribute="width" id="yOV-3I-8m7"/>
+                            <constraint firstItem="rfF-w8-MB3" firstAttribute="width" secondItem="KVx-v7-kMX" secondAttribute="width" id="yz0-Rl-d6p"/>
+                            <constraint firstItem="KVx-v7-kMX" firstAttribute="width" secondItem="nR7-j4-4VW" secondAttribute="width" id="zqQ-y4-ZIT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="发贴" id="Yaw-qT-fer">
