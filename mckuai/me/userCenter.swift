@@ -126,21 +126,8 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     }
     
     @IBAction func userLogout() {
-        UIAlertView(title: "提示", message: "你确定要注销吗？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定").show()
-    }
-    
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        if buttonIndex == 1 {
-            var userDefault = NSUserDefaults.standardUserDefaults()
-            userDefault.removeObjectForKey("appUserIdSave")
-            appUserIdSave = nil
-            dynamicTableView = nil
-            messageTableView = nil
-            isLoginout = true
-            self.tabBarController?.selectedIndex = 0
-//            self.viewDidLoad()
-            println("用户已退出！")
-        }
+        Profile.loadProfile(self.navigationController!)
+        //UIAlertView(title: "提示", message: "你确定要注销吗？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定").show()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -149,6 +136,9 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = true
+        self.dynamicTableView = nil
+        self.messageTableView = nil
+        isLoginout = true
         viewDidLoad()
         
     }

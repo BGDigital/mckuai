@@ -31,6 +31,9 @@ class OtherCenter: UIViewController{
         super.viewDidLoad()
         initData()
         
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarPosition: .Any, barMetrics: .Default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
         if(dynamicTableView == nil){
             dynamicTableView = UIStoryboard(name: "Dynamic", bundle: nil).instantiateViewControllerWithIdentifier("dynamicSb")as Dynamic
             dynamicTableView.userId = self.userId

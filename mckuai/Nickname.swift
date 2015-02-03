@@ -39,7 +39,7 @@ class Nickname:UIViewController {
             let dic = [
                 "flag" : NSString(string: "name"),
 //                "userId": appUserIdSave,
-                "userId": 3,
+                "userId": appUserIdSave,
                 "nickName" : uname
             ]
             APIClient.sharedInstance.modifiyUserInfo(self.view, ctl: self.navigationController, param: dic, success:{

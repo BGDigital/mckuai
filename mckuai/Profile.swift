@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class Profile:UIViewController {
+class Profile:UIViewController, UIAlertViewDelegate {
     
 
     @IBOutlet weak var myview: UIView!
@@ -35,7 +35,7 @@ class Profile:UIViewController {
     }
     func loadData(){
         var uid = appUserIdSave
-        uid = 3
+//        uid = 3
         
         if uid == nil || uid == 0  {
             self.navigationController?.popViewControllerAnimated(false)
@@ -58,11 +58,22 @@ class Profile:UIViewController {
     }
     
     @IBAction func exit(){
-        var userDefault = NSUserDefaults.standardUserDefaults()
-        userDefault.removeObjectForKey("appUserIdSave")
-        appUserIdSave = nil
-        self.navigationController?.popViewControllerAnimated(true)
+        UIAlertView(title: "提示", message: "你确定要注销吗？", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定").show()
     }
+
+
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 1 {
+            var userDefault = NSUserDefaults.standardUserDefaults()
+            userDefault.removeObjectForKey("appUserIdSave")
+            appUserIdSave = 0
+            
+            println("用户已退出！")
+            self.navigationController?.popViewControllerAnimated(true)
+            //self.tabBarController?.selectedIndex = 0
+        }
+    }
+    
     @IBAction func toNick(){
         Nickname.changeNickname(self.navigationController!,uname:user!["nike"].stringValue)
     }

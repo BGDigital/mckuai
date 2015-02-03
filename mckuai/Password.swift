@@ -39,7 +39,7 @@ class Profile_Password:UIViewController {
         }
         let dic = [
         "flag":NSString(string: "password"),
-        "userId":3,
+        "userId":appUserIdSave,
         "old_password":oldpass,
         "new_password":newpass
         ]

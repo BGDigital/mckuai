@@ -50,8 +50,7 @@ class Avatar:UIViewController,UICollectionViewDataSource,UICollectionViewDelegat
         if(chosedAvatar != nil){
             let dic = [
                 "flag" : NSString(string: "headImg"),
-                //                "userId": appUserIdSave,
-                "userId": 3,
+                "userId": appUserIdSave,
                 "headImg" : chosedAvatar!
             ]
             APIClient.sharedInstance.modifiyUserInfo(self.view, ctl: self.navigationController, param: dic, success: {
