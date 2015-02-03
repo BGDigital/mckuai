@@ -18,6 +18,11 @@
 		0BE195371A4D2D5700F4262B /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE195351A4D2D5700F4262B /* TencentOpenAPI.framework */; };
 		0BE1953D1A4D472900F4262B /* McLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE1953C1A4D472900F4262B /* McLogin.storyboard */; };
 		0BE1953F1A4D474200F4262B /* McLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE1953E1A4D474200F4262B /* McLogin.swift */; };
+		AA5759771A80D7BC00F15234 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5759721A80D7BC00F15234 /* Avatar.swift */; };
+		AA5759781A80D7BC00F15234 /* Nickname.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5759731A80D7BC00F15234 /* Nickname.swift */; };
+		AA5759791A80D7BC00F15234 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5759741A80D7BC00F15234 /* Password.swift */; };
+		AA57597A1A80D7BC00F15234 /* profile_layout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5759751A80D7BC00F15234 /* profile_layout.storyboard */; };
+		AA57597B1A80D7BC00F15234 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5759761A80D7BC00F15234 /* Profile.swift */; };
 		E626E1361A40167000506234 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E626E1351A40167000506234 /* Post.storyboard */; };
 		E626E1381A40168E00506234 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E626E1371A40168E00506234 /* PostViewController.swift */; };
 		E626E13D1A408C1F00506234 /* tiezi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E626E13B1A408C1F00506234 /* tiezi.storyboard */; };
@@ -110,6 +115,11 @@
 		0BE195351A4D2D5700F4262B /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		0BE1953C1A4D472900F4262B /* McLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = McLogin.storyboard; sourceTree = "<group>"; };
 		0BE1953E1A4D474200F4262B /* McLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McLogin.swift; sourceTree = "<group>"; };
+		AA5759721A80D7BC00F15234 /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		AA5759731A80D7BC00F15234 /* Nickname.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nickname.swift; sourceTree = "<group>"; };
+		AA5759741A80D7BC00F15234 /* Password.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		AA5759751A80D7BC00F15234 /* profile_layout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = profile_layout.storyboard; sourceTree = "<group>"; };
+		AA5759761A80D7BC00F15234 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E626E1351A40167000506234 /* Post.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		E626E1371A40168E00506234 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		E626E13B1A408C1F00506234 /* tiezi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tiezi.storyboard; sourceTree = "<group>"; };
@@ -212,6 +222,18 @@
 			name = zone;
 			sourceTree = "<group>";
 		};
+		AA5759711A80D75D00F15234 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				AA5759721A80D7BC00F15234 /* Avatar.swift */,
+				AA5759731A80D7BC00F15234 /* Nickname.swift */,
+				AA5759741A80D7BC00F15234 /* Password.swift */,
+				AA5759751A80D7BC00F15234 /* profile_layout.storyboard */,
+				AA5759761A80D7BC00F15234 /* Profile.swift */,
+			);
+			name = profile;
+			sourceTree = "<group>";
+		};
 		E618A7AF1A41857800EA7B3F /* menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +308,7 @@
 		E62C217A1A03F34E004DBFD0 /* mckuai */ = {
 			isa = PBXGroup;
 			children = (
+				AA5759711A80D75D00F15234 /* profile */,
 				0BDA0A791A4F1844008B888D /* zone */,
 				E618A7AF1A41857800EA7B3F /* menu */,
 				E626E13A1A408C1F00506234 /* tiezi */,
@@ -568,6 +591,7 @@
 				E628890C1A3E876300C45131 /* dynamicNoData.storyboard in Resources */,
 				E62889091A3E876300C45131 /* Dynamic.storyboard in Resources */,
 				E62888FC1A3E870800C45131 /* Login.storyboard in Resources */,
+				AA57597A1A80D7BC00F15234 /* profile_layout.storyboard in Resources */,
 				E6A3C5861A4AA8E2002485FC /* Reply.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,8 +626,11 @@
 				E67B86621A3E7B8100B782E1 /* GTUtil.swift in Sources */,
 				E62E55821A7A139400E5730D /* CBStoreHouseRefreshControl.m in Sources */,
 				E63FD7D91A133CB000177E3E /* Community.swift in Sources */,
+				AA57597B1A80D7BC00F15234 /* Profile.swift in Sources */,
+				AA5759791A80D7BC00F15234 /* Password.swift in Sources */,
 				E64264481A68C15000488803 /* Reachability.swift in Sources */,
 				E63FD6D21A13340100177E3E /* Welcome.swift in Sources */,
+				AA5759771A80D7BC00F15234 /* Avatar.swift in Sources */,
 				E62889111A3E876300C45131 /* MessageCell.swift in Sources */,
 				E62889101A3E876300C45131 /* Message.swift in Sources */,
 				E6D6C2CA1A2FFC0800858161 /* SwiftyJSON.swift in Sources */,
@@ -620,6 +647,7 @@
 				E628890E1A3E876300C45131 /* HttpUrlConstant.swift in Sources */,
 				E6D6C2C91A2FFC0800858161 /* Alamofire-SwiftyJSON.swift in Sources */,
 				E62E55811A7A139400E5730D /* BarItem.m in Sources */,
+				AA5759781A80D7BC00F15234 /* Nickname.swift in Sources */,
 				E63FD7E81A13471F00177E3E /* chat.swift in Sources */,
 				E628890B1A3E876300C45131 /* DynamicAddCell.swift in Sources */,
 				E67B865E1A3E7AA400B782E1 /* HotTableViewCell.swift in Sources */,

@@ -49,7 +49,6 @@ class APIClient {
         if showHud {
             var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
             hud.labelText = "正在获取"
-            
             Alamofire.request(.GET, APIRootURL + path, parameters: parameters)
                 .responseSwiftyJSON { (request, response, json, error) in
                     if let err = error? {
@@ -195,5 +194,29 @@ class APIClient {
         self.getJSONDataByPost(view, path: "user.do?act=register", parameters: dict, success: success, failure: failure)
     }
 
-
+    func getUserInfo(view: UIView,uid:Int,success: (JSON) -> Void, failure: (NSError) -> Void){
+        var api = "user.do?act=one"
+        self.getJSONData(true, view: view, path: api, parameters: ["id":uid], success: success, failure: failure)
+    }
+    
+    func modifiyUserInfo(view:UIView,ctl:UINavigationController?,param:[String : AnyObject]?,success: (JSON) -> Void, failure: (NSError) -> Void){
+        var api = "user.do?act=update"
+        
+        var hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        hud.labelText = "保存中"
+        
+        Alamofire.request(.GET, APIRootURL + api, parameters: param).responseSwiftyJSON {
+            (_, _, json, error) in
+//            println(APIRootURL + api)
+//            println(param)
+//            println(json)
+            hud.hide(true)
+            if json["state"].stringValue == "ok" {
+                GTUtil.showCustomHUD(view, title: "保存成功", imgName: "HUD_OK")
+                ctl?.popViewControllerAnimated(true)
+            }else{
+                GTUtil.showCustomHUD(view, title: json["msg"].stringValue , imgName: "HUD_OK")
+            }
+        }
+    }
 }

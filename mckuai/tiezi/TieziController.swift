@@ -39,15 +39,15 @@ class TieziController: UIViewController,UIWebViewDelegate {
         super.viewDidLoad()
 //        println(tid)
         load()
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        self.navigationItem
         webview.delegate = self
         comment_border.layer.borderWidth = 1;
         var bdc = UIColor(red: 228/255, green: 228/255, blue: 228/255, alpha: 1)
         comment_border.layer.borderColor = bdc.CGColor
         pull.attributedTitle = NSAttributedString(string:"再往下拉就刷新了^_^")
         pull.addTarget(self, action: "onPull", forControlEvents: UIControlEvents.ValueChanged)
-        
         self.webview.scrollView.addSubview(pull)
-        
     }
     func onPull(){
         pull.beginRefreshing()
