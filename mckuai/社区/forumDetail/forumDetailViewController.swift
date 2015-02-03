@@ -95,8 +95,12 @@ class forumDetailViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     @IBAction func showPost() {
-        PostView = UIStoryboard(name: "Post", bundle: nil).instantiateViewControllerWithIdentifier("SB_POST") as PostViewController
-        self.navigationController?.pushViewController(PostView, animated: true)
+        if(appUserIdSave != nil && appUserIdSave != 0){
+            PostView = UIStoryboard(name: "Post", bundle: nil).instantiateViewControllerWithIdentifier("SB_POST") as PostViewController
+            self.navigationController?.pushViewController(PostView, animated: true)
+        } else {
+            UserLogin.showUserLoginView(presentNavigator: self.navigationController)
+        }
     }
     
     func sendRequest() {

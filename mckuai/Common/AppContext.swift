@@ -38,20 +38,26 @@ class AppContext {
     }
     
     private func saveData(#key:String,nodes:AnyObject){
-        var userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(nodes), forKey: key)
-        userDefaults.synchronize()
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            
+            var userDefaults = NSUserDefaults.standardUserDefaults()
+            userDefaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(nodes), forKey: key)
+            userDefaults.synchronize()
+            
+        })
+        
     }
     
     private func getData(#key:String) -> JSON{
-        var userDefaults = NSUserDefaults.standardUserDefaults()
-        var data: AnyObject? = userDefaults.objectForKey(key)
-        if let obj: AnyObject = data? {
-            var json: AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithData(obj as NSData)
-            return JSON(json!)
-        } else {
-            return nil
-        }
+        
+            var userDefaults = NSUserDefaults.standardUserDefaults()
+            var data: AnyObject? = userDefaults.objectForKey(key)
+            if let obj: AnyObject = data? {
+                var json: AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithData(obj as NSData)
+                return JSON(json!)
+            } else {
+                return nil
+            }
     }
     
 }

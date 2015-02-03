@@ -27,8 +27,15 @@ class Community: BaseTableViewController {
     }
     
     @IBAction func showPost() {
-        PostView = UIStoryboard(name: "Post", bundle: nil).instantiateViewControllerWithIdentifier("SB_POST") as PostViewController
-        self.navigationController?.pushViewController(PostView, animated: true)
+        //这里要判断有没有登录，没有登录的话，要登录
+        if(appUserIdSave != nil && appUserIdSave != 0){
+            PostView = UIStoryboard(name: "Post", bundle: nil).instantiateViewControllerWithIdentifier("SB_POST") as PostViewController
+            self.navigationController?.pushViewController(PostView, animated: true)
+        } else {
+            UserLogin.showUserLoginView(presentNavigator: self.navigationController)
+        }
+        
+        
     }
     
     func sendRequest() {

@@ -87,8 +87,12 @@ class HotTableViewController:UITableViewController, DHCarouselViewDelegate, UISc
             }
             }, {
                 (err) -> Void in
+                
                 if let d = AppContext.sharedInstance.getHomePageData(){
                     self.data = d["dataObject"]
+                    if self.data == nil {
+                        self.showDefaultView()
+                    }
                     self.CBSH_Refresh.finishingLoading()
                 }
             }
@@ -124,6 +128,13 @@ class HotTableViewController:UITableViewController, DHCarouselViewDelegate, UISc
 //            println("nil")
             return 0
         }
+    }
+    
+    var dynamicNoData:UIViewController!=nil
+    func showDefaultView(){
+        self.dynamicNoData = UIStoryboard(name: "dynamicNoData", bundle: nil).instantiateViewControllerWithIdentifier("noDataSb")as UIViewController
+        self.dynamicNoData.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(self.dynamicNoData.view)
     }
     
     

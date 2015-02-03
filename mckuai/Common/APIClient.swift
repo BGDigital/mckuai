@@ -9,8 +9,8 @@
 
 import UIKit
 
-//let APIRootURL = "http://118.144.83.145:8081/"
-let APIRootURL = "http://192.168.99.117/"
+let APIRootURL = "http://118.144.83.145:8081/"
+
 class APIClient {
    
     class var sharedInstance : APIClient {
