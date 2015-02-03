@@ -10,39 +10,25 @@ import Foundation
 import UIKit
 
 class Avatar:UIViewController,UICollectionViewDataSource,UICollectionViewDelegate{
-    
+    var imgPrex = "http://cdn.mckuai.com/images/iphone/"
+    var isNew = false
     var chosedAvatar:String?{
         didSet{
             choseAvatar()
         }
     }
-    var avatars = [
-        "http://pic3.zhimg.com/3d6543642_m.jpg",
-        "http://pic4.zhimg.com/f0d75f67542d7447612ebac5f67d208c_m.jpg",
-        "http://pic1.zhimg.com/88db1114b_m.jpg",
-        "http://pic3.zhimg.com/3d6543642_m.jpg",
-        "http://pic4.zhimg.com/f0d75f67542d7447612ebac5f67d208c_m.jpg",
-        "http://pic1.zhimg.com/88db1114b_m.jpg",
-        "http://pic3.zhimg.com/3d6543642_m.jpg",
-        "http://pic4.zhimg.com/f0d75f67542d7447612ebac5f67d208c_m.jpg",
-        "http://pic1.zhimg.com/88db1114b_m.jpg",
-        "http://pic3.zhimg.com/3d6543642_m.jpg",
-        "http://pic4.zhimg.com/f0d75f67542d7447612ebac5f67d208c_m.jpg",
-        "http://pic1.zhimg.com/88db1114b_m.jpg",
-        "http://pic3.zhimg.com/3d6543642_m.jpg",
-        "http://pic4.zhimg.com/f0d75f67542d7447612ebac5f67d208c_m.jpg",
-        "http://pic1.zhimg.com/88db1114b_m.jpg",
-        "http://pic3.zhimg.com/3d6543642_m.jpg",
-        "http://pic4.zhimg.com/f0d75f67542d7447612ebac5f67d208c_m.jpg",
-        "http://pic1.zhimg.com/88db1114b_m.jpg"
-    ]
+    var avatars = ["0.png","1.png","2.png","3.png","4.png","5.png","6.png","7.png","8.png","9.png","10.png","11.png","12.png","13.png","14.png"]
     
     @IBOutlet weak var avatar: UIImageView!
     
     @IBOutlet weak var avatarList: UICollectionView!
     override func viewDidLoad() {
-        
-        chosedAvatar = avatars[0]
+
+        if chosedAvatar == nil {
+            chosedAvatar = avatars[0]
+        }else{
+            choseAvatar()
+        }
         
         avatarList.dataSource = self
         avatarList.delegate = self
@@ -57,15 +43,33 @@ class Avatar:UIViewController,UICollectionViewDataSource,UICollectionViewDelegat
         btnSave.action = Selector("save")
     }
     func save(){
+        if !isNew {
+            self.navigationController?.popViewControllerAnimated(true)
+            return
+        }
         if(chosedAvatar != nil){
-            println(chosedAvatar!)
+            let dic = [
+                "flag" : NSString(string: "headImg"),
+                //                "userId": appUserIdSave,
+                "userId": 3,
+                "headImg" : chosedAvatar!
+            ]
+            APIClient.sharedInstance.modifiyUserInfo(self.view, ctl: self.navigationController, param: dic, success: {
+                (res:JSON?)in
+                }, failure: {
+                    (res:NSError) in
+            })
+            
         }
     }
     func choseAvatar(){
-        if(chosedAvatar == nil){
+        if chosedAvatar == nil || self.avatar == nil {
             return
         }
-        GTUtil.loadImage(chosedAvatar!, callback: {
+
+        var a_url = chosedAvatar!.hasPrefix("http://") ? chosedAvatar! : imgPrex + chosedAvatar!
+
+        GTUtil.loadImage( a_url, callback: {
             (img:UIImage?)->Void in
             self.avatar.image = img
         })
@@ -74,7 +78,7 @@ class Avatar:UIViewController,UICollectionViewDataSource,UICollectionViewDelegat
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         chosedAvatar = avatars[indexPath.row]
-        
+        isNew = true
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -84,14 +88,14 @@ class Avatar:UIViewController,UICollectionViewDataSource,UICollectionViewDelegat
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var chosing = collectionView.dequeueReusableCellWithReuseIdentifier("avt", forIndexPath: indexPath) as AvatarHolder
-        chosing.url = avatars[indexPath.row]
+        chosing.url = imgPrex + avatars[indexPath.row]
         return chosing
     }
     
     
-    class func changeAvatar(ctl:UINavigationController){
+    class func changeAvatar(ctl:UINavigationController,url:String?){
         var avatar_view = UIStoryboard(name: "profile_layout", bundle: nil).instantiateViewControllerWithIdentifier("avatar_chose") as Avatar
-        
+        avatar_view.chosedAvatar = url
         ctl.pushViewController(avatar_view, animated: true)
     }
     

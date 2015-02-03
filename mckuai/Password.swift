@@ -11,6 +11,9 @@ import UIKit
 
 class Profile_Password:UIViewController {
     
+    @IBOutlet weak var old_pass: UITextField!
+    @IBOutlet weak var new_pass: UITextField!
+    @IBOutlet weak var ensure_pass: UITextField!
     override func viewDidLoad() {
         self.navigationController?.navigationBar.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         var barSize = self.navigationController?.navigationBar.frame
@@ -22,12 +25,34 @@ class Profile_Password:UIViewController {
     }
     
     func save(){
-        println("修改密码")
+        let oldpass = old_pass.text
+        let newpass = new_pass.text
+        let ensure = ensure_pass.text
+        
+        if oldpass == "" || newpass == "" || ensure == ""{
+            GTUtil.showCustomHUD(self.view, title: "密码不能为空", imgName: "HUD_OK")
+            return
+        }
+        if newpass != ensure {
+            GTUtil.showCustomHUD(self.view, title: "两次密码输入不一致", imgName: "HUD_OK")
+            return
+        }
+        let dic = [
+        "flag":NSString(string: "password"),
+        "userId":3,
+        "old_password":oldpass,
+        "new_password":newpass
+        ]
+        APIClient.sharedInstance.modifiyUserInfo(self.view, ctl: self.navigationController, param: dic, success: {
+            (res:JSON?) in
+            }, failure: {
+                (NSError) in
+        })
     }
     
     class func changePass(ctl:UINavigationController){
-        var edit_nick = UIStoryboard(name: "profile_layout", bundle: nil).instantiateViewControllerWithIdentifier("edit_nick") as Nickname
+        var edit_pass = UIStoryboard(name: "profile_layout", bundle: nil).instantiateViewControllerWithIdentifier("pass_edit") as Profile_Password
         
-        ctl.pushViewController(edit_nick, animated: true)
+        ctl.pushViewController(edit_pass, animated: true)
     }
 }
