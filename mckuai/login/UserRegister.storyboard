@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -28,10 +28,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9P-5p-Dpe">
                                 <rect key="frame" x="0.0" y="144" width="320" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_username" translatesAutoresizingMaskIntoConstraints="NO" id="OGB-5e-xU7">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_username" translatesAutoresizingMaskIntoConstraints="NO" id="OGB-5e-xU7">
                                         <rect key="frame" x="21" y="14" width="24" height="24"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="注册邮箱" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KJK-rP-Z6r">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="注册邮箱" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KJK-rP-Z6r">
                                         <rect key="frame" x="58" y="11" width="250" height="30"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -40,16 +40,22 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="KJK-rP-Z6r" firstAttribute="top" secondItem="d9P-5p-Dpe" secondAttribute="top" constant="11" id="6Ah-Zo-QId"/>
+                                    <constraint firstAttribute="bottom" secondItem="KJK-rP-Z6r" secondAttribute="bottom" constant="9" id="AFK-ph-4sw"/>
+                                    <constraint firstItem="OGB-5e-xU7" firstAttribute="leading" secondItem="d9P-5p-Dpe" secondAttribute="leading" constant="21" id="E7y-cG-Uy7"/>
+                                    <constraint firstItem="KJK-rP-Z6r" firstAttribute="leading" secondItem="OGB-5e-xU7" secondAttribute="trailing" constant="13" id="SH4-M1-K3E"/>
                                     <constraint firstAttribute="height" constant="50" id="Tx5-WB-VM0"/>
+                                    <constraint firstItem="KJK-rP-Z6r" firstAttribute="centerY" secondItem="OGB-5e-xU7" secondAttribute="centerY" id="WM4-L0-qOq"/>
+                                    <constraint firstAttribute="trailing" secondItem="KJK-rP-Z6r" secondAttribute="trailing" constant="12" id="mk9-gM-yfM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KyZ-N8-Flh">
                                 <rect key="frame" x="0.0" y="195" width="320" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_password" translatesAutoresizingMaskIntoConstraints="NO" id="LAv-Zx-qw0">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_password" translatesAutoresizingMaskIntoConstraints="NO" id="LAv-Zx-qw0">
                                         <rect key="frame" x="21" y="14" width="24" height="24"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="20" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ekw-9a-Nx3">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ekw-9a-Nx3">
                                         <rect key="frame" x="59" y="12" width="250" height="30"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -58,16 +64,22 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Ekw-9a-Nx3" firstAttribute="top" secondItem="KyZ-N8-Flh" secondAttribute="top" constant="12" id="60C-S4-5Oa"/>
+                                    <constraint firstItem="Ekw-9a-Nx3" firstAttribute="bottom" secondItem="KyZ-N8-Flh" secondAttribute="bottomMargin" id="CNt-88-Kwy"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ekw-9a-Nx3" secondAttribute="trailing" constant="11" id="GF5-cE-h3u"/>
+                                    <constraint firstItem="LAv-Zx-qw0" firstAttribute="top" secondItem="KyZ-N8-Flh" secondAttribute="top" constant="14" id="MOR-tE-1Be"/>
+                                    <constraint firstItem="Ekw-9a-Nx3" firstAttribute="leading" secondItem="LAv-Zx-qw0" secondAttribute="trailing" constant="14" id="PAm-PV-8fy"/>
                                     <constraint firstAttribute="height" constant="50" id="iXQ-Wq-Dnp"/>
+                                    <constraint firstItem="LAv-Zx-qw0" firstAttribute="leading" secondItem="KyZ-N8-Flh" secondAttribute="leading" constant="21" id="ptT-tk-Npr"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwa-Eo-6Hx">
                                 <rect key="frame" x="0.0" y="246" width="320" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_nickname" translatesAutoresizingMaskIntoConstraints="NO" id="UDf-Jk-gvg">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_nickname" translatesAutoresizingMaskIntoConstraints="NO" id="UDf-Jk-gvg">
                                         <rect key="frame" x="21" y="14" width="24" height="24"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="30" contentMode="scaleToFill" verticalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="用户昵称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="28o-kV-pVj">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="30" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="用户昵称" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="28o-kV-pVj">
                                         <rect key="frame" x="58" y="11" width="250" height="30"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -77,6 +89,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="K0M-1L-BSo"/>
+                                    <constraint firstItem="28o-kV-pVj" firstAttribute="top" secondItem="Kwa-Eo-6Hx" secondAttribute="top" constant="11" id="Tve-pK-1XK"/>
+                                    <constraint firstItem="UDf-Jk-gvg" firstAttribute="leading" secondItem="Kwa-Eo-6Hx" secondAttribute="leading" constant="21" id="fcC-NU-g3x"/>
+                                    <constraint firstAttribute="trailing" secondItem="28o-kV-pVj" secondAttribute="trailing" constant="12" id="nwR-wS-oZt"/>
+                                    <constraint firstAttribute="bottom" secondItem="28o-kV-pVj" secondAttribute="bottom" constant="9" id="pGe-Tf-2bY"/>
+                                    <constraint firstItem="28o-kV-pVj" firstAttribute="centerY" secondItem="UDf-Jk-gvg" secondAttribute="centerY" id="pRN-sk-1oR"/>
+                                    <constraint firstItem="28o-kV-pVj" firstAttribute="leading" secondItem="UDf-Jk-gvg" secondAttribute="trailing" constant="13" id="qvW-V9-622"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" tag="10" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTb-BG-BYH">

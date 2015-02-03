@@ -45,10 +45,10 @@ class DHCarouselView: UIView {
   
   func setPageControl() {
     carouselPageControl = UIPageControl(frame: CGRect(x: 0, y: carouselScrollView.frame.size.height - pageControllHeight, width: carouselScrollView.frame.size.width, height: pageControllHeight))
-    carouselPageControl.numberOfPages = 1
+    carouselPageControl.numberOfPages = 0
 
     carouselPageControl.center = CGPointMake(self.center.x, carouselPageControl.center.y)
-    carouselPageControl.backgroundColor = UIColor(white: 0, alpha: 0.5)
+    
     self.addSubview(carouselPageControl)
   }
 //增加清空轮播图功能
@@ -65,10 +65,9 @@ extension DHCarouselView {
     if carouselDataArray.count <= 0 {
       return
     }
-    
+    carouselPageControl.backgroundColor = UIColor(white: 0, alpha: 0.5)
     carouselScrollView.contentSize = CGSize(width: carouselScrollView.frame.size.width * CGFloat(carouselDataArray.count + 2), height: carouselScrollView.frame.size.height)
     carouselPageControl.numberOfPages = carouselDataArray.count
-    
     
     for i in 0...carouselDataArray.count - 1 {
       let carouselImgName = carouselDataArray[i]

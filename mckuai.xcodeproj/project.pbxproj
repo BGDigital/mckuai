@@ -48,7 +48,6 @@
 		E62C21941A03F34E004DBFD0 /* mckuaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C21931A03F34E004DBFD0 /* mckuaiTests.swift */; };
 		E62E55811A7A139400E5730D /* BarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E62E557E1A7A139400E5730D /* BarItem.m */; };
 		E62E55821A7A139400E5730D /* CBStoreHouseRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E62E55801A7A139400E5730D /* CBStoreHouseRefreshControl.m */; };
-		E62E55841A7A140300E5730D /* storehouse.plist in Resources */ = {isa = PBXBuildFile; fileRef = E62E55831A7A140300E5730D /* storehouse.plist */; };
 		E63C78B61A302F5F00D28668 /* forumDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63C78B31A302F5F00D28668 /* forumDetail.storyboard */; };
 		E63C78B71A302F5F00D28668 /* forumDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C78B41A302F5F00D28668 /* forumDetailCell.swift */; };
 		E63C78B81A302F5F00D28668 /* forumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C78B51A302F5F00D28668 /* forumDetailViewController.swift */; };
@@ -74,6 +73,7 @@
 		E6D6C2CA1A2FFC0800858161 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6C2C81A2FFC0800858161 /* SwiftyJSON.swift */; };
 		E6D6C2DA1A2FFE9800858161 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6C2D91A2FFE9800858161 /* BaseTableViewController.swift */; };
 		E6D6C2DC1A300C2100858161 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D6C2DB1A300C2100858161 /* AppContext.swift */; };
+		E6D732241A80D45200D183FF /* storehouse.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6D732231A80D45200D183FF /* storehouse.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,7 +147,6 @@
 		E62E557E1A7A139400E5730D /* BarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarItem.m; sourceTree = "<group>"; };
 		E62E557F1A7A139400E5730D /* CBStoreHouseRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStoreHouseRefreshControl.h; sourceTree = "<group>"; };
 		E62E55801A7A139400E5730D /* CBStoreHouseRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStoreHouseRefreshControl.m; sourceTree = "<group>"; };
-		E62E55831A7A140300E5730D /* storehouse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storehouse.plist; sourceTree = "<group>"; };
 		E63C78B31A302F5F00D28668 /* forumDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = forumDetail.storyboard; sourceTree = "<group>"; };
 		E63C78B41A302F5F00D28668 /* forumDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forumDetailCell.swift; sourceTree = "<group>"; };
 		E63C78B51A302F5F00D28668 /* forumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forumDetailViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +173,7 @@
 		E6D6C2C81A2FFC0800858161 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		E6D6C2D91A2FFE9800858161 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		E6D6C2DB1A300C2100858161 /* AppContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
+		E6D732231A80D45200D183FF /* storehouse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storehouse.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,7 +257,7 @@
 		E62C216F1A03F34E004DBFD0 = {
 			isa = PBXGroup;
 			children = (
-				E62E55831A7A140300E5730D /* storehouse.plist */,
+				E6D732231A80D45200D183FF /* storehouse.plist */,
 				0BE195341A4D2D5700F4262B /* TencentOpenApi_IOS_Bundle.bundle */,
 				0BE195351A4D2D5700F4262B /* TencentOpenAPI.framework */,
 				E628892C1A3E895B00C45131 /* Security.framework */,
@@ -554,6 +554,7 @@
 				0BDA0A7C1A4F1AC4008B888D /* OtherCenter.storyboard in Resources */,
 				0BE1953D1A4D472900F4262B /* McLogin.storyboard in Resources */,
 				E62C21831A03F34E004DBFD0 /* Main.storyboard in Resources */,
+				E6D732241A80D45200D183FF /* storehouse.plist in Resources */,
 				0BB152621A7E91AD001A451B /* UserLogin.storyboard in Resources */,
 				E626E13D1A408C1F00506234 /* tiezi.storyboard in Resources */,
 				E63FD7E61A1346CC00177E3E /* chat.storyboard in Resources */,
@@ -564,7 +565,6 @@
 				E63C78B61A302F5F00D28668 /* forumDetail.storyboard in Resources */,
 				E626E1361A40167000506234 /* Post.storyboard in Resources */,
 				0B610DFC1A7F73550077CF83 /* UserRegister.storyboard in Resources */,
-				E62E55841A7A140300E5730D /* storehouse.plist in Resources */,
 				E628890C1A3E876300C45131 /* dynamicNoData.storyboard in Resources */,
 				E62889091A3E876300C45131 /* Dynamic.storyboard in Resources */,
 				E62888FC1A3E870800C45131 /* Login.storyboard in Resources */,
