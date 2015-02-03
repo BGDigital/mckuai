@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
@@ -16,25 +17,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无最新动态信息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hI-J1-b1K">
-                                <rect key="frame" x="92" y="111" width="136" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还没有任何动态" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECn-aG-fFY">
+                                <rect key="frame" x="118" y="311" width="84" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nologin" translatesAutoresizingMaskIntoConstraints="NO" id="2rJ-uG-oH5">
+                                <rect key="frame" x="103" y="197" width="115" height="115"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5hI-J1-b1K" firstAttribute="top" secondItem="RQ3-kz-7jl" secondAttribute="bottom" constant="91" id="3I5-1n-UEt"/>
-                            <constraint firstAttribute="centerX" secondItem="5hI-J1-b1K" secondAttribute="centerX" id="dyC-U2-z4u"/>
+                            <constraint firstAttribute="centerX" secondItem="2rJ-uG-oH5" secondAttribute="centerX" id="BeL-eq-gN7"/>
+                            <constraint firstItem="2rJ-uG-oH5" firstAttribute="top" secondItem="ECn-aG-fFY" secondAttribute="top" constant="-114" id="BrU-Js-Sng"/>
+                            <constraint firstAttribute="centerX" secondItem="ECn-aG-fFY" secondAttribute="centerX" id="DAG-uK-057"/>
+                            <constraint firstAttribute="centerY" secondItem="2rJ-uG-oH5" secondAttribute="centerY" constant="29.5" id="MqD-G2-NbQ"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzD-so-Ukg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277.86666666666667" y="-35.973333333333336"/>
+            <point key="canvasLocation" x="277" y="-36"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="nologin" width="115" height="115"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

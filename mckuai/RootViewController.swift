@@ -41,7 +41,7 @@ class RootViewController: UITabBarController, UITabBarControllerDelegate{
 //           McLogin.showLoginView(self)
 //        }
         //测试ID，一叶之秋
-        //appUserIdSave=2
+//        appUserIdSave=2
 
     }
     
@@ -50,16 +50,16 @@ class RootViewController: UITabBarController, UITabBarControllerDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
-        selectItemTag = item.tag
-        if(item.tag == 3 && (appUserIdSave == nil || appUserIdSave == 0)){
-            McLogin.showLoginView(self)
-        }
-     }
-
-    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
-        //返回false不变，返回true要变
-        return !(selectItemTag == 3 && (appUserIdSave == nil || appUserIdSave == 0))
-        //return true
-    }
+//     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
+//        selectItemTag = item.tag
+//        if(item.tag == 3 && (appUserIdSave == nil || appUserIdSave == 0)){
+//            McLogin.showLoginView(self)
+//        }
+//     }
+//
+//    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+//        //返回false不变，返回true要变
+//        return !(selectItemTag == 3 && (appUserIdSave == nil || appUserIdSave == 0))
+//        //return true
+//    }
 }
