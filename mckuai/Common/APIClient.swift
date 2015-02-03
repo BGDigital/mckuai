@@ -9,8 +9,8 @@
 
 import UIKit
 
-let APIRootURL = "http://118.144.83.145:8081/"
-
+//let APIRootURL = "http://118.144.83.145:8081/"
+let APIRootURL = "http://192.168.99.117/"
 class APIClient {
    
     class var sharedInstance : APIClient {
@@ -175,5 +175,25 @@ class APIClient {
         let dict = ["id": userId, "page": page]
         self.getJSONData(false, view: view, path: "user.do?act=dynamic", parameters: dict, success: success, failure: failure)
     }
+    
+    //QQ登录
+    func mckuaiLoginByPost(view: UIView, userName:String,passWord:String,success: (JSON) -> Void, failure: (NSError) -> Void){
+        let dict = [
+            "userName": userName,
+            "passWord": passWord,
+        ]
+        self.getJSONDataByPost(view, path: "user.do?act=userLogin", parameters: dict, success: success, failure: failure)
+    }
+    
+    //QQ注册
+    func mckuaiRegisterByPost(view: UIView, userName:String,passWord:String,nickName:String,success: (JSON) -> Void, failure: (NSError) -> Void){
+        let dict = [
+            "userName": userName,
+            "passWord": passWord,
+            "nickName": nickName,
+        ]
+        self.getJSONDataByPost(view, path: "user.do?act=register", parameters: dict, success: success, failure: failure)
+    }
+
 
 }

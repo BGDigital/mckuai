@@ -110,7 +110,7 @@
     </scenes>
     <resources>
         <image name="background" width="375" height="244"/>
-        <image name="defaultIcon" width="73" height="73"/>
+        <image name="defaultIcon" width="72" height="72"/>
         <image name="headBg" width="100" height="100"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
