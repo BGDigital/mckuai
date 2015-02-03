@@ -48,6 +48,8 @@ class DHCarouselView: UIView {
     carouselPageControl.numberOfPages = 1
 
     carouselPageControl.center = CGPointMake(self.center.x, carouselPageControl.center.y)
+    carouselPageControl.backgroundColor = UIColor(white: 0, alpha: 0.5)
+    self.addSubview(carouselPageControl)
   }
 //增加清空轮播图功能
     func emptyCarouseView(){
@@ -90,13 +92,12 @@ extension DHCarouselView {
             label.text = " "+carouseTitle![i]
             var size = label.sizeThatFits(CGSize.zeroSize)
             size.width = carouselScrollView.frame.size.width
-            size.height = 25
-            let orgin = CGPoint(x: carouselScrollView.frame.size.width * CGFloat(i + 1), y: carouselScrollView.frame.size.height - size.height)
+            size.height = 20
+            let orgin = CGPoint(x: carouselScrollView.frame.size.width * CGFloat(i + 1), y: carouselScrollView.frame.size.height - 40)
             label.frame = CGRect(origin: orgin, size: size)
             label.textColor = UIColor(white: 0.9, alpha: 1)
             label.backgroundColor = UIColor(white: 0, alpha: 0.5)
-//            label.numberOfLines = 1
-            label.font = label.font.fontWithSize(12.0)
+            label.font = label.font.fontWithSize(15.0)
             carouselScrollView.addSubview(label)
         }
 

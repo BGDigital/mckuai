@@ -13,7 +13,7 @@ class HotTableViewController:UITableViewController, DHCarouselViewDelegate, UISc
     
     var CBSH_Refresh = CBStoreHouseRefreshControl()
     var carouselView: DHCarouselView!
-    let fpic: CGFloat = 0.36
+    let fpic: CGFloat = 0.5
     var picHeight: CGFloat!
     var data:JSON!{
         didSet{
@@ -50,9 +50,12 @@ class HotTableViewController:UITableViewController, DHCarouselViewDelegate, UISc
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        self.tableView.separatorStyle = .None
+        self.tableView.layoutIfNeeded()
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         InitData(true)
-        picHeight = (UIScreen.mainScreen().bounds.width * fpic)
+        picHeight = (self.view.frame.size.width * fpic)
         InitCarouselView(picHeight)
         self.CBSH_Refresh = CBStoreHouseRefreshControl.attachToScrollView(self.tableView, target: self, refreshAction: "onPullToFresh", plist: "storehouse", color: UIColor.blackColor(), lineWidth: 1.5, dropHeight: 80, scale: 1, horizontalRandomness: 150, reverseLoadingAnimation: true, internalAnimationFactor: 0.5)
         
@@ -98,6 +101,15 @@ class HotTableViewController:UITableViewController, DHCarouselViewDelegate, UISc
     
     override func tableView(tableView:UITableView,cellForRowAtIndexPath indexPath:NSIndexPath) ->UITableViewCell{
         var cell = tableView.dequeueReusableCellWithIdentifier("hottiezi",forIndexPath:indexPath) as HotTableViewCell;
+        
+        //画分割线
+        var cellheight = 72
+        var bdb = UIView()
+        var size = CGSize(width: tableView.frame.size.width - 10, height: 1.0)
+        var org = CGPoint(x: 5, y: cellheight-1)
+        bdb.frame = CGRect(origin: org, size: size)
+        bdb.backgroundColor = UIColor(white: 239/255, alpha: 1)
+        cell.addSubview(bdb)
         
         cell.update(hotTiezi[indexPath.row])
         
