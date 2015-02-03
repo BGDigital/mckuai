@@ -92,7 +92,13 @@ class UserLogin: UIViewController,UITextFieldDelegate,TencentSessionDelegate{
     @IBAction func loginFunction(sender: UIButton) {
         if(sender.tag == 10) {
             println("普通登录")
-            mckuaiLoginFunction()
+            if(self.userName.text != nil && self.passWord.text != nil && self.userName.text != "注册邮箱" && self.passWord.text != "密码") {
+                mckuaiLoginFunction()
+            }else {
+                var alertView = UIAlertView(title: "用户名或密码不能为空", message: "", delegate: self, cancelButtonTitle: "确定")
+                alertView.show()
+            }
+            
         }else if(sender.tag == 20) {
             println("qq登录")
             
@@ -101,6 +107,8 @@ class UserLogin: UIViewController,UITextFieldDelegate,TencentSessionDelegate{
     }
     
     func mckuaiLoginFunction() {
+        
+        
         APIClient.sharedInstance.mckuaiLoginByPost(self.view, userName: self.userName.text, passWord: self.passWord.text,success: { (json) -> Void in
             if json["state"].stringValue == "ok" {
                 var userId = json["dataObject"].intValue
