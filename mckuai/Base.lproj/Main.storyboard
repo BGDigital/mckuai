@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sFg-L0-DoZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sFg-L0-DoZ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -745,7 +745,7 @@
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPo-GW-V8G">
                                 <rect key="frame" x="0.0" y="242" width="320" height="282"/>
-                                <color key="backgroundColor" white="0.35266755756578955" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="用户名字" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeV-wB-MfF">
                                 <rect key="frame" x="101" y="151" width="123" height="21"/>
@@ -787,7 +787,7 @@
                                     <constraint firstAttribute="height" constant="44" id="SPP-Ui-f0h"/>
                                     <constraint firstAttribute="width" constant="44" id="t9e-N1-Tr6"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="Logout">
+                                <state key="normal" backgroundImage="set_btn_normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -795,7 +795,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nt-Xg-46E">
-                                <rect key="frame" x="51" y="207" width="56" height="29"/>
+                                <rect key="frame" x="51" y="207" width="58" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="做了什么">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -816,10 +816,34 @@
                                     <action selector="changeStatusClicked:" destination="9y3-Ee-uvq" eventType="touchUpInside" id="ThJ-zm-vZI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="我的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfR-Bb-TD1">
+                                <rect key="frame" x="142" y="30" width="40" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10z-VI-LKx">
+                                <rect key="frame" x="97" y="95" width="126" height="52"/>
+                                <color key="backgroundColor" red="0.10196078431372549" green="0.51764705882352946" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="登录/注册">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nologin" translatesAutoresizingMaskIntoConstraints="NO" id="JW0-3O-5WR">
+                                <rect key="frame" x="103" y="296" width="115" height="115"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你还没有任何动态" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcU-GF-qe0">
+                                <rect key="frame" x="112" y="407" width="96" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="XeV-wB-MfF" secondAttribute="centerX" constant="-2.5" id="2BX-2D-xVG"/>
+                            <constraint firstAttribute="centerX" secondItem="hfR-Bb-TD1" secondAttribute="centerX" constant="-2" id="2pn-7e-n4h"/>
                             <constraint firstAttribute="bottomMargin" secondItem="KPo-GW-V8G" secondAttribute="bottomMargin" constant="52" id="3fa-OD-AI5"/>
                             <constraint firstItem="KPo-GW-V8G" firstAttribute="top" secondItem="rV9-Mg-Ycq" secondAttribute="top" id="5w6-Qv-TYH"/>
                             <constraint firstAttribute="centerX" secondItem="pCV-OR-4e4" secondAttribute="centerX" constant="-2" id="9gn-iM-ykD"/>
@@ -830,11 +854,14 @@
                             <constraint firstItem="Dfy-H2-SKH" firstAttribute="leading" secondItem="OEb-SS-Y3k" secondAttribute="leading" id="LTI-va-4W6"/>
                             <constraint firstAttribute="centerX" secondItem="0Pi-ml-md7" secondAttribute="centerX" constant="-2" id="LgE-ZX-1D0"/>
                             <constraint firstItem="tPG-0V-8RD" firstAttribute="top" secondItem="OEb-SS-Y3k" secondAttribute="topMargin" constant="20" id="RXQ-j5-g1t"/>
+                            <constraint firstAttribute="centerY" secondItem="JW0-3O-5WR" secondAttribute="centerY" constant="-69.5" id="RXW-4M-bHE"/>
+                            <constraint firstAttribute="centerX" secondItem="tcU-GF-qe0" secondAttribute="centerX" id="VIR-3u-8k6"/>
                             <constraint firstItem="KPo-GW-V8G" firstAttribute="leading" secondItem="rV9-Mg-Ycq" secondAttribute="leading" id="WsC-SX-pFP"/>
                             <constraint firstItem="KPo-GW-V8G" firstAttribute="bottom" secondItem="EGJ-9F-qXY" secondAttribute="top" id="aof-Xi-abi"/>
                             <constraint firstItem="rV9-Mg-Ycq" firstAttribute="leading" secondItem="Dfy-H2-SKH" secondAttribute="leading" id="auX-hG-Gt9"/>
                             <constraint firstItem="Cws-4Q-w1g" firstAttribute="centerX" secondItem="rV9-Mg-Ycq" secondAttribute="centerX" id="byT-tQ-bua"/>
-                            <constraint firstItem="Cws-4Q-w1g" firstAttribute="leading" secondItem="9Nt-Xg-46E" secondAttribute="trailing" constant="53" id="cVl-OK-oOG"/>
+                            <constraint firstItem="Cws-4Q-w1g" firstAttribute="leading" secondItem="9Nt-Xg-46E" secondAttribute="trailing" constant="51" id="cVl-OK-oOG"/>
+                            <constraint firstAttribute="centerX" secondItem="10z-VI-LKx" secondAttribute="centerX" id="dBf-EW-HNG"/>
                             <constraint firstItem="KPo-GW-V8G" firstAttribute="trailing" secondItem="rV9-Mg-Ycq" secondAttribute="trailing" id="fGq-gd-k7o"/>
                             <constraint firstItem="9Nt-Xg-46E" firstAttribute="top" secondItem="Dfy-H2-SKH" secondAttribute="bottom" constant="9" id="gkz-mb-kbY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eRX-kl-zS1" secondAttribute="trailing" constant="33" id="hYB-HK-2Ih"/>
@@ -845,7 +872,9 @@
                             <constraint firstItem="eRX-kl-zS1" firstAttribute="leading" secondItem="ZMQ-oL-owx" secondAttribute="leading" id="rhw-fb-qYE"/>
                             <constraint firstAttribute="centerX" secondItem="ZMQ-oL-owx" secondAttribute="centerX" constant="-52" id="vhb-eG-u8J"/>
                             <constraint firstAttribute="trailing" secondItem="Dfy-H2-SKH" secondAttribute="trailing" id="yDQ-ha-nEv"/>
+                            <constraint firstAttribute="centerX" secondItem="JW0-3O-5WR" secondAttribute="centerX" id="yt7-hi-I8F"/>
                             <constraint firstItem="rV9-Mg-Ycq" firstAttribute="trailing" secondItem="Dfy-H2-SKH" secondAttribute="trailing" id="z4h-dm-5Zb"/>
+                            <constraint firstItem="tcU-GF-qe0" firstAttribute="top" secondItem="JW0-3O-5WR" secondAttribute="top" constant="111" id="zdS-gJ-5ip"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -855,12 +884,17 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="container_v" destination="KPo-GW-V8G" id="EAC-4g-z1g"/>
+                        <outlet property="denglu_btn" destination="10z-VI-LKx" id="rt4-uq-5oC"/>
                         <outlet property="dynamic_btn" destination="9Nt-Xg-46E" id="l5e-tQ-tLx"/>
+                        <outlet property="exitLogin_btn" destination="tPG-0V-8RD" id="93L-3a-815"/>
                         <outlet property="fuzhu" destination="Tyy-Dj-kSt" id="w8j-BJ-ujN"/>
+                        <outlet property="headBg" destination="ATk-fc-ep6" id="qne-9a-nev"/>
                         <outlet property="headImage" destination="pCV-OR-4e4" id="oQL-aM-23f"/>
                         <outlet property="level" destination="0Pi-ml-md7" id="qbg-aU-Lm0"/>
                         <outlet property="message_btn" destination="eRX-kl-zS1" id="Etg-La-lud"/>
                         <outlet property="mingren" destination="ZMQ-oL-owx" id="1zy-AG-RRy"/>
+                        <outlet property="no_dynamic_icon" destination="JW0-3O-5WR" id="Sez-Fd-JNz"/>
+                        <outlet property="no_dynamic_lable" destination="tcU-GF-qe0" id="HI9-EF-Mhj"/>
                         <outlet property="userName" destination="XeV-wB-MfF" id="Ck9-Rr-Olg"/>
                     </connections>
                 </viewController>
@@ -871,7 +905,6 @@
     </scenes>
     <resources>
         <image name="750" width="375" height="49"/>
-        <image name="Logout" width="44" height="44"/>
         <image name="background" width="375" height="244"/>
         <image name="bankuai" width="20" height="20"/>
         <image name="bankuai_count1" width="16" height="16"/>
@@ -879,7 +912,7 @@
         <image name="bankuai_fatie" width="22" height="22"/>
         <image name="bankuai_huodong" width="15" height="15"/>
         <image name="community_test_no" width="28" height="25"/>
-        <image name="defaultIcon" width="73" height="73"/>
+        <image name="defaultIcon" width="72" height="72"/>
         <image name="headBg" width="100" height="100"/>
         <image name="home_test_no" width="28" height="25"/>
         <image name="image1" width="20" height="20"/>
@@ -887,6 +920,8 @@
         <image name="image4" width="20" height="20"/>
         <image name="message" width="11" height="11"/>
         <image name="mine_test_no" width="28" height="25"/>
+        <image name="nologin" width="115" height="115"/>
+        <image name="set_btn_normal" width="44" height="44"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

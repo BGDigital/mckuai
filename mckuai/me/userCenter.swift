@@ -14,6 +14,8 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     let ITEM_WIDTH:CGFloat = 45
     let ITEM_HEIGHT:CGFloat = 45
     var isLoginout:Bool = false
+    
+    @IBOutlet weak var headBg: UIImageView!
     @IBOutlet weak var headImage: UIImageView!
     
     @IBOutlet weak var userName: UILabel!
@@ -29,19 +31,34 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     
     @IBOutlet weak var container_v: UIView!
     
+    @IBOutlet weak var exitLogin_btn: UIButton!
+    @IBOutlet weak var denglu_btn: UIButton!
+    @IBOutlet weak var no_dynamic_icon: UIImageView!
+    
+    @IBOutlet weak var no_dynamic_lable: UILabel!
     var imageCache = Dictionary<String, UIImage>()
     
     var json = JSON("")
     var http_url = UserCenterUrl;
+    
+    var dynamicTableView:Dynamic!=nil
+    var messageTableView:Message!=nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         isLoginout = false
-        if(appUserIdSave != nil){
-            
-            self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
-            //隐藏navigationbar
-            self.navigationController?.navigationBar.hidden = true
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
+        //隐藏navigationbar
+//        setRightBarButtonItem();
+        self.navigationController?.navigationBar.hidden = true
+        
+        if(appUserIdSave != nil && appUserIdSave != 0){
+            showHiddenLable();
+            self.denglu_btn.hidden = true;
+            self.no_dynamic_icon.hidden = true;
+            self.no_dynamic_lable.hidden = true;
             /*
             //navigation bar 背景
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
@@ -56,10 +73,56 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
             }
             //changeStatusClicked(self.dynamic_btn)
         }else{
-            McLogin.showLoginView(self)
+            hiddenLable();
+            self.denglu_btn.hidden = false;
+            self.no_dynamic_icon.hidden = false;
+            self.no_dynamic_lable.hidden = false;
+            setLoginButtonStyle();
+            
         }
 
 
+    }
+    
+
+    
+    func setLoginButtonStyle() {
+         self.denglu_btn.layer.masksToBounds = true;
+         self.denglu_btn.layer.borderWidth = 1;
+         self.denglu_btn.layer.borderColor = UIColor(red: 0.353, green: 0.796, blue: 0.478, alpha: 1.00).CGColor;
+         self.denglu_btn!.userInteractionEnabled = true
+         self.denglu_btn.addTarget(self, action:"dengluButtonClick:", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    // 用户登录
+    func dengluButtonClick(sender:UIButton) {
+        println("登录注册按钮");
+        self.navigationItem.rightBarButtonItem?.title = "注册"
+        UserLogin.showUserLoginView(presentNavigator: self.navigationController)
+    }
+    
+    func hiddenLable() {
+        self.headBg.hidden = true;
+        self.headImage.hidden = true;
+        self.fuzhu.hidden = true;
+        self.userName.hidden = true;
+        self.level.hidden = true;
+        self.mingren.hidden = true;
+        self.dynamic_btn.enabled = false;
+        self.message_btn.enabled = false;
+        self.exitLogin_btn.enabled = false;
+    }
+    
+    func showHiddenLable() {
+        self.headBg.hidden = false;
+        self.headImage.hidden = false;
+        self.fuzhu.hidden = false;
+        self.userName.hidden = false;
+        self.level.hidden = false;
+        self.mingren.hidden = false;
+        self.dynamic_btn.enabled = true;
+        self.message_btn.enabled = true;
+        self.exitLogin_btn.enabled = true;
     }
     
     @IBAction func userLogout() {
@@ -75,6 +138,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
             messageTableView = nil
             isLoginout = true
             self.tabBarController?.selectedIndex = 0
+//            self.viewDidLoad()
             println("用户已退出！")
         }
     }
@@ -85,9 +149,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = true
-        if(isLoginout){
-            viewDidLoad()
-        }
+        viewDidLoad()
         
     }
     
@@ -142,11 +204,13 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     func setRightBarButtonItem() {
         self.rightButton = UIButton.buttonWithType(UIButtonType.Custom) as? UIButton
         self.rightButton!.frame=CGRectMake(0,0,ITEM_WIDTH,ITEM_HEIGHT)
+        self.rightButton!.tintColor = UIColor.whiteColor()
+        self.rightButton!.setTitle("注册", forState: UIControlState.Normal)
         self.rightButton!.tag=10
         self.rightButton!.userInteractionEnabled = true
         self.rightButton?.addTarget(self, action: "rightBarButtonItemClicked", forControlEvents: UIControlEvents.TouchUpInside)
-        self.rightButton!.setImage(UIImage(named: "searchCenter_d"),forState:UIControlState.Normal)
-        self.rightButton!.setImage(UIImage(named: "searchCenter"),forState:UIControlState.Highlighted)
+//        self.rightButton!.setImage(UIImage(named: "searchCenter_d"),forState:UIControlState.Normal)
+//        self.rightButton!.setImage(UIImage(named: "searchCenter"),forState:UIControlState.Highlighted)
         //self.rightButton!.imageEdgeInsets = UIEdgeInsetsMake(0,30, 10, 0);
         var barButtonItem = UIBarButtonItem(customView:self.rightButton!)
         
@@ -166,8 +230,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
         
     }
     
-    var dynamicTableView:Dynamic!=nil
-    var messageTableView:Message!=nil
+
 
     @IBAction func changeStatusClicked(sender: UIButton) {
         var btn_tag=sender.tag

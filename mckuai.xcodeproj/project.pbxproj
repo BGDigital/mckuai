@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B610DFC1A7F73550077CF83 /* UserRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B610DFB1A7F73550077CF83 /* UserRegister.storyboard */; };
+		0B610DFE1A7F73700077CF83 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B610DFD1A7F73700077CF83 /* UserRegister.swift */; };
 		0B7C386C1A487C7100920B83 /* newfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7C386B1A487C7100920B83 /* newfile.swift */; };
+		0BB152621A7E91AD001A451B /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BB152611A7E91AD001A451B /* UserLogin.storyboard */; };
+		0BB152641A7EA2AB001A451B /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB152631A7EA2AB001A451B /* UserLogin.swift */; };
 		0BDA0A7C1A4F1AC4008B888D /* OtherCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BDA0A7B1A4F1AC4008B888D /* OtherCenter.storyboard */; };
 		0BDA0A7E1A4F1EE6008B888D /* OtherCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA0A7D1A4F1EE6008B888D /* OtherCenter.swift */; };
 		0BE195361A4D2D5700F4262B /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0BE195341A4D2D5700F4262B /* TencentOpenApi_IOS_Bundle.bundle */; };
@@ -95,7 +99,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B610DFB1A7F73550077CF83 /* UserRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserRegister.storyboard; sourceTree = "<group>"; };
+		0B610DFD1A7F73700077CF83 /* UserRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		0B7C386B1A487C7100920B83 /* newfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newfile.swift; sourceTree = "<group>"; };
+		0BB152611A7E91AD001A451B /* UserLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserLogin.storyboard; sourceTree = "<group>"; };
+		0BB152631A7EA2AB001A451B /* UserLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		0BDA0A7B1A4F1AC4008B888D /* OtherCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OtherCenter.storyboard; sourceTree = "<group>"; };
 		0BDA0A7D1A4F1EE6008B888D /* OtherCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherCenter.swift; sourceTree = "<group>"; };
 		0BE195341A4D2D5700F4262B /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
@@ -238,6 +246,10 @@
 				E62888F81A3E870800C45131 /* Login.swift */,
 				0BE1953C1A4D472900F4262B /* McLogin.storyboard */,
 				0BE1953E1A4D474200F4262B /* McLogin.swift */,
+				0BB152611A7E91AD001A451B /* UserLogin.storyboard */,
+				0BB152631A7EA2AB001A451B /* UserLogin.swift */,
+				0B610DFB1A7F73550077CF83 /* UserRegister.storyboard */,
+				0B610DFD1A7F73700077CF83 /* UserRegister.swift */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -542,6 +554,7 @@
 				0BDA0A7C1A4F1AC4008B888D /* OtherCenter.storyboard in Resources */,
 				0BE1953D1A4D472900F4262B /* McLogin.storyboard in Resources */,
 				E62C21831A03F34E004DBFD0 /* Main.storyboard in Resources */,
+				0BB152621A7E91AD001A451B /* UserLogin.storyboard in Resources */,
 				E626E13D1A408C1F00506234 /* tiezi.storyboard in Resources */,
 				E63FD7E61A1346CC00177E3E /* chat.storyboard in Resources */,
 				0BE195361A4D2D5700F4262B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -550,6 +563,7 @@
 				E62889131A3E886A00C45131 /* Images.xcassets in Resources */,
 				E63C78B61A302F5F00D28668 /* forumDetail.storyboard in Resources */,
 				E626E1361A40167000506234 /* Post.storyboard in Resources */,
+				0B610DFC1A7F73550077CF83 /* UserRegister.storyboard in Resources */,
 				E62E55841A7A140300E5730D /* storehouse.plist in Resources */,
 				E628890C1A3E876300C45131 /* dynamicNoData.storyboard in Resources */,
 				E62889091A3E876300C45131 /* Dynamic.storyboard in Resources */,
@@ -576,6 +590,7 @@
 				0BE1953F1A4D474200F4262B /* McLogin.swift in Sources */,
 				E67B865F1A3E7AA400B782E1 /* HotTableViewController.swift in Sources */,
 				0B7C386C1A487C7100920B83 /* newfile.swift in Sources */,
+				0B610DFE1A7F73700077CF83 /* UserRegister.swift in Sources */,
 				E6D6C2C31A2FFB5100858161 /* APIClient.swift in Sources */,
 				E6D6C2DA1A2FFE9800858161 /* BaseTableViewController.swift in Sources */,
 				E67F89431A1C7B5E00044035 /* DynamicCell.swift in Sources */,
@@ -598,6 +613,7 @@
 				E6D6C2DC1A300C2100858161 /* AppContext.swift in Sources */,
 				E62888FD1A3E870800C45131 /* Login.swift in Sources */,
 				E6A3C5871A4AA8E2002485FC /* ReplyViewController.swift in Sources */,
+				0BB152641A7EA2AB001A451B /* UserLogin.swift in Sources */,
 				E628890A1A3E876300C45131 /* Dynamic.swift in Sources */,
 				E62C21801A03F34E004DBFD0 /* RootViewController.swift in Sources */,
 				E626E1381A40168E00506234 /* PostViewController.swift in Sources */,
