@@ -71,6 +71,12 @@ class UserRegister: UIViewController,UITextFieldDelegate {
     @IBAction func registerUserInfo(sender: UIButton) {
         println("注册用户")
         
+        if(self.userName.text == nil || self.passWord.text == nil || self.nickName.text == nil || self.userName.text == "注册邮箱" || self.passWord.text == "密码" || self.nickName == "用户昵称" ){
+            var alertView = UIAlertView(title: "输入的信息不能为空", message: "", delegate: self, cancelButtonTitle: "确定")
+            alertView.show()
+            return
+        }
+        
         APIClient.sharedInstance.mckuaiRegisterByPost(self.view, userName: self.userName.text, passWord: self.passWord.text,nickName:self.nickName.text,success: { (json) -> Void in
             if json["state"].stringValue == "ok" {
                 var userId = json["dataObject"].intValue
