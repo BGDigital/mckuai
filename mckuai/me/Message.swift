@@ -26,7 +26,7 @@ class Message: UITableViewController, UITableViewDataSource, UITableViewDelegate
     
     //上拉加载更多
     var LoadMoreText = UILabel()
-    let tableFooterView = UIView()
+    var tableFooterView = UIView()
     var normalTipe:String = "上拉查看更多"
     
     override func viewDidLoad() {

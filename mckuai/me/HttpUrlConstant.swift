@@ -10,4 +10,4 @@ import UIKit
 
 let UserCenterUrl="http://118.144.83.145:8081/user.do"
 
-
+var isLoginout:Bool = false

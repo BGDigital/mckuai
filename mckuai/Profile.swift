@@ -67,10 +67,11 @@ class Profile:UIViewController, UIAlertViewDelegate {
             var userDefault = NSUserDefaults.standardUserDefaults()
             userDefault.removeObjectForKey("appUserIdSave")
             appUserIdSave = 0
-            
+            isLoginout = true
             println("用户已退出！")
-            self.navigationController?.popViewControllerAnimated(true)
-            //self.tabBarController?.selectedIndex = 0
+            self.navigationController?.popToRootViewControllerAnimated(true)
+//            self.navigationController?.popViewControllerAnimated(true)
+//            self.tabBarController?.selectedIndex = 0
         }
     }
     
