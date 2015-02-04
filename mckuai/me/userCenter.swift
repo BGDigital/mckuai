@@ -137,18 +137,22 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.hidden = true
-        if dynamicTableView != nil {
-            self.dynamicTableView.tableView.tableFooterView = nil
-            self.dynamicTableView.dynamicNoData = nil
+        
+        if(isLoginout == true) {
+            if(self.dynamicTableView != nil){
+                self.dynamicTableView.view = nil
+                self.dynamicTableView = nil
+                
+            }
+            if(self.messageTableView != nil){
+                self.messageTableView.view = nil
+                self.messageTableView = nil
+            }
+            
+            viewDidLoad()
         }
-        if messageTableView != nil {
-            self.messageTableView.tableView.tableFooterView = nil
-            self.messageTableView.dynamicNoData = nil
-        }
-        self.dynamicTableView = nil
-        self.messageTableView = nil
-        isLoginout = true
-        viewDidLoad()
+        
+
         
     }
     

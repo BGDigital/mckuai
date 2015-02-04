@@ -30,11 +30,11 @@ class Profile_Password:UIViewController {
         let ensure = ensure_pass.text
         
         if oldpass == "" || newpass == "" || ensure == ""{
-            GTUtil.showCustomHUD(self.view, title: "密码不能为空", imgName: "HUD_OK")
+            UIAlertView(title: "提示", message: "密码不能为空", delegate: nil, cancelButtonTitle: "确定").show()
             return
         }
         if newpass != ensure {
-            GTUtil.showCustomHUD(self.view, title: "两次密码输入不一致", imgName: "HUD_OK")
+            UIAlertView(title: "提示", message: "两次密码输入不一致", delegate: nil, cancelButtonTitle: "确定").show()
             return
         }
         let dic = [

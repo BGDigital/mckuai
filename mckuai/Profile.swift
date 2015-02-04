@@ -30,19 +30,19 @@ class Profile:UIViewController, UIAlertViewDelegate {
         }
     }
     override func viewDidLoad() {
-        
+        loadData(true)
     }
     override func viewDidAppear(animated: Bool) {
-        loadData()
+        loadData(false)
     }
-    func loadData(){
+    func loadData(showHUD: Bool){
         var uid = appUserIdSave
 //        uid = 3
         
         if uid == nil || uid == 0  {
             self.navigationController?.popViewControllerAnimated(false)
         }
-        APIClient.sharedInstance.getUserInfo(self.myview, uid: uid, success: {
+        APIClient.sharedInstance.getUserInfo(showHUD, view:self.myview, uid: uid, success: {
             (data:JSON?) -> Void in
             if(data != nil && data!["state"].stringValue == "ok"){
                 self.user = data!["dataObject"]["user"]
@@ -71,8 +71,9 @@ class Profile:UIViewController, UIAlertViewDelegate {
             appUserIdSave = 0
             isLoginout = true
             println("用户已退出！")
-            self.navigationController?.popViewControllerAnimated(true)
-            self.tabBarController?.selectedIndex = 0
+            self.navigationController?.popToRootViewControllerAnimated(true)
+//            self.navigationController?.popViewControllerAnimated(true)
+//            self.tabBarController?.selectedIndex = 0
         }
     }
     

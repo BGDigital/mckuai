@@ -45,6 +45,7 @@ class Nickname:UIViewController {
             APIClient.sharedInstance.modifiyUserInfo(self.view, ctl: self.navigationController, param: dic, success:{
                 (res:JSON?) in
                     println(res)
+                    isLoginout = true
                 }, failure: {
                 (err:NSError) in
                     

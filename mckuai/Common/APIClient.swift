@@ -194,9 +194,9 @@ class APIClient {
         self.getJSONDataByPost(view, path: "user.do?act=register", parameters: dict, success: success, failure: failure)
     }
 
-    func getUserInfo(view: UIView,uid:Int,success: (JSON) -> Void, failure: (NSError) -> Void){
+    func getUserInfo(showHUD: Bool, view: UIView,uid:Int,success: (JSON) -> Void, failure: (NSError) -> Void){
         var api = "user.do?act=one"
-        self.getJSONData(true, view: view, path: api, parameters: ["id":uid], success: success, failure: failure)
+        self.getJSONData(showHUD, view: view, path: api, parameters: ["id":uid], success: success, failure: failure)
     }
     
     func modifiyUserInfo(view:UIView,ctl:UINavigationController?,param:[String : AnyObject]?,success: (JSON) -> Void, failure: (NSError) -> Void){

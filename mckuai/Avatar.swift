@@ -55,6 +55,7 @@ class Avatar:UIViewController,UICollectionViewDataSource,UICollectionViewDelegat
             ]
             APIClient.sharedInstance.modifiyUserInfo(self.view, ctl: self.navigationController, param: dic, success: {
                 (res:JSON?)in
+                isLoginout = true
                 }, failure: {
                     (res:NSError) in
             })
