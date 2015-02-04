@@ -117,6 +117,7 @@ class UserLogin: UIViewController,UITextFieldDelegate,TencentSessionDelegate{
                 userDefault.setInteger(userId, forKey: "appUserIdSave")
                 userDefault.synchronize()
                 appUserIdSave = userId
+                isLoginout = true
                 //                    self.navigationController?.popViewControllerAnimated(true)
                 self.navigationController?.popToRootViewControllerAnimated(true)
                 
@@ -172,6 +173,7 @@ class UserLogin: UIViewController,UITextFieldDelegate,TencentSessionDelegate{
                     userDefault.synchronize()
                     
                     appUserIdSave = userId
+                    isLoginout = true
 //                    self.navigationController?.popViewControllerAnimated(true)
                     self.navigationController?.popToRootViewControllerAnimated(true)
 //                    self.removeLoginView()

@@ -13,7 +13,7 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     var rightButton:UIButton?
     let ITEM_WIDTH:CGFloat = 45
     let ITEM_HEIGHT:CGFloat = 45
-    var isLoginout:Bool = false
+    
     
     @IBOutlet weak var headBg: UIImageView!
     @IBOutlet weak var headImage: UIImageView!
@@ -47,7 +47,6 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         isLoginout = false
-        
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "nav_bg"), forBarMetrics: UIBarMetrics.Default)
         //隐藏navigationbar
@@ -111,6 +110,8 @@ class UserCenter: UIViewController, UIAlertViewDelegate {
         self.dynamic_btn.enabled = false;
         self.message_btn.enabled = false;
         self.exitLogin_btn.enabled = false;
+        self.dynamic_btn.setTitleColor(UIColor.lightGrayColor(),forState:UIControlState.Normal)
+        self.message_btn.setTitleColor(UIColor.lightGrayColor(),forState:UIControlState.Normal)
     }
     
     func showHiddenLable() {

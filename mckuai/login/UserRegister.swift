@@ -85,6 +85,7 @@ class UserRegister: UIViewController,UITextFieldDelegate {
                 userDefault.setInteger(userId, forKey: "appUserIdSave")
                 userDefault.synchronize()
                 appUserIdSave = userId
+                isLoginout = true
                 //                    self.navigationController?.popViewControllerAnimated(true)
                 self.navigationController?.popToRootViewControllerAnimated(true)
                 
