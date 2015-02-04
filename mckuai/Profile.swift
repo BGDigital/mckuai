@@ -11,6 +11,7 @@ import UIKit
 class Profile:UIViewController, UIAlertViewDelegate {
     
 
+    @IBOutlet weak var password_view: UIView!
     @IBOutlet weak var myview: UIView!
     @IBOutlet weak var useravatar: UIImageView!
     @IBOutlet weak var username: UILabel!
@@ -24,6 +25,7 @@ class Profile:UIViewController, UIAlertViewDelegate {
                         self.useravatar.image = img
                     }
                 })
+                
             }
         }
     }
@@ -70,7 +72,7 @@ class Profile:UIViewController, UIAlertViewDelegate {
             
             println("用户已退出！")
             self.navigationController?.popViewControllerAnimated(true)
-            //self.tabBarController?.selectedIndex = 0
+            self.tabBarController?.selectedIndex = 0
         }
     }
     
@@ -79,6 +81,10 @@ class Profile:UIViewController, UIAlertViewDelegate {
     }
     
     @IBAction func toPass(){
+        if user!["userType"].stringValue == "qq"{
+            UIAlertView(title: "提示", message: "QQ用户不能修改密码", delegate: nil, cancelButtonTitle: "确定").show()
+            return
+        }
         Profile_Password.changePass(self.navigationController!)
     }
     @IBAction func toAvatar(){
